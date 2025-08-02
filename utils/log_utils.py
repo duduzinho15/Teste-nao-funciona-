@@ -1,34 +1,36 @@
-# log_utils.py
-
+import logging
 import os
 from datetime import datetime
 
-def get_log_paths():
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    log_dir = os.path.join(base_dir, 'logs')
+def setup_logging():
+    """
+    Configura um sistema de log centralizado que salva todas as mensagens
+    em um arquivo e também as exibe no terminal.
+    """
+    log_dir = 'logs'
     os.makedirs(log_dir, exist_ok=True)
-
-    return {
-        "info": os.path.join(log_dir, 'coleta.log'),
-        "erro": os.path.join(log_dir, 'erros.log')
-    }
-
-def registrar_log(fonte, mensagem):
-    caminhos = get_log_paths()
-    agora = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    entrada = f"[{agora}] [{fonte}] {mensagem}\n"
     
-    with open(caminhos["info"], 'a', encoding='utf-8') as f:
-        f.write(entrada)
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    log_file = os.path.join(log_dir, f"pipeline_run_{timestamp}.log")
 
-def registrar_erro(fonte, mensagem, excecao=None):
-    caminhos = get_log_paths()
-    agora = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    erro_msg = f"[{agora}] [{fonte}] ERRO: {mensagem}"
-    
-    if excecao:
-        erro_msg += f" | Exceção: {str(excecao)}"
-    erro_msg += "\n"
+    # Configura o logger principal (root logger).
+    # Qualquer script que usar 'import logging' usará esta configuração.
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - [%(name)s] - %(message)s',
+        handlers=[
+            logging.FileHandler(log_file, encoding='utf-8'),
+            logging.StreamHandler()
+        ]
+    )
+    # Cria um logger específico para este módulo para evitar confusão
+    logger = logging.getLogger(__name__)
+    logger.info(f"Sistema de log configurado. A saída será salva em: {log_file}")
 
-    with open(caminhos["erro"], 'a', encoding='utf-8') as f:
-        f.write(erro_msg)
+def registrar_log(nome_logger, mensagem):
+    """Registra uma mensagem de informação."""
+    logging.getLogger(nome_logger).info(mensagem)
+
+def registrar_erro(nome_logger, mensagem, exc_info=False):
+    """Registra uma mensagem de erro."""
+    logging.getLogger(nome_logger).error(mensagem, exc_info=exc_info)

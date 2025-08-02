@@ -6,21 +6,22 @@ import logging
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..'))
 DB_NAME = os.path.join(PROJECT_ROOT, 'Banco_de_dados', 'aposta.db')
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - [%(name)s] - %(message)s')
 
 def criar_todas_as_tabelas():
     """
     Cria ou verifica a existência de TODAS as tabelas necessárias para a pipeline completa.
     """
-    logging.info(f"Verificando e configurando a estrutura completa do banco de dados em '{DB_NAME}'...")
+    logger = logging.getLogger(__name__)
+    logger.info(f"Verificando e configurando a estrutura completa do banco de dados em '{DB_NAME}'...")
     os.makedirs(os.path.dirname(DB_NAME), exist_ok=True)
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
 
     # --- 1. Tabelas para a Pipeline do FBREF ---
-    logging.info("Criando tabelas para o FBRef...")
+    logger.info("Criando tabelas para o FBRef...")
     
-    # Definição ÚNICA e CORRETA da tabela 'competicoes'
+    # Definição ÚNICA e CORRETA da tabela 'competicoes' com a coluna 'contexto'
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS competicoes (
             id INTEGER PRIMARY KEY,
@@ -30,23 +31,33 @@ def criar_todas_as_tabelas():
         )
     ''')
 
-    cursor.execute('CREATE TABLE IF NOT EXISTS links_para_coleta (id INTEGER PRIMARY KEY, competicao_id INTEGER, url TEXT NOT NULL UNIQUE, tipo_dado TEXT, status_coleta TEXT DEFAULT "pendente", FOREIGN KEY (competicao_id) REFERENCES competicoes (id))')
+    # ✅ Verificação após criação
+    cursor.execute("PRAGMA table_info(competicoes)")
+    colunas = [col[1] for col in cursor.fetchall()]
+    print("📋 Colunas da tabela competicoes:", colunas)
 
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS links_para_coleta (
+            id INTEGER PRIMARY KEY, competicao_id INTEGER, url TEXT NOT NULL UNIQUE, 
+            tipo_dado TEXT, status_coleta TEXT DEFAULT "pendente", 
+            FOREIGN KEY (competicao_id) REFERENCES competicoes (id)
+        )
+    ''')
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS partidas (
             id INTEGER PRIMARY KEY, link_coleta_id INTEGER, data TEXT, time_casa TEXT, placar TEXT,
             time_visitante TEXT, url_match_report TEXT UNIQUE, status_coleta_detalhada TEXT DEFAULT 'pendente',
-            FOREIGN KEY (link_coleta_id) REFERENCES links_para_coleta (id))
+            FOREIGN KEY (link_coleta_id) REFERENCES links_para_coleta (id)
+        )
     ''')
-    
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS estatisticas_time_partida (
             id INTEGER PRIMARY KEY, partida_id INTEGER, time_nome TEXT, posse_bola REAL, finalizacoes INTEGER,
             chutes_no_alvo INTEGER, sot_percent REAL, gols_por_chute REAL, gols_por_chute_no_alvo REAL, 
             xg REAL, npxg REAL, xg_assist REAL, g_xg_diff REAL, g_npxg_diff REAL,
-            UNIQUE(partida_id, time_nome), FOREIGN KEY (partida_id) REFERENCES partidas (id))
+            UNIQUE(partida_id, time_nome), FOREIGN KEY (partida_id) REFERENCES partidas (id)
+        )
     ''')
-    
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS estatisticas_jogador_partida (
             id INTEGER PRIMARY KEY, partida_id INTEGER, jogador_nome TEXT, time_nome TEXT, nacao TEXT, 
@@ -71,8 +82,7 @@ def criar_todas_as_tabelas():
     ''')
 
     # --- 2. Tabelas para as outras APIs ---
-    logging.info("Criando tabelas para as outras APIs...")
-    # (As definições para as outras APIs permanecem as mesmas)
+    logger.info("Criando tabelas para as outras APIs...")
     cursor.execute('CREATE TABLE IF NOT EXISTS ligas_api_football (id INTEGER PRIMARY KEY, liga_id INTEGER UNIQUE, nome TEXT, pais TEXT)')
     cursor.execute('CREATE TABLE IF NOT EXISTS times_api_football (id INTEGER PRIMARY KEY, time_id INTEGER UNIQUE, nome TEXT, fundado INTEGER, estadio TEXT, capacidade_estadio INTEGER)')
     cursor.execute('CREATE TABLE IF NOT EXISTS jogadores_api_football (id INTEGER PRIMARY KEY, jogador_id INTEGER UNIQUE, nome TEXT, idade INTEGER, nacionalidade TEXT)')
@@ -89,7 +99,7 @@ def criar_todas_as_tabelas():
 
     conn.commit()
     conn.close()
-    logging.info("Banco de dados pronto com a estrutura completa para TODAS as fontes de dados.")
+    logger.info("Banco de dados pronto com a estrutura completa para TODAS as fontes de dados.")
 
 if __name__ == "__main__":
     criar_todas_as_tabelas()

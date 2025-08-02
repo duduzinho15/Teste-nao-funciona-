@@ -1,10 +1,15 @@
 import logging
 import sqlite3
+import os
 from .fbref_utils import close_driver, fazer_requisicao, extrair_tabelas_da_pagina, BASE_URL
 
 # --- CONFIGURAÇÕES GERAIS ---
-DB_NAME = '../../Banco_de_dados/aposta.db'
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..', '..'))
+DB_NAME = os.path.join(PROJECT_ROOT, 'Banco_de_dados', 'aposta.db')
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+conn = sqlite3.connect(DB_NAME)
+cursor = conn.cursor()
 
 def coletar_competicoes():
     """

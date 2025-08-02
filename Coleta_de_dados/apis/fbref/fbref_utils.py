@@ -54,14 +54,8 @@ def fazer_requisicao(url):
         driver.get(url)
         return BeautifulSoup(driver.page_source, 'lxml')
     except WebDriverException as e:
-        logging.error(f"O Selenium falhou ao tentar acessar a URL: {url}")
-        registrar_erro(url, e)
-        return None
-
-def registrar_erro(url, erro):
-    """Registra um erro em um arquivo de log para análise posterior."""
-    with open(ARQUIVO_ERRO_LOG, 'a', encoding='utf-8') as f:
-        f.write(f"[{datetime.datetime.now().isoformat()}] Erro ao processar: {url}\n  Detalhe: {str(erro)}\n\n")
+         logging.getLogger(__name__).error(f"O Selenium falhou ao tentar acessar a URL: {url}")
+         return None
 
 def encontrar_links_temporadas(driver):
     try:

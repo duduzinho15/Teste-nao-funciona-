@@ -1,0 +1,2275 @@
+2025-08-02 10:11:30,282 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-02_10-11-30.log
+2025-08-02 10:11:30,968 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🚀🚀🚀 INICIANDO A PIPELINE COMPLETA DE DADOS DO FBREF 🚀🚀🚀
+2025-08-02 10:11:30,968 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 0 de 6] Executando: Preparação do Banco de Dados ---
+2025-08-02 10:11:30,969 - INFO - [Banco_de_dados.criar_banco] - Verificando e configurando a estrutura completa do banco de dados em 'C:\ApostaPro\Banco_de_dados\aposta.db'...
+2025-08-02 10:11:30,969 - INFO - [Banco_de_dados.criar_banco] - Criando tabelas para o FBRef...
+2025-08-02 10:11:30,981 - INFO - [Banco_de_dados.criar_banco] - Criando tabelas para as outras APIs...
+2025-08-02 10:11:31,012 - INFO - [Banco_de_dados.criar_banco] - Banco de dados pronto com a estrutura completa para TODAS as fontes de dados.
+2025-08-02 10:11:31,013 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 0 de 6] Finalizada com sucesso! ---
+2025-08-02 10:11:31,013 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 1 de 6] Executando: Descoberta de Competições e Temporadas ---
+2025-08-02 10:11:31,013 - INFO - [root] - 🚀 Iniciando Script 1: Descoberta de Links...
+2025-08-02 10:11:31,014 - INFO - [root] - Buscando lista de competições com reconhecimento de contexto aprimorado...
+2025-08-02 10:11:31,014 - INFO - [root] - Iniciando o navegador (WebDriver)...
+2025-08-02 10:11:31,015 - INFO - [WDM] - ====== WebDriver manager ======
+2025-08-02 10:11:31,672 - INFO - [WDM] - Get LATEST chromedriver version for google-chrome
+2025-08-02 10:11:31,701 - INFO - [WDM] - Get LATEST chromedriver version for google-chrome
+2025-08-02 10:11:31,720 - INFO - [WDM] - Driver [C:\Users\Eduardo Vitorino\.wdm\drivers\chromedriver\win64\138.0.7204.183\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-02 10:11:32,777 - INFO - [root] - Navegador iniciado com sucesso em modo invisível.
+2025-08-02 10:11:36,952 - INFO - [root] - Encontradas 150 competições únicas com contexto.
+2025-08-02 10:11:36,952 - INFO - [root] - 
+--- Processando Competição 1/150: 2. Fußball-Bundesliga (Desconhecido) ---
+2025-08-02 10:11:40,577 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:11:40,577 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 10:11:40,579 - INFO - [root] - 
+--- Processando Competição 2/150: 3. Fußball-Liga (Desconhecido) ---
+2025-08-02 10:11:44,516 - INFO - [root] -   -> 17 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:11:44,516 - INFO - [root] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 10:11:44,518 - INFO - [root] - 
+--- Processando Competição 3/150: A-League Men (Desconhecido) ---
+2025-08-02 10:11:49,357 - INFO - [root] -   -> 20 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:11:49,357 - INFO - [root] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 10:11:49,360 - INFO - [root] - 
+--- Processando Competição 4/150: A-League Women (Desconhecido) ---
+2025-08-02 10:11:54,496 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:11:54,497 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 10:11:54,499 - INFO - [root] - 
+--- Processando Competição 5/150: AFC Asian Cup (Desconhecido) ---
+2025-08-02 10:11:58,323 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:11:58,323 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 10:11:58,326 - INFO - [root] - 
+--- Processando Competição 6/150: AFC Asian Cup qualification (Desconhecido) ---
+2025-08-02 10:12:02,316 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:12:02,316 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:12:02,318 - INFO - [root] - 
+--- Processando Competição 7/150: AFC Women's Asian Cup (Desconhecido) ---
+2025-08-02 10:12:06,118 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:12:06,118 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:12:06,121 - INFO - [root] - 
+--- Processando Competição 8/150: AFC Women's Asian Cup qualification (Desconhecido) ---
+2025-08-02 10:12:09,870 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:12:09,870 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:12:09,872 - INFO - [root] - 
+--- Processando Competição 9/150: Africa Cup of Nations (Desconhecido) ---
+2025-08-02 10:12:13,597 - INFO - [root] -   -> 8 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:12:13,597 - INFO - [root] -   -> Encontrados 8 links do tipo TEMPORADAS.
+2025-08-02 10:12:13,600 - INFO - [root] - 
+--- Processando Competição 10/150: Africa Cup of Nations qualification (Desconhecido) ---
+2025-08-02 10:12:17,850 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:12:17,850 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:12:17,853 - INFO - [root] - 
+--- Processando Competição 11/150: Africa Women Cup of Nations (Desconhecido) ---
+2025-08-02 10:12:21,615 - INFO - [root] -   -> 4 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:12:21,616 - INFO - [root] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 10:12:21,618 - INFO - [root] - 
+--- Processando Competição 12/150: Algarve Cup (Desconhecido) ---
+2025-08-02 10:12:25,493 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:12:25,493 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:12:25,495 - INFO - [root] - 
+--- Processando Competição 13/150: Allsvenskan (Desconhecido) ---
+2025-08-02 10:12:29,246 - INFO - [root] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:12:29,246 - INFO - [root] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 10:12:29,249 - INFO - [root] - 
+--- Processando Competição 14/150: Austrian Football Bundesliga (Desconhecido) ---
+2025-08-02 10:12:33,036 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:12:33,037 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 10:12:33,039 - INFO - [root] - 
+--- Processando Competição 15/150: Belgian Pro League (Desconhecido) ---
+2025-08-02 10:12:36,732 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:12:36,732 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 10:12:36,735 - INFO - [root] - 
+--- Processando Competição 16/150: Belgian Women's Super League (Desconhecido) ---
+2025-08-02 10:12:40,580 - INFO - [root] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:12:40,580 - INFO - [root] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 10:12:40,583 - INFO - [root] - 
+--- Processando Competição 17/150: Big 5 European Leagues Combined (Desconhecido) ---
+2025-08-02 10:12:45,328 - INFO - [root] -   -> 31 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:12:45,328 - INFO - [root] -   -> Encontrados 31 links do tipo TEMPORADAS.
+2025-08-02 10:12:45,330 - INFO - [root] - 
+--- Processando Competição 18/150: Brasileirão Feminino Série A1 (Desconhecido) ---
+2025-08-02 10:12:49,161 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:12:49,161 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 10:12:49,163 - INFO - [root] - 
+--- Processando Competição 19/150: CONCACAF Gold Cup (Desconhecido) ---
+2025-08-02 10:12:53,114 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:12:53,115 - INFO - [root] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 10:12:53,117 - INFO - [root] - 
+--- Processando Competição 20/150: CONCACAF W Championship (Desconhecido) ---
+2025-08-02 10:13:01,140 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:13:01,140 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:13:01,142 - INFO - [root] - 
+--- Processando Competição 21/150: CONMEBOL Copa América (Desconhecido) ---
+2025-08-02 10:13:04,911 - INFO - [root] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:13:04,912 - INFO - [root] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 10:13:04,914 - INFO - [root] - 
+--- Processando Competição 22/150: Campeonato Brasileiro Série A (Desconhecido) ---
+2025-08-02 10:13:08,407 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:13:08,407 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:13:08,410 - INFO - [root] - 
+--- Processando Competição 23/150: Campeonato Brasileiro Série B (Desconhecido) ---
+2025-08-02 10:13:11,928 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:13:11,928 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:13:11,931 - INFO - [root] - 
+--- Processando Competição 24/150: Canadian Premier League (Desconhecido) ---
+2025-08-02 10:13:15,776 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:13:15,776 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 10:13:15,779 - INFO - [root] - 
+--- Processando Competição 25/150: Categoría Primera A (Desconhecido) ---
+2025-08-02 10:13:19,731 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:13:19,731 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:13:19,734 - INFO - [root] - 
+--- Processando Competição 26/150: Challenger Pro League (Desconhecido) ---
+2025-08-02 10:13:23,406 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:13:23,406 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 10:13:23,409 - INFO - [root] - 
+--- Processando Competição 27/150: Chilean Primera División (Desconhecido) ---
+2025-08-02 10:13:27,319 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:13:27,319 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:13:27,322 - INFO - [root] - 
+--- Processando Competição 28/150: Chinese Football Association Super League (Desconhecido) ---
+2025-08-02 10:13:31,239 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:13:31,239 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:13:31,241 - INFO - [root] - 
+--- Processando Competição 29/150: Copa América Femenina (Desconhecido) ---
+2025-08-02 10:13:35,029 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:13:35,029 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:13:35,031 - INFO - [root] - 
+--- Processando Competição 30/150: Copa CONMEBOL Sudamericana (Desconhecido) ---
+2025-08-02 10:13:38,725 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:13:38,725 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:13:38,728 - INFO - [root] - 
+--- Processando Competição 31/150: Copa Libertadores de América (Desconhecido) ---
+2025-08-02 10:13:42,391 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:13:42,391 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:13:42,393 - INFO - [root] - 
+--- Processando Competição 32/150: Copa de la Liga Profesional (Desconhecido) ---
+2025-08-02 10:13:46,251 - INFO - [root] -   -> 4 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:13:46,251 - INFO - [root] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 10:13:46,254 - INFO - [root] - 
+--- Processando Competição 33/150: Copa del Rey (Desconhecido) ---
+2025-08-02 10:13:50,342 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:13:50,342 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 10:13:50,345 - INFO - [root] - 
+--- Processando Competição 34/150: Coppa Italia (Desconhecido) ---
+2025-08-02 10:13:54,403 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:13:54,403 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:13:54,406 - INFO - [root] - 
+--- Processando Competição 35/150: Coupe de France (Desconhecido) ---
+2025-08-02 10:13:58,613 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:13:58,613 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 10:13:58,616 - INFO - [root] - 
+--- Processando Competição 36/150: Coupe de la Ligue (Desconhecido) ---
+2025-08-02 10:14:02,441 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:02,442 - INFO - [root] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 10:14:02,444 - INFO - [root] - 
+--- Processando Competição 37/150: Croatian Football League (Desconhecido) ---
+2025-08-02 10:14:06,125 - INFO - [root] -   -> 19 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:06,125 - INFO - [root] -   -> Encontrados 19 links do tipo TEMPORADAS.
+2025-08-02 10:14:06,128 - INFO - [root] - 
+--- Processando Competição 38/150: Czech First League (Desconhecido) ---
+2025-08-02 10:14:09,803 - INFO - [root] -   -> 17 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:09,804 - INFO - [root] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 10:14:09,806 - INFO - [root] - 
+--- Processando Competição 39/150: DFB-Pokal (Desconhecido) ---
+2025-08-02 10:14:13,820 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:13,820 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:14:13,823 - INFO - [root] - 
+--- Processando Competição 40/150: DFB-Pokal Frauen (Desconhecido) ---
+2025-08-02 10:14:17,585 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:17,586 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 10:14:17,588 - INFO - [root] - 
+--- Processando Competição 41/150: Damallsvenskan (Desconhecido) ---
+2025-08-02 10:14:21,401 - INFO - [root] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:21,401 - INFO - [root] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 10:14:21,403 - INFO - [root] - 
+--- Processando Competição 42/150: Danish Superliga (Desconhecido) ---
+2025-08-02 10:14:25,089 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:25,090 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 10:14:25,092 - INFO - [root] - 
+--- Processando Competição 43/150: Danish Women's League (Desconhecido) ---
+2025-08-02 10:14:29,201 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:29,201 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 10:14:29,204 - INFO - [root] - 
+--- Processando Competição 44/150: División de Fútbol Profesional (Desconhecido) ---
+2025-08-02 10:14:33,169 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:33,169 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 10:14:33,173 - INFO - [root] - 
+--- Processando Competição 45/150: EFL Championship (Desconhecido) ---
+2025-08-02 10:14:36,816 - INFO - [root] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:36,816 - INFO - [root] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 10:14:36,819 - INFO - [root] - 
+--- Processando Competição 46/150: EFL Cup (Desconhecido) ---
+2025-08-02 10:14:40,906 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:40,906 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:14:40,909 - INFO - [root] - 
+--- Processando Competição 47/150: EFL League One (Desconhecido) ---
+2025-08-02 10:14:44,557 - INFO - [root] -   -> 24 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:44,557 - INFO - [root] -   -> Encontrados 24 links do tipo TEMPORADAS.
+2025-08-02 10:14:44,560 - INFO - [root] - 
+--- Processando Competição 48/150: EFL League Two (Desconhecido) ---
+2025-08-02 10:14:48,303 - INFO - [root] -   -> 24 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:48,303 - INFO - [root] -   -> Encontrados 24 links do tipo TEMPORADAS.
+2025-08-02 10:14:48,306 - INFO - [root] - 
+--- Processando Competição 49/150: Eerste Divisie (Desconhecido) ---
+2025-08-02 10:14:52,350 - INFO - [root] -   -> 19 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:52,350 - INFO - [root] -   -> Encontrados 19 links do tipo TEMPORADAS.
+2025-08-02 10:14:52,354 - INFO - [root] - 
+--- Processando Competição 50/150: Ekstraklasa (Desconhecido) ---
+2025-08-02 10:14:56,028 - INFO - [root] -   -> 24 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:56,028 - INFO - [root] -   -> Encontrados 24 links do tipo TEMPORADAS.
+2025-08-02 10:14:56,031 - INFO - [root] - 
+--- Processando Competição 51/150: Eliteserien (Desconhecido) ---
+2025-08-02 10:14:59,707 - INFO - [root] -   -> 26 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:14:59,708 - INFO - [root] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 10:14:59,711 - INFO - [root] - 
+--- Processando Competição 52/150: Eredivisie (Desconhecido) ---
+2025-08-02 10:15:03,429 - INFO - [root] -   -> 26 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:15:03,430 - INFO - [root] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 10:15:03,433 - INFO - [root] - 
+--- Processando Competição 53/150: Eredivisie Vrouwen (Desconhecido) ---
+2025-08-02 10:15:07,363 - INFO - [root] -   -> 8 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:15:07,363 - INFO - [root] -   -> Encontrados 8 links do tipo TEMPORADAS.
+2025-08-02 10:15:07,366 - INFO - [root] - 
+--- Processando Competição 54/150: FA Community Shield (Desconhecido) ---
+2025-08-02 10:15:11,254 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:15:11,254 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:15:11,257 - INFO - [root] - 
+--- Processando Competição 55/150: FA Cup (Desconhecido) ---
+2025-08-02 10:15:14,940 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:15:14,941 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:15:14,943 - INFO - [root] - 
+--- Processando Competição 56/150: FA Women's Super League (Desconhecido) ---
+2025-08-02 10:15:18,845 - INFO - [root] -   -> 10 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:15:18,845 - INFO - [root] -   -> Encontrados 10 links do tipo TEMPORADAS.
+2025-08-02 10:15:18,848 - INFO - [root] - 
+--- Processando Competição 57/150: FIFA Club World Cup (Desconhecido) ---
+2025-08-02 10:15:22,480 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:15:22,480 - INFO - [root] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 10:15:22,483 - INFO - [root] - 
+--- Processando Competição 58/150: FIFA Confederations Cup (Desconhecido) ---
+2025-08-02 10:15:26,317 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:15:26,317 - INFO - [root] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 10:15:26,320 - INFO - [root] - 
+--- Processando Competição 59/150: FIFA Women's World Cup (Desconhecido) ---
+2025-08-02 10:15:30,250 - INFO - [root] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:15:30,250 - INFO - [root] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 10:15:30,252 - INFO - [root] - 
+--- Processando Competição 60/150: FIFA Women's World Cup Qualification (UEFA) (Desconhecido) ---
+2025-08-02 10:15:34,094 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:15:34,094 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:15:34,096 - INFO - [root] - 
+--- Processando Competição 61/150: FIFA World Cup (Desconhecido) ---
+2025-08-02 10:15:37,772 - INFO - [root] -   -> 22 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:15:37,772 - INFO - [root] -   -> Encontrados 22 links do tipo TEMPORADAS.
+2025-08-02 10:15:37,776 - INFO - [root] - 
+--- Processando Competição 62/150: FIFA World Cup Qualification — AFC (Desconhecido) ---
+2025-08-02 10:15:41,716 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:15:41,716 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:15:41,718 - INFO - [root] - 
+--- Processando Competição 63/150: FIFA World Cup Qualification — CAF (Desconhecido) ---
+2025-08-02 10:15:45,916 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:15:45,916 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:15:45,918 - INFO - [root] - 
+--- Processando Competição 64/150: FIFA World Cup Qualification — CONCACAF (Desconhecido) ---
+2025-08-02 10:15:49,921 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:15:49,921 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:15:49,923 - INFO - [root] - 
+--- Processando Competição 65/150: FIFA World Cup Qualification — CONMEBOL (Desconhecido) ---
+2025-08-02 10:15:53,814 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:15:53,814 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:15:53,816 - INFO - [root] - 
+--- Processando Competição 66/150: FIFA World Cup Qualification — Inter-confederation play-offs (Desconhecido) ---
+2025-08-02 10:15:57,545 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:15:57,545 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:15:57,547 - INFO - [root] - 
+--- Processando Competição 67/150: FIFA World Cup Qualification — OFC (Desconhecido) ---
+2025-08-02 10:16:01,432 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:16:01,432 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:16:01,435 - INFO - [root] - 
+--- Processando Competição 68/150: FIFA World Cup Qualification — UEFA (Desconhecido) ---
+2025-08-02 10:16:05,813 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:16:05,813 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:16:05,815 - INFO - [root] - 
+--- Processando Competição 69/150: First Professional Football League (Desconhecido) ---
+2025-08-02 10:16:09,534 - INFO - [root] -   -> 17 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:16:09,534 - INFO - [root] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 10:16:09,537 - INFO - [root] - 
+--- Processando Competição 70/150: Franz Beckenbauer Supercup (Desconhecido) ---
+2025-08-02 10:16:13,503 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:16:13,503 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:16:13,505 - INFO - [root] - 
+--- Processando Competição 71/150: Frauen-Bundesliga (Desconhecido) ---
+2025-08-02 10:16:17,385 - INFO - [root] -   -> 10 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:16:17,385 - INFO - [root] -   -> Encontrados 10 links do tipo TEMPORADAS.
+2025-08-02 10:16:17,387 - INFO - [root] - 
+--- Processando Competição 72/150: Fußball-Bundesliga (Desconhecido) ---
+2025-08-02 10:16:21,154 - INFO - [root] -   -> 38 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:16:21,155 - INFO - [root] -   -> Encontrados 38 links do tipo TEMPORADAS.
+2025-08-02 10:16:21,157 - INFO - [root] - 
+--- Processando Competição 73/150: I-League (Desconhecido) ---
+2025-08-02 10:16:25,112 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:16:25,112 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:16:25,115 - INFO - [root] - 
+--- Processando Competição 74/150: Indian Super League (Desconhecido) ---
+2025-08-02 10:16:29,119 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:16:29,120 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 10:16:29,122 - INFO - [root] - 
+--- Processando Competição 75/150: International Friendlies (M) (Desconhecido) ---
+2025-08-02 10:16:32,776 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:16:32,776 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:16:32,779 - INFO - [root] - 
+--- Processando Competição 76/150: International Friendlies (W) (Desconhecido) ---
+2025-08-02 10:16:36,690 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:16:36,690 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 10:16:36,693 - INFO - [root] - 
+--- Processando Competição 77/150: J1 League (Desconhecido) ---
+2025-08-02 10:16:40,662 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:16:40,662 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:16:40,664 - INFO - [root] - 
+--- Processando Competição 78/150: J2 League (Desconhecido) ---
+2025-08-02 10:16:44,586 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:16:44,586 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:16:44,589 - INFO - [root] - 
+--- Processando Competição 79/150: K League 1 (Desconhecido) ---
+2025-08-02 10:16:48,517 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:16:48,517 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:16:48,520 - INFO - [root] - 
+--- Processando Competição 80/150: La Liga (Desconhecido) ---
+2025-08-02 10:16:52,137 - INFO - [root] -   -> 38 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:16:52,137 - INFO - [root] -   -> Encontrados 38 links do tipo TEMPORADAS.
+2025-08-02 10:16:52,140 - INFO - [root] - 
+--- Processando Competição 81/150: Lamar Hunt U.S. Open Cup (Desconhecido) ---
+2025-08-02 10:16:56,057 - INFO - [root] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:16:56,057 - INFO - [root] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 10:16:56,059 - INFO - [root] - 
+--- Processando Competição 82/150: Liga 1 de Fútbol Profesional (Desconhecido) ---
+2025-08-02 10:16:59,970 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:16:59,970 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:16:59,973 - INFO - [root] - 
+--- Processando Competição 83/150: Liga F (Desconhecido) ---
+2025-08-02 10:17:03,750 - INFO - [root] -   -> 4 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:17:03,750 - INFO - [root] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 10:17:03,753 - INFO - [root] - 
+--- Processando Competição 84/150: Liga I (Desconhecido) ---
+2025-08-02 10:17:07,432 - INFO - [root] -   -> 20 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:17:07,433 - INFO - [root] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 10:17:07,435 - INFO - [root] - 
+--- Processando Competição 85/150: Liga MX (Desconhecido) ---
+2025-08-02 10:17:11,170 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:17:11,170 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 10:17:11,173 - INFO - [root] - 
+--- Processando Competição 86/150: Liga Profesional Ecuador (Desconhecido) ---
+2025-08-02 10:17:15,093 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:17:15,094 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:17:15,097 - INFO - [root] - 
+--- Processando Competição 87/150: Liga Profesional de Fútbol Argentina (Desconhecido) ---
+2025-08-02 10:17:19,092 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:17:19,093 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:17:19,096 - INFO - [root] - 
+--- Processando Competição 88/150: Ligue 1 (Desconhecido) ---
+2025-08-02 10:17:22,808 - INFO - [root] -   -> 31 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:17:22,809 - INFO - [root] -   -> Encontrados 31 links do tipo TEMPORADAS.
+2025-08-02 10:17:22,812 - INFO - [root] - 
+--- Processando Competição 89/150: Ligue 2 (Desconhecido) ---
+2025-08-02 10:17:26,839 - INFO - [root] -   -> 17 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:17:26,839 - INFO - [root] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 10:17:26,844 - INFO - [root] - 
+--- Processando Competição 90/150: Major League Soccer (Desconhecido) ---
+2025-08-02 10:17:30,521 - INFO - [root] -   -> 30 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:17:30,521 - INFO - [root] -   -> Encontrados 30 links do tipo TEMPORADAS.
+2025-08-02 10:17:30,524 - INFO - [root] - 
+--- Processando Competição 91/150: NWSL Challenge Cup (Desconhecido) ---
+2025-08-02 10:17:34,343 - INFO - [root] -   -> 4 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:17:34,344 - INFO - [root] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 10:17:34,346 - INFO - [root] - 
+--- Processando Competição 92/150: NWSL Fall Series (Desconhecido) ---
+2025-08-02 10:17:38,031 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:17:38,032 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:17:38,033 - INFO - [root] - 
+--- Processando Competição 93/150: National League (Desconhecido) ---
+2025-08-02 10:17:42,217 - INFO - [root] -   -> 20 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:17:42,217 - INFO - [root] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 10:17:42,220 - INFO - [root] - 
+--- Processando Competição 94/150: National Women's Soccer League (Desconhecido) ---
+2025-08-02 10:17:45,857 - INFO - [root] -   -> 13 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:17:45,857 - INFO - [root] -   -> Encontrados 13 links do tipo TEMPORADAS.
+2025-08-02 10:17:45,860 - INFO - [root] - 
+--- Processando Competição 95/150: Nemzeti Bajnokság I (Desconhecido) ---
+2025-08-02 10:17:49,664 - INFO - [root] -   -> 21 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:17:49,664 - INFO - [root] -   -> Encontrados 21 links do tipo TEMPORADAS.
+2025-08-02 10:17:49,667 - INFO - [root] - 
+--- Processando Competição 96/150: North American Soccer League (Desconhecido) ---
+2025-08-02 10:17:53,482 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:17:53,482 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 10:17:53,485 - INFO - [root] - 
+--- Processando Competição 97/150: OFC Nations Cup (Desconhecido) ---
+2025-08-02 10:17:57,211 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:17:57,211 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:17:57,213 - INFO - [root] - 
+--- Processando Competição 98/150: OFC Women's Nations Cup (Desconhecido) ---
+2025-08-02 10:18:00,961 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:18:00,961 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:18:00,963 - INFO - [root] - 
+--- Processando Competição 99/150: Olympics — Women's Tournament (Desconhecido) ---
+2025-08-02 10:18:04,645 - INFO - [root] -   -> 8 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:18:04,646 - INFO - [root] -   -> Encontrados 8 links do tipo TEMPORADAS.
+2025-08-02 10:18:04,648 - INFO - [root] - 
+--- Processando Competição 100/150: Paraguayan Primera División (Desconhecido) ---
+2025-08-02 10:18:08,564 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:18:08,565 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:18:08,566 - INFO - [root] - 
+--- Processando Competição 101/150: Persian Gulf Pro League (Desconhecido) ---
+2025-08-02 10:18:12,503 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:18:12,504 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:18:12,506 - INFO - [root] - 
+--- Processando Competição 102/150: Premier League (Desconhecido) ---
+2025-08-02 10:18:16,229 - INFO - [root] -   -> 127 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:18:16,229 - INFO - [root] -   -> Encontrados 127 links do tipo TEMPORADAS.
+2025-08-02 10:18:16,232 - INFO - [root] - 
+--- Processando Competição 103/150: Premier League 2 (Desconhecido) ---
+2025-08-02 10:18:20,122 - INFO - [root] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:18:20,123 - INFO - [root] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 10:18:20,126 - INFO - [root] - 
+--- Processando Competição 104/150: Premier League 2 — Division 2 (Desconhecido) ---
+2025-08-02 10:18:23,959 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:18:23,960 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 10:18:23,962 - INFO - [root] - 
+--- Processando Competição 105/150: Première Ligue (Desconhecido) ---
+2025-08-02 10:18:27,836 - INFO - [root] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:18:27,837 - INFO - [root] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 10:18:27,839 - INFO - [root] - 
+--- Processando Competição 106/150: Primeira Liga (Desconhecido) ---
+2025-08-02 10:18:31,505 - INFO - [root] -   -> 26 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:18:31,505 - INFO - [root] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 10:18:31,508 - INFO - [root] - 
+--- Processando Competição 107/150: Russian Premier League (Desconhecido) ---
+2025-08-02 10:18:35,195 - INFO - [root] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:18:35,195 - INFO - [root] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 10:18:35,198 - INFO - [root] - 
+--- Processando Competição 108/150: Saudi Professional League (Desconhecido) ---
+2025-08-02 10:18:39,081 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:18:39,081 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 10:18:39,084 - INFO - [root] - 
+--- Processando Competição 109/150: Scottish Championship (Desconhecido) ---
+2025-08-02 10:18:43,070 - INFO - [root] -   -> 19 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:18:43,070 - INFO - [root] -   -> Encontrados 19 links do tipo TEMPORADAS.
+2025-08-02 10:18:43,073 - INFO - [root] - 
+--- Processando Competição 110/150: Scottish Premiership (Desconhecido) ---
+2025-08-02 10:18:46,787 - INFO - [root] -   -> 26 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:18:46,788 - INFO - [root] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 10:18:46,790 - INFO - [root] - 
+--- Processando Competição 111/150: Serbian SuperLiga (Desconhecido) ---
+2025-08-02 10:18:50,489 - INFO - [root] -   -> 18 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:18:50,489 - INFO - [root] -   -> Encontrados 18 links do tipo TEMPORADAS.
+2025-08-02 10:18:50,492 - INFO - [root] - 
+--- Processando Competição 112/150: Serie A (Desconhecido) ---
+2025-08-02 10:18:54,179 - INFO - [root] -   -> 38 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:18:54,179 - INFO - [root] -   -> Encontrados 38 links do tipo TEMPORADAS.
+2025-08-02 10:18:54,182 - INFO - [root] - 
+--- Processando Competição 113/150: Serie A (Desconhecido) ---
+2025-08-02 10:18:58,026 - INFO - [root] -   -> 8 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:18:58,026 - INFO - [root] -   -> Encontrados 8 links do tipo TEMPORADAS.
+2025-08-02 10:18:58,029 - INFO - [root] - 
+--- Processando Competição 114/150: Serie B (Desconhecido) ---
+2025-08-02 10:19:01,736 - INFO - [root] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:19:01,736 - INFO - [root] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 10:19:01,739 - INFO - [root] - 
+--- Processando Competição 115/150: SheBelieves Cup (Desconhecido) ---
+2025-08-02 10:19:05,612 - INFO - [root] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:19:05,612 - INFO - [root] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 10:19:05,615 - INFO - [root] - 
+--- Processando Competição 116/150: South African Premier Division (Desconhecido) ---
+2025-08-02 10:19:09,552 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:19:09,552 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 10:19:09,555 - INFO - [root] - 
+--- Processando Competição 117/150: Spanish Segunda División (Desconhecido) ---
+2025-08-02 10:19:13,203 - INFO - [root] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:19:13,203 - INFO - [root] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 10:19:13,206 - INFO - [root] - 
+--- Processando Competição 118/150: Super League Greece (Desconhecido) ---
+2025-08-02 10:19:16,908 - INFO - [root] -   -> 26 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:19:16,909 - INFO - [root] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 10:19:16,911 - INFO - [root] - 
+--- Processando Competição 119/150: Supercopa de España (Desconhecido) ---
+2025-08-02 10:19:20,801 - INFO - [root] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:19:20,802 - INFO - [root] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 10:19:20,804 - INFO - [root] - 
+--- Processando Competição 120/150: Supercoppa Italiana (Desconhecido) ---
+2025-08-02 10:19:24,743 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:19:24,744 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:19:24,746 - INFO - [root] - 
+--- Processando Competição 121/150: Superettan (Desconhecido) ---
+2025-08-02 10:19:28,803 - INFO - [root] -   -> 20 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:19:28,804 - INFO - [root] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 10:19:28,806 - INFO - [root] - 
+--- Processando Competição 122/150: Swiss Super League (Desconhecido) ---
+2025-08-02 10:19:32,430 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:19:32,431 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 10:19:32,433 - INFO - [root] - 
+--- Processando Competição 123/150: Swiss Women's Super League (Desconhecido) ---
+2025-08-02 10:19:36,270 - INFO - [root] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:19:36,271 - INFO - [root] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 10:19:36,273 - INFO - [root] - 
+--- Processando Competição 124/150: Süper Lig (Desconhecido) ---
+2025-08-02 10:19:40,257 - INFO - [root] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:19:40,257 - INFO - [root] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 10:19:40,259 - INFO - [root] - 
+--- Processando Competição 125/150: Toppserien (Desconhecido) ---
+2025-08-02 10:19:44,087 - INFO - [root] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:19:44,087 - INFO - [root] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 10:19:44,090 - INFO - [root] - 
+--- Processando Competição 126/150: Trophée des Champions (Desconhecido) ---
+2025-08-02 10:19:47,946 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:19:47,946 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:19:47,949 - INFO - [root] - 
+--- Processando Competição 127/150: U17 DFB Youth League (Desconhecido) ---
+2025-08-02 10:19:51,942 - INFO - [root] -   -> 10 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:19:51,943 - INFO - [root] -   -> Encontrados 10 links do tipo TEMPORADAS.
+2025-08-02 10:19:51,945 - INFO - [root] - 
+--- Processando Competição 128/150: U19 DFB Youth League (Desconhecido) ---
+2025-08-02 10:19:55,968 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:19:55,969 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 10:19:55,971 - INFO - [root] - 
+--- Processando Competição 129/150: UEFA Champions League (Desconhecido) ---
+2025-08-02 10:19:59,734 - INFO - [root] -   -> 36 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:19:59,735 - INFO - [root] -   -> Encontrados 36 links do tipo TEMPORADAS.
+2025-08-02 10:19:59,737 - INFO - [root] - 
+--- Processando Competição 130/150: UEFA Conference League (Desconhecido) ---
+2025-08-02 10:20:03,381 - INFO - [root] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:20:03,381 - INFO - [root] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 10:20:03,384 - INFO - [root] - 
+--- Processando Competição 131/150: UEFA Europa League (Desconhecido) ---
+2025-08-02 10:20:07,024 - INFO - [root] -   -> 36 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:20:07,024 - INFO - [root] -   -> Encontrados 36 links do tipo TEMPORADAS.
+2025-08-02 10:20:07,027 - INFO - [root] - 
+--- Processando Competição 132/150: UEFA European Football Championship (Desconhecido) ---
+2025-08-02 10:20:10,986 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:20:10,986 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 10:20:10,989 - INFO - [root] - 
+--- Processando Competição 133/150: UEFA European Football Championship Qualifying (Desconhecido) ---
+2025-08-02 10:20:15,075 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:20:15,076 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:20:15,079 - INFO - [root] - 
+--- Processando Competição 134/150: UEFA Nations League (Desconhecido) ---
+2025-08-02 10:20:19,012 - INFO - [root] -   -> 4 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:20:19,012 - INFO - [root] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 10:20:19,016 - INFO - [root] - 
+--- Processando Competição 135/150: UEFA Super Cup (Desconhecido) ---
+2025-08-02 10:20:22,687 - INFO - [root] -   -> 14 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:20:22,687 - INFO - [root] -   -> Encontrados 14 links do tipo TEMPORADAS.
+2025-08-02 10:20:22,690 - INFO - [root] - 
+--- Processando Competição 136/150: UEFA Women's Champions League (Desconhecido) ---
+2025-08-02 10:20:26,745 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:20:26,746 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:20:26,749 - INFO - [root] - 
+--- Processando Competição 137/150: UEFA Women's Championship (Desconhecido) ---
+2025-08-02 10:20:30,692 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:20:30,692 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 10:20:30,697 - INFO - [root] - 
+--- Processando Competição 138/150: UEFA Women's Euro Qualification (Desconhecido) ---
+2025-08-02 10:20:34,601 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:20:34,601 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:20:34,604 - INFO - [root] - 
+--- Processando Competição 139/150: USL Championship (Desconhecido) ---
+2025-08-02 10:20:38,727 - INFO - [root] -   -> 15 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:20:38,727 - INFO - [root] -   -> Encontrados 15 links do tipo TEMPORADAS.
+2025-08-02 10:20:38,730 - INFO - [root] - 
+--- Processando Competição 140/150: USL First Division (Desconhecido) ---
+2025-08-02 10:20:42,563 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:20:42,563 - INFO - [root] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 10:20:42,567 - INFO - [root] - 
+--- Processando Competição 141/150: USL League One (Desconhecido) ---
+2025-08-02 10:20:46,402 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:20:46,402 - INFO - [root] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 10:20:46,405 - INFO - [root] - 
+--- Processando Competição 142/150: USSF Division 2 Professional League (Desconhecido) ---
+2025-08-02 10:20:50,149 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:20:50,150 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:20:50,152 - INFO - [root] - 
+--- Processando Competição 143/150: Ukrainian Premier League (Desconhecido) ---
+2025-08-02 10:20:53,838 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:20:53,839 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 10:20:53,842 - INFO - [root] - 
+--- Processando Competição 144/150: Uruguayan Primera División (Desconhecido) ---
+2025-08-02 10:20:57,869 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:20:57,870 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:20:57,872 - INFO - [root] - 
+--- Processando Competição 145/150: Veikkausliiga (Desconhecido) ---
+2025-08-02 10:21:01,550 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:21:01,551 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 10:21:01,553 - INFO - [root] - 
+--- Processando Competição 146/150: Venezuelan Primera División (Desconhecido) ---
+2025-08-02 10:21:05,523 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:21:05,524 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 10:21:05,526 - INFO - [root] - 
+--- Processando Competição 147/150: Women Empowerment League (Desconhecido) ---
+2025-08-02 10:21:09,651 - INFO - [root] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:21:09,651 - INFO - [root] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 10:21:09,654 - INFO - [root] - 
+--- Processando Competição 148/150: Women's Professional Soccer (Desconhecido) ---
+2025-08-02 10:21:13,603 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:21:13,603 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:21:13,606 - INFO - [root] - 
+--- Processando Competição 149/150: Women's United Soccer Association (Desconhecido) ---
+2025-08-02 10:21:17,456 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 10:21:17,457 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 10:21:17,459 - INFO - [root] - 
+--- Processando Competição 150/150: ÖFB Frauen-Bundesliga (Desconhecido) ---
+2025-08-02 10:21:21,261 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 10:21:21,261 - INFO - [root] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 10:21:21,263 - INFO - [root] - 
+✅ Script 1 (Descoberta) finalizado com sucesso!
+2025-08-02 10:21:23,453 - INFO - [root] - Navegador (WebDriver) finalizado.
+2025-08-02 10:21:23,453 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 1 de 6] Finalizada com sucesso! ---
+2025-08-02 10:21:23,453 - INFO - [root] - 
+--- [ETAPA 2 de 6] Executando: Coleta de Dados de Partidas ---
+2025-08-02 10:21:23,454 - INFO - [root] - 🚀 Iniciando Script 2: Coleta de Dados de Partidas...
+2025-08-02 10:21:23,456 - INFO - [root] - Encontrados 1921 links pendentes ou a revisar para processar.
+2025-08-02 10:21:23,457 - INFO - [root] - 
+--- Processando link ID 1: https://fbref.com/en/comps/33/2024-2025/2024-2025-2-Bundesliga-Stats ---
+2025-08-02 10:21:23,457 - INFO - [root] - Iniciando o navegador (WebDriver)...
+2025-08-02 10:21:23,457 - INFO - [WDM] - ====== WebDriver manager ======
+2025-08-02 10:21:24,119 - INFO - [WDM] - Get LATEST chromedriver version for google-chrome
+2025-08-02 10:21:24,138 - INFO - [WDM] - Get LATEST chromedriver version for google-chrome
+2025-08-02 10:21:24,154 - INFO - [WDM] - Driver [C:\Users\Eduardo Vitorino\.wdm\drivers\chromedriver\win64\138.0.7204.183\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-02 10:21:25,202 - INFO - [root] - Navegador iniciado com sucesso em modo invisível.
+2025-08-02 10:21:29,767 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:21:29,770 - INFO - [root] - 
+--- Processando link ID 2: https://fbref.com/en/comps/33/2023-2024/2023-2024-2-Bundesliga-Stats ---
+2025-08-02 10:21:34,060 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:21:34,064 - INFO - [root] - 
+--- Processando link ID 3: https://fbref.com/en/comps/33/2022-2023/2022-2023-2-Bundesliga-Stats ---
+2025-08-02 10:21:38,355 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:21:38,358 - INFO - [root] - 
+--- Processando link ID 4: https://fbref.com/en/comps/33/2021-2022/2021-2022-2-Bundesliga-Stats ---
+2025-08-02 10:21:42,779 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:21:42,784 - INFO - [root] - 
+--- Processando link ID 5: https://fbref.com/en/comps/33/2020-2021/2020-2021-2-Bundesliga-Stats ---
+2025-08-02 10:21:49,184 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:21:49,187 - INFO - [root] - 
+--- Processando link ID 6: https://fbref.com/en/comps/33/2019-2020/2019-2020-2-Bundesliga-Stats ---
+2025-08-02 10:21:53,378 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:21:53,381 - INFO - [root] - 
+--- Processando link ID 7: https://fbref.com/en/comps/33/2018-2019/2018-2019-2-Bundesliga-Stats ---
+2025-08-02 10:21:57,781 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:21:57,784 - INFO - [root] - 
+--- Processando link ID 8: https://fbref.com/en/comps/33/2017-2018/2017-2018-2-Bundesliga-Stats ---
+2025-08-02 10:22:02,096 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:22:02,099 - INFO - [root] - 
+--- Processando link ID 9: https://fbref.com/en/comps/33/2016-2017/2016-2017-2-Bundesliga-Stats ---
+2025-08-02 10:22:07,762 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:22:07,765 - INFO - [root] - 
+--- Processando link ID 10: https://fbref.com/en/comps/33/2015-2016/2015-2016-2-Bundesliga-Stats ---
+2025-08-02 10:22:13,242 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:22:13,246 - INFO - [root] - 
+--- Processando link ID 11: https://fbref.com/en/comps/33/2014-2015/2014-2015-2-Bundesliga-Stats ---
+2025-08-02 10:22:18,916 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:22:18,919 - INFO - [root] - 
+--- Processando link ID 12: https://fbref.com/en/comps/33/2013-2014/2013-2014-2-Bundesliga-Stats ---
+2025-08-02 10:22:23,154 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:22:23,157 - INFO - [root] - 
+--- Processando link ID 13: https://fbref.com/en/comps/33/2012-2013/2012-2013-2-Bundesliga-Stats ---
+2025-08-02 10:22:27,479 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:22:27,482 - INFO - [root] - 
+--- Processando link ID 14: https://fbref.com/en/comps/33/2011-2012/2011-2012-2-Bundesliga-Stats ---
+2025-08-02 10:22:32,865 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:22:32,869 - INFO - [root] - 
+--- Processando link ID 15: https://fbref.com/en/comps/33/2010-2011/2010-2011-2-Bundesliga-Stats ---
+2025-08-02 10:22:38,351 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:22:38,354 - INFO - [root] - 
+--- Processando link ID 16: https://fbref.com/en/comps/33/2009-2010/2009-2010-2-Bundesliga-Stats ---
+2025-08-02 10:22:43,973 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:22:43,976 - INFO - [root] - 
+--- Processando link ID 17: https://fbref.com/en/comps/33/2008-2009/2008-2009-2-Bundesliga-Stats ---
+2025-08-02 10:22:49,479 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:22:49,482 - INFO - [root] - 
+--- Processando link ID 18: https://fbref.com/en/comps/33/2007-2008/2007-2008-2-Bundesliga-Stats ---
+2025-08-02 10:22:55,115 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:22:55,118 - INFO - [root] - 
+--- Processando link ID 19: https://fbref.com/en/comps/33/2006-2007/2006-2007-2-Bundesliga-Stats ---
+2025-08-02 10:23:01,790 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:23:01,793 - INFO - [root] - 
+--- Processando link ID 20: https://fbref.com/en/comps/33/2005-2006/2005-2006-2-Bundesliga-Stats ---
+2025-08-02 10:23:07,237 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:23:07,241 - INFO - [root] - 
+--- Processando link ID 21: https://fbref.com/en/comps/33/2004-2005/2004-2005-2-Bundesliga-Stats ---
+2025-08-02 10:23:11,513 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:23:11,516 - INFO - [root] - 
+--- Processando link ID 22: https://fbref.com/en/comps/33/2003-2004/2003-2004-2-Bundesliga-Stats ---
+2025-08-02 10:23:15,762 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:23:15,765 - INFO - [root] - 
+--- Processando link ID 23: https://fbref.com/en/comps/33/2-Bundesliga-Stats ---
+2025-08-02 10:23:19,893 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:23:19,896 - INFO - [root] - 
+--- Processando link ID 24: https://fbref.com/en/comps/59/3-Liga-Stats ---
+2025-08-02 10:23:23,877 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:23:23,880 - INFO - [root] - 
+--- Processando link ID 25: https://fbref.com/en/comps/59/2024-2025/2024-2025-3-Liga-Stats ---
+2025-08-02 10:23:29,443 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:23:29,446 - INFO - [root] - 
+--- Processando link ID 26: https://fbref.com/en/comps/59/2023-2024/2023-2024-3-Liga-Stats ---
+2025-08-02 10:23:33,685 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:23:33,688 - INFO - [root] - 
+--- Processando link ID 27: https://fbref.com/en/comps/59/2022-2023/2022-2023-3-Liga-Stats ---
+2025-08-02 10:23:37,926 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:23:37,929 - INFO - [root] - 
+--- Processando link ID 28: https://fbref.com/en/comps/59/2021-2022/2021-2022-3-Liga-Stats ---
+2025-08-02 10:23:43,392 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:23:43,396 - INFO - [root] - 
+--- Processando link ID 29: https://fbref.com/en/comps/59/2020-2021/2020-2021-3-Liga-Stats ---
+2025-08-02 10:23:49,104 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:23:49,107 - INFO - [root] - 
+--- Processando link ID 30: https://fbref.com/en/comps/59/2019-2020/2019-2020-3-Liga-Stats ---
+2025-08-02 10:23:54,312 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:23:54,315 - INFO - [root] - 
+--- Processando link ID 31: https://fbref.com/en/comps/59/2018-2019/2018-2019-3-Liga-Stats ---
+2025-08-02 10:24:00,056 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:24:00,058 - INFO - [root] - 
+--- Processando link ID 32: https://fbref.com/en/comps/59/2017-2018/2017-2018-3-Liga-Stats ---
+2025-08-02 10:24:05,606 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:24:05,609 - INFO - [root] - 
+--- Processando link ID 33: https://fbref.com/en/comps/59/2016-2017/2016-2017-3-Liga-Stats ---
+2025-08-02 10:24:11,386 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:24:11,390 - INFO - [root] - 
+--- Processando link ID 34: https://fbref.com/en/comps/59/2015-2016/2015-2016-3-Liga-Stats ---
+2025-08-02 10:24:16,926 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:24:16,929 - INFO - [root] - 
+--- Processando link ID 35: https://fbref.com/en/comps/59/2014-2015/2014-2015-3-Liga-Stats ---
+2025-08-02 10:24:22,730 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:24:22,733 - INFO - [root] - 
+--- Processando link ID 36: https://fbref.com/en/comps/59/2013-2014/2013-2014-3-Liga-Stats ---
+2025-08-02 10:24:28,199 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:24:28,202 - INFO - [root] - 
+--- Processando link ID 37: https://fbref.com/en/comps/59/2012-2013/2012-2013-3-Liga-Stats ---
+2025-08-02 10:24:33,642 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:24:33,645 - INFO - [root] - 
+--- Processando link ID 38: https://fbref.com/en/comps/59/2011-2012/2011-2012-3-Liga-Stats ---
+2025-08-02 10:24:39,084 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:24:39,087 - INFO - [root] - 
+--- Processando link ID 39: https://fbref.com/en/comps/59/2010-2011/2010-2011-3-Liga-Stats ---
+2025-08-02 10:24:44,503 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:24:44,506 - INFO - [root] - 
+--- Processando link ID 40: https://fbref.com/en/comps/59/2009-2010/2009-2010-3-Liga-Stats ---
+2025-08-02 10:24:50,154 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:24:50,157 - INFO - [root] - 
+--- Processando link ID 41: https://fbref.com/en/comps/65/A-League-Men-Stats ---
+2025-08-02 10:24:54,374 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:24:54,377 - INFO - [root] - 
+--- Processando link ID 42: https://fbref.com/en/comps/65/2023-2024/2023-2024-A-League-Men-Stats ---
+2025-08-02 10:24:58,610 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:24:58,613 - INFO - [root] - 
+--- Processando link ID 43: https://fbref.com/en/comps/65/2022-2023/2022-2023-A-League-Men-Stats ---
+2025-08-02 10:25:04,105 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:25:04,108 - INFO - [root] - 
+--- Processando link ID 44: https://fbref.com/en/comps/65/2021-2022/2021-2022-A-League-Men-Stats ---
+2025-08-02 10:25:09,327 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:25:09,330 - INFO - [root] - 
+--- Processando link ID 45: https://fbref.com/en/comps/65/2020-2021/2020-2021-A-League-Men-Stats ---
+2025-08-02 10:25:15,436 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:25:15,440 - INFO - [root] - 
+--- Processando link ID 46: https://fbref.com/en/comps/65/2019-2020/2019-2020-A-League-Men-Stats ---
+2025-08-02 10:25:21,585 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:25:21,588 - INFO - [root] - 
+--- Processando link ID 47: https://fbref.com/en/comps/65/2018-2019/2018-2019-A-League-Men-Stats ---
+2025-08-02 10:25:26,927 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:25:26,930 - INFO - [root] - 
+--- Processando link ID 48: https://fbref.com/en/comps/65/2017-2018/2017-2018-A-League-Men-Stats ---
+2025-08-02 10:25:32,128 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:25:32,131 - INFO - [root] - 
+--- Processando link ID 49: https://fbref.com/en/comps/65/2016-2017/2016-2017-A-League-Men-Stats ---
+2025-08-02 10:25:37,377 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:25:37,380 - INFO - [root] - 
+--- Processando link ID 50: https://fbref.com/en/comps/65/2015-2016/2015-2016-A-League-Men-Stats ---
+2025-08-02 10:25:42,663 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:25:42,665 - INFO - [root] - 
+--- Processando link ID 51: https://fbref.com/en/comps/65/2014-2015/2014-2015-A-League-Men-Stats ---
+2025-08-02 10:25:47,970 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:25:47,972 - INFO - [root] - 
+--- Processando link ID 52: https://fbref.com/en/comps/65/2013-2014/2013-2014-A-League-Men-Stats ---
+2025-08-02 10:25:53,317 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:25:53,319 - INFO - [root] - 
+--- Processando link ID 53: https://fbref.com/en/comps/65/2012-2013/2012-2013-A-League-Men-Stats ---
+2025-08-02 10:25:58,489 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:25:58,492 - INFO - [root] - 
+--- Processando link ID 54: https://fbref.com/en/comps/65/2011-2012/2011-2012-A-League-Men-Stats ---
+2025-08-02 10:26:03,858 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:26:03,861 - INFO - [root] - 
+--- Processando link ID 55: https://fbref.com/en/comps/65/2010-2011/2010-2011-A-League-Men-Stats ---
+2025-08-02 10:26:08,937 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:26:08,940 - INFO - [root] - 
+--- Processando link ID 56: https://fbref.com/en/comps/65/2009-2010/2009-2010-A-League-Men-Stats ---
+2025-08-02 10:26:14,180 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:26:14,183 - INFO - [root] - 
+--- Processando link ID 57: https://fbref.com/en/comps/65/2008-2009/2008-2009-A-League-Men-Stats ---
+2025-08-02 10:26:19,162 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:26:19,165 - INFO - [root] - 
+--- Processando link ID 58: https://fbref.com/en/comps/65/2007-2008/2007-2008-A-League-Men-Stats ---
+2025-08-02 10:26:24,121 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:26:24,124 - INFO - [root] - 
+--- Processando link ID 59: https://fbref.com/en/comps/65/2006-2007/2006-2007-A-League-Men-Stats ---
+2025-08-02 10:26:28,292 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:26:28,294 - INFO - [root] - 
+--- Processando link ID 60: https://fbref.com/en/comps/65/2005-2006/2005-2006-A-League-Men-Stats ---
+2025-08-02 10:26:33,453 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:26:33,457 - INFO - [root] - 
+--- Processando link ID 61: https://fbref.com/en/comps/196/A-League-Women-Stats ---
+2025-08-02 10:26:38,432 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:26:38,435 - INFO - [root] - 
+--- Processando link ID 62: https://fbref.com/en/comps/196/2023-2024/2023-2024-A-League-Women-Stats ---
+2025-08-02 10:26:43,473 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:26:43,476 - INFO - [root] - 
+--- Processando link ID 63: https://fbref.com/en/comps/196/2022-2023/2022-2023-A-League-Women-Stats ---
+2025-08-02 10:26:50,227 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:26:50,231 - INFO - [root] - 
+--- Processando link ID 64: https://fbref.com/en/comps/196/2021-2022/2021-2022-A-League-Women-Stats ---
+2025-08-02 10:26:57,033 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:26:57,036 - INFO - [root] - 
+--- Processando link ID 65: https://fbref.com/en/comps/196/2020-2021/2020-2021-A-League-Women-Stats ---
+2025-08-02 10:27:04,531 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:27:04,534 - INFO - [root] - 
+--- Processando link ID 66: https://fbref.com/en/comps/196/2019-2020/2019-2020-A-League-Women-Stats ---
+2025-08-02 10:27:11,186 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:27:11,189 - INFO - [root] - 
+--- Processando link ID 67: https://fbref.com/en/comps/196/2018-2019/2018-2019-A-League-Women-Stats ---
+2025-08-02 10:27:17,472 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:27:17,474 - INFO - [root] - 
+--- Processando link ID 68: https://fbref.com/en/comps/664/AFC-Asian-Cup-Stats ---
+2025-08-02 10:27:21,631 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:27:21,634 - INFO - [root] - 
+--- Processando link ID 69: https://fbref.com/en/comps/664/2019/2019-AFC-Asian-Cup-Stats ---
+2025-08-02 10:27:25,804 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:27:25,807 - INFO - [root] - 
+--- Processando link ID 70: https://fbref.com/en/comps/664/2015/2015-AFC-Asian-Cup-Stats ---
+2025-08-02 10:27:29,666 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:27:29,669 - INFO - [root] - 
+--- Processando link ID 71: https://fbref.com/en/comps/664/2011/2011-AFC-Asian-Cup-Stats ---
+2025-08-02 10:27:33,625 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:27:33,627 - INFO - [root] - 
+--- Processando link ID 72: https://fbref.com/en/comps/664/2007/2007-AFC-Asian-Cup-Stats ---
+2025-08-02 10:27:37,611 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:27:37,614 - INFO - [root] - 
+--- Processando link ID 73: https://fbref.com/en/comps/664/2004/2004-AFC-Asian-Cup-Stats ---
+2025-08-02 10:27:41,569 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:27:41,572 - INFO - [root] - 
+--- Processando link ID 74: https://fbref.com/en/comps/664/2000/2000-AFC-Asian-Cup-Stats ---
+2025-08-02 10:27:46,861 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:27:46,864 - INFO - [root] - 
+--- Processando link ID 75: https://fbref.comhttps://fbref.com/en/comps/8/UEFA-Champions-League-Stats ---
+2025-08-02 10:27:50,064 - ERROR - [Coleta_de_dados.apis.fbref.fbref_utils] - O Selenium falhou ao tentar acessar a URL: https://fbref.comhttps://fbref.com/en/comps/8/UEFA-Champions-League-Stats
+2025-08-02 10:27:50,064 - INFO - [root] - 
+--- Processando link ID 76: https://fbref.comhttps://fbref.com/en/comps/14/Copa-Libertadores-Stats ---
+2025-08-02 10:27:53,197 - ERROR - [Coleta_de_dados.apis.fbref.fbref_utils] - O Selenium falhou ao tentar acessar a URL: https://fbref.comhttps://fbref.com/en/comps/14/Copa-Libertadores-Stats
+2025-08-02 10:27:53,198 - INFO - [root] - 
+--- Processando link ID 77: https://fbref.com/en/comps/656/Africa-Cup-of-Nations-Stats ---
+2025-08-02 10:27:57,457 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:27:57,460 - INFO - [root] - 
+--- Processando link ID 78: https://fbref.com/en/comps/656/2021/2022-Africa-Cup-of-Nations-Stats ---
+2025-08-02 10:28:01,520 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:28:01,522 - INFO - [root] - 
+--- Processando link ID 79: https://fbref.com/en/comps/656/2019/2019-Africa-Cup-of-Nations-Stats ---
+2025-08-02 10:28:05,606 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:28:05,609 - INFO - [root] - 
+--- Processando link ID 80: https://fbref.com/en/comps/656/2017/2017-Africa-Cup-of-Nations-Stats ---
+2025-08-02 10:28:09,588 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:28:09,591 - INFO - [root] - 
+--- Processando link ID 81: https://fbref.com/en/comps/656/2015/2015-Africa-Cup-of-Nations-Stats ---
+2025-08-02 10:28:13,566 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:28:13,569 - INFO - [root] - 
+--- Processando link ID 82: https://fbref.com/en/comps/656/2013/2013-Africa-Cup-of-Nations-Stats ---
+2025-08-02 10:28:17,459 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:28:17,462 - INFO - [root] - 
+--- Processando link ID 83: https://fbref.com/en/comps/656/2012/2012-Africa-Cup-of-Nations-Stats ---
+2025-08-02 10:28:21,398 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:28:21,402 - INFO - [root] - 
+--- Processando link ID 84: https://fbref.com/en/comps/656/2010/2010-Africa-Cup-of-Nations-Stats ---
+2025-08-02 10:28:25,296 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:28:25,299 - INFO - [root] - 
+--- Processando link ID 85: https://fbref.com/en/comps/156/Africa-Women-Cup-of-Nations-Stats ---
+2025-08-02 10:28:29,978 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:28:29,981 - INFO - [root] - 
+--- Processando link ID 86: https://fbref.com/en/comps/156/2022/2022-Africa-Women-Cup-of-Nations-Stats ---
+2025-08-02 10:28:33,856 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:28:33,859 - INFO - [root] - 
+--- Processando link ID 87: https://fbref.com/en/comps/156/2018/2018-Africa-Women-Cup-of-Nations-Stats ---
+2025-08-02 10:28:37,757 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:28:37,760 - INFO - [root] - 
+--- Processando link ID 88: https://fbref.com/en/comps/156/2016/2016-Africa-Women-Cup-of-Nations-Stats ---
+2025-08-02 10:28:42,277 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:28:42,280 - INFO - [root] - 
+--- Processando link ID 89: https://fbref.com/en/comps/29/Allsvenskan-Stats ---
+2025-08-02 10:28:46,417 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:28:46,420 - INFO - [root] - 
+--- Processando link ID 90: https://fbref.com/en/comps/29/2024/2024-Allsvenskan-Stats ---
+2025-08-02 10:28:50,716 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:28:50,719 - INFO - [root] - 
+--- Processando link ID 91: https://fbref.com/en/comps/29/2023/2023-Allsvenskan-Stats ---
+2025-08-02 10:28:56,288 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:28:56,292 - INFO - [root] - 
+--- Processando link ID 92: https://fbref.com/en/comps/29/2022/2022-Allsvenskan-Stats ---
+2025-08-02 10:29:00,629 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:29:00,631 - INFO - [root] - 
+--- Processando link ID 93: https://fbref.com/en/comps/29/2021/2021-Allsvenskan-Stats ---
+2025-08-02 10:29:04,915 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:29:04,918 - INFO - [root] - 
+--- Processando link ID 94: https://fbref.com/en/comps/29/2020/2020-Allsvenskan-Stats ---
+2025-08-02 10:29:09,166 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:29:09,170 - INFO - [root] - 
+--- Processando link ID 95: https://fbref.com/en/comps/29/2019/2019-Allsvenskan-Stats ---
+2025-08-02 10:29:14,554 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:29:14,556 - INFO - [root] - 
+--- Processando link ID 96: https://fbref.com/en/comps/29/2018/2018-Allsvenskan-Stats ---
+2025-08-02 10:29:19,905 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:29:19,908 - INFO - [root] - 
+--- Processando link ID 97: https://fbref.com/en/comps/29/2017/2017-Allsvenskan-Stats ---
+2025-08-02 10:29:25,388 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:29:25,390 - INFO - [root] - 
+--- Processando link ID 98: https://fbref.com/en/comps/29/2016/2016-Allsvenskan-Stats ---
+2025-08-02 10:29:29,663 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:29:29,666 - INFO - [root] - 
+--- Processando link ID 99: https://fbref.com/en/comps/29/2015/2015-Allsvenskan-Stats ---
+2025-08-02 10:29:34,959 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:29:34,962 - INFO - [root] - 
+--- Processando link ID 100: https://fbref.com/en/comps/29/2014/2014-Allsvenskan-Stats ---
+2025-08-02 10:29:40,360 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:29:40,363 - INFO - [root] - 
+--- Processando link ID 101: https://fbref.com/en/comps/29/2013/2013-Allsvenskan-Stats ---
+2025-08-02 10:29:45,928 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:29:45,931 - INFO - [root] - 
+--- Processando link ID 102: https://fbref.com/en/comps/29/2012/2012-Allsvenskan-Stats ---
+2025-08-02 10:29:51,339 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:29:51,342 - INFO - [root] - 
+--- Processando link ID 103: https://fbref.com/en/comps/29/2011/2011-Allsvenskan-Stats ---
+2025-08-02 10:29:57,531 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:29:57,534 - INFO - [root] - 
+--- Processando link ID 104: https://fbref.com/en/comps/29/2010/2010-Allsvenskan-Stats ---
+2025-08-02 10:30:02,986 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:30:02,990 - INFO - [root] - 
+--- Processando link ID 105: https://fbref.com/en/comps/29/2009/2009-Allsvenskan-Stats ---
+2025-08-02 10:30:07,221 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:30:07,224 - INFO - [root] - 
+--- Processando link ID 106: https://fbref.com/en/comps/29/2008/2008-Allsvenskan-Stats ---
+2025-08-02 10:30:12,738 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:30:12,742 - INFO - [root] - 
+--- Processando link ID 107: https://fbref.com/en/comps/29/2007/2007-Allsvenskan-Stats ---
+2025-08-02 10:30:17,892 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:30:17,895 - INFO - [root] - 
+--- Processando link ID 108: https://fbref.com/en/comps/29/2006/2006-Allsvenskan-Stats ---
+2025-08-02 10:30:23,047 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:30:23,049 - INFO - [root] - 
+--- Processando link ID 109: https://fbref.com/en/comps/29/2005/2005-Allsvenskan-Stats ---
+2025-08-02 10:30:28,366 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:30:28,369 - INFO - [root] - 
+--- Processando link ID 110: https://fbref.com/en/comps/29/2004/2004-Allsvenskan-Stats ---
+2025-08-02 10:30:33,661 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:30:33,664 - INFO - [root] - 
+--- Processando link ID 111: https://fbref.com/en/comps/29/2003/2003-Allsvenskan-Stats ---
+2025-08-02 10:30:38,854 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:30:38,857 - INFO - [root] - 
+--- Processando link ID 112: https://fbref.com/en/comps/29/2002/2002-Allsvenskan-Stats ---
+2025-08-02 10:30:44,095 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:30:44,098 - INFO - [root] - 
+--- Processando link ID 113: https://fbref.com/en/comps/29/2001/2001-Allsvenskan-Stats ---
+2025-08-02 10:30:52,108 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:30:52,111 - INFO - [root] - 
+--- Processando link ID 114: https://fbref.com/en/comps/56/Austrian-Bundesliga-Stats ---
+2025-08-02 10:30:56,079 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:30:56,082 - INFO - [root] - 
+--- Processando link ID 115: https://fbref.com/en/comps/56/2024-2025/2024-2025-Austrian-Bundesliga-Stats ---
+2025-08-02 10:31:00,287 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:31:00,291 - INFO - [root] - 
+--- Processando link ID 116: https://fbref.com/en/comps/56/2023-2024/2023-2024-Austrian-Bundesliga-Stats ---
+2025-08-02 10:31:04,446 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:31:04,449 - INFO - [root] - 
+--- Processando link ID 117: https://fbref.com/en/comps/56/2022-2023/2022-2023-Austrian-Bundesliga-Stats ---
+2025-08-02 10:31:08,725 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:31:08,728 - INFO - [root] - 
+--- Processando link ID 118: https://fbref.com/en/comps/56/2021-2022/2021-2022-Austrian-Bundesliga-Stats ---
+2025-08-02 10:31:12,979 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:31:12,983 - INFO - [root] - 
+--- Processando link ID 119: https://fbref.com/en/comps/56/2020-2021/2020-2021-Austrian-Bundesliga-Stats ---
+2025-08-02 10:31:18,647 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:31:18,650 - INFO - [root] - 
+--- Processando link ID 120: https://fbref.com/en/comps/56/2019-2020/2019-2020-Austrian-Bundesliga-Stats ---
+2025-08-02 10:31:24,243 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:31:24,246 - INFO - [root] - 
+--- Processando link ID 121: https://fbref.com/en/comps/56/2018-2019/2018-2019-Austrian-Bundesliga-Stats ---
+2025-08-02 10:31:29,679 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:31:29,682 - INFO - [root] - 
+--- Processando link ID 122: https://fbref.com/en/comps/56/2017-2018/2017-2018-Austrian-Bundesliga-Stats ---
+2025-08-02 10:31:33,748 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:31:33,751 - INFO - [root] - 
+--- Processando link ID 123: https://fbref.com/en/comps/56/2016-2017/2016-2017-Austrian-Bundesliga-Stats ---
+2025-08-02 10:31:39,111 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:31:39,114 - INFO - [root] - 
+--- Processando link ID 124: https://fbref.com/en/comps/56/2015-2016/2015-2016-Austrian-Bundesliga-Stats ---
+2025-08-02 10:31:44,185 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:31:44,188 - INFO - [root] - 
+--- Processando link ID 125: https://fbref.com/en/comps/56/2014-2015/2014-2015-Austrian-Bundesliga-Stats ---
+2025-08-02 10:31:48,289 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:31:48,292 - INFO - [root] - 
+--- Processando link ID 126: https://fbref.com/en/comps/56/2013-2014/2013-2014-Austrian-Bundesliga-Stats ---
+2025-08-02 10:31:52,476 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:31:52,479 - INFO - [root] - 
+--- Processando link ID 127: https://fbref.com/en/comps/56/2012-2013/2012-2013-Austrian-Bundesliga-Stats ---
+2025-08-02 10:31:57,560 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:31:57,563 - INFO - [root] - 
+--- Processando link ID 128: https://fbref.com/en/comps/56/2011-2012/2011-2012-Austrian-Bundesliga-Stats ---
+2025-08-02 10:32:01,684 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:32:01,687 - INFO - [root] - 
+--- Processando link ID 129: https://fbref.com/en/comps/56/2010-2011/2010-2011-Austrian-Bundesliga-Stats ---
+2025-08-02 10:32:05,725 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:32:05,728 - INFO - [root] - 
+--- Processando link ID 130: https://fbref.com/en/comps/56/2009-2010/2009-2010-Austrian-Bundesliga-Stats ---
+2025-08-02 10:32:09,821 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:32:09,825 - INFO - [root] - 
+--- Processando link ID 131: https://fbref.com/en/comps/56/2008-2009/2008-2009-Austrian-Bundesliga-Stats ---
+2025-08-02 10:32:13,897 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:32:13,900 - INFO - [root] - 
+--- Processando link ID 132: https://fbref.com/en/comps/56/2007-2008/2007-2008-Austrian-Bundesliga-Stats ---
+2025-08-02 10:32:17,951 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:32:17,954 - INFO - [root] - 
+--- Processando link ID 133: https://fbref.com/en/comps/56/2006-2007/2006-2007-Austrian-Bundesliga-Stats ---
+2025-08-02 10:32:22,970 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:32:22,973 - INFO - [root] - 
+--- Processando link ID 134: https://fbref.com/en/comps/56/2005-2006/2005-2006-Austrian-Bundesliga-Stats ---
+2025-08-02 10:32:27,037 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:32:27,040 - INFO - [root] - 
+--- Processando link ID 135: https://fbref.com/en/comps/56/2004-2005/2004-2005-Austrian-Bundesliga-Stats ---
+2025-08-02 10:32:32,113 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:32:32,116 - INFO - [root] - 
+--- Processando link ID 136: https://fbref.com/en/comps/56/2003-2004/2003-2004-Austrian-Bundesliga-Stats ---
+2025-08-02 10:32:37,118 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:32:37,121 - INFO - [root] - 
+--- Processando link ID 137: https://fbref.com/en/comps/37/Belgian-Pro-League-Stats ---
+2025-08-02 10:32:42,309 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:32:42,312 - INFO - [root] - 
+--- Processando link ID 138: https://fbref.com/en/comps/37/2024-2025/2024-2025-Belgian-Pro-League-Stats ---
+2025-08-02 10:32:47,392 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:32:47,395 - INFO - [root] - 
+--- Processando link ID 139: https://fbref.com/en/comps/37/2023-2024/2023-2024-Belgian-Pro-League-Stats ---
+2025-08-02 10:32:52,509 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:32:52,512 - INFO - [root] - 
+--- Processando link ID 140: https://fbref.com/en/comps/37/2022-2023/2022-2023-Belgian-Pro-League-Stats ---
+2025-08-02 10:32:57,753 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:32:57,756 - INFO - [root] - 
+--- Processando link ID 141: https://fbref.com/en/comps/37/2021-2022/2021-2022-Belgian-Pro-League-Stats ---
+2025-08-02 10:33:02,857 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:33:02,860 - INFO - [root] - 
+--- Processando link ID 142: https://fbref.com/en/comps/37/2020-2021/2020-2021-Belgian-Pro-League-Stats ---
+2025-08-02 10:33:08,033 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:33:08,036 - INFO - [root] - 
+--- Processando link ID 143: https://fbref.com/en/comps/37/2019-2020/2019-2020-Belgian-Pro-League-Stats ---
+2025-08-02 10:33:13,325 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:33:13,328 - INFO - [root] - 
+--- Processando link ID 144: https://fbref.com/en/comps/37/2018-2019/2018-2019-Belgian-Pro-League-Stats ---
+2025-08-02 10:33:18,516 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:33:18,519 - INFO - [root] - 
+--- Processando link ID 145: https://fbref.com/en/comps/37/2017-2018/2017-2018-Belgian-Pro-League-Stats ---
+2025-08-02 10:33:23,794 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:33:23,797 - INFO - [root] - 
+--- Processando link ID 146: https://fbref.com/en/comps/37/2016-2017/2016-2017-Belgian-Pro-League-Stats ---
+2025-08-02 10:33:29,502 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:33:29,505 - INFO - [root] - 
+--- Processando link ID 147: https://fbref.com/en/comps/37/2015-2016/2015-2016-Belgian-Pro-League-Stats ---
+2025-08-02 10:33:33,942 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:33:33,945 - INFO - [root] - 
+--- Processando link ID 148: https://fbref.com/en/comps/37/2014-2015/2014-2015-Belgian-Pro-League-Stats ---
+2025-08-02 10:33:39,903 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:33:39,907 - INFO - [root] - 
+--- Processando link ID 149: https://fbref.com/en/comps/37/2013-2014/2013-2014-Belgian-Pro-League-Stats ---
+2025-08-02 10:33:44,044 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:33:44,048 - INFO - [root] - 
+--- Processando link ID 150: https://fbref.com/en/comps/37/2012-2013/2012-2013-Belgian-Pro-League-Stats ---
+2025-08-02 10:33:49,677 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:33:49,680 - INFO - [root] - 
+--- Processando link ID 151: https://fbref.com/en/comps/37/2011-2012/2011-2012-Belgian-Pro-League-Stats ---
+2025-08-02 10:33:53,912 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:33:53,916 - INFO - [root] - 
+--- Processando link ID 152: https://fbref.com/en/comps/37/2010-2011/2010-2011-Belgian-Pro-League-Stats ---
+2025-08-02 10:33:58,186 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:33:58,189 - INFO - [root] - 
+--- Processando link ID 153: https://fbref.com/en/comps/37/2009-2010/2009-2010-Belgian-Pro-League-Stats ---
+2025-08-02 10:34:03,952 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:34:03,955 - INFO - [root] - 
+--- Processando link ID 154: https://fbref.com/en/comps/37/2008-2009/2008-2009-Belgian-Pro-League-Stats ---
+2025-08-02 10:34:09,475 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:34:09,478 - INFO - [root] - 
+--- Processando link ID 155: https://fbref.com/en/comps/37/2007-2008/2007-2008-Belgian-Pro-League-Stats ---
+2025-08-02 10:34:13,658 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:34:13,661 - INFO - [root] - 
+--- Processando link ID 156: https://fbref.com/en/comps/37/2006-2007/2006-2007-Belgian-Pro-League-Stats ---
+2025-08-02 10:34:19,138 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:34:19,142 - INFO - [root] - 
+--- Processando link ID 157: https://fbref.com/en/comps/37/2005-2006/2005-2006-Belgian-Pro-League-Stats ---
+2025-08-02 10:34:24,575 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:34:24,577 - INFO - [root] - 
+--- Processando link ID 158: https://fbref.com/en/comps/37/2004-2005/2004-2005-Belgian-Pro-League-Stats ---
+2025-08-02 10:34:28,824 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:34:28,827 - INFO - [root] - 
+--- Processando link ID 159: https://fbref.com/en/comps/37/2003-2004/2003-2004-Belgian-Pro-League-Stats ---
+2025-08-02 10:34:34,397 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:34:34,400 - INFO - [root] - 
+--- Processando link ID 160: https://fbref.com/en/comps/296/Belgian-Womens-Super-League-Stats ---
+2025-08-02 10:34:39,400 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:34:39,403 - INFO - [root] - 
+--- Processando link ID 161: https://fbref.com/en/comps/296/2023-2024/2023-2024-Belgian-Womens-Super-League-Stats ---
+2025-08-02 10:34:43,493 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:34:43,495 - INFO - [root] - 
+--- Processando link ID 162: https://fbref.com/en/comps/296/2022-2023/2022-2023-Belgian-Womens-Super-League-Stats ---
+2025-08-02 10:34:47,649 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:34:47,652 - INFO - [root] - 
+--- Processando link ID 163: https://fbref.com/en/comps/296/2021-2022/2021-2022-Belgian-Womens-Super-League-Stats ---
+2025-08-02 10:34:52,291 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:34:52,294 - INFO - [root] - 
+--- Processando link ID 164: https://fbref.com/en/comps/296/2020-2021/2020-2021-Belgian-Womens-Super-League-Stats ---
+2025-08-02 10:34:56,269 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:34:56,271 - INFO - [root] - 
+--- Processando link ID 165: https://fbref.com/en/comps/Big5/Big-5-European-Leagues-Stats ---
+2025-08-02 10:35:00,703 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:35:00,707 - INFO - [root] - 
+--- Processando link ID 166: https://fbref.com/en/comps/Big5/2025-2026/2025-2026-Big-5-European-Leagues-Stats ---
+2025-08-02 10:35:04,553 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:35:04,556 - INFO - [root] - 
+--- Processando link ID 167: https://fbref.com/en/comps/Big5/2023-2024/2023-2024-Big-5-European-Leagues-Stats ---
+2025-08-02 10:35:08,927 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:35:08,930 - INFO - [root] - 
+--- Processando link ID 168: https://fbref.com/en/comps/Big5/2022-2023/2022-2023-Big-5-European-Leagues-Stats ---
+2025-08-02 10:35:13,504 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:35:13,506 - INFO - [root] - 
+--- Processando link ID 169: https://fbref.com/en/comps/Big5/2021-2022/2021-2022-Big-5-European-Leagues-Stats ---
+2025-08-02 10:35:17,989 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:35:17,991 - INFO - [root] - 
+--- Processando link ID 170: https://fbref.com/en/comps/Big5/2020-2021/2020-2021-Big-5-European-Leagues-Stats ---
+2025-08-02 10:35:22,478 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:35:22,482 - INFO - [root] - 
+--- Processando link ID 171: https://fbref.com/en/comps/Big5/2019-2020/2019-2020-Big-5-European-Leagues-Stats ---
+2025-08-02 10:35:27,029 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:35:27,033 - INFO - [root] - 
+--- Processando link ID 172: https://fbref.com/en/comps/Big5/2018-2019/2018-2019-Big-5-European-Leagues-Stats ---
+2025-08-02 10:35:31,567 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:35:31,569 - INFO - [root] - 
+--- Processando link ID 173: https://fbref.com/en/comps/Big5/2017-2018/2017-2018-Big-5-European-Leagues-Stats ---
+2025-08-02 10:35:35,978 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:35:35,981 - INFO - [root] - 
+--- Processando link ID 174: https://fbref.com/en/comps/Big5/2016-2017/2016-2017-Big-5-European-Leagues-Stats ---
+2025-08-02 10:35:40,095 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:35:40,098 - INFO - [root] - 
+--- Processando link ID 175: https://fbref.com/en/comps/Big5/2015-2016/2015-2016-Big-5-European-Leagues-Stats ---
+2025-08-02 10:35:44,233 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:35:44,235 - INFO - [root] - 
+--- Processando link ID 176: https://fbref.com/en/comps/Big5/2014-2015/2014-2015-Big-5-European-Leagues-Stats ---
+2025-08-02 10:35:49,424 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:35:49,428 - INFO - [root] - 
+--- Processando link ID 177: https://fbref.com/en/comps/Big5/2013-2014/2013-2014-Big-5-European-Leagues-Stats ---
+2025-08-02 10:35:53,449 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:35:53,452 - INFO - [root] - 
+--- Processando link ID 178: https://fbref.com/en/comps/Big5/2012-2013/2012-2013-Big-5-European-Leagues-Stats ---
+2025-08-02 10:35:57,680 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:35:57,684 - INFO - [root] - 
+--- Processando link ID 179: https://fbref.com/en/comps/Big5/2011-2012/2011-2012-Big-5-European-Leagues-Stats ---
+2025-08-02 10:36:01,833 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:36:01,836 - INFO - [root] - 
+--- Processando link ID 180: https://fbref.com/en/comps/Big5/2010-2011/2010-2011-Big-5-European-Leagues-Stats ---
+2025-08-02 10:36:05,990 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:36:05,993 - INFO - [root] - 
+--- Processando link ID 181: https://fbref.com/en/comps/Big5/2009-2010/2009-2010-Big-5-European-Leagues-Stats ---
+2025-08-02 10:36:10,020 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:36:10,023 - INFO - [root] - 
+--- Processando link ID 182: https://fbref.com/en/comps/Big5/2008-2009/2008-2009-Big-5-European-Leagues-Stats ---
+2025-08-02 10:36:14,237 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:36:14,240 - INFO - [root] - 
+--- Processando link ID 183: https://fbref.com/en/comps/Big5/2007-2008/2007-2008-Big-5-European-Leagues-Stats ---
+2025-08-02 10:36:18,333 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:36:18,337 - INFO - [root] - 
+--- Processando link ID 184: https://fbref.com/en/comps/Big5/2006-2007/2006-2007-Big-5-European-Leagues-Stats ---
+2025-08-02 10:36:22,466 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:36:22,469 - INFO - [root] - 
+--- Processando link ID 185: https://fbref.com/en/comps/Big5/2005-2006/2005-2006-Big-5-European-Leagues-Stats ---
+2025-08-02 10:36:26,627 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:36:26,631 - INFO - [root] - 
+--- Processando link ID 186: https://fbref.com/en/comps/Big5/2004-2005/2004-2005-Big-5-European-Leagues-Stats ---
+2025-08-02 10:36:30,742 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:36:30,744 - INFO - [root] - 
+--- Processando link ID 187: https://fbref.com/en/comps/Big5/2003-2004/2003-2004-Big-5-European-Leagues-Stats ---
+2025-08-02 10:36:34,847 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:36:34,849 - INFO - [root] - 
+--- Processando link ID 188: https://fbref.com/en/comps/Big5/2002-2003/2002-2003-Big-5-European-Leagues-Stats ---
+2025-08-02 10:36:39,039 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:36:39,042 - INFO - [root] - 
+--- Processando link ID 189: https://fbref.com/en/comps/Big5/2001-2002/2001-2002-Big-5-European-Leagues-Stats ---
+2025-08-02 10:36:43,185 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:36:43,188 - INFO - [root] - 
+--- Processando link ID 190: https://fbref.com/en/comps/Big5/2000-2001/2000-2001-Big-5-European-Leagues-Stats ---
+2025-08-02 10:36:47,268 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:36:47,271 - INFO - [root] - 
+--- Processando link ID 191: https://fbref.com/en/comps/Big5/1999-2000/1999-2000-Big-5-European-Leagues-Stats ---
+2025-08-02 10:36:51,397 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:36:51,400 - INFO - [root] - 
+--- Processando link ID 192: https://fbref.com/en/comps/Big5/1998-1999/1998-1999-Big-5-European-Leagues-Stats ---
+2025-08-02 10:36:55,434 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:36:55,437 - INFO - [root] - 
+--- Processando link ID 193: https://fbref.com/en/comps/Big5/1997-1998/1997-1998-Big-5-European-Leagues-Stats ---
+2025-08-02 10:36:59,527 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:36:59,529 - INFO - [root] - 
+--- Processando link ID 194: https://fbref.com/en/comps/Big5/1996-1997/1996-1997-Big-5-European-Leagues-Stats ---
+2025-08-02 10:37:03,636 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:37:03,639 - INFO - [root] - 
+--- Processando link ID 195: https://fbref.com/en/comps/Big5/1995-1996/1995-1996-Big-5-European-Leagues-Stats ---
+2025-08-02 10:37:07,739 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:37:07,742 - INFO - [root] - 
+--- Processando link ID 196: https://fbref.com/en/comps/206/Serie-A1-Stats ---
+2025-08-02 10:37:12,845 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:37:12,848 - INFO - [root] - 
+--- Processando link ID 197: https://fbref.com/en/comps/206/2024/2024-Serie-A1-Stats ---
+2025-08-02 10:37:18,060 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:37:18,063 - INFO - [root] - 
+--- Processando link ID 198: https://fbref.com/en/comps/206/2023/2023-Serie-A1-Stats ---
+2025-08-02 10:37:23,285 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:37:23,288 - INFO - [root] - 
+--- Processando link ID 199: https://fbref.com/en/comps/206/2022/2022-Serie-A1-Stats ---
+2025-08-02 10:37:27,280 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:37:27,282 - INFO - [root] - 
+--- Processando link ID 200: https://fbref.com/en/comps/206/2021/2021-Serie-A1-Stats ---
+2025-08-02 10:37:31,293 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:37:31,296 - INFO - [root] - 
+--- Processando link ID 201: https://fbref.com/en/comps/206/2020/2020-Serie-A1-Stats ---
+2025-08-02 10:37:36,700 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:37:36,703 - INFO - [root] - 
+--- Processando link ID 202: https://fbref.com/en/comps/206/2019/2019-Serie-A1-Stats ---
+2025-08-02 10:37:42,000 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:37:42,003 - INFO - [root] - 
+--- Processando link ID 203: https://fbref.com/en/comps/681/Gold-Cup-Stats ---
+2025-08-02 10:37:46,776 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:37:46,778 - INFO - [root] - 
+--- Processando link ID 204: https://fbref.com/en/comps/681/2023/2023-Gold-Cup-Stats ---
+2025-08-02 10:37:50,895 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:37:50,898 - INFO - [root] - 
+--- Processando link ID 205: https://fbref.com/en/comps/681/2021/2021-Gold-Cup-Stats ---
+2025-08-02 10:37:54,879 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:37:54,882 - INFO - [root] - 
+--- Processando link ID 206: https://fbref.com/en/comps/681/2019/2019-Gold-Cup-Stats ---
+2025-08-02 10:37:58,853 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:37:58,856 - INFO - [root] - 
+--- Processando link ID 207: https://fbref.com/en/comps/681/2017/2017-Gold-Cup-Stats ---
+2025-08-02 10:38:02,918 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:38:02,921 - INFO - [root] - 
+--- Processando link ID 208: https://fbref.com/en/comps/681/2015/2015-Gold-Cup-Stats ---
+2025-08-02 10:38:06,868 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:38:06,871 - INFO - [root] - 
+--- Processando link ID 209: https://fbref.com/en/comps/685/Copa-America-Stats ---
+2025-08-02 10:38:11,259 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:38:11,261 - INFO - [root] - 
+--- Processando link ID 210: https://fbref.com/en/comps/685/2021/2021-Copa-America-Stats ---
+2025-08-02 10:38:15,579 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:38:15,582 - INFO - [root] - 
+--- Processando link ID 211: https://fbref.com/en/comps/685/2019/2019-Copa-America-Stats ---
+2025-08-02 10:38:19,849 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:38:19,852 - INFO - [root] - 
+--- Processando link ID 212: https://fbref.com/en/comps/685/2016/2016-Copa-America-Stats ---
+2025-08-02 10:38:23,967 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:38:23,969 - INFO - [root] - 
+--- Processando link ID 213: https://fbref.com/en/comps/685/2015/2015-Copa-America-Stats ---
+2025-08-02 10:38:27,959 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:38:27,961 - INFO - [root] - 
+--- Processando link ID 214: https://fbref.com/en/comps/24/Serie-A-Stats ---
+2025-08-02 10:38:32,919 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:38:32,921 - INFO - [root] - 
+--- Processando link ID 215: https://fbref.com/en/comps/24/2024/2024-Serie-A-Stats ---
+2025-08-02 10:38:38,181 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:38:38,184 - INFO - [root] - 
+--- Processando link ID 216: https://fbref.com/en/comps/24/2023/2023-Serie-A-Stats ---
+2025-08-02 10:38:43,472 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:38:43,475 - INFO - [root] - 
+--- Processando link ID 217: https://fbref.com/en/comps/24/2022/2022-Serie-A-Stats ---
+2025-08-02 10:38:48,665 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:38:48,668 - INFO - [root] - 
+--- Processando link ID 218: https://fbref.com/en/comps/24/2021/2021-Serie-A-Stats ---
+2025-08-02 10:38:55,082 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:38:55,084 - INFO - [root] - 
+--- Processando link ID 219: https://fbref.com/en/comps/24/2020/2020-Serie-A-Stats ---
+2025-08-02 10:39:00,391 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:39:00,394 - INFO - [root] - 
+--- Processando link ID 220: https://fbref.com/en/comps/24/2019/2019-Serie-A-Stats ---
+2025-08-02 10:39:05,588 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:39:05,590 - INFO - [root] - 
+--- Processando link ID 221: https://fbref.com/en/comps/24/2018/2018-Serie-A-Stats ---
+2025-08-02 10:39:10,068 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:39:10,071 - INFO - [root] - 
+--- Processando link ID 222: https://fbref.com/en/comps/24/2017/2017-Serie-A-Stats ---
+2025-08-02 10:39:14,639 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:39:14,642 - INFO - [root] - 
+--- Processando link ID 223: https://fbref.com/en/comps/24/2016/2016-Serie-A-Stats ---
+2025-08-02 10:39:18,942 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:39:18,945 - INFO - [root] - 
+--- Processando link ID 224: https://fbref.com/en/comps/24/2015/2015-Serie-A-Stats ---
+2025-08-02 10:39:23,199 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:39:23,202 - INFO - [root] - 
+--- Processando link ID 225: https://fbref.com/en/comps/24/2014/2014-Serie-A-Stats ---
+2025-08-02 10:39:27,430 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:39:27,433 - INFO - [root] - 
+--- Processando link ID 226: https://fbref.com/en/comps/38/Serie-B-Stats ---
+2025-08-02 10:39:32,268 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:39:32,271 - INFO - [root] - 
+--- Processando link ID 227: https://fbref.com/en/comps/38/2024/2024-Serie-B-Stats ---
+2025-08-02 10:39:36,676 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:39:36,679 - INFO - [root] - 
+--- Processando link ID 228: https://fbref.com/en/comps/38/2023/2023-Serie-B-Stats ---
+2025-08-02 10:39:43,623 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:39:43,626 - INFO - [root] - 
+--- Processando link ID 229: https://fbref.com/en/comps/38/2022/2022-Serie-B-Stats ---
+2025-08-02 10:39:49,774 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:39:49,778 - INFO - [root] - 
+--- Processando link ID 230: https://fbref.com/en/comps/38/2021/2021-Serie-B-Stats ---
+2025-08-02 10:39:55,696 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:39:55,699 - INFO - [root] - 
+--- Processando link ID 231: https://fbref.com/en/comps/38/2020/2020-Serie-B-Stats ---
+2025-08-02 10:40:01,533 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:40:01,536 - INFO - [root] - 
+--- Processando link ID 232: https://fbref.com/en/comps/38/2019/2019-Serie-B-Stats ---
+2025-08-02 10:40:07,645 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:40:07,648 - INFO - [root] - 
+--- Processando link ID 233: https://fbref.com/en/comps/38/2018/2018-Serie-B-Stats ---
+2025-08-02 10:40:11,856 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:40:11,859 - INFO - [root] - 
+--- Processando link ID 234: https://fbref.com/en/comps/38/2017/2017-Serie-B-Stats ---
+2025-08-02 10:40:17,489 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:40:17,491 - INFO - [root] - 
+--- Processando link ID 235: https://fbref.com/en/comps/38/2016/2016-Serie-B-Stats ---
+2025-08-02 10:40:23,101 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:40:23,105 - INFO - [root] - 
+--- Processando link ID 236: https://fbref.com/en/comps/38/2015/2015-Serie-B-Stats ---
+2025-08-02 10:40:26,815 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:40:26,817 - INFO - [root] - 
+--- Processando link ID 237: https://fbref.com/en/comps/38/2014/2014-Serie-B-Stats ---
+2025-08-02 10:40:30,508 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:40:30,510 - INFO - [root] - 
+--- Processando link ID 238: https://fbref.com/en/comps/211/Canadian-Premier-League-Stats ---
+2025-08-02 10:40:34,516 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:40:34,519 - INFO - [root] - 
+--- Processando link ID 239: https://fbref.com/en/comps/211/2024/2024-Canadian-Premier-League-Stats ---
+2025-08-02 10:40:38,507 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:40:38,511 - INFO - [root] - 
+--- Processando link ID 240: https://fbref.com/en/comps/211/2023/2023-Canadian-Premier-League-Stats ---
+2025-08-02 10:40:42,460 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:40:42,463 - INFO - [root] - 
+--- Processando link ID 241: https://fbref.com/en/comps/211/2022/2022-Canadian-Premier-League-Stats ---
+2025-08-02 10:40:46,432 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:40:46,435 - INFO - [root] - 
+--- Processando link ID 242: https://fbref.com/en/comps/211/2021/2021-Canadian-Premier-League-Stats ---
+2025-08-02 10:40:50,408 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:40:50,410 - INFO - [root] - 
+--- Processando link ID 243: https://fbref.com/en/comps/211/2020/2020-Canadian-Premier-League-Stats ---
+2025-08-02 10:40:54,382 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:40:54,385 - INFO - [root] - 
+--- Processando link ID 244: https://fbref.com/en/comps/211/2019/2019-Canadian-Premier-League-Stats ---
+2025-08-02 10:40:58,338 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:40:58,341 - INFO - [root] - 
+--- Processando link ID 245: https://fbref.com/en/comps/41/Primera-A-Stats ---
+2025-08-02 10:41:02,794 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:41:02,796 - INFO - [root] - 
+--- Processando link ID 246: https://fbref.com/en/comps/41/2024/2024-Primera-A-Stats ---
+2025-08-02 10:41:07,172 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:41:07,175 - INFO - [root] - 
+--- Processando link ID 247: https://fbref.com/en/comps/41/2023/2023-Primera-A-Stats ---
+2025-08-02 10:41:13,007 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:41:13,009 - INFO - [root] - 
+--- Processando link ID 248: https://fbref.com/en/comps/41/2022/2022-Primera-A-Stats ---
+2025-08-02 10:41:19,032 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:41:19,035 - INFO - [root] - 
+--- Processando link ID 249: https://fbref.com/en/comps/41/2021/2021-Primera-A-Stats ---
+2025-08-02 10:41:24,959 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:41:24,962 - INFO - [root] - 
+--- Processando link ID 250: https://fbref.com/en/comps/41/2020/2020-Primera-A-Stats ---
+2025-08-02 10:41:30,627 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:41:30,630 - INFO - [root] - 
+--- Processando link ID 251: https://fbref.com/en/comps/41/2019/2019-Primera-A-Stats ---
+2025-08-02 10:41:36,412 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:41:36,415 - INFO - [root] - 
+--- Processando link ID 252: https://fbref.com/en/comps/41/2018/2018-Primera-A-Stats ---
+2025-08-02 10:41:40,838 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:41:40,842 - INFO - [root] - 
+--- Processando link ID 253: https://fbref.com/en/comps/41/2017/2017-Primera-A-Stats ---
+2025-08-02 10:41:46,529 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:41:46,532 - INFO - [root] - 
+--- Processando link ID 254: https://fbref.com/en/comps/41/2016/2016-Primera-A-Stats ---
+2025-08-02 10:41:51,885 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:41:51,888 - INFO - [root] - 
+--- Processando link ID 255: https://fbref.com/en/comps/41/2015/2015-Primera-A-Stats ---
+2025-08-02 10:41:56,123 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:41:56,126 - INFO - [root] - 
+--- Processando link ID 256: https://fbref.com/en/comps/41/2014/2014-Primera-A-Stats ---
+2025-08-02 10:42:00,764 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:42:00,767 - INFO - [root] - 
+--- Processando link ID 257: https://fbref.com/en/comps/69/Challenger-Pro-League-Stats ---
+2025-08-02 10:42:05,012 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:42:05,015 - INFO - [root] - 
+--- Processando link ID 258: https://fbref.com/en/comps/69/2023-2024/2023-2024-Challenger-Pro-League-Stats ---
+2025-08-02 10:42:10,152 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:42:10,155 - INFO - [root] - 
+--- Processando link ID 259: https://fbref.com/en/comps/69/2022-2023/2022-2023-Challenger-Pro-League-Stats ---
+2025-08-02 10:42:15,337 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:42:15,340 - INFO - [root] - 
+--- Processando link ID 260: https://fbref.com/en/comps/69/2021-2022/2021-2022-Challenger-Pro-League-Stats ---
+2025-08-02 10:42:19,444 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:42:19,447 - INFO - [root] - 
+--- Processando link ID 261: https://fbref.com/en/comps/69/2020-2021/2020-2021-Challenger-Pro-League-Stats ---
+2025-08-02 10:42:23,318 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:42:23,320 - INFO - [root] - 
+--- Processando link ID 262: https://fbref.com/en/comps/69/2019-2020/2019-2020-Challenger-Pro-League-Stats ---
+2025-08-02 10:42:28,217 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:42:28,219 - INFO - [root] - 
+--- Processando link ID 263: https://fbref.com/en/comps/69/2018-2019/2018-2019-Challenger-Pro-League-Stats ---
+2025-08-02 10:42:33,267 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:42:33,269 - INFO - [root] - 
+--- Processando link ID 264: https://fbref.com/en/comps/69/2017-2018/2017-2018-Challenger-Pro-League-Stats ---
+2025-08-02 10:42:38,463 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:42:38,466 - INFO - [root] - 
+--- Processando link ID 265: https://fbref.com/en/comps/69/2016-2017/2016-2017-Challenger-Pro-League-Stats ---
+2025-08-02 10:42:43,490 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:42:43,493 - INFO - [root] - 
+--- Processando link ID 266: https://fbref.com/en/comps/69/2015-2016/2015-2016-Challenger-Pro-League-Stats ---
+2025-08-02 10:42:51,320 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:42:51,323 - INFO - [root] - 
+--- Processando link ID 267: https://fbref.com/en/comps/69/2014-2015/2014-2015-Challenger-Pro-League-Stats ---
+2025-08-02 10:42:56,524 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:42:56,527 - INFO - [root] - 
+--- Processando link ID 268: https://fbref.com/en/comps/35/Chilean-Primera-Division-Stats ---
+2025-08-02 10:43:00,950 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:43:00,953 - INFO - [root] - 
+--- Processando link ID 269: https://fbref.com/en/comps/35/2024/2024-Chilean-Primera-Division-Stats ---
+2025-08-02 10:43:05,190 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:43:05,193 - INFO - [root] - 
+--- Processando link ID 270: https://fbref.com/en/comps/35/2023/2023-Chilean-Primera-Division-Stats ---
+2025-08-02 10:43:09,549 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:43:09,552 - INFO - [root] - 
+--- Processando link ID 271: https://fbref.com/en/comps/35/2022/2022-Chilean-Primera-Division-Stats ---
+2025-08-02 10:43:14,985 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:43:14,987 - INFO - [root] - 
+--- Processando link ID 272: https://fbref.com/en/comps/35/2021/2021-Chilean-Primera-Division-Stats ---
+2025-08-02 10:43:20,515 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:43:20,518 - INFO - [root] - 
+--- Processando link ID 273: https://fbref.com/en/comps/35/2020/2020-Chilean-Primera-Division-Stats ---
+2025-08-02 10:43:26,158 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:43:26,161 - INFO - [root] - 
+--- Processando link ID 274: https://fbref.com/en/comps/35/2019/2019-Chilean-Primera-Division-Stats ---
+2025-08-02 10:43:30,483 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:43:30,487 - INFO - [root] - 
+--- Processando link ID 275: https://fbref.com/en/comps/35/2018/2018-Chilean-Primera-Division-Stats ---
+2025-08-02 10:43:35,844 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:43:35,847 - INFO - [root] - 
+--- Processando link ID 276: https://fbref.com/en/comps/35/2017/2017-Chilean-Primera-Division-Stats ---
+2025-08-02 10:43:41,529 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:43:41,532 - INFO - [root] - 
+--- Processando link ID 277: https://fbref.com/en/comps/35/2016-2017/2016-2017-Chilean-Primera-Division-Stats ---
+2025-08-02 10:43:46,680 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:43:46,683 - INFO - [root] - 
+--- Processando link ID 278: https://fbref.com/en/comps/35/2015-2016/2015-2016-Chilean-Primera-Division-Stats ---
+2025-08-02 10:43:51,765 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:43:51,768 - INFO - [root] - 
+--- Processando link ID 279: https://fbref.com/en/comps/35/2014-2015/2014-2015-Chilean-Primera-Division-Stats ---
+2025-08-02 10:43:57,211 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:43:57,214 - INFO - [root] - 
+--- Processando link ID 280: https://fbref.com/en/comps/62/Chinese-Super-League-Stats ---
+2025-08-02 10:44:01,467 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:44:01,470 - INFO - [root] - 
+--- Processando link ID 281: https://fbref.com/en/comps/62/2024/2024-Chinese-Super-League-Stats ---
+2025-08-02 10:44:05,848 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:44:05,851 - INFO - [root] - 
+--- Processando link ID 282: https://fbref.com/en/comps/62/2023/2023-Chinese-Super-League-Stats ---
+2025-08-02 10:44:10,161 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:44:10,164 - INFO - [root] - 
+--- Processando link ID 283: https://fbref.com/en/comps/62/2022/2022-Chinese-Super-League-Stats ---
+2025-08-02 10:44:14,466 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:44:14,468 - INFO - [root] - 
+--- Processando link ID 284: https://fbref.com/en/comps/62/2021/2021-Chinese-Super-League-Stats ---
+2025-08-02 10:44:18,766 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:44:18,768 - INFO - [root] - 
+--- Processando link ID 285: https://fbref.com/en/comps/62/2020/2020-Chinese-Super-League-Stats ---
+2025-08-02 10:44:23,142 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:44:23,145 - INFO - [root] - 
+--- Processando link ID 286: https://fbref.com/en/comps/62/2019/2019-Chinese-Super-League-Stats ---
+2025-08-02 10:44:27,367 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:44:27,370 - INFO - [root] - 
+--- Processando link ID 287: https://fbref.com/en/comps/62/2018/2018-Chinese-Super-League-Stats ---
+2025-08-02 10:44:32,990 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:44:32,995 - INFO - [root] - 
+--- Processando link ID 288: https://fbref.com/en/comps/62/2017/2017-Chinese-Super-League-Stats ---
+2025-08-02 10:44:37,111 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:44:37,114 - INFO - [root] - 
+--- Processando link ID 289: https://fbref.com/en/comps/62/2016/2016-Chinese-Super-League-Stats ---
+2025-08-02 10:44:41,365 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:44:41,368 - INFO - [root] - 
+--- Processando link ID 290: https://fbref.com/en/comps/62/2015/2015-Chinese-Super-League-Stats ---
+2025-08-02 10:44:46,561 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:44:46,564 - INFO - [root] - 
+--- Processando link ID 291: https://fbref.com/en/comps/62/2014/2014-Chinese-Super-League-Stats ---
+2025-08-02 10:44:50,356 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:44:50,358 - INFO - [root] - 
+--- Processando link ID 292: https://fbref.com/en/comps/205/Copa-Sudamericana-Stats ---
+2025-08-02 10:44:54,830 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:44:54,833 - INFO - [root] - 
+--- Processando link ID 293: https://fbref.com/en/comps/205/2024/2024-Copa-Sudamericana-Stats ---
+2025-08-02 10:44:59,144 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:44:59,147 - INFO - [root] - 
+--- Processando link ID 294: https://fbref.com/en/comps/205/2023/2023-Copa-Sudamericana-Stats ---
+2025-08-02 10:45:05,997 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:45:06,000 - INFO - [root] - 
+--- Processando link ID 295: https://fbref.com/en/comps/205/2022/2022-Copa-Sudamericana-Stats ---
+2025-08-02 10:45:12,684 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:45:12,687 - INFO - [root] - 
+--- Processando link ID 296: https://fbref.com/en/comps/205/2021/2021-Copa-Sudamericana-Stats ---
+2025-08-02 10:45:19,760 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:45:19,767 - INFO - [root] - 
+--- Processando link ID 297: https://fbref.com/en/comps/205/2020/2020-Copa-Sudamericana-Stats ---
+2025-08-02 10:45:25,384 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:45:25,388 - INFO - [root] - 
+--- Processando link ID 298: https://fbref.com/en/comps/205/2019/2019-Copa-Sudamericana-Stats ---
+2025-08-02 10:45:29,697 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:45:29,700 - INFO - [root] - 
+--- Processando link ID 299: https://fbref.com/en/comps/205/2018/2018-Copa-Sudamericana-Stats ---
+2025-08-02 10:45:33,956 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:45:33,959 - INFO - [root] - 
+--- Processando link ID 300: https://fbref.com/en/comps/205/2017/2017-Copa-Sudamericana-Stats ---
+2025-08-02 10:45:39,241 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:45:39,244 - INFO - [root] - 
+--- Processando link ID 301: https://fbref.com/en/comps/205/2016/2016-Copa-Sudamericana-Stats ---
+2025-08-02 10:45:43,227 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:45:43,230 - INFO - [root] - 
+--- Processando link ID 302: https://fbref.com/en/comps/205/2015/2015-Copa-Sudamericana-Stats ---
+2025-08-02 10:45:47,232 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:45:47,234 - INFO - [root] - 
+--- Processando link ID 303: https://fbref.com/en/comps/205/2014/2014-Copa-Sudamericana-Stats ---
+2025-08-02 10:45:52,244 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:45:52,246 - INFO - [root] - 
+--- Processando link ID 304: https://fbref.com/en/comps/14/Copa-Libertadores-Stats ---
+2025-08-02 10:45:59,043 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:45:59,045 - INFO - [root] - 
+--- Processando link ID 305: https://fbref.com/en/comps/14/2024/2024-Copa-Libertadores-Stats ---
+2025-08-02 10:46:03,763 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:46:03,766 - INFO - [root] - 
+--- Processando link ID 306: https://fbref.com/en/comps/14/2023/2023-Copa-Libertadores-Stats ---
+2025-08-02 10:46:08,709 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:46:08,712 - INFO - [root] - 
+--- Processando link ID 307: https://fbref.com/en/comps/14/2022/2022-Copa-Libertadores-Stats ---
+2025-08-02 10:46:13,589 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:46:13,593 - INFO - [root] - 
+--- Processando link ID 308: https://fbref.com/en/comps/14/2021/2021-Copa-Libertadores-Stats ---
+2025-08-02 10:46:18,314 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:46:18,317 - INFO - [root] - 
+--- Processando link ID 309: https://fbref.com/en/comps/14/2020/2020-Copa-Libertadores-Stats ---
+2025-08-02 10:46:23,281 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:46:23,284 - INFO - [root] - 
+--- Processando link ID 310: https://fbref.com/en/comps/14/2019/2019-Copa-Libertadores-Stats ---
+2025-08-02 10:46:28,149 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:46:28,152 - INFO - [root] - 
+--- Processando link ID 311: https://fbref.com/en/comps/14/2018/2018-Copa-Libertadores-Stats ---
+2025-08-02 10:46:32,977 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:46:32,980 - INFO - [root] - 
+--- Processando link ID 312: https://fbref.com/en/comps/14/2017/2017-Copa-Libertadores-Stats ---
+2025-08-02 10:46:37,204 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:46:37,206 - INFO - [root] - 
+--- Processando link ID 313: https://fbref.com/en/comps/14/2016/2016-Copa-Libertadores-Stats ---
+2025-08-02 10:46:41,394 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:46:41,396 - INFO - [root] - 
+--- Processando link ID 314: https://fbref.com/en/comps/14/2015/2015-Copa-Libertadores-Stats ---
+2025-08-02 10:46:47,556 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:46:47,559 - INFO - [root] - 
+--- Processando link ID 315: https://fbref.com/en/comps/14/2014/2014-Copa-Libertadores-Stats ---
+2025-08-02 10:46:51,753 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:46:51,756 - INFO - [root] - 
+--- Processando link ID 316: https://fbref.com/en/comps/905/Copa-de-la-Liga-Profesional-Stats ---
+2025-08-02 10:46:57,317 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:46:57,320 - INFO - [root] - 
+--- Processando link ID 317: https://fbref.com/en/comps/905/2023/2023-Copa-de-la-Liga-Profesional-Stats ---
+2025-08-02 10:47:02,911 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:47:02,914 - INFO - [root] - 
+--- Processando link ID 318: https://fbref.com/en/comps/905/2022/2022-Copa-de-la-Liga-Profesional-Stats ---
+2025-08-02 10:47:08,058 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:47:08,060 - INFO - [root] - 
+--- Processando link ID 319: https://fbref.com/en/comps/905/2021/2021-Copa-de-la-Liga-Profesional-Stats ---
+2025-08-02 10:47:13,187 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:47:13,190 - INFO - [root] - 
+--- Processando link ID 320: https://fbref.com/en/comps/569/Copa-del-Rey-Stats ---
+2025-08-02 10:47:17,625 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:47:17,628 - INFO - [root] - 
+--- Processando link ID 321: https://fbref.com/en/comps/569/2023-2024/2023-2024-Copa-del-Rey-Stats ---
+2025-08-02 10:47:22,033 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:47:22,036 - INFO - [root] - 
+--- Processando link ID 322: https://fbref.com/en/comps/569/2022-2023/2022-2023-Copa-del-Rey-Stats ---
+2025-08-02 10:47:26,476 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:47:26,479 - INFO - [root] - 
+--- Processando link ID 323: https://fbref.com/en/comps/569/2021-2022/2021-2022-Copa-del-Rey-Stats ---
+2025-08-02 10:47:30,796 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:47:30,799 - INFO - [root] - 
+--- Processando link ID 324: https://fbref.com/en/comps/569/2020-2021/2020-2021-Copa-del-Rey-Stats ---
+2025-08-02 10:47:37,668 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:47:37,671 - INFO - [root] - 
+--- Processando link ID 325: https://fbref.com/en/comps/569/2019-2020/2019-2020-Copa-del-Rey-Stats ---
+2025-08-02 10:47:46,173 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:47:46,176 - INFO - [root] - 
+--- Processando link ID 326: https://fbref.com/en/comps/569/2018-2019/2018-2019-Copa-del-Rey-Stats ---
+2025-08-02 10:47:53,821 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:47:53,824 - INFO - [root] - 
+--- Processando link ID 327: https://fbref.com/en/comps/569/2017-2018/2017-2018-Copa-del-Rey-Stats ---
+2025-08-02 10:47:58,196 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:47:58,199 - INFO - [root] - 
+--- Processando link ID 328: https://fbref.com/en/comps/569/2016-2017/2016-2017-Copa-del-Rey-Stats ---
+2025-08-02 10:48:02,663 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:48:02,666 - INFO - [root] - 
+--- Processando link ID 329: https://fbref.com/en/comps/569/2015-2016/2015-2016-Copa-del-Rey-Stats ---
+2025-08-02 10:48:09,344 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:48:09,347 - INFO - [root] - 
+--- Processando link ID 330: https://fbref.com/en/comps/569/2014-2015/2014-2015-Copa-del-Rey-Stats ---
+2025-08-02 10:48:16,739 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:48:16,743 - INFO - [root] - 
+--- Processando link ID 331: https://fbref.com/en/comps/529/Coppa-Italia-Stats ---
+2025-08-02 10:48:20,806 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:48:20,809 - INFO - [root] - 
+--- Processando link ID 332: https://fbref.com/en/comps/529/2024-2025/2024-2025-Coppa-Italia-Stats ---
+2025-08-02 10:48:26,224 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:48:26,227 - INFO - [root] - 
+--- Processando link ID 333: https://fbref.com/en/comps/529/2023-2024/2023-2024-Coppa-Italia-Stats ---
+2025-08-02 10:48:31,598 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:48:31,601 - INFO - [root] - 
+--- Processando link ID 334: https://fbref.com/en/comps/529/2022-2023/2022-2023-Coppa-Italia-Stats ---
+2025-08-02 10:48:35,719 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:48:35,722 - INFO - [root] - 
+--- Processando link ID 335: https://fbref.com/en/comps/529/2021-2022/2021-2022-Coppa-Italia-Stats ---
+2025-08-02 10:48:39,863 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:48:39,866 - INFO - [root] - 
+--- Processando link ID 336: https://fbref.com/en/comps/529/2020-2021/2020-2021-Coppa-Italia-Stats ---
+2025-08-02 10:48:44,298 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:48:44,302 - INFO - [root] - 
+--- Processando link ID 337: https://fbref.com/en/comps/529/2019-2020/2019-2020-Coppa-Italia-Stats ---
+2025-08-02 10:48:51,676 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:48:51,679 - INFO - [root] - 
+--- Processando link ID 338: https://fbref.com/en/comps/529/2018-2019/2018-2019-Coppa-Italia-Stats ---
+2025-08-02 10:48:55,997 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:48:56,000 - INFO - [root] - 
+--- Processando link ID 339: https://fbref.com/en/comps/529/2017-2018/2017-2018-Coppa-Italia-Stats ---
+2025-08-02 10:49:00,415 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:49:00,418 - INFO - [root] - 
+--- Processando link ID 340: https://fbref.com/en/comps/529/2016-2017/2016-2017-Coppa-Italia-Stats ---
+2025-08-02 10:49:04,720 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:49:04,723 - INFO - [root] - 
+--- Processando link ID 341: https://fbref.com/en/comps/529/2015-2016/2015-2016-Coppa-Italia-Stats ---
+2025-08-02 10:49:08,987 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:49:08,990 - INFO - [root] - 
+--- Processando link ID 342: https://fbref.com/en/comps/529/2014-2015/2014-2015-Coppa-Italia-Stats ---
+2025-08-02 10:49:16,164 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:49:16,167 - INFO - [root] - 
+--- Processando link ID 343: https://fbref.com/en/comps/518/Coupe-de-France-Stats ---
+2025-08-02 10:49:24,399 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:49:24,402 - INFO - [root] - 
+--- Processando link ID 344: https://fbref.com/en/comps/518/2023-2024/2023-2024-Coupe-de-France-Stats ---
+2025-08-02 10:49:32,319 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:49:32,321 - INFO - [root] - 
+--- Processando link ID 345: https://fbref.com/en/comps/518/2022-2023/2022-2023-Coupe-de-France-Stats ---
+2025-08-02 10:49:40,567 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:49:40,569 - INFO - [root] - 
+--- Processando link ID 346: https://fbref.com/en/comps/518/2021-2022/2021-2022-Coupe-de-France-Stats ---
+2025-08-02 10:49:47,872 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:49:47,875 - INFO - [root] - 
+--- Processando link ID 347: https://fbref.com/en/comps/518/2020-2021/2020-2021-Coupe-de-France-Stats ---
+2025-08-02 10:49:54,818 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:49:54,822 - INFO - [root] - 
+--- Processando link ID 348: https://fbref.com/en/comps/518/2019-2020/2019-2020-Coupe-de-France-Stats ---
+2025-08-02 10:50:04,888 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:50:04,890 - INFO - [root] - 
+--- Processando link ID 349: https://fbref.com/en/comps/518/2018-2019/2018-2019-Coupe-de-France-Stats ---
+2025-08-02 10:50:10,521 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:50:10,524 - INFO - [root] - 
+--- Processando link ID 350: https://fbref.com/en/comps/518/2017-2018/2017-2018-Coupe-de-France-Stats ---
+2025-08-02 10:50:15,560 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:50:15,563 - INFO - [root] - 
+--- Processando link ID 351: https://fbref.com/en/comps/518/2016-2017/2016-2017-Coupe-de-France-Stats ---
+2025-08-02 10:50:24,789 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:50:24,793 - INFO - [root] - 
+--- Processando link ID 352: https://fbref.com/en/comps/518/2015-2016/2015-2016-Coupe-de-France-Stats ---
+2025-08-02 10:50:34,357 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:50:34,359 - INFO - [root] - 
+--- Processando link ID 353: https://fbref.com/en/comps/518/2014-2015/2014-2015-Coupe-de-France-Stats ---
+2025-08-02 10:50:43,305 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:50:43,308 - INFO - [root] - 
+--- Processando link ID 354: https://fbref.com/en/comps/693/Coupe-de-la-Ligue-Stats ---
+2025-08-02 10:50:49,368 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:50:49,371 - INFO - [root] - 
+--- Processando link ID 355: https://fbref.com/en/comps/693/2018-2019/2018-2019-Coupe-de-la-Ligue-Stats ---
+2025-08-02 10:50:55,006 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:50:55,008 - INFO - [root] - 
+--- Processando link ID 356: https://fbref.com/en/comps/693/2017-2018/2017-2018-Coupe-de-la-Ligue-Stats ---
+2025-08-02 10:51:00,757 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:51:00,760 - INFO - [root] - 
+--- Processando link ID 357: https://fbref.com/en/comps/693/2016-2017/2016-2017-Coupe-de-la-Ligue-Stats ---
+2025-08-02 10:51:06,429 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:51:06,432 - INFO - [root] - 
+--- Processando link ID 358: https://fbref.com/en/comps/693/2015-2016/2015-2016-Coupe-de-la-Ligue-Stats ---
+2025-08-02 10:51:10,483 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:51:10,486 - INFO - [root] - 
+--- Processando link ID 359: https://fbref.com/en/comps/693/2014-2015/2014-2015-Coupe-de-la-Ligue-Stats ---
+2025-08-02 10:51:14,374 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:51:14,377 - INFO - [root] - 
+--- Processando link ID 360: https://fbref.com/en/comps/63/Hrvatska-NL-Stats ---
+2025-08-02 10:51:18,466 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:51:18,469 - INFO - [root] - 
+--- Processando link ID 361: https://fbref.com/en/comps/63/2024-2025/2024-2025-Hrvatska-NL-Stats ---
+2025-08-02 10:51:22,661 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:51:22,664 - INFO - [root] - 
+--- Processando link ID 362: https://fbref.com/en/comps/63/2023-2024/2023-2024-Hrvatska-NL-Stats ---
+2025-08-02 10:51:26,783 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:51:26,786 - INFO - [root] - 
+--- Processando link ID 363: https://fbref.com/en/comps/63/2022-2023/2022-2023-Hrvatska-NL-Stats ---
+2025-08-02 10:51:30,889 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:51:30,892 - INFO - [root] - 
+--- Processando link ID 364: https://fbref.com/en/comps/63/2021-2022/2021-2022-Hrvatska-NL-Stats ---
+2025-08-02 10:51:35,636 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:51:35,639 - INFO - [root] - 
+--- Processando link ID 365: https://fbref.com/en/comps/63/2020-2021/2020-2021-Hrvatska-NL-Stats ---
+2025-08-02 10:51:40,632 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:51:40,635 - INFO - [root] - 
+--- Processando link ID 366: https://fbref.com/en/comps/63/2019-2020/2019-2020-Hrvatska-NL-Stats ---
+2025-08-02 10:51:44,702 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:51:44,705 - INFO - [root] - 
+--- Processando link ID 367: https://fbref.com/en/comps/63/2018-2019/2018-2019-Hrvatska-NL-Stats ---
+2025-08-02 10:51:48,674 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:51:48,677 - INFO - [root] - 
+--- Processando link ID 368: https://fbref.com/en/comps/63/2017-2018/2017-2018-Hrvatska-NL-Stats ---
+2025-08-02 10:51:54,043 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:51:54,046 - INFO - [root] - 
+--- Processando link ID 369: https://fbref.com/en/comps/63/2016-2017/2016-2017-Hrvatska-NL-Stats ---
+2025-08-02 10:51:59,250 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:51:59,253 - INFO - [root] - 
+--- Processando link ID 370: https://fbref.com/en/comps/63/2015-2016/2015-2016-Hrvatska-NL-Stats ---
+2025-08-02 10:52:04,289 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:52:04,292 - INFO - [root] - 
+--- Processando link ID 371: https://fbref.com/en/comps/63/2014-2015/2014-2015-Hrvatska-NL-Stats ---
+2025-08-02 10:52:08,440 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:52:08,442 - INFO - [root] - 
+--- Processando link ID 372: https://fbref.com/en/comps/63/2013-2014/2013-2014-Hrvatska-NL-Stats ---
+2025-08-02 10:52:13,450 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:52:13,453 - INFO - [root] - 
+--- Processando link ID 373: https://fbref.com/en/comps/63/2012-2013/2012-2013-Hrvatska-NL-Stats ---
+2025-08-02 10:52:18,547 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:52:18,550 - INFO - [root] - 
+--- Processando link ID 374: https://fbref.com/en/comps/63/2011-2012/2011-2012-Hrvatska-NL-Stats ---
+2025-08-02 10:52:23,870 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:52:23,873 - INFO - [root] - 
+--- Processando link ID 375: https://fbref.com/en/comps/63/2010-2011/2010-2011-Hrvatska-NL-Stats ---
+2025-08-02 10:52:28,077 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:52:28,080 - INFO - [root] - 
+--- Processando link ID 376: https://fbref.com/en/comps/63/2009-2010/2009-2010-Hrvatska-NL-Stats ---
+2025-08-02 10:52:33,372 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:52:33,381 - INFO - [root] - 
+--- Processando link ID 377: https://fbref.com/en/comps/63/2008-2009/2008-2009-Hrvatska-NL-Stats ---
+2025-08-02 10:52:37,495 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:52:37,498 - INFO - [root] - 
+--- Processando link ID 378: https://fbref.com/en/comps/63/2007-2008/2007-2008-Hrvatska-NL-Stats ---
+2025-08-02 10:52:42,488 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:52:42,491 - INFO - [root] - 
+--- Processando link ID 379: https://fbref.com/en/comps/66/Czech-First-League-Stats ---
+2025-08-02 10:52:46,874 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:52:46,877 - INFO - [root] - 
+--- Processando link ID 380: https://fbref.com/en/comps/66/2024-2025/2024-2025-Czech-First-League-Stats ---
+2025-08-02 10:52:51,178 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:52:51,181 - INFO - [root] - 
+--- Processando link ID 381: https://fbref.com/en/comps/66/2023-2024/2023-2024-Czech-First-League-Stats ---
+2025-08-02 10:52:55,373 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:52:55,376 - INFO - [root] - 
+--- Processando link ID 382: https://fbref.com/en/comps/66/2022-2023/2022-2023-Czech-First-League-Stats ---
+2025-08-02 10:52:59,636 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:52:59,639 - INFO - [root] - 
+--- Processando link ID 383: https://fbref.com/en/comps/66/2021-2022/2021-2022-Czech-First-League-Stats ---
+2025-08-02 10:53:03,942 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:53:03,945 - INFO - [root] - 
+--- Processando link ID 384: https://fbref.com/en/comps/66/2020-2021/2020-2021-Czech-First-League-Stats ---
+2025-08-02 10:53:09,141 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:53:09,144 - INFO - [root] - 
+--- Processando link ID 385: https://fbref.com/en/comps/66/2019-2020/2019-2020-Czech-First-League-Stats ---
+2025-08-02 10:53:14,695 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:53:14,698 - INFO - [root] - 
+--- Processando link ID 386: https://fbref.com/en/comps/66/2018-2019/2018-2019-Czech-First-League-Stats ---
+2025-08-02 10:53:20,377 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:53:20,379 - INFO - [root] - 
+--- Processando link ID 387: https://fbref.com/en/comps/66/2017-2018/2017-2018-Czech-First-League-Stats ---
+2025-08-02 10:53:25,960 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:53:25,962 - INFO - [root] - 
+--- Processando link ID 388: https://fbref.com/en/comps/66/2016-2017/2016-2017-Czech-First-League-Stats ---
+2025-08-02 10:53:31,327 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:53:31,330 - INFO - [root] - 
+--- Processando link ID 389: https://fbref.com/en/comps/66/2015-2016/2015-2016-Czech-First-League-Stats ---
+2025-08-02 10:53:35,522 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:53:35,526 - INFO - [root] - 
+--- Processando link ID 390: https://fbref.com/en/comps/66/2014-2015/2014-2015-Czech-First-League-Stats ---
+2025-08-02 10:53:39,776 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:53:39,778 - INFO - [root] - 
+--- Processando link ID 391: https://fbref.com/en/comps/66/2013-2014/2013-2014-Czech-First-League-Stats ---
+2025-08-02 10:53:45,116 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:53:45,118 - INFO - [root] - 
+--- Processando link ID 392: https://fbref.com/en/comps/66/2012-2013/2012-2013-Czech-First-League-Stats ---
+2025-08-02 10:53:49,281 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:53:49,283 - INFO - [root] - 
+--- Processando link ID 393: https://fbref.com/en/comps/66/2011-2012/2011-2012-Czech-First-League-Stats ---
+2025-08-02 10:53:54,623 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:53:54,625 - INFO - [root] - 
+--- Processando link ID 394: https://fbref.com/en/comps/66/2010-2011/2010-2011-Czech-First-League-Stats ---
+2025-08-02 10:53:59,959 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:53:59,962 - INFO - [root] - 
+--- Processando link ID 395: https://fbref.com/en/comps/66/2009-2010/2009-2010-Czech-First-League-Stats ---
+2025-08-02 10:54:05,266 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:54:05,269 - INFO - [root] - 
+--- Processando link ID 396: https://fbref.com/en/comps/521/DFB-Pokal-Stats ---
+2025-08-02 10:54:09,051 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:54:09,053 - INFO - [root] - 
+--- Processando link ID 397: https://fbref.com/en/comps/521/2024-2025/2024-2025-DFB-Pokal-Stats ---
+2025-08-02 10:54:13,252 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:54:13,255 - INFO - [root] - 
+--- Processando link ID 398: https://fbref.com/en/comps/521/2023-2024/2023-2024-DFB-Pokal-Stats ---
+2025-08-02 10:54:17,477 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:54:17,480 - INFO - [root] - 
+--- Processando link ID 399: https://fbref.com/en/comps/521/2022-2023/2022-2023-DFB-Pokal-Stats ---
+2025-08-02 10:54:23,071 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:54:23,074 - INFO - [root] - 
+--- Processando link ID 400: https://fbref.com/en/comps/521/2021-2022/2021-2022-DFB-Pokal-Stats ---
+2025-08-02 10:54:27,327 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:54:27,330 - INFO - [root] - 
+--- Processando link ID 401: https://fbref.com/en/comps/521/2020-2021/2020-2021-DFB-Pokal-Stats ---
+2025-08-02 10:54:32,769 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:54:32,772 - INFO - [root] - 
+--- Processando link ID 402: https://fbref.com/en/comps/521/2019-2020/2019-2020-DFB-Pokal-Stats ---
+2025-08-02 10:54:39,476 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:54:39,479 - INFO - [root] - 
+--- Processando link ID 403: https://fbref.com/en/comps/521/2018-2019/2018-2019-DFB-Pokal-Stats ---
+2025-08-02 10:54:47,313 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:54:47,316 - INFO - [root] - 
+--- Processando link ID 404: https://fbref.com/en/comps/521/2017-2018/2017-2018-DFB-Pokal-Stats ---
+2025-08-02 10:54:53,545 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:54:53,548 - INFO - [root] - 
+--- Processando link ID 405: https://fbref.com/en/comps/521/2016-2017/2016-2017-DFB-Pokal-Stats ---
+2025-08-02 10:55:00,477 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:55:00,480 - INFO - [root] - 
+--- Processando link ID 406: https://fbref.com/en/comps/521/2015-2016/2015-2016-DFB-Pokal-Stats ---
+2025-08-02 10:55:06,678 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:55:06,680 - INFO - [root] - 
+--- Processando link ID 407: https://fbref.com/en/comps/521/2014-2015/2014-2015-DFB-Pokal-Stats ---
+2025-08-02 10:55:12,992 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:55:12,995 - INFO - [root] - 
+--- Processando link ID 408: https://fbref.com/en/comps/520/DFB-Pokal-Frauen-Stats ---
+2025-08-02 10:55:17,012 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:55:17,016 - INFO - [root] - 
+--- Processando link ID 409: https://fbref.com/en/comps/520/2024-2025/2024-2025-DFB-Pokal-Frauen-Stats ---
+2025-08-02 10:55:21,955 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:55:21,957 - INFO - [root] - 
+--- Processando link ID 410: https://fbref.com/en/comps/520/2023-2024/2023-2024-DFB-Pokal-Frauen-Stats ---
+2025-08-02 10:55:27,011 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:55:27,014 - INFO - [root] - 
+--- Processando link ID 411: https://fbref.com/en/comps/520/2022-2023/2022-2023-DFB-Pokal-Frauen-Stats ---
+2025-08-02 10:55:31,751 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:55:31,753 - INFO - [root] - 
+--- Processando link ID 412: https://fbref.com/en/comps/520/2021-2022/2021-2022-DFB-Pokal-Frauen-Stats ---
+2025-08-02 10:55:36,403 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:55:36,406 - INFO - [root] - 
+--- Processando link ID 413: https://fbref.com/en/comps/520/2020-2021/2020-2021-DFB-Pokal-Frauen-Stats ---
+2025-08-02 10:55:40,918 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:55:40,920 - INFO - [root] - 
+--- Processando link ID 414: https://fbref.com/en/comps/520/2019-2020/2019-2020-DFB-Pokal-Frauen-Stats ---
+2025-08-02 10:55:45,511 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:55:45,514 - INFO - [root] - 
+--- Processando link ID 415: https://fbref.com/en/comps/187/Damallsvenskan-Stats ---
+2025-08-02 10:55:49,555 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:55:49,558 - INFO - [root] - 
+--- Processando link ID 416: https://fbref.com/en/comps/187/2024/2024-Damallsvenskan-Stats ---
+2025-08-02 10:55:53,575 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:55:53,577 - INFO - [root] - 
+--- Processando link ID 417: https://fbref.com/en/comps/187/2023/2023-Damallsvenskan-Stats ---
+2025-08-02 10:55:58,581 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:55:58,584 - INFO - [root] - 
+--- Processando link ID 418: https://fbref.com/en/comps/187/2022/2022-Damallsvenskan-Stats ---
+2025-08-02 10:56:02,671 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:56:02,674 - INFO - [root] - 
+--- Processando link ID 419: https://fbref.com/en/comps/187/2021/2021-Damallsvenskan-Stats ---
+2025-08-02 10:56:06,709 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:56:06,712 - INFO - [root] - 
+--- Processando link ID 420: https://fbref.com/en/comps/187/2020/2020-Damallsvenskan-Stats ---
+2025-08-02 10:56:11,732 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:56:11,735 - INFO - [root] - 
+--- Processando link ID 421: https://fbref.com/en/comps/187/2019/2019-Damallsvenskan-Stats ---
+2025-08-02 10:56:16,688 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:56:16,690 - INFO - [root] - 
+--- Processando link ID 422: https://fbref.com/en/comps/187/2018/2018-Damallsvenskan-Stats ---
+2025-08-02 10:56:21,821 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:56:21,823 - INFO - [root] - 
+--- Processando link ID 423: https://fbref.com/en/comps/187/2017/2017-Damallsvenskan-Stats ---
+2025-08-02 10:56:26,687 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:56:26,689 - INFO - [root] - 
+--- Processando link ID 424: https://fbref.com/en/comps/50/Danish-Superliga-Stats ---
+2025-08-02 10:56:30,874 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:56:30,876 - INFO - [root] - 
+--- Processando link ID 425: https://fbref.com/en/comps/50/2024-2025/2024-2025-Danish-Superliga-Stats ---
+2025-08-02 10:56:35,102 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:56:35,105 - INFO - [root] - 
+--- Processando link ID 426: https://fbref.com/en/comps/50/2023-2024/2023-2024-Danish-Superliga-Stats ---
+2025-08-02 10:56:39,352 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:56:39,355 - INFO - [root] - 
+--- Processando link ID 427: https://fbref.com/en/comps/50/2022-2023/2022-2023-Danish-Superliga-Stats ---
+2025-08-02 10:56:43,593 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:56:43,596 - INFO - [root] - 
+--- Processando link ID 428: https://fbref.com/en/comps/50/2021-2022/2021-2022-Danish-Superliga-Stats ---
+2025-08-02 10:56:49,013 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:56:49,016 - INFO - [root] - 
+--- Processando link ID 429: https://fbref.com/en/comps/50/2020-2021/2020-2021-Danish-Superliga-Stats ---
+2025-08-02 10:56:53,283 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:56:53,287 - INFO - [root] - 
+--- Processando link ID 430: https://fbref.com/en/comps/50/2019-2020/2019-2020-Danish-Superliga-Stats ---
+2025-08-02 10:56:58,905 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:56:58,908 - INFO - [root] - 
+--- Processando link ID 431: https://fbref.com/en/comps/50/2018-2019/2018-2019-Danish-Superliga-Stats ---
+2025-08-02 10:57:04,532 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:57:04,535 - INFO - [root] - 
+--- Processando link ID 432: https://fbref.com/en/comps/50/2017-2018/2017-2018-Danish-Superliga-Stats ---
+2025-08-02 10:57:11,147 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:57:11,150 - INFO - [root] - 
+--- Processando link ID 433: https://fbref.com/en/comps/50/2016-2017/2016-2017-Danish-Superliga-Stats ---
+2025-08-02 10:57:16,892 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:57:16,895 - INFO - [root] - 
+--- Processando link ID 434: https://fbref.com/en/comps/50/2015-2016/2015-2016-Danish-Superliga-Stats ---
+2025-08-02 10:57:22,165 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:57:22,167 - INFO - [root] - 
+--- Processando link ID 435: https://fbref.com/en/comps/50/2014-2015/2014-2015-Danish-Superliga-Stats ---
+2025-08-02 10:57:27,345 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:57:27,347 - INFO - [root] - 
+--- Processando link ID 436: https://fbref.com/en/comps/50/2013-2014/2013-2014-Danish-Superliga-Stats ---
+2025-08-02 10:57:32,466 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:57:32,468 - INFO - [root] - 
+--- Processando link ID 437: https://fbref.com/en/comps/50/2012-2013/2012-2013-Danish-Superliga-Stats ---
+2025-08-02 10:57:37,614 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:57:37,618 - INFO - [root] - 
+--- Processando link ID 438: https://fbref.com/en/comps/50/2011-2012/2011-2012-Danish-Superliga-Stats ---
+2025-08-02 10:57:41,680 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:57:41,684 - INFO - [root] - 
+--- Processando link ID 439: https://fbref.com/en/comps/50/2010-2011/2010-2011-Danish-Superliga-Stats ---
+2025-08-02 10:57:46,798 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:57:46,801 - INFO - [root] - 
+--- Processando link ID 440: https://fbref.com/en/comps/50/2009-2010/2009-2010-Danish-Superliga-Stats ---
+2025-08-02 10:57:51,850 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:57:51,853 - INFO - [root] - 
+--- Processando link ID 441: https://fbref.com/en/comps/50/2008-2009/2008-2009-Danish-Superliga-Stats ---
+2025-08-02 10:57:55,960 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:57:55,962 - INFO - [root] - 
+--- Processando link ID 442: https://fbref.com/en/comps/50/2007-2008/2007-2008-Danish-Superliga-Stats ---
+2025-08-02 10:58:01,188 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:58:01,191 - INFO - [root] - 
+--- Processando link ID 443: https://fbref.com/en/comps/50/2006-2007/2006-2007-Danish-Superliga-Stats ---
+2025-08-02 10:58:06,160 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:58:06,164 - INFO - [root] - 
+--- Processando link ID 444: https://fbref.com/en/comps/50/2005-2006/2005-2006-Danish-Superliga-Stats ---
+2025-08-02 10:58:10,267 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:58:10,269 - INFO - [root] - 
+--- Processando link ID 445: https://fbref.com/en/comps/50/2004-2005/2004-2005-Danish-Superliga-Stats ---
+2025-08-02 10:58:14,386 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:58:14,389 - INFO - [root] - 
+--- Processando link ID 446: https://fbref.com/en/comps/50/2003-2004/2003-2004-Danish-Superliga-Stats ---
+2025-08-02 10:58:19,477 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:58:19,481 - INFO - [root] - 
+--- Processando link ID 447: https://fbref.com/en/comps/340/Kvindeligaen-Stats ---
+2025-08-02 10:58:23,176 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:58:23,179 - INFO - [root] - 
+--- Processando link ID 448: https://fbref.com/en/comps/340/2024-2025/2024-2025-Kvindeligaen-Stats ---
+2025-08-02 10:58:27,178 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:58:27,181 - INFO - [root] - 
+--- Processando link ID 449: https://fbref.com/en/comps/340/2023-2024/2023-2024-Kvindeligaen-Stats ---
+2025-08-02 10:58:32,154 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:58:32,157 - INFO - [root] - 
+--- Processando link ID 450: https://fbref.com/en/comps/340/2022-2023/2022-2023-Kvindeligaen-Stats ---
+2025-08-02 10:58:36,199 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:58:36,202 - INFO - [root] - 
+--- Processando link ID 451: https://fbref.com/en/comps/340/2021-2022/2021-2022-Kvindeligaen-Stats ---
+2025-08-02 10:58:41,013 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:58:41,016 - INFO - [root] - 
+--- Processando link ID 452: https://fbref.com/en/comps/340/2020-2021/2020-2021-Kvindeligaen-Stats ---
+2025-08-02 10:58:45,726 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:58:45,729 - INFO - [root] - 
+--- Processando link ID 453: https://fbref.com/en/comps/340/2019-2020/2019-2020-Kvindeligaen-Stats ---
+2025-08-02 10:58:50,350 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:58:50,353 - INFO - [root] - 
+--- Processando link ID 454: https://fbref.com/en/comps/74/Bolivian-Primera-Division-Stats ---
+2025-08-02 10:58:54,394 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:58:54,397 - INFO - [root] - 
+--- Processando link ID 455: https://fbref.com/en/comps/74/2024/2024-Bolivian-Primera-Division-Stats ---
+2025-08-02 10:58:59,818 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:58:59,821 - INFO - [root] - 
+--- Processando link ID 456: https://fbref.com/en/comps/74/2023/2023-Bolivian-Primera-Division-Stats ---
+2025-08-02 10:59:03,943 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:59:03,946 - INFO - [root] - 
+--- Processando link ID 457: https://fbref.com/en/comps/74/2022/2022-Bolivian-Primera-Division-Stats ---
+2025-08-02 10:59:09,304 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:59:09,306 - INFO - [root] - 
+--- Processando link ID 458: https://fbref.com/en/comps/74/2021/2021-Bolivian-Primera-Division-Stats ---
+2025-08-02 10:59:13,505 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:59:13,508 - INFO - [root] - 
+--- Processando link ID 459: https://fbref.com/en/comps/74/2020/2020-Bolivian-Primera-Division-Stats ---
+2025-08-02 10:59:20,039 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:59:20,042 - INFO - [root] - 
+--- Processando link ID 460: https://fbref.com/en/comps/74/2019/2019-Bolivian-Primera-Division-Stats ---
+2025-08-02 10:59:24,890 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:59:24,893 - INFO - [root] - 
+--- Processando link ID 461: https://fbref.com/en/comps/74/2018/2018-Bolivian-Primera-Division-Stats ---
+2025-08-02 10:59:29,946 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:59:29,949 - INFO - [root] - 
+--- Processando link ID 462: https://fbref.com/en/comps/74/2016-2017/2016-2017-Bolivian-Primera-Division-Stats ---
+2025-08-02 10:59:35,129 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:59:35,132 - INFO - [root] - 
+--- Processando link ID 463: https://fbref.com/en/comps/74/2015-2016/2015-2016-Bolivian-Primera-Division-Stats ---
+2025-08-02 10:59:40,239 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:59:40,242 - INFO - [root] - 
+--- Processando link ID 464: https://fbref.com/en/comps/74/2014-2015/2014-2015-Bolivian-Primera-Division-Stats ---
+2025-08-02 10:59:44,448 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:59:44,451 - INFO - [root] - 
+--- Processando link ID 465: https://fbref.com/en/comps/10/Championship-Stats ---
+2025-08-02 10:59:48,157 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:59:48,160 - INFO - [root] - 
+--- Processando link ID 466: https://fbref.com/en/comps/10/2024-2025/2024-2025-Championship-Stats ---
+2025-08-02 10:59:53,437 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:59:53,440 - INFO - [root] - 
+--- Processando link ID 467: https://fbref.com/en/comps/10/2023-2024/2023-2024-Championship-Stats ---
+2025-08-02 10:59:58,679 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 10:59:58,682 - INFO - [root] - 
+--- Processando link ID 468: https://fbref.com/en/comps/10/2022-2023/2022-2023-Championship-Stats ---
+2025-08-02 11:00:04,121 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:00:04,124 - INFO - [root] - 
+--- Processando link ID 469: https://fbref.com/en/comps/10/2021-2022/2021-2022-Championship-Stats ---
+2025-08-02 11:00:09,509 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:00:09,512 - INFO - [root] - 
+--- Processando link ID 470: https://fbref.com/en/comps/10/2020-2021/2020-2021-Championship-Stats ---
+2025-08-02 11:00:14,837 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:00:14,840 - INFO - [root] - 
+--- Processando link ID 471: https://fbref.com/en/comps/10/2019-2020/2019-2020-Championship-Stats ---
+2025-08-02 11:00:20,415 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:00:20,418 - INFO - [root] - 
+--- Processando link ID 472: https://fbref.com/en/comps/10/2018-2019/2018-2019-Championship-Stats ---
+2025-08-02 11:00:25,824 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:00:25,827 - INFO - [root] - 
+--- Processando link ID 473: https://fbref.com/en/comps/10/2017-2018/2017-2018-Championship-Stats ---
+2025-08-02 11:00:30,255 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:00:30,259 - INFO - [root] - 
+--- Processando link ID 474: https://fbref.com/en/comps/10/2016-2017/2016-2017-Championship-Stats ---
+2025-08-02 11:00:34,836 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:00:34,840 - INFO - [root] - 
+--- Processando link ID 475: https://fbref.com/en/comps/10/2015-2016/2015-2016-Championship-Stats ---
+2025-08-02 11:00:39,206 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:00:39,209 - INFO - [root] - 
+--- Processando link ID 476: https://fbref.com/en/comps/10/2014-2015/2014-2015-Championship-Stats ---
+2025-08-02 11:00:43,659 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:00:43,661 - INFO - [root] - 
+--- Processando link ID 477: https://fbref.com/en/comps/10/2013-2014/2013-2014-Championship-Stats ---
+2025-08-02 11:00:48,232 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:00:48,236 - INFO - [root] - 
+--- Processando link ID 478: https://fbref.com/en/comps/10/2012-2013/2012-2013-Championship-Stats ---
+2025-08-02 11:00:52,729 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:00:52,732 - INFO - [root] - 
+--- Processando link ID 479: https://fbref.com/en/comps/10/2011-2012/2011-2012-Championship-Stats ---
+2025-08-02 11:00:57,192 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:00:57,196 - INFO - [root] - 
+--- Processando link ID 480: https://fbref.com/en/comps/10/2010-2011/2010-2011-Championship-Stats ---
+2025-08-02 11:01:01,641 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:01:01,644 - INFO - [root] - 
+--- Processando link ID 481: https://fbref.com/en/comps/10/2009-2010/2009-2010-Championship-Stats ---
+2025-08-02 11:01:05,986 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:01:05,989 - INFO - [root] - 
+--- Processando link ID 482: https://fbref.com/en/comps/10/2008-2009/2008-2009-Championship-Stats ---
+2025-08-02 11:01:10,363 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:01:10,366 - INFO - [root] - 
+--- Processando link ID 483: https://fbref.com/en/comps/10/2007-2008/2007-2008-Championship-Stats ---
+2025-08-02 11:01:14,662 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:01:14,665 - INFO - [root] - 
+--- Processando link ID 484: https://fbref.com/en/comps/10/2006-2007/2006-2007-Championship-Stats ---
+2025-08-02 11:01:19,029 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:01:19,032 - INFO - [root] - 
+--- Processando link ID 485: https://fbref.com/en/comps/10/2005-2006/2005-2006-Championship-Stats ---
+2025-08-02 11:01:24,547 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:01:24,550 - INFO - [root] - 
+--- Processando link ID 486: https://fbref.com/en/comps/10/2004-2005/2004-2005-Championship-Stats ---
+2025-08-02 11:01:29,029 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:01:29,031 - INFO - [root] - 
+--- Processando link ID 487: https://fbref.com/en/comps/10/2003-2004/2003-2004-Championship-Stats ---
+2025-08-02 11:01:33,423 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:01:33,427 - INFO - [root] - 
+--- Processando link ID 488: https://fbref.com/en/comps/10/2002-2003/2002-2003-Championship-Stats ---
+2025-08-02 11:01:37,824 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:01:37,827 - INFO - [root] - 
+--- Processando link ID 489: https://fbref.com/en/comps/10/2001-2002/2001-2002-Championship-Stats ---
+2025-08-02 11:01:42,122 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:01:42,125 - INFO - [root] - 
+--- Processando link ID 490: https://fbref.com/en/comps/690/EFL-Cup-Stats ---
+2025-08-02 11:01:45,916 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:01:45,918 - INFO - [root] - 
+--- Processando link ID 491: https://fbref.com/en/comps/690/2024-2025/2024-2025-EFL-Cup-Stats ---
+2025-08-02 11:01:50,115 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:01:50,118 - INFO - [root] - 
+--- Processando link ID 492: https://fbref.com/en/comps/690/2023-2024/2023-2024-EFL-Cup-Stats ---
+2025-08-02 11:01:54,415 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:01:54,418 - INFO - [root] - 
+--- Processando link ID 493: https://fbref.com/en/comps/690/2022-2023/2022-2023-EFL-Cup-Stats ---
+2025-08-02 11:02:00,326 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:02:00,328 - INFO - [root] - 
+--- Processando link ID 494: https://fbref.com/en/comps/690/2021-2022/2021-2022-EFL-Cup-Stats ---
+2025-08-02 11:02:04,759 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:02:04,762 - INFO - [root] - 
+--- Processando link ID 495: https://fbref.com/en/comps/690/2020-2021/2020-2021-EFL-Cup-Stats ---
+2025-08-02 11:02:11,213 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:02:11,216 - INFO - [root] - 
+--- Processando link ID 496: https://fbref.com/en/comps/690/2019-2020/2019-2020-EFL-Cup-Stats ---
+2025-08-02 11:02:18,587 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:02:18,590 - INFO - [root] - 
+--- Processando link ID 497: https://fbref.com/en/comps/690/2018-2019/2018-2019-EFL-Cup-Stats ---
+2025-08-02 11:02:23,421 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:02:23,424 - INFO - [root] - 
+--- Processando link ID 498: https://fbref.com/en/comps/690/2017-2018/2017-2018-EFL-Cup-Stats ---
+2025-08-02 11:02:28,196 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:02:28,199 - INFO - [root] - 
+--- Processando link ID 499: https://fbref.com/en/comps/690/2016-2017/2016-2017-EFL-Cup-Stats ---
+2025-08-02 11:02:33,099 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:02:33,102 - INFO - [root] - 
+--- Processando link ID 500: https://fbref.com/en/comps/690/2015-2016/2015-2016-EFL-Cup-Stats ---
+2025-08-02 11:02:40,071 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:02:40,074 - INFO - [root] - 
+--- Processando link ID 501: https://fbref.com/en/comps/690/2014-2015/2014-2015-EFL-Cup-Stats ---
+2025-08-02 11:02:47,140 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:02:47,143 - INFO - [root] - 
+--- Processando link ID 502: https://fbref.com/en/comps/15/League-One-Stats ---
+2025-08-02 11:02:51,102 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:02:51,105 - INFO - [root] - 
+--- Processando link ID 503: https://fbref.com/en/comps/15/2024-2025/2024-2025-League-One-Stats ---
+2025-08-02 11:02:55,537 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:02:55,540 - INFO - [root] - 
+--- Processando link ID 504: https://fbref.com/en/comps/15/2023-2024/2023-2024-League-One-Stats ---
+2025-08-02 11:02:59,935 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:02:59,939 - INFO - [root] - 
+--- Processando link ID 505: https://fbref.com/en/comps/15/2022-2023/2022-2023-League-One-Stats ---
+2025-08-02 11:03:04,425 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:03:04,428 - INFO - [root] - 
+--- Processando link ID 506: https://fbref.com/en/comps/15/2021-2022/2021-2022-League-One-Stats ---
+2025-08-02 11:03:08,874 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:03:08,878 - INFO - [root] - 
+--- Processando link ID 507: https://fbref.com/en/comps/15/2020-2021/2020-2021-League-One-Stats ---
+2025-08-02 11:03:13,289 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:03:13,291 - INFO - [root] - 
+--- Processando link ID 508: https://fbref.com/en/comps/15/2019-2020/2019-2020-League-One-Stats ---
+2025-08-02 11:03:19,279 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:03:19,281 - INFO - [root] - 
+--- Processando link ID 509: https://fbref.com/en/comps/15/2018-2019/2018-2019-League-One-Stats ---
+2025-08-02 11:03:24,999 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:03:25,001 - INFO - [root] - 
+--- Processando link ID 510: https://fbref.com/en/comps/15/2017-2018/2017-2018-League-One-Stats ---
+2025-08-02 11:03:29,319 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:03:29,322 - INFO - [root] - 
+--- Processando link ID 511: https://fbref.com/en/comps/15/2016-2017/2016-2017-League-One-Stats ---
+2025-08-02 11:03:35,195 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:03:35,197 - INFO - [root] - 
+--- Processando link ID 512: https://fbref.com/en/comps/15/2015-2016/2015-2016-League-One-Stats ---
+2025-08-02 11:03:39,890 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:03:39,893 - INFO - [root] - 
+--- Processando link ID 513: https://fbref.com/en/comps/15/2014-2015/2014-2015-League-One-Stats ---
+2025-08-02 11:03:44,316 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:03:44,319 - INFO - [root] - 
+--- Processando link ID 514: https://fbref.com/en/comps/15/2013-2014/2013-2014-League-One-Stats ---
+2025-08-02 11:03:50,172 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:03:50,176 - INFO - [root] - 
+--- Processando link ID 515: https://fbref.com/en/comps/15/2012-2013/2012-2013-League-One-Stats ---
+2025-08-02 11:03:54,466 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:03:54,469 - INFO - [root] - 
+--- Processando link ID 516: https://fbref.com/en/comps/15/2011-2012/2011-2012-League-One-Stats ---
+2025-08-02 11:04:00,343 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:04:00,345 - INFO - [root] - 
+--- Processando link ID 517: https://fbref.com/en/comps/15/2010-2011/2010-2011-League-One-Stats ---
+2025-08-02 11:04:06,528 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:04:06,530 - INFO - [root] - 
+--- Processando link ID 518: https://fbref.com/en/comps/15/2009-2010/2009-2010-League-One-Stats ---
+2025-08-02 11:04:10,816 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:04:10,818 - INFO - [root] - 
+--- Processando link ID 519: https://fbref.com/en/comps/15/2008-2009/2008-2009-League-One-Stats ---
+2025-08-02 11:04:16,532 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:04:16,535 - INFO - [root] - 
+--- Processando link ID 520: https://fbref.com/en/comps/15/2007-2008/2007-2008-League-One-Stats ---
+2025-08-02 11:04:22,384 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:04:22,387 - INFO - [root] - 
+--- Processando link ID 521: https://fbref.com/en/comps/15/2006-2007/2006-2007-League-One-Stats ---
+2025-08-02 11:04:28,392 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:04:28,395 - INFO - [root] - 
+--- Processando link ID 522: https://fbref.com/en/comps/15/2005-2006/2005-2006-League-One-Stats ---
+2025-08-02 11:04:34,012 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:04:34,016 - INFO - [root] - 
+--- Processando link ID 523: https://fbref.com/en/comps/15/2004-2005/2004-2005-League-One-Stats ---
+2025-08-02 11:04:39,772 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:04:39,775 - INFO - [root] - 
+--- Processando link ID 524: https://fbref.com/en/comps/15/2003-2004/2003-2004-League-One-Stats ---
+2025-08-02 11:04:45,381 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:04:45,384 - INFO - [root] - 
+--- Processando link ID 525: https://fbref.com/en/comps/15/2002-2003/2002-2003-League-One-Stats ---
+2025-08-02 11:04:49,701 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:04:49,704 - INFO - [root] - 
+--- Processando link ID 526: https://fbref.com/en/comps/16/League-Two-Stats ---
+2025-08-02 11:04:53,402 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:04:53,406 - INFO - [root] - 
+--- Processando link ID 527: https://fbref.com/en/comps/16/2024-2025/2024-2025-League-Two-Stats ---
+2025-08-02 11:04:57,752 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:04:57,755 - INFO - [root] - 
+--- Processando link ID 528: https://fbref.com/en/comps/16/2023-2024/2023-2024-League-Two-Stats ---
+2025-08-02 11:05:02,299 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:05:02,302 - INFO - [root] - 
+--- Processando link ID 529: https://fbref.com/en/comps/16/2022-2023/2022-2023-League-Two-Stats ---
+2025-08-02 11:05:06,766 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:05:06,769 - INFO - [root] - 
+--- Processando link ID 530: https://fbref.com/en/comps/16/2021-2022/2021-2022-League-Two-Stats ---
+2025-08-02 11:05:11,213 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:05:11,217 - INFO - [root] - 
+--- Processando link ID 531: https://fbref.com/en/comps/16/2020-2021/2020-2021-League-Two-Stats ---
+2025-08-02 11:05:15,610 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:05:15,613 - INFO - [root] - 
+--- Processando link ID 532: https://fbref.com/en/comps/16/2019-2020/2019-2020-League-Two-Stats ---
+2025-08-02 11:05:21,974 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:05:21,977 - INFO - [root] - 
+--- Processando link ID 533: https://fbref.com/en/comps/16/2018-2019/2018-2019-League-Two-Stats ---
+2025-08-02 11:05:27,567 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:05:27,569 - INFO - [root] - 
+--- Processando link ID 534: https://fbref.com/en/comps/16/2017-2018/2017-2018-League-Two-Stats ---
+2025-08-02 11:05:32,046 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:05:32,048 - INFO - [root] - 
+--- Processando link ID 535: https://fbref.com/en/comps/16/2016-2017/2016-2017-League-Two-Stats ---
+2025-08-02 11:05:37,988 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:05:37,991 - INFO - [root] - 
+--- Processando link ID 536: https://fbref.com/en/comps/16/2015-2016/2015-2016-League-Two-Stats ---
+2025-08-02 11:05:42,438 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:05:42,441 - INFO - [root] - 
+--- Processando link ID 537: https://fbref.com/en/comps/16/2014-2015/2014-2015-League-Two-Stats ---
+2025-08-02 11:05:48,337 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:05:48,340 - INFO - [root] - 
+--- Processando link ID 538: https://fbref.com/en/comps/16/2013-2014/2013-2014-League-Two-Stats ---
+2025-08-02 11:05:54,413 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:05:54,417 - INFO - [root] - 
+--- Processando link ID 539: https://fbref.com/en/comps/16/2012-2013/2012-2013-League-Two-Stats ---
+2025-08-02 11:05:58,835 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:05:58,838 - INFO - [root] - 
+--- Processando link ID 540: https://fbref.com/en/comps/16/2011-2012/2011-2012-League-Two-Stats ---
+2025-08-02 11:06:04,595 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:06:04,598 - INFO - [root] - 
+--- Processando link ID 541: https://fbref.com/en/comps/16/2010-2011/2010-2011-League-Two-Stats ---
+2025-08-02 11:06:09,061 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:06:09,064 - INFO - [root] - 
+--- Processando link ID 542: https://fbref.com/en/comps/16/2009-2010/2009-2010-League-Two-Stats ---
+2025-08-02 11:06:13,410 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:06:13,413 - INFO - [root] - 
+--- Processando link ID 543: https://fbref.com/en/comps/16/2008-2009/2008-2009-League-Two-Stats ---
+2025-08-02 11:06:19,113 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:06:19,116 - INFO - [root] - 
+--- Processando link ID 544: https://fbref.com/en/comps/16/2007-2008/2007-2008-League-Two-Stats ---
+2025-08-02 11:06:24,913 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:06:24,916 - INFO - [root] - 
+--- Processando link ID 545: https://fbref.com/en/comps/16/2006-2007/2006-2007-League-Two-Stats ---
+2025-08-02 11:06:30,588 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:06:30,591 - INFO - [root] - 
+--- Processando link ID 546: https://fbref.com/en/comps/16/2005-2006/2005-2006-League-Two-Stats ---
+2025-08-02 11:06:36,331 - WARNING - [root] -    -> AVISO: Nenhuma tabela de jogos válida foi encontrada nesta página.
+2025-08-02 11:06:36,334 - INFO - [root] - 
+--- Processando link ID 547: https://fbref.com/en/comps/16/2004-2005/2004-2005-League-Two-Stats ---
+2025-08-02 11:06:38,200 - WARNING - [urllib3.connectionpool] - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'Foi forçado o cancelamento de uma conexão existente pelo host remoto', None, 10054, None)': /session/44cdacee9173e02bd1f2c326df96ffd0

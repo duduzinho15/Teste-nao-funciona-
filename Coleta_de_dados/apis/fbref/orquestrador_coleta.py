@@ -7,31 +7,32 @@ import os
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../"))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
-# Importa a função 'main' ou equivalente de cada script
+# Importações agora funcionam porque o run.py ajustou o path
 from Banco_de_dados.criar_banco import criar_todas_as_tabelas
-from .fbref_integrado import main as descobrir_links
-from .coletar_dados_partidas import main as coletar_partidas
-from .coletar_estatisticas_detalhadas import main as coletar_estatisticas
-from .fbref_criar_tabela_rotulada import main as processar_dados
-from .gerar_relatorio_final import main as gerar_relatorio
+from Coleta_de_dados.apis.fbref.fbref_integrado import main as descobrir_links
+from Coleta_de_dados.apis.fbref.coletar_dados_partidas import main as coletar_partidas
+from Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas import main as coletar_estatisticas
+from Coleta_de_dados.apis.fbref.fbref_criar_tabela_rotulada import main as processar_dados
+from Coleta_de_dados.apis.fbref.gerar_relatorio_final import main as gerar_relatorio
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - ORQUESTRADOR - %(message)s')
+# Pega o logger já configurado pelo run.py
+logger = logging.getLogger(__name__)
 
 def executar_pipeline_completa():
     """Executa todos os scripts da pipeline de dados em sequência."""
     start_time = time.time()
-    logging.info("🚀🚀🚀 INICIANDO A PIPELINE COMPLETA DE DADOS DO FBREF 🚀🚀🚀")
+    logger.info("🚀🚀🚀 INICIANDO A PIPELINE COMPLETA DE DADOS DO FBREF 🚀🚀🚀")
 
     try:
-        # --- ETAPA 0: Preparação do Banco de Dados ---
-        logging.info("\n--- [ETAPA 0 de 6] Executando: Preparação do Banco de Dados ---")
+        # Etapa 0: Preparação do Banco de Dados
+        logger.info("\n--- [ETAPA 0 de 6] Executando: Preparação do Banco de Dados ---")
         criar_todas_as_tabelas()
-        logging.info("--- [ETAPA 0 de 6] Finalizada com sucesso! ---")
+        logger.info("--- [ETAPA 0 de 6] Finalizada com sucesso! ---")
         
-        # --- ETAPA 1: Descoberta de Links ---
-        logging.info("\n--- [ETAPA 1 de 6] Executando: Descoberta de Competições e Temporadas ---")
+        # Etapa 1: Descoberta de Links
+        logger.info("\n--- [ETAPA 1 de 6] Executando: Descoberta de Competições e Temporadas ---")
         descobrir_links()
-        logging.info("--- [ETAPA 1 de 6] Finalizada com sucesso! ---")
+        logger.info("--- [ETAPA 1 de 6] Finalizada com sucesso! ---")
 
         # --- ETAPA 2: Coleta de Dados de Partidas ---
         logging.info("\n--- [ETAPA 2 de 6] Executando: Coleta de Dados de Partidas ---")
@@ -53,13 +54,15 @@ def executar_pipeline_completa():
         gerar_relatorio()
         logging.info("--- [ETAPA 5 de 6] Finalizada com sucesso! ---")
 
+        # --- ETAPA 6: Finalização da Pipeline ---
+        logger.info("\n--- [ETAPA 6 de 6] Finalizando a Pipeline ---")
     except Exception as e:
-        logging.error(f"🚨🚨🚨 ERRO CRÍTICO NA PIPELINE! 🚨🚨🚨", exc_info=True)
+        logger.critical(f"🚨🚨🚨 ERRO CRÍTICO NA PIPELINE! 🚨🚨🚨", exc_info=True)
     
     end_time = time.time()
     total_time = end_time - start_time
-    logging.info(f"\n✅✅✅ PIPELINE COMPLETA FINALIZADA! ✅✅✅")
-    logging.info(f"Tempo total de execução: {time.strftime('%H:%M:%S', time.gmtime(total_time))}")
+    logger.info(f"\n✅✅✅ PIPELINE COMPLETA FINALIZADA! ✅✅✅")
+    logger.info(f"Tempo total de execução: {time.strftime('%H:%M:%S', time.gmtime(total_time))}")
 
 if __name__ == "__main__":
     executar_pipeline_completa()
