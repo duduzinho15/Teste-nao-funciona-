@@ -1,17 +1,16 @@
 import sqlite3
 import pandas as pd
 import logging
-import os  # Importe a biblioteca OS
-logger = logging.getLogger(__name__)
+import os # Importe a biblioteca OS
 
-# --- CONFIGURAÇÕES ---
-# Lógica para encontrar o caminho absoluto para o banco de dados
+# --- CONFIGURAÇÕES COM CAMINHO ABSOLUTO ---
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..', '..'))
 DB_NAME = os.path.join(PROJECT_ROOT, 'Banco_de_dados', 'aposta.db')
+logger = logging.getLogger(__name__)
 
 OUTPUT_TABLE_NAME = 'dados_rotulados_partidas'
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - [%(name)s] - %(message)s')
 
 def criar_dataframe_rotulado(dados):
     if not dados:

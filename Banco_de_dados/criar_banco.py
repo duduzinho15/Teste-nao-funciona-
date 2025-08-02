@@ -9,9 +9,7 @@ DB_NAME = os.path.join(PROJECT_ROOT, 'Banco_de_dados', 'aposta.db')
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - [%(name)s] - %(message)s')
 
 def criar_todas_as_tabelas():
-    """
-    Cria ou verifica a existência de TODAS as tabelas necessárias para a pipeline completa.
-    """
+    """Cria a estrutura completa do banco de dados para todas as fontes de dados."""
     logger = logging.getLogger(__name__)
     logger.info(f"Verificando e configurando a estrutura completa do banco de dados em '{DB_NAME}'...")
     os.makedirs(os.path.dirname(DB_NAME), exist_ok=True)
@@ -21,7 +19,7 @@ def criar_todas_as_tabelas():
     # --- 1. Tabelas para a Pipeline do FBREF ---
     logger.info("Criando tabelas para o FBRef...")
     
-    # Definição ÚNICA e CORRETA da tabela 'competicoes' com a coluna 'contexto'
+    # Definição ÚNICA e CORRETA da tabela 'competicoes'
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS competicoes (
             id INTEGER PRIMARY KEY,
@@ -30,11 +28,6 @@ def criar_todas_as_tabelas():
             url_historico TEXT UNIQUE
         )
     ''')
-
-    # ✅ Verificação após criação
-    cursor.execute("PRAGMA table_info(competicoes)")
-    colunas = [col[1] for col in cursor.fetchall()]
-    print("📋 Colunas da tabela competicoes:", colunas)
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS links_para_coleta (
@@ -50,6 +43,8 @@ def criar_todas_as_tabelas():
             FOREIGN KEY (link_coleta_id) REFERENCES links_para_coleta (id)
         )
     ''')
+    
+    # Definições completas das tabelas de estatísticas
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS estatisticas_time_partida (
             id INTEGER PRIMARY KEY, partida_id INTEGER, time_nome TEXT, posse_bola REAL, finalizacoes INTEGER,

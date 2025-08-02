@@ -1,17 +1,16 @@
 import logging
 import sqlite3
 import pandas as pd
-import os
-# Importação corrigida
+import os # Importe a biblioteca OS
 from .fbref_utils import close_driver, fazer_requisicao
 
-# --- CONFIGURAÇÕES ---
-# --- INÍCIO DA CORREÇÃO ---
+# --- CONFIGURAÇÕES COM CAMINHO ABSOLUTO ---
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..', '..'))
 DB_NAME = os.path.join(PROJECT_ROOT, 'Banco_de_dados', 'aposta.db')
-# --- FIM DA CORREÇÃO ---
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - [%(name)s] - %(message)s')
 
 def setup_database_stats():
     """Cria/Altera as tabelas de estatísticas para incluir TODAS as colunas do documento."""
