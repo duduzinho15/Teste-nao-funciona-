@@ -52,3 +52,54 @@
 2025-08-03 12:55:30,865 - hang_detection - INFO - ✅ CONCLUÍDA: HTTP
 2025-08-03 12:55:30,865 - hang_detection - INFO -    Duração: 0.24s
 2025-08-03 12:55:30,865 - hang_detection - INFO -    Detalhes: Status: 200
+2025-08-03 17:47:02,756 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 17:47:02,756 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 17:47:02,797 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 17:47:02,798 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 17:47:02,798 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 17:47:02,798 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 17:47:02,828 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 17:47:11,617 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 17:47:11,617 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 17:47:11,659 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 17:47:11,659 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 17:47:11,660 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 17:47:11,660 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 17:47:11,690 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 17:47:19,541 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 17:47:19,542 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 17:47:19,585 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 17:47:19,585 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 17:47:19,585 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 17:47:19,586 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 17:47:19,615 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 19:59:15,016 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 19:59:15,016 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 19:59:15,064 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 19:59:15,064 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 19:59:15,065 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 19:59:15,065 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 19:59:15,101 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 19:59:15,101 - Coleta_de_dados.apis.fbref.fbref_integrado_orm - INFO - Buscando lista de competições com sistema de fallback...
+2025-08-03 19:59:15,102 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Cache válido encontrado: 150 competições
+2025-08-03 19:59:15,102 - Coleta_de_dados.apis.fbref.fbref_integrado_orm - INFO - Usando competições do cache: 150 competições
+2025-08-03 19:59:39,155 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 19:59:39,155 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 19:59:39,211 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 19:59:39,211 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 19:59:39,212 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 19:59:39,212 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 19:59:39,244 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 19:59:39,244 - Coleta_de_dados.apis.fbref.fbref_integrado_orm - INFO - Buscando lista de competições com sistema de fallback...
+2025-08-03 19:59:39,245 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Cache válido encontrado: 150 competições
+2025-08-03 19:59:39,245 - Coleta_de_dados.apis.fbref.fbref_integrado_orm - INFO - Usando competições do cache: 150 competições
+2025-08-03 19:59:52,231 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 19:59:52,231 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 19:59:52,269 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 19:59:52,269 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 19:59:52,270 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 19:59:52,270 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 19:59:52,298 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 19:59:52,298 - Coleta_de_dados.apis.fbref.fbref_integrado_orm - INFO - Buscando lista de competições com sistema de fallback...
+2025-08-03 19:59:52,299 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Cache válido encontrado: 150 competições
+2025-08-03 19:59:52,299 - Coleta_de_dados.apis.fbref.fbref_integrado_orm - INFO - Usando competições do cache: 150 competições
