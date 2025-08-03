@@ -1,0 +1,50 @@
+2025-08-03 10:37:04 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_10-37-04.log
+2025-08-03 10:37:04 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_10-37-04.log
+2025-08-03 10:37:04 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 10:37:04 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🚀🚀🚀 INICIANDO A PIPELINE COMPLETA DE DADOS DO FBREF 🚀🚀🚀
+2025-08-03 10:37:04 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Configuração: {'continuar_em_erro': True, 'salvar_logs_detalhados': True, 'backup_antes_execucao': True, 'timeout_global': 14400, 'intervalo_checkpoint': 300, 'modo_teste': False, 'limite_competicoes': None}
+2025-08-03 10:37:04 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 1 de 9] Executando: Preparação do Banco de Dados ---
+2025-08-03 10:37:04 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Timeout não suportado neste sistema. Executando sem timeout.
+2025-08-03 10:37:04 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_10-37-04.log
+2025-08-03 10:37:04 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_10-37-04.log
+2025-08-03 10:37:05 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 10:37:05 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando preparação do banco de dados...
+2025-08-03 10:37:05 - INFO - [Banco_de_dados.criar_banco] - Verificando e configurando a estrutura completa do banco de dados em 'C:\ApostaPro\Banco_de_dados\aposta.db'...
+2025-08-03 10:37:05 - INFO - [Banco_de_dados.criar_banco] - Criando tabelas para o FBRef...
+2025-08-03 10:37:05 - INFO - [Banco_de_dados.criar_banco] - Criando tabelas para clubes e jogadores...
+2025-08-03 10:37:05 - INFO - [Banco_de_dados.criar_banco] - Criando tabelas para as outras APIs...
+2025-08-03 10:37:05 - INFO - [Banco_de_dados.criar_banco] - Banco de dados pronto com a estrutura completa para TODAS as fontes de dados.
+2025-08-03 10:37:05 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 1] Finalizada com sucesso! ---
+2025-08-03 10:37:05 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ✅ Etapa 'preparacao_banco' executada com sucesso - continuando pipeline
+2025-08-03 10:37:05 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 2 de 9] Executando: Descoberta de Competições e Temporadas ---
+2025-08-03 10:37:05 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Timeout não suportado neste sistema. Executando sem timeout.
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 2] Finalizada com sucesso! ---
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ✅ Etapa 'descoberta_links' executada com sucesso - continuando pipeline
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 3 de 9] Executando: Verificação da Completude da Extração ---
+2025-08-03 10:37:07 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Timeout não suportado neste sistema. Executando sem timeout.
+2025-08-03 10:52:07 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 3] TIMEOUT: Timeout após 900s ---
+2025-08-03 10:52:07 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🔄 Etapa obrigatória 'verificacao_extracao' falhou - continuando por configuração
+2025-08-03 10:52:07 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📋 Detalhes do erro: Timeout: Timeout após 900s
+2025-08-03 10:52:07 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 4 de 9] Executando: Coleta de Dados de Partidas ---
+2025-08-03 10:52:07 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Timeout não suportado neste sistema. Executando sem timeout.
+2025-08-03 11:03:34 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🛑 Pipeline interrompida pelo usuário (Ctrl+C)
+2025-08-03 11:03:34 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+================================================================================
+2025-08-03 11:03:34 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📊 RELATÓRIO FINAL DA PIPELINE
+2025-08-03 11:03:34 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ================================================================================
+2025-08-03 11:03:34 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ⏱️  Tempo total de execução: 00:26:30
+2025-08-03 11:03:34 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📈 Etapas executadas: 4/9
+2025-08-03 11:03:34 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ✅ Etapas com sucesso: 2
+2025-08-03 11:03:34 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ❌ Etapas com erro: 2
+2025-08-03 11:03:34 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+📋 DETALHES POR ETAPA:
+2025-08-03 11:03:34 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -   ✅ SUCESSO | preparacao_banco     | 00:00:00
+2025-08-03 11:03:34 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -   ✅ SUCESSO | descoberta_links     | 00:00:01
+2025-08-03 11:03:34 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -   ❌ ERRO | verificacao_extracao | 00:15:00
+2025-08-03 11:03:34 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -     └─ Erro: Timeout: Timeout após 900s
+2025-08-03 11:03:34 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ================================================================================
+2025-08-03 11:03:34 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ❌❌❌ PIPELINE FINALIZADA COM ERROS ❌❌❌

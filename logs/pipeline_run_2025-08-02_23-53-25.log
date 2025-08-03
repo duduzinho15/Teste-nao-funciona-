@@ -1,0 +1,23 @@
+2025-08-02 23:53:25 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-02_23-53-25.log
+2025-08-02 23:53:25 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-02_23-53-25.log
+2025-08-02 23:53:26 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🚀🚀🚀 INICIANDO A PIPELINE COMPLETA DE DADOS DO FBREF 🚀🚀🚀
+2025-08-02 23:53:26 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Configuração: {'continuar_em_erro': False, 'salvar_logs_detalhados': True, 'backup_antes_execucao': True, 'timeout_global': 14400, 'intervalo_checkpoint': 300}
+2025-08-02 23:53:26 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 1 de 6] Executando: Preparação do Banco de Dados ---
+2025-08-02 23:53:26 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Timeout não suportado neste sistema. Executando sem timeout.
+2025-08-02 23:53:26 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 1] ERRO: Can't pickle local object 'OrquestradorColeta._run_with_timeout.<locals>.worker' ---
+2025-08-02 23:53:26 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Etapa obrigatória 'preparacao_banco' falhou. Interrompendo pipeline.
+2025-08-02 23:53:26 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+================================================================================
+2025-08-02 23:53:26 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📊 RELATÓRIO FINAL DA PIPELINE
+2025-08-02 23:53:26 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ================================================================================
+2025-08-02 23:53:26 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ⏱️  Tempo total de execução: 00:00:00
+2025-08-02 23:53:26 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📈 Etapas executadas: 1/6
+2025-08-02 23:53:26 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ✅ Etapas com sucesso: 0
+2025-08-02 23:53:26 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ❌ Etapas com erro: 1
+2025-08-02 23:53:26 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+📋 DETALHES POR ETAPA:
+2025-08-02 23:53:26 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -   ❌ ERRO | preparacao_banco     | 00:00:00
+2025-08-02 23:53:26 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -     └─ Erro: Can't pickle local object 'OrquestradorColeta._run_with_timeout.<locals>.worker'
+2025-08-02 23:53:26 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ================================================================================
+2025-08-02 23:53:26 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ❌❌❌ PIPELINE FINALIZADA COM ERROS ❌❌❌

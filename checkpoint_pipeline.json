@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-08-03T11:20:23.623612",
+  "etapas_executadas": 3,
+  "etapas_com_sucesso": 2,
+  "resultados": [
+    {
+      "nome": "preparacao_banco",
+      "sucesso": true,
+      "tempo_execucao": 0.8872663974761963,
+      "erro": null
+    },
+    {
+      "nome": "descoberta_links",
+      "sucesso": true,
+      "tempo_execucao": 1.715524435043335,
+      "erro": null
+    },
+    {
+      "nome": "verificacao_extracao",
+      "sucesso": false,
+      "tempo_execucao": 900.013162612915,
+      "erro": "Timeout: Timeout após 900s"
+    }
+  ]
+}

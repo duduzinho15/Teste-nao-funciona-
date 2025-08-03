@@ -1,0 +1,133 @@
+2025-08-03 10:37:05 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_10-37-05.log
+2025-08-03 10:37:05 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_10-37-05.log
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando descoberta de competições e temporadas (modo_teste=False)
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 🚀 Iniciando Script 1: Descoberta de Links...
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Buscando lista de competições com sistema de fallback...
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 🔍 Verificação rápida de acessibilidade do FBRef...
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - ⚠️ FBRef status 429 - usando fallback
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 📦 Modo fallback ativado - usando dados locais
+2025-08-03 10:37:06 - WARNING - [Coleta_de_dados.apis.fbref.fbref_integrado] - Site FBRef parece inacessível. Usando dados de fallback.
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback carregados: 10 competições
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Processando 10 competições em lotes de 10
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+=== PROCESSANDO LOTE 1/1 ===
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Competições 1 a 10 de 10
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 1/10: Premier League (Masculino) ---
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/9/history/Premier-League-Seasons
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 🔍 Verificação rápida de acessibilidade do FBRef...
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - ⚠️ FBRef status 429 - usando fallback
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 📦 Modo fallback ativado - usando dados locais
+2025-08-03 10:37:06 - WARNING - [Coleta_de_dados.apis.fbref.fbref_integrado] - Site inacessível. Usando temporadas de fallback para: https://fbref.com/en/comps/9/history/Premier-League-Seasons
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Geradas 5 temporadas de fallback para https://fbref.com/en/comps/9/history/Premier-League-Seasons
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 temporadas de fallback geradas
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo FALLBACK_TEMPORADAS.
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 2/10: La Liga (Masculino) ---
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/12/history/La-Liga-Seasons
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 🔍 Verificação rápida de acessibilidade do FBRef...
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - ⚠️ FBRef status 429 - usando fallback
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 📦 Modo fallback ativado - usando dados locais
+2025-08-03 10:37:06 - WARNING - [Coleta_de_dados.apis.fbref.fbref_integrado] - Site inacessível. Usando temporadas de fallback para: https://fbref.com/en/comps/12/history/La-Liga-Seasons
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Geradas 5 temporadas de fallback para https://fbref.com/en/comps/12/history/La-Liga-Seasons
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 temporadas de fallback geradas
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo FALLBACK_TEMPORADAS.
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 3/10: Serie A (Masculino) ---
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/11/history/Serie-A-Seasons
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 🔍 Verificação rápida de acessibilidade do FBRef...
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - ⚠️ FBRef status 429 - usando fallback
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 📦 Modo fallback ativado - usando dados locais
+2025-08-03 10:37:06 - WARNING - [Coleta_de_dados.apis.fbref.fbref_integrado] - Site inacessível. Usando temporadas de fallback para: https://fbref.com/en/comps/11/history/Serie-A-Seasons
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Geradas 5 temporadas de fallback para https://fbref.com/en/comps/11/history/Serie-A-Seasons
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 temporadas de fallback geradas
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo FALLBACK_TEMPORADAS.
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 4/10: Bundesliga (Masculino) ---
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/20/history/Bundesliga-Seasons
+2025-08-03 10:37:06 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 🔍 Verificação rápida de acessibilidade do FBRef...
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - ⚠️ FBRef status 429 - usando fallback
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 📦 Modo fallback ativado - usando dados locais
+2025-08-03 10:37:07 - WARNING - [Coleta_de_dados.apis.fbref.fbref_integrado] - Site inacessível. Usando temporadas de fallback para: https://fbref.com/en/comps/20/history/Bundesliga-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Geradas 5 temporadas de fallback para https://fbref.com/en/comps/20/history/Bundesliga-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 temporadas de fallback geradas
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo FALLBACK_TEMPORADAS.
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 5/10: Ligue 1 (Masculino) ---
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/13/history/Ligue-1-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 🔍 Verificação rápida de acessibilidade do FBRef...
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - ⚠️ FBRef status 429 - usando fallback
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 📦 Modo fallback ativado - usando dados locais
+2025-08-03 10:37:07 - WARNING - [Coleta_de_dados.apis.fbref.fbref_integrado] - Site inacessível. Usando temporadas de fallback para: https://fbref.com/en/comps/13/history/Ligue-1-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Geradas 5 temporadas de fallback para https://fbref.com/en/comps/13/history/Ligue-1-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 temporadas de fallback geradas
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo FALLBACK_TEMPORADAS.
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 6/10: Champions League (Masculino) ---
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/8/history/Champions-League-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 🔍 Verificação rápida de acessibilidade do FBRef...
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - ⚠️ FBRef status 429 - usando fallback
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 📦 Modo fallback ativado - usando dados locais
+2025-08-03 10:37:07 - WARNING - [Coleta_de_dados.apis.fbref.fbref_integrado] - Site inacessível. Usando temporadas de fallback para: https://fbref.com/en/comps/8/history/Champions-League-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Geradas 3 temporadas de fallback para https://fbref.com/en/comps/8/history/Champions-League-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 temporadas de fallback geradas
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo FALLBACK_TEMPORADAS.
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 novos links salvos no banco.
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 7/10: Europa League (Masculino) ---
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/19/history/Europa-League-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 🔍 Verificação rápida de acessibilidade do FBRef...
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - ⚠️ FBRef status 429 - usando fallback
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 📦 Modo fallback ativado - usando dados locais
+2025-08-03 10:37:07 - WARNING - [Coleta_de_dados.apis.fbref.fbref_integrado] - Site inacessível. Usando temporadas de fallback para: https://fbref.com/en/comps/19/history/Europa-League-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Geradas 3 temporadas de fallback para https://fbref.com/en/comps/19/history/Europa-League-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 temporadas de fallback geradas
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo FALLBACK_TEMPORADAS.
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 novos links salvos no banco.
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 8/10: World Cup (Masculino) ---
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/1/history/World-Cup-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 🔍 Verificação rápida de acessibilidade do FBRef...
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - ⚠️ FBRef status 429 - usando fallback
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 📦 Modo fallback ativado - usando dados locais
+2025-08-03 10:37:07 - WARNING - [Coleta_de_dados.apis.fbref.fbref_integrado] - Site inacessível. Usando temporadas de fallback para: https://fbref.com/en/comps/1/history/World-Cup-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Geradas 2 temporadas de fallback para https://fbref.com/en/comps/1/history/World-Cup-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 2 temporadas de fallback geradas
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo FALLBACK_TEMPORADAS.
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 2 novos links salvos no banco.
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 9/10: Premier League (Feminino) ---
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/182/history/Womens-Super-League-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 🔍 Verificação rápida de acessibilidade do FBRef...
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - ⚠️ FBRef status 429 - usando fallback
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 📦 Modo fallback ativado - usando dados locais
+2025-08-03 10:37:07 - WARNING - [Coleta_de_dados.apis.fbref.fbref_integrado] - Site inacessível. Usando temporadas de fallback para: https://fbref.com/en/comps/182/history/Womens-Super-League-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Geradas 0 temporadas de fallback para https://fbref.com/en/comps/182/history/Womens-Super-League-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 0 links do tipo sem_fallback_disponivel.
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 10/10: Serie A (W) (Feminino) ---
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/106/history/Serie-A-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 🔍 Verificação rápida de acessibilidade do FBRef...
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - ⚠️ FBRef status 429 - usando fallback
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - 📦 Modo fallback ativado - usando dados locais
+2025-08-03 10:37:07 - WARNING - [Coleta_de_dados.apis.fbref.fbref_integrado] - Site inacessível. Usando temporadas de fallback para: https://fbref.com/en/comps/106/history/Serie-A-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Geradas 5 temporadas de fallback para https://fbref.com/en/comps/106/history/Serie-A-Seasons
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 temporadas de fallback geradas
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo FALLBACK_TEMPORADAS.
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 novos links salvos no banco.
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+✅ Lote 1 concluído:
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 10 competições processadas até agora
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 0 competições com erro
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 38 links coletados até agora
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+✅ Script 1 (Descoberta) finalizado com sucesso!
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 10 competições processadas com sucesso
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 0 competições com erro
+2025-08-03 10:37:07 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 38 links de temporadas coletados
