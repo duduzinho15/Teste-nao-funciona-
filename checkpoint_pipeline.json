@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-08-03T12:21:01.719171",
+  "etapas_executadas": 4,
+  "etapas_com_sucesso": 3,
+  "resultados": [
+    {
+      "nome": "preparacao_banco",
+      "sucesso": true,
+      "tempo_execucao": 0.9861536026000977,
+      "erro": null
+    },
+    {
+      "nome": "descoberta_links",
+      "sucesso": true,
+      "tempo_execucao": 1.8109333515167236,
+      "erro": null
+    },
+    {
+      "nome": "verificacao_extracao",
+      "sucesso": true,
+      "tempo_execucao": 81.10734558105469,
+      "erro": null
+    },
+    {
+      "nome": "coleta_partidas",
+      "sucesso": false,
+      "tempo_execucao": 3600.031513929367,
+      "erro": "Timeout: Timeout após 3600s"
+    }
+  ]
+}

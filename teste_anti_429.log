@@ -1,0 +1,102 @@
+2025-08-03 11:44:47,007 - __main__ - INFO - INICIANDO TESTE COMPLETO DO SISTEMA ANTI-429
+2025-08-03 11:44:47,008 - __main__ - INFO - Data/Hora: 2025-08-03 11:44:47
+2025-08-03 11:44:47,008 - __main__ - INFO - ================================================================================
+2025-08-03 11:44:47,008 - __main__ - INFO - TESTE: Maquina de Estados Anti-429
+2025-08-03 11:44:47,008 - __main__ - INFO - ==================================================
+2025-08-03 11:44:47,029 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 11:44:47,029 - __main__ - INFO - Estado inicial: NOMINAL
+2025-08-03 11:44:47,029 - __main__ - INFO - Apos sucesso: NOMINAL
+2025-08-03 11:44:47,030 - Coleta_de_dados.apis.fbref.anti_429_state_machine - WARNING - Erro 429 detectado: https://test.com (consecutivos: 1)
+2025-08-03 11:44:47,030 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Transicao de estado: NOMINAL -> THROTTLED
+2025-08-03 11:44:47,030 - __main__ - INFO - Apos erro 429: THROTTLED
+2025-08-03 11:44:47,030 - Coleta_de_dados.apis.fbref.anti_429_state_machine - WARNING - Erro 429 detectado: https://test.com (consecutivos: 2)
+2025-08-03 11:44:47,031 - Coleta_de_dados.apis.fbref.anti_429_state_machine - WARNING - Erro 429 detectado: https://test.com (consecutivos: 3)
+2025-08-03 11:44:47,031 - Coleta_de_dados.apis.fbref.anti_429_state_machine - WARNING - Rate limiting persistente - mudando identidade
+2025-08-03 11:44:47,031 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Transicao de estado: THROTTLED -> RECONFIGURING
+2025-08-03 11:44:47,031 - Coleta_de_dados.apis.fbref.anti_429_state_machine - WARNING - Erro 429 detectado: https://test.com (consecutivos: 4)
+2025-08-03 11:44:47,031 - __main__ - INFO - Apos multiplos 429: RECONFIGURING
+2025-08-03 11:44:47,031 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Mudanca de identidade #1
+2025-08-03 11:44:47,031 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Transicao de estado: RECONFIGURING -> NOMINAL
+2025-08-03 11:44:47,032 - __main__ - INFO - Mudanca de identidade: True
+2025-08-03 11:44:47,032 - __main__ - INFO - Estado apos mudanca: NOMINAL
+2025-08-03 11:44:47,032 - __main__ - INFO - Estatisticas: {'current_state': 'NOMINAL', 'requests_made': 1, 'errors_429': 4, 'errors_connection': 0, 'consecutive_failures': 0, 'identity_changes': 1, 'current_delay': 2.0, 'last_success': '2025-08-03T11:44:47.029008', 'last_error': '2025-08-03T11:44:47.031008', 'should_continue': True}
+2025-08-03 11:44:47,032 - __main__ - INFO - SUCESSO: Maquina de estados funcionando
+2025-08-03 11:44:47,032 - __main__ - INFO - 
+TESTE: Sistema de Rotacao de Proxies
+2025-08-03 11:44:47,033 - __main__ - INFO - ==================================================
+2025-08-03 11:44:47,223 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Sistema de rotacao de proxies inicializado
+2025-08-03 11:44:47,223 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Proxy residencial adicionado: proxy1.example.com:8080
+2025-08-03 11:44:47,223 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Proxy datacenter adicionado: proxy2.example.com:3128
+2025-08-03 11:44:47,223 - __main__ - INFO - Proxies adicionados: 2
+2025-08-03 11:44:47,223 - __main__ - INFO - Estatisticas de proxies: {'total_proxies': 2, 'working_proxies': 2, 'blocked_proxies': 0, 'residential_proxies': 1, 'datacenter_proxies': 1, 'average_success_rate': 1.0, 'proxies_detail': [{'host': 'proxy1.example.com', 'port': 8080, 'type': 'residential', 'success_rate': 1.0, 'is_blocked': False, 'last_used': None}, {'host': 'proxy2.example.com', 'port': 3128, 'type': 'datacenter', 'success_rate': 1.0, 'is_blocked': False, 'last_used': None}]}
+2025-08-03 11:44:47,223 - __main__ - INFO - Proximo proxy: proxy2.example.com:3128
+2025-08-03 11:44:47,224 - __main__ - INFO - Sucesso simulado registrado
+2025-08-03 11:44:47,224 - __main__ - INFO - SUCESSO: Sistema de proxies funcionando
+2025-08-03 11:44:47,224 - __main__ - INFO - 
+TESTE: Sistema de Cabecalhos de Emulacao
+2025-08-03 11:44:47,224 - __main__ - INFO - ==================================================
+2025-08-03 11:44:47,228 - Coleta_de_dados.apis.fbref.browser_emulation_headers - INFO - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-03 11:44:47,229 - __main__ - INFO - Perfil selecionado: Chrome_Windows_Latest
+2025-08-03 11:44:47,231 - __main__ - INFO - Cabecalhos gerados (15 total):
+2025-08-03 11:44:47,234 - __main__ - INFO -   User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...
+2025-08-03 11:44:47,236 - __main__ - INFO -   Accept: text/html,application/xhtml+xml,application/xml;q=...
+2025-08-03 11:44:47,236 - __main__ - INFO -   Accept-Language: en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7...
+2025-08-03 11:44:47,237 - __main__ - INFO -   Accept-Encoding: gzip, deflate, br...
+2025-08-03 11:44:47,237 - __main__ - INFO -   Connection: keep-alive...
+2025-08-03 11:44:47,238 - __main__ - INFO -   Upgrade-Insecure-Requests: 1...
+2025-08-03 11:44:47,241 - __main__ - INFO -   DNT: 1...
+2025-08-03 11:44:47,244 - __main__ - INFO -   Sec-Fetch-Site: none...
+2025-08-03 11:44:47,245 - __main__ - INFO -   Sec-Fetch-Mode: navigate...
+2025-08-03 11:44:47,245 - __main__ - INFO -   Sec-Fetch-Dest: document...
+2025-08-03 11:44:47,245 - __main__ - INFO -   Sec-Fetch-User: ?1...
+2025-08-03 11:44:47,246 - __main__ - INFO -   Cache-Control: max-age=0...
+2025-08-03 11:44:47,246 - __main__ - INFO -   Sec-CH-UA: "Chromium";v="122", "Not(A:Brand";v="24", "Google ...
+2025-08-03 11:44:47,246 - __main__ - INFO -   Sec-CH-UA-Mobile: ?0...
+2025-08-03 11:44:47,247 - __main__ - INFO -   Sec-CH-UA-Platform: "Windows"...
+2025-08-03 11:44:47,247 - __main__ - INFO - ESSENCIAL OK: User-Agent
+2025-08-03 11:44:47,248 - __main__ - INFO - ESSENCIAL OK: Accept
+2025-08-03 11:44:47,248 - __main__ - INFO - ESSENCIAL OK: Accept-Language
+2025-08-03 11:44:47,248 - __main__ - INFO - ESSENCIAL OK: Accept-Encoding
+2025-08-03 11:44:47,248 - Coleta_de_dados.apis.fbref.browser_emulation_headers - INFO - Sequencia de navegacao simulada para 2 URLs
+2025-08-03 11:44:47,248 - __main__ - INFO - Sequencia de navegacao simulada: 2 conjuntos de cabecalhos
+2025-08-03 11:44:47,249 - __main__ - INFO - Referer correto: https://fbref.com/en/comps/9/Premier-League-Stats
+2025-08-03 11:44:47,249 - __main__ - INFO - SUCESSO: Sistema de cabecalhos funcionando
+2025-08-03 11:44:47,249 - __main__ - INFO - 
+TESTE: Configuracao de Proxies
+2025-08-03 11:44:47,249 - __main__ - INFO - ==================================================
+2025-08-03 11:44:47,249 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Sistema de rotacao de proxies inicializado
+2025-08-03 11:44:47,250 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Proxy residencial adicionado: exemplo-residencial.com:8080
+2025-08-03 11:44:47,250 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Proxy datacenter adicionado: exemplo-datacenter.com:3128
+2025-08-03 11:44:47,250 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Carregados 2 proxies da configuracao
+2025-08-03 11:44:47,250 - __main__ - INFO - Proxies carregados da configuracao: 2
+2025-08-03 11:44:47,251 - __main__ - INFO - Proxies residenciais: 1
+2025-08-03 11:44:47,251 - __main__ - INFO - Proxies datacenter: 1
+2025-08-03 11:44:47,251 - __main__ - INFO - SUCESSO: Configuracao de proxies funcionando
+2025-08-03 11:44:47,251 - __main__ - INFO - 
+TESTE: Integracao Completa Anti-429
+2025-08-03 11:44:47,251 - __main__ - INFO - ==================================================
+2025-08-03 11:44:47,559 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 11:44:47,559 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Sistema de rotacao de proxies inicializado
+2025-08-03 11:44:47,559 - Coleta_de_dados.apis.fbref.browser_emulation_headers - INFO - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-03 11:44:47,559 - Coleta_de_dados.apis.fbref.fbref_utils - INFO - Sistemas anti-429 inicializados com sucesso
+2025-08-03 11:44:47,559 - __main__ - INFO - Sistemas anti-429 inicializados:
+2025-08-03 11:44:47,561 - __main__ - INFO -   - Maquina de estados: OK
+2025-08-03 11:44:47,561 - __main__ - INFO -   - Sistema de proxies: OK
+2025-08-03 11:44:47,561 - __main__ - INFO -   - Sistema de cabecalhos: OK
+2025-08-03 11:44:47,561 - __main__ - INFO - Testando requisicao integrada para: https://fbref.com/en/comps/9/Premier-League-Stats
+2025-08-03 11:47:53,633 - __main__ - INFO - SUCESSO: Requisicao completada em 186.07s
+2025-08-03 11:47:53,634 - __main__ - INFO - Tabelas encontradas: 2
+2025-08-03 11:47:53,634 - __main__ - INFO - Estado da maquina: NOMINAL
+2025-08-03 11:47:53,634 - __main__ - INFO - Requisicoes feitas: 1
+2025-08-03 11:47:53,634 - __main__ - INFO - 
+================================================================================
+2025-08-03 11:47:53,634 - __main__ - INFO - RELATORIO FINAL DOS TESTES ANTI-429
+2025-08-03 11:47:53,634 - __main__ - INFO - ================================================================================
+2025-08-03 11:47:53,636 - __main__ - INFO -   PASSOU - Maquina de Estados
+2025-08-03 11:47:53,636 - __main__ - INFO -   PASSOU - Sistema de Proxies
+2025-08-03 11:47:53,636 - __main__ - INFO -   PASSOU - Cabecalhos de Emulacao
+2025-08-03 11:47:53,636 - __main__ - INFO -   PASSOU - Configuracao de Proxies
+2025-08-03 11:47:53,636 - __main__ - INFO -   PASSOU - Integracao Completa
+2025-08-03 11:47:53,636 - __main__ - INFO - 
+Resultado: 5/5 testes passaram
+2025-08-03 11:47:53,637 - __main__ - INFO - TODOS OS TESTES PASSARAM! Sistema anti-429 implementado com sucesso!
