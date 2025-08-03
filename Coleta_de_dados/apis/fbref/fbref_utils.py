@@ -341,12 +341,19 @@ def _fazer_requisicao_http(url: str) -> Optional[BeautifulSoup]:
     # Inicializar sistemas anti-429
     state_machine, proxy_system, header_system = get_anti_429_systems()
     
-    # Inicializar sistema anti-bloqueio avançado
+    # Inicializar sistema anti-bloqueio simplificado (sem travamentos)
     try:
-        from .advanced_anti_blocking import get_advanced_anti_blocking, calculate_intelligent_delay, record_fbref_request, should_change_identity
+        from .simple_anti_blocking import get_simple_anti_blocking
+        simple_anti_blocking = get_simple_anti_blocking()
+    except ImportError:
+        logger.warning("Sistema anti-bloqueio simplificado não disponível")
+        simple_anti_blocking = None
+    
+    # Manter compatibilidade com sistema avançado (fallback)
+    try:
+        from .advanced_anti_blocking import get_advanced_anti_blocking, record_fbref_request, should_change_identity
         anti_blocking = get_advanced_anti_blocking()
     except ImportError:
-        logger.warning("Sistema anti-bloqueio avançado não disponível")
         anti_blocking = None
     
     # Verificar se deve continuar fazendo scraping
@@ -364,16 +371,38 @@ def _fazer_requisicao_http(url: str) -> Optional[BeautifulSoup]:
         if anti_blocking:
             anti_blocking.reset_session()
     
-    # Calcular delay inteligente baseado em padrões de tráfego
-    if anti_blocking:
-        smart_delay = calculate_intelligent_delay(url)
-        logger.debug(f"Delay inteligente calculado: {smart_delay:.2f}s para padrão {anti_blocking.get_current_traffic_pattern().value}")
-        time.sleep(smart_delay)
+    # Usar sistema anti-bloqueio simplificado (prioridade)
+    if simple_anti_blocking:
+        logger.debug("Usando sistema anti-bloqueio simplificado")
+        response = simple_anti_blocking.make_request(url)
+        
+        if response and response.status_code == 200:
+            # Sucesso com sistema simplificado!
+            logger.debug(f"Requisição bem-sucedida (simplificado): {url}")
+            
+            # Registrar sucesso nos outros sistemas
+            if state_machine:
+                state_machine.record_success(url)
+            if anti_blocking:
+                record_fbref_request(url, True, 0.0, 200)
+            
+            return BeautifulSoup(response.text, 'lxml')
+        
+        elif response is None:
+            # Falha no sistema simplificado - registrar
+            if anti_blocking:
+                record_fbref_request(url, False, 0.0, None)
+            
+            logger.debug("Sistema simplificado falhou - usando fallback")
+            return None  # Usar fallback
+    
+    # Fallback para sistema avançado se simplificado não disponível
     elif state_machine:
-        # Fallback para delay da máquina de estados
+        # Delay da máquina de estados (limitado)
         wait_time = state_machine.get_wait_time()
         if wait_time > 0:
-            logger.debug(f"Aguardando {wait_time:.2f}s baseado no estado {state_machine.get_current_state().value}")
+            wait_time = min(wait_time, 8.0)  # Máximo 8 segundos
+            logger.debug(f"Aguardando {wait_time:.2f}s (máquina de estados)")
             time.sleep(wait_time)
     
     # Obter proxy se disponível
@@ -404,11 +433,17 @@ def _fazer_requisicao_http(url: str) -> Optional[BeautifulSoup]:
         if headers:
             session.headers.update(headers)
         
+        # Timeout mais agressivo para evitar travamentos
+        timeout_connect = 10  # 10s para conectar
+        timeout_read = 20     # 20s para ler resposta
+        
+        logger.debug(f"Fazendo requisição com timeout ({timeout_connect}s, {timeout_read}s)")
+        
         # Fazer requisição
         response = session.get(
             url, 
             proxies=proxy_dict,
-            timeout=(15, 30),
+            timeout=(timeout_connect, timeout_read),
             allow_redirects=True
         )
         
