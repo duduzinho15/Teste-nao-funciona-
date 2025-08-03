@@ -367,12 +367,17 @@ def _fazer_requisicao_http(url: str) -> Optional[BeautifulSoup]:
     # Calcular delay inteligente baseado em padrões de tráfego
     if anti_blocking:
         smart_delay = calculate_intelligent_delay(url)
-        logger.debug(f"Delay inteligente calculado: {smart_delay:.2f}s para padrão {anti_blocking.get_current_traffic_pattern().value}")
+        # Limitar delay máximo para evitar travamentos
+        max_delay = 15.0  # Máximo 15 segundos
+        smart_delay = min(smart_delay, max_delay)
+        logger.debug(f"Delay inteligente (limitado): {smart_delay:.2f}s para padrão {anti_blocking.get_current_traffic_pattern().value}")
         time.sleep(smart_delay)
     elif state_machine:
         # Fallback para delay da máquina de estados
         wait_time = state_machine.get_wait_time()
         if wait_time > 0:
+            # Também limitar delay da máquina de estados
+            wait_time = min(wait_time, 10.0)
             logger.debug(f"Aguardando {wait_time:.2f}s baseado no estado {state_machine.get_current_state().value}")
             time.sleep(wait_time)
     
@@ -404,11 +409,17 @@ def _fazer_requisicao_http(url: str) -> Optional[BeautifulSoup]:
         if headers:
             session.headers.update(headers)
         
+        # Timeout mais agressivo para evitar travamentos
+        timeout_connect = 10  # 10s para conectar
+        timeout_read = 20     # 20s para ler resposta
+        
+        logger.debug(f"Fazendo requisição com timeout ({timeout_connect}s, {timeout_read}s)")
+        
         # Fazer requisição
         response = session.get(
             url, 
             proxies=proxy_dict,
-            timeout=(15, 30),
+            timeout=(timeout_connect, timeout_read),
             allow_redirects=True
         )
         

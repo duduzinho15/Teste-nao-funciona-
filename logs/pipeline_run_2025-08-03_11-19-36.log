@@ -17,3 +17,8 @@
 2025-08-03 11:21:01 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ✅ Etapa 'verificacao_extracao' executada com sucesso - continuando pipeline
 2025-08-03 11:21:01 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
 --- [ETAPA 4 de 9] Executando: Coleta de Dados de Partidas ---
+2025-08-03 12:21:01 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 4] TIMEOUT: Timeout após 3600s ---
+2025-08-03 12:21:01 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🔄 Etapa obrigatória 'coleta_partidas' falhou - continuando por configuração
+2025-08-03 12:21:01 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📋 Detalhes do erro: Timeout: Timeout após 3600s
+2025-08-03 12:21:01 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 5 de 9] Executando: Coleta de Estatísticas Detalhadas ---

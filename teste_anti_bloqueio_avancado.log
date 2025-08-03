@@ -46,3 +46,26 @@ TESTE: Monitoramento Tempo Real
 2025-08-03 12:17:03,139 - __main__ - INFO -   Requisicoes: 8
 2025-08-03 12:17:03,139 - __main__ - INFO -   Taxa sucesso: 62.50%
 2025-08-03 12:17:03,139 - __main__ - INFO -   Padrao trafego: weekend
+2025-08-03 12:17:13,183 - __main__ - INFO - [10s] Monitoramento:
+2025-08-03 12:17:13,183 - __main__ - INFO -   Requisicoes: 8
+2025-08-03 12:17:13,183 - __main__ - INFO -   Taxa sucesso: 62.50%
+2025-08-03 12:17:13,183 - __main__ - INFO -   Padrao trafego: weekend
+2025-08-03 12:17:23,253 - __main__ - INFO - [20s] Monitoramento:
+2025-08-03 12:17:23,253 - __main__ - INFO -   Requisicoes: 8
+2025-08-03 12:17:23,254 - __main__ - INFO -   Taxa sucesso: 62.50%
+2025-08-03 12:17:23,254 - __main__ - INFO -   Padrao trafego: weekend
+2025-08-03 12:17:33,332 - __main__ - INFO - Monitoramento concluido
+2025-08-03 12:17:33,333 - __main__ - INFO - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2025-08-03 12:17:33,334 - __main__ - INFO - TESTE CRITICO: Integracao com FBRef Real
+2025-08-03 12:17:33,334 - __main__ - INFO - Este teste fara requisicoes reais ao FBRef
+2025-08-03 12:17:33,335 - __main__ - INFO - !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2025-08-03 12:17:33,336 - __main__ - INFO - 
+TESTE: Integracao com FBRef Real
+2025-08-03 12:17:33,338 - __main__ - INFO - ==================================================
+2025-08-03 12:17:33,970 - __main__ - INFO - Testando 3 URLs do FBRef...
+2025-08-03 12:17:33,970 - __main__ - INFO - Requisicao 1/3: https://fbref.com/en/comps/9/Premier-League-Stats
+2025-08-03 12:17:36,975 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 12:17:36,975 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Sistema de rotacao de proxies inicializado
+2025-08-03 12:17:36,975 - Coleta_de_dados.apis.fbref.browser_emulation_headers - INFO - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-03 12:17:36,976 - Coleta_de_dados.apis.fbref.fbref_utils - INFO - Sistemas anti-429 inicializados com sucesso
