@@ -1,0 +1,55 @@
+2025-08-03 17:08:55,843 - INFO - Sistema avançado anti-bloqueio inicializado
+2025-08-03 17:08:55,844 - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 17:08:55,844 - INFO - 🎯 Iniciando teste final com 10 URLs
+2025-08-03 17:08:55,844 - INFO - Processando URL 1/10: https://fbref.com/en/comps/20/2023-2024/stats/2023-2024-Bundesliga-Stats
+2025-08-03 17:08:55,844 - INFO - Delay calculado: 2.35s (Pattern: weekend, Success: 100.0%)
+2025-08-03 17:08:59,006 - INFO - Resultado: 200 | Estado: NOMINAL
+2025-08-03 17:08:59,006 - INFO - Processando URL 2/10: https://fbref.com/en/comps/20/2023-2024/shooting/2023-2024-Bundesliga-Shooting
+2025-08-03 17:08:59,006 - INFO - Delay calculado: 1.26s (Pattern: weekend, Success: 100.0%)
+2025-08-03 17:09:01,638 - INFO - Resultado: 200 | Estado: NOMINAL
+2025-08-03 17:09:01,638 - INFO - Processando URL 3/10: https://fbref.com/en/comps/11/2023-2024/stats/2023-2024-Premier-League-Stats
+2025-08-03 17:09:01,638 - INFO - Simulando pausa humana: 26.7s (normal)
+2025-08-03 17:09:01,638 - INFO - Delay calculado: 28.99s (Pattern: weekend, Success: 100.0%)
+2025-08-03 17:09:32,410 - INFO - Resultado: 200 | Estado: NOMINAL
+2025-08-03 17:09:32,410 - INFO - Processando URL 4/10: https://fbref.com/en/comps/12/2023-2024/stats/2023-2024-La-Liga-Stats
+2025-08-03 17:09:32,410 - INFO - Delay calculado: 2.22s (Pattern: weekend, Success: 100.0%)
+2025-08-03 17:09:36,391 - INFO - Resultado: 200 | Estado: NOMINAL
+2025-08-03 17:09:36,392 - INFO - Processando URL 5/10: https://fbref.com/en/comps/13/2023-2024/stats/2023-2024-Ligue-1-Stats
+2025-08-03 17:09:36,392 - INFO - Delay calculado: 1.97s (Pattern: weekend, Success: 100.0%)
+2025-08-03 17:09:40,326 - INFO - Resultado: 429 | Estado: NOMINAL
+2025-08-03 17:09:40,327 - INFO - Processando URL 6/10: https://fbref.com/en/squads/18ac8c56/2023-2024/Bayern-Munich-Stats
+2025-08-03 17:09:40,328 - INFO - Delay calculado: 2.91s (Pattern: weekend, Success: 80.0%)
+2025-08-03 17:09:43,876 - INFO - Resultado: 200 | Estado: NOMINAL
+2025-08-03 17:09:43,877 - INFO - Processando URL 7/10: https://fbref.com/en/squads/054efa67/2023-2024/Borussia-Dortmund-Stats
+2025-08-03 17:09:43,877 - INFO - Delay calculado: 2.85s (Pattern: weekend, Success: 83.3%)
+2025-08-03 17:09:47,437 - INFO - Resultado: 200 | Estado: NOMINAL
+2025-08-03 17:09:47,438 - INFO - Processando URL 8/10: https://fbref.com/en/squads/a3741613/2023-2024/RB-Leipzig-Stats
+2025-08-03 17:09:47,438 - INFO - 💥 BURST MODE ATIVO!
+2025-08-03 17:09:47,438 - INFO - Delay calculado: 1.16s (Pattern: weekend, Success: 85.7%)
+2025-08-03 17:09:50,386 - INFO - Resultado: 200 | Estado: NOMINAL
+2025-08-03 17:09:50,386 - INFO - Processando URL 9/10: https://fbref.com/en/comps/20/2023-2024/passing/2023-2024-Bundesliga-Passing
+2025-08-03 17:09:50,386 - INFO - Delay calculado: 1.86s (Pattern: weekend, Success: 87.5%)
+2025-08-03 17:09:53,763 - INFO - Resultado: 502 | Estado: NOMINAL
+2025-08-03 17:09:53,763 - INFO - Processando URL 10/10: https://fbref.com/en/comps/20/2023-2024/defense/2023-2024-Bundesliga-Defense
+2025-08-03 17:09:53,764 - INFO - Delay calculado: 3.31s (Pattern: weekend, Success: 77.8%)
+2025-08-03 17:09:57,743 - INFO - Resultado: 200 | Estado: NOMINAL
+2025-08-03 17:09:57,745 - WARNING - ⚠️ TESTE FINAL - ALGUNS TARGETS NÃO ATINGIDOS
+2025-08-03 17:13:17,003 - INFO - Sistema avançado anti-bloqueio inicializado
+2025-08-03 17:13:17,003 - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 17:13:17,004 - INFO - 🎯 Iniciando teste final com 10 URLs
+2025-08-03 17:13:17,004 - INFO - Processando URL 1/10: https://fbref.com/en/comps/20/2023-2024/stats/2023-2024-Bundesliga-Stats
+2025-08-03 17:13:17,004 - INFO - Delay calculado: 2.59s (Pattern: weekend, Success: 100.0%)
+2025-08-03 17:13:20,340 - INFO - Resultado: 200 | Estado: NOMINAL
+2025-08-03 17:13:20,340 - INFO - Processando URL 2/10: https://fbref.com/en/comps/20/2023-2024/shooting/2023-2024-Bundesliga-Shooting
+2025-08-03 17:13:20,340 - INFO - 💥 BURST MODE ATIVO!
+2025-08-03 17:13:20,340 - INFO - Delay calculado: 1.07s (Pattern: weekend, Success: 100.0%)
+2025-08-03 17:13:22,960 - INFO - Resultado: 200 | Estado: NOMINAL
+2025-08-03 17:13:22,961 - INFO - Processando URL 3/10: https://fbref.com/en/comps/11/2023-2024/stats/2023-2024-Premier-League-Stats
+2025-08-03 17:13:22,961 - INFO - Delay calculado: 2.80s (Pattern: weekend, Success: 100.0%)
+2025-08-03 17:13:26,934 - INFO - Resultado: 200 | Estado: NOMINAL
+2025-08-03 17:13:26,935 - INFO - Processando URL 4/10: https://fbref.com/en/comps/12/2023-2024/stats/2023-2024-La-Liga-Stats
+2025-08-03 17:13:26,935 - INFO - Delay calculado: 2.57s (Pattern: weekend, Success: 100.0%)
+2025-08-03 17:13:30,289 - INFO - Resultado: 200 | Estado: NOMINAL
+2025-08-03 17:13:30,290 - INFO - Processando URL 5/10: https://fbref.com/en/comps/13/2023-2024/stats/2023-2024-Ligue-1-Stats
+2025-08-03 17:13:30,290 - INFO - Simulando pausa humana: 25.9s (normal)
+2025-08-03 17:13:30,290 - INFO - Delay calculado: 28.66s (Pattern: weekend, Success: 100.0%)

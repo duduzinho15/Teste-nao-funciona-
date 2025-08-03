@@ -81,12 +81,13 @@ class Anti429StateMachine:
             return random.uniform(base, base + variation * 2)
         
         elif self.state == ScrapingState.THROTTLED:
-            # Backoff exponencial baseado em falhas consecutivas
-            exponential_delay = self.base_delay * (2 ** self.metrics.consecutive_failures)
-            capped_delay = min(exponential_delay, self.max_delay)
+            # OTIMIZADO: Backoff menos agressivo para recovery mais rápido
+            # Reduzido de 2^x para 1.6^x e cap reduzido
+            exponential_delay = self.base_delay * (1.6 ** min(self.metrics.consecutive_failures, 4))
+            capped_delay = min(exponential_delay, self.max_delay * 0.6)  # Cap reduzido para 60%
             
             # Adiciona aleatoriedade para evitar padrões
-            variation = capped_delay * 0.3
+            variation = capped_delay * 0.2  # Reduzido de 0.3 para 0.2
             return random.uniform(capped_delay, capped_delay + variation)
         
         elif self.state == ScrapingState.RECONFIGURING:
