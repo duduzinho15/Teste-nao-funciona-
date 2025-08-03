@@ -141,6 +141,9 @@ def fechar_driver(driver: Optional[webdriver.Chrome]) -> None:
         except Exception as e:
             logger.warning(f"Erro ao fechar o driver: {e}")
 
+# Alias para manter compatibilidade com código existente
+close_driver = fechar_driver
+
 @contextmanager
 def driver_context():
     """
@@ -286,14 +289,13 @@ def extrair_nome_e_genero(href: str) -> tuple[str, str]:
     """
     # Mapeamento expandido de competições
     competicoes_map = {
-        "/comps/9/": ("Serie A", "Masculino"),
+        "/comps/9/": ("Premier League", "Masculino"),
         "/comps/106/": ("Serie A", "Feminino"),
         "/comps/183/": ("Bundesliga", "Feminino"),
         "/comps/20/": ("Bundesliga", "Masculino"),
         "/comps/11/": ("Serie A", "Masculino"),  # Italiano
         "/comps/12/": ("La Liga", "Masculino"),
         "/comps/13/": ("Ligue 1", "Masculino"),
-        "/comps/9/": ("Premier League", "Masculino"),
         # Adicionar mais conforme necessário
     }
     
