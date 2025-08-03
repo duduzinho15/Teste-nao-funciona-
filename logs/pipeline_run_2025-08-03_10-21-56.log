@@ -1,0 +1,34 @@
+2025-08-03 10:21:56 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_10-21-56.log
+2025-08-03 10:21:56 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_10-21-56.log
+2025-08-03 10:21:57 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 10:21:57 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🚀🚀🚀 INICIANDO A PIPELINE COMPLETA DE DADOS DO FBREF 🚀🚀🚀
+2025-08-03 10:21:57 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Configuração: {'continuar_em_erro': False, 'salvar_logs_detalhados': True, 'backup_antes_execucao': True, 'timeout_global': 14400, 'intervalo_checkpoint': 300}
+2025-08-03 10:21:57 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 1 de 9] Executando: Preparação do Banco de Dados ---
+2025-08-03 10:21:57 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Timeout não suportado neste sistema. Executando sem timeout.
+2025-08-03 10:21:58 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 1] Finalizada com sucesso! ---
+2025-08-03 10:21:58 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 2 de 9] Executando: Descoberta de Competições e Temporadas ---
+2025-08-03 10:21:58 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Timeout não suportado neste sistema. Executando sem timeout.
+2025-08-03 10:21:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 2] Finalizada com sucesso! ---
+2025-08-03 10:21:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 3 de 9] Executando: Verificação da Completude da Extração ---
+2025-08-03 10:21:59 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Timeout não suportado neste sistema. Executando sem timeout.
+2025-08-03 10:36:59 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 3] TIMEOUT: Timeout após 900s ---
+2025-08-03 10:36:59 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Etapa obrigatória 'verificacao_extracao' falhou. Interrompendo pipeline.
+2025-08-03 10:36:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+================================================================================
+2025-08-03 10:36:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📊 RELATÓRIO FINAL DA PIPELINE
+2025-08-03 10:36:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ================================================================================
+2025-08-03 10:36:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ⏱️  Tempo total de execução: 00:15:02
+2025-08-03 10:36:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📈 Etapas executadas: 3/9
+2025-08-03 10:36:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ✅ Etapas com sucesso: 2
+2025-08-03 10:36:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ❌ Etapas com erro: 1
+2025-08-03 10:36:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+📋 DETALHES POR ETAPA:
+2025-08-03 10:36:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -   ✅ SUCESSO | preparacao_banco     | 00:00:01
+2025-08-03 10:36:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -   ✅ SUCESSO | descoberta_links     | 00:00:01
+2025-08-03 10:36:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -   ❌ ERRO | verificacao_extracao | 00:15:00
+2025-08-03 10:36:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -     └─ Erro: Timeout: Timeout após 900s
+2025-08-03 10:36:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ================================================================================
+2025-08-03 10:36:59 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ❌❌❌ PIPELINE FINALIZADA COM ERROS ❌❌❌

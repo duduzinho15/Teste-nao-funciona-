@@ -17,3 +17,17 @@
 2025-08-02 22:37:52 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando descoberta de competições e temporadas...
 2025-08-02 22:37:52 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 🚀 Iniciando Script 1: Descoberta de Links...
 2025-08-02 22:37:52 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Buscando lista de competições com extração de gênero direta...
+2025-08-02 23:09:47 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🛑 Pipeline interrompida pelo usuário (Ctrl+C)
+2025-08-02 23:09:47 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+================================================================================
+2025-08-02 23:09:47 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📊 RELATÓRIO FINAL DA PIPELINE
+2025-08-02 23:09:47 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ================================================================================
+2025-08-02 23:09:47 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ⏱️  Tempo total de execução: 00:31:54
+2025-08-02 23:09:47 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📈 Etapas executadas: 2/6
+2025-08-02 23:09:47 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ✅ Etapas com sucesso: 1
+2025-08-02 23:09:47 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ❌ Etapas com erro: 1
+2025-08-02 23:09:47 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+📋 DETALHES POR ETAPA:
+2025-08-02 23:09:47 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -   ✅ SUCESSO | preparacao_banco     | 00:00:00
+2025-08-02 23:09:47 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ================================================================================
+2025-08-02 23:09:47 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ❌❌❌ PIPELINE FINALIZADA COM ERROS ❌❌❌

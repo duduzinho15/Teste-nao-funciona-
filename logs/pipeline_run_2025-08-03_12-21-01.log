@@ -1,0 +1,15 @@
+2025-08-03 12:21:01 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_12-21-01.log
+2025-08-03 12:21:01 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_12-21-01.log
+2025-08-03 12:21:02 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 12:21:02 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando coleta de estatísticas detalhadas...
+2025-08-03 12:21:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 🚀 Iniciando Script 3: Coleta de Estatísticas COMPLETAS...
+2025-08-03 12:21:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - Configurando banco de dados com a estrutura completa de estatísticas...
+2025-08-03 12:21:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - Estrutura do banco de dados atualizada com sucesso.
+2025-08-03 12:21:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - Encontrados 615 relatórios de partida pendentes.
+2025-08-03 12:21:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 1 ---
+2025-08-03 12:21:05 - INFO - [Coleta_de_dados.apis.fbref.anti_429_state_machine] - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 12:21:05 - INFO - [Coleta_de_dados.apis.fbref.proxy_rotation_system] - Sistema de rotacao de proxies inicializado
+2025-08-03 12:21:05 - INFO - [Coleta_de_dados.apis.fbref.browser_emulation_headers] - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-03 12:21:05 - INFO - [Coleta_de_dados.apis.fbref.fbref_utils] - Sistemas anti-429 inicializados com sucesso
+2025-08-03 12:21:05 - INFO - [Coleta_de_dados.apis.fbref.advanced_anti_blocking] - Sistema avançado anti-bloqueio inicializado

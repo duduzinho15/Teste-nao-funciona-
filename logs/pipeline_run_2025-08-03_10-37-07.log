@@ -1,0 +1,21 @@
+2025-08-03 10:37:07 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_10-37-07.log
+2025-08-03 10:37:07 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_10-37-07.log
+2025-08-03 10:37:08 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 10:37:08 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando verificação da completude da extração...
+2025-08-03 10:37:08 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 🔍 Iniciando verificação completa de extração...
+2025-08-03 10:37:08 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Bundesliga (Masculino)
+2025-08-03 10:37:08 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando temporadas faltando em: https://fbref.com/en/comps/20/history/Bundesliga-Seasons
+2025-08-03 10:47:36 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Champions League (Masculino)
+2025-08-03 10:47:36 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando temporadas faltando em: https://fbref.com/en/comps/8/history/Champions-League-Seasons
+2025-08-03 10:47:40 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Europa League (Masculino)
+2025-08-03 10:47:40 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando temporadas faltando em: https://fbref.com/en/comps/19/history/Europa-League-Seasons
+2025-08-03 10:47:42 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: La Liga (Masculino)
+2025-08-03 10:47:42 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando temporadas faltando em: https://fbref.com/en/comps/12/history/La-Liga-Seasons
+2025-08-03 10:47:45 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Ligue 1 (Masculino)
+2025-08-03 10:47:45 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando temporadas faltando em: https://fbref.com/en/comps/13/history/Ligue-1-Seasons
+2025-08-03 10:47:47 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Premier League (Masculino)
+2025-08-03 10:47:47 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando temporadas faltando em: https://fbref.com/en/comps/9/history/Premier-League-Seasons
+2025-08-03 10:47:49 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Premier League (Feminino)
+2025-08-03 10:47:49 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando temporadas faltando em: https://fbref.com/en/comps/182/history/Womens-Super-League-Seasons
+2025-08-03 10:47:52 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Serie A (Masculino)
+2025-08-03 10:47:52 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando temporadas faltando em: https://fbref.com/en/comps/11/history/Serie-A-Seasons
