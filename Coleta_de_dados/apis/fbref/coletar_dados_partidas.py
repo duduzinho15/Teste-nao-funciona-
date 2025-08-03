@@ -131,31 +131,51 @@ class ColetorPartidas:
                 return None
                 
             cols = linha.find_all('td')
-            if len(cols) < 9:  # Verifica se há colunas suficientes
+            if len(cols) < 5:  # Verifica se há colunas suficientes
                 return None
                 
-            # Extrai informações básicas
-            data = cols[0].get_text(strip=True)
-            time_casa = cols[2].get_text(strip=True)
-            placar = cols[4].get_text(strip=True)
-            time_visitante = cols[6].get_text(strip=True)
+            # Extrai informações básicas - estrutura corrigida baseada no HTML real
+            data = cols[0].get_text(strip=True) if len(cols) > 0 else ""
+            time_casa = cols[2].get_text(strip=True) if len(cols) > 2 else ""
+            placar = cols[4].get_text(strip=True) if len(cols) > 4 else ""
+            time_visitante = cols[6].get_text(strip=True) if len(cols) > 6 else ""
             
             # Verifica se há placar (indica que o jogo aconteceu)
-            if not placar or placar in ['', '-', 'vs']:
+            if not placar or placar in ['', '-', 'vs', 'TBD']:
                 return None
                 
-            # Busca o link do match report
-            match_report_cell = cols[8] if len(cols) > 8 else None
-            if not match_report_cell:
+            # Busca o link do match report - CORREÇÃO: agora procura na coluna de score
+            url_match_report = None
+            
+            # Estratégia 1: Procurar na coluna de score (onde está o link da partida)
+            score_cell = cols[4] if len(cols) > 4 else None
+            if score_cell:
+                score_link = score_cell.find('a')
+                if score_link and score_link.get('href'):
+                    url_match_report = f"{base_url}{score_link['href']}"
+                    logger.debug(f"Link encontrado na coluna score: {url_match_report}")
+            
+            # Estratégia 2: Procurar em toda a linha por links de partida
+            if not url_match_report:
+                for col in cols:
+                    link_tag = col.find('a')
+                    if link_tag and link_tag.get('href') and '/matches/' in link_tag['href']:
+                        url_match_report = f"{base_url}{link_tag['href']}"
+                        logger.debug(f"Link encontrado em coluna genérica: {url_match_report}")
+                        break
+            
+            # Estratégia 3: Procurar por "Match Report" específico
+            if not url_match_report:
+                for col in cols:
+                    link_tag = col.find('a', string='Match Report')
+                    if link_tag and link_tag.get('href'):
+                        url_match_report = f"{base_url}{link_tag['href']}"
+                        logger.debug(f"Link Match Report encontrado: {url_match_report}")
+                        break
+            
+            if not url_match_report:
+                logger.debug(f"Nenhum link de partida encontrado para: {time_casa} vs {time_visitante}")
                 return None
-                
-            match_report_tag = match_report_cell.find('a')
-            if not (match_report_tag and 
-                    match_report_tag.get('href') and 
-                    match_report_tag.get_text(strip=True) == 'Match Report'):
-                return None
-                
-            url_match_report = f"{base_url}{match_report_tag['href']}"
             
             return PartidaInfo(
                 data=data,
