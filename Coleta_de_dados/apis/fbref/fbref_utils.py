@@ -18,6 +18,28 @@ import threading
 from contextlib import contextmanager
 import re
 
+# Sistema de detecção de travamentos
+try:
+    import sys
+    sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+    from utils.hang_detection_logger import log_http_start, log_http_end, log_critical_section, get_hang_detector
+    HANG_DETECTION_AVAILABLE = True
+except ImportError:
+    HANG_DETECTION_AVAILABLE = False
+    def log_http_start(url, timeout=30): return None
+    def log_http_end(op_id, status_code=None, error=""): pass
+    def log_critical_section(name): return contextmanager(lambda: (yield))()
+
+# Sistema de emergência para falhas sistemáticas
+try:
+    from .emergency_fallback_mode import should_use_emergency_fallback, record_request_result, log_emergency_status
+    EMERGENCY_SYSTEM_AVAILABLE = True
+except ImportError:
+    EMERGENCY_SYSTEM_AVAILABLE = False
+    def should_use_emergency_fallback(): return False
+    def record_request_result(url, success, content_received=False): pass
+    def log_emergency_status(): pass
+
 # Constantes globais
 BASE_URL = "https://fbref.com"
 FALLBACK_DIR = "fallback_htmls"
@@ -337,16 +359,41 @@ def fazer_requisicao(url: str, use_selenium: bool = False, driver: Optional[webd
 
 def _fazer_requisicao_http(url: str) -> Optional[BeautifulSoup]:
     """Faz requisição usando requests HTTP com sistema anti-429 avançado."""
+    logger = logging.getLogger(__name__)
+    logger.debug(f"Iniciando requisição para: {url}")
+    
+    # Iniciar detecção de travamentos
+    hang_op_id = None
+    if HANG_DETECTION_AVAILABLE:
+        hang_op_id = log_http_start(url, TIMEOUT)
+        logger.info(f"🔍 Detecção de travamentos ativada para: {url}")
+    
+    # Verificar se está em modo de emergência
+    if EMERGENCY_SYSTEM_AVAILABLE and should_use_emergency_fallback():
+        logger.warning(f"🚑 MODO DE EMERGÊncia ATIVO - Forçando fallback para: {url}")
+        
+        # Finalizar detecção de travamentos (emergência)
+        if hang_op_id:
+            log_http_end(hang_op_id, None, "Modo de emergência - fallback forçado")
+        
+        return None  # Forçar uso de fallback
     
     # Inicializar sistemas anti-429
     state_machine, proxy_system, header_system = get_anti_429_systems()
     
-    # Inicializar sistema anti-bloqueio avançado
+    # Inicializar sistema anti-bloqueio simplificado (sem travamentos)
     try:
-        from .advanced_anti_blocking import get_advanced_anti_blocking, calculate_intelligent_delay, record_fbref_request, should_change_identity
+        from .simple_anti_blocking import get_simple_anti_blocking
+        simple_anti_blocking = get_simple_anti_blocking()
+    except ImportError:
+        logger.warning("Sistema anti-bloqueio simplificado não disponível")
+        simple_anti_blocking = None
+    
+    # Manter compatibilidade com sistema avançado (fallback)
+    try:
+        from .advanced_anti_blocking import get_advanced_anti_blocking, record_fbref_request, should_change_identity
         anti_blocking = get_advanced_anti_blocking()
     except ImportError:
-        logger.warning("Sistema anti-bloqueio avançado não disponível")
         anti_blocking = None
     
     # Verificar se deve continuar fazendo scraping
@@ -364,22 +411,103 @@ def _fazer_requisicao_http(url: str) -> Optional[BeautifulSoup]:
         if anti_blocking:
             anti_blocking.reset_session()
     
-    # Calcular delay inteligente baseado em padrões de tráfego
-    if anti_blocking:
-        smart_delay = calculate_intelligent_delay(url)
-        # Limitar delay máximo para evitar travamentos
-        max_delay = 15.0  # Máximo 15 segundos
-        smart_delay = min(smart_delay, max_delay)
-        logger.debug(f"Delay inteligente (limitado): {smart_delay:.2f}s para padrão {anti_blocking.get_current_traffic_pattern().value}")
-        time.sleep(smart_delay)
-    elif state_machine:
-        # Fallback para delay da máquina de estados
-        wait_time = state_machine.get_wait_time()
-        if wait_time > 0:
-            # Também limitar delay da máquina de estados
-            wait_time = min(wait_time, 10.0)
-            logger.debug(f"Aguardando {wait_time:.2f}s baseado no estado {state_machine.get_current_state().value}")
-            time.sleep(wait_time)
+    # PRIORIDADE 1: Sistema Fallback-First (evita travamentos)
+    try:
+        from .fallback_first_system import should_use_fallback, make_controlled_request
+        
+        if should_use_fallback(url):
+            logger.debug("Sistema Fallback-First recomenda usar fallback - evitando requisição real")
+            return None  # Usar fallback imediatamente
+        
+        # Tentar requisição controlada (com timeout rígido)
+        logger.debug("Tentando requisição controlada (Fallback-First)")
+        response = make_controlled_request(url)
+        
+        if response and response.status_code == 200:
+            logger.debug(f"Requisição controlada bem-sucedida: {url}")
+            
+            # Registrar sucesso nos outros sistemas
+            if state_machine:
+                state_machine.record_success(url)
+            if anti_blocking:
+                record_fbref_request(url, True, 0.0, 200)
+            
+            soup = BeautifulSoup(response.text, 'lxml')
+            
+            # Verificar se realmente recebeu conteúdo útil
+            content_received = soup and len(soup.get_text().strip()) > 100
+            
+            # Registrar resultado no sistema de emergência
+            if EMERGENCY_SYSTEM_AVAILABLE:
+                record_request_result(url, True, content_received)
+            
+            # Finalizar detecção de travamentos (sucesso)
+            if HANG_DETECTION_AVAILABLE and hang_op_id:
+                log_http_end(hang_op_id, response.status_code)
+            
+            return soup
+        
+        else:
+            # Falha na requisição controlada - usar fallback
+            logger.debug("Requisição controlada falhou - usando fallback")
+            if anti_blocking:
+                record_fbref_request(url, False, 0.0, None)
+            
+            # Registrar falha no sistema de emergência
+            if EMERGENCY_SYSTEM_AVAILABLE:
+                record_request_result(url, False, False)
+            
+            # Finalizar detecção de travamentos (falha)
+            if HANG_DETECTION_AVAILABLE and hang_op_id:
+                log_http_end(hang_op_id, None, "Requisição controlada falhou")
+            
+            return None  # Usar fallback
+            
+    except ImportError:
+        logger.warning("Sistema Fallback-First não disponível - usando sistema simplificado")
+        
+        # FALLBACK: Sistema anti-bloqueio simplificado
+        if simple_anti_blocking:
+            logger.debug("Usando sistema anti-bloqueio simplificado")
+            response = simple_anti_blocking.make_request(url)
+            
+            if response and response.status_code == 200:
+                logger.debug(f"Requisição bem-sucedida (simplificado): {url}")
+                
+                if state_machine:
+                    state_machine.record_success(url)
+                if anti_blocking:
+                    record_fbref_request(url, True, 0.0, 200)
+                
+                return BeautifulSoup(response.text, 'lxml')
+            
+            else:
+                logger.debug("Sistema simplificado falhou - usando fallback")
+                if anti_blocking:
+                    record_fbref_request(url, False, 0.0, None)
+                
+                # Registrar falha no sistema de emergência
+                if EMERGENCY_SYSTEM_AVAILABLE:
+                    record_request_result(url, False, False)
+                
+                # Finalizar detecção de travamentos (falha)
+                if HANG_DETECTION_AVAILABLE and hang_op_id:
+                    log_http_end(hang_op_id, None, "Sistema simplificado falhou")
+                
+                return None
+    
+    # Se chegou aqui, todos os sistemas falharam - usar fallback
+    logger.debug("Todos os sistemas anti-bloqueio falharam - usando fallback")
+    
+    # Registrar falha no sistema de emergência
+    if EMERGENCY_SYSTEM_AVAILABLE:
+        record_request_result(url, False, False)
+    
+    # Finalizar detecção de travamentos (fallback)
+    if HANG_DETECTION_AVAILABLE and hang_op_id:
+        log_http_end(hang_op_id, None, "Todos os sistemas falharam - usando fallback")
+    
+    return None
     
     # Obter proxy se disponível
     current_proxy = None

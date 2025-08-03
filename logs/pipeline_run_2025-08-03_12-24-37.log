@@ -17,3 +17,4 @@
 2025-08-03 12:26:01 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ✅ Etapa 'verificacao_extracao' executada com sucesso - continuando pipeline
 2025-08-03 12:26:01 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
 --- [ETAPA 4 de 9] Executando: Coleta de Dados de Partidas ---
+2025-08-03 12:36:01 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 4] ERRO: Processo terminou sem retornar resultado ---

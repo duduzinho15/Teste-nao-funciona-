@@ -22,3 +22,4 @@
 2025-08-03 12:21:01 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📋 Detalhes do erro: Timeout: Timeout após 3600s
 2025-08-03 12:21:01 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
 --- [ETAPA 5 de 9] Executando: Coleta de Estatísticas Detalhadas ---
+2025-08-03 13:22:02 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 5] ERRO: Processo terminou sem retornar resultado ---

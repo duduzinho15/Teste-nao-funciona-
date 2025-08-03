@@ -17,3 +17,26 @@
 2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ✅ Etapa 'verificacao_extracao' executada com sucesso - continuando pipeline
 2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
 --- [ETAPA 4 de 9] Executando: Coleta de Dados de Partidas ---
+2025-08-03 13:04:29 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 4] TIMEOUT: Timeout após 3600s ---
+2025-08-03 13:04:29 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🔄 Etapa obrigatória 'coleta_partidas' falhou - continuando por configuração
+2025-08-03 13:04:29 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📋 Detalhes do erro: Timeout: Timeout após 3600s
+2025-08-03 13:04:29 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 5 de 9] Executando: Coleta de Estatísticas Detalhadas ---
+2025-08-03 13:21:23 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🛑 Pipeline interrompida pelo usuário (Ctrl+C)
+2025-08-03 13:21:23 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+================================================================================
+2025-08-03 13:21:23 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📊 RELATÓRIO FINAL DA PIPELINE
+2025-08-03 13:21:23 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ================================================================================
+2025-08-03 13:21:23 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ⏱️  Tempo total de execução: 01:18:17
+2025-08-03 13:21:23 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📈 Etapas executadas: 5/9
+2025-08-03 13:21:23 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ✅ Etapas com sucesso: 3
+2025-08-03 13:21:23 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ❌ Etapas com erro: 2
+2025-08-03 13:21:23 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+📋 DETALHES POR ETAPA:
+2025-08-03 13:21:23 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -   ✅ SUCESSO | preparacao_banco     | 00:00:00
+2025-08-03 13:21:23 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -   ✅ SUCESSO | descoberta_links     | 00:00:01
+2025-08-03 13:21:23 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -   ✅ SUCESSO | verificacao_extracao | 00:01:21
+2025-08-03 13:21:23 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -   ❌ ERRO | coleta_partidas      | 01:00:00
+2025-08-03 13:21:23 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -     └─ Erro: Timeout: Timeout após 3600s
+2025-08-03 13:21:23 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ================================================================================
+2025-08-03 13:21:23 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ❌❌❌ PIPELINE FINALIZADA COM ERROS ❌❌❌

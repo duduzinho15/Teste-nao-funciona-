@@ -8,3 +8,47 @@
 2025-08-03 09:52:53,634 - __main__ - INFO - Iniciando teste super rápido...
 2025-08-03 09:52:53,635 - Coleta_de_dados.apis.fbref.fbref_integrado - INFO - Buscando lista de competições com extração de gênero direta...
 2025-08-03 11:34:59,427 - Coleta_de_dados.apis.fbref.fbref_utils - INFO - Conteudo extraido de 1 comentarios HTML - reparsing...
+2025-08-03 12:44:39,673 - Coleta_de_dados.apis.fbref.fallback_first_system - WARNING - Entrando em modo fallback por 1 minutos
+2025-08-03 12:44:39,673 - Coleta_de_dados.apis.fbref.fallback_first_system - INFO - Modo fallback forçado por 1 minutos
+2025-08-03 12:44:42,681 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 12:44:42,681 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Sistema de rotacao de proxies inicializado
+2025-08-03 12:44:42,681 - Coleta_de_dados.apis.fbref.browser_emulation_headers - INFO - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-03 12:44:42,681 - Coleta_de_dados.apis.fbref.fbref_utils - INFO - Sistemas anti-429 inicializados com sucesso
+2025-08-03 12:44:42,681 - Coleta_de_dados.apis.fbref.simple_anti_blocking - INFO - Sistema anti-bloqueio simplificado inicializado
+2025-08-03 12:44:42,681 - Coleta_de_dados.apis.fbref.advanced_anti_blocking - INFO - Sistema avançado anti-bloqueio inicializado
+2025-08-03 12:48:59,390 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 12:48:59,390 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Sistema de rotacao de proxies inicializado
+2025-08-03 12:48:59,391 - Coleta_de_dados.apis.fbref.browser_emulation_headers - INFO - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-03 12:48:59,391 - Coleta_de_dados.apis.fbref.fbref_utils - INFO - Sistemas anti-429 inicializados com sucesso
+2025-08-03 12:48:59,392 - Coleta_de_dados.apis.fbref.advanced_anti_blocking - INFO - Sistema avançado anti-bloqueio inicializado
+2025-08-03 12:48:59,392 - Coleta_de_dados.apis.fbref.fallback_first_system - INFO - Sistema Fallback-First inicializado
+2025-08-03 12:55:16,374 - hang_detection - INFO - 🔄 INICIANDO: HTTP_REQUEST
+2025-08-03 12:55:16,375 - hang_detection - INFO -    Detalhes: URL: https://httpbin.org/delay/2
+2025-08-03 12:55:16,375 - hang_detection - INFO -    Timeout: 40s
+2025-08-03 12:55:16,375 - hang_detection - INFO -    ID: HTTP_REQUEST_1754236516
+2025-08-03 12:55:16,375 - Coleta_de_dados.apis.fbref.fbref_utils - INFO - 🔍 Detecção de travamentos ativada para: https://httpbin.org/delay/2
+2025-08-03 12:55:16,378 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 12:55:16,379 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Sistema de rotacao de proxies inicializado
+2025-08-03 12:55:16,379 - Coleta_de_dados.apis.fbref.browser_emulation_headers - INFO - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-03 12:55:16,379 - Coleta_de_dados.apis.fbref.fbref_utils - INFO - Sistemas anti-429 inicializados com sucesso
+2025-08-03 12:55:16,379 - Coleta_de_dados.apis.fbref.simple_anti_blocking - INFO - Sistema anti-bloqueio simplificado inicializado
+2025-08-03 12:55:16,381 - Coleta_de_dados.apis.fbref.advanced_anti_blocking - INFO - Sistema avançado anti-bloqueio inicializado
+2025-08-03 12:55:16,382 - Coleta_de_dados.apis.fbref.fallback_first_system - INFO - Sistema Fallback-First inicializado
+2025-08-03 12:55:19,604 - hang_detection - INFO - ✅ CONCLUÍDA: HTTP
+2025-08-03 12:55:19,605 - hang_detection - INFO -    Duração: 3.23s
+2025-08-03 12:55:19,605 - hang_detection - INFO -    Detalhes: Status: 200
+2025-08-03 12:55:19,606 - hang_detection - INFO - 🔄 INICIANDO: OPERACAO_TRAVADA
+2025-08-03 12:55:19,606 - hang_detection - INFO -    Detalhes: Simulação de travamento
+2025-08-03 12:55:19,606 - hang_detection - INFO -    Timeout: 5s
+2025-08-03 12:55:19,606 - hang_detection - INFO -    ID: OPERACAO_TRAVADA_1754236519
+2025-08-03 12:55:27,608 - hang_detection - INFO - ✅ CONCLUÍDA: OPERACAO
+2025-08-03 12:55:27,608 - hang_detection - INFO -    Duração: 8.00s
+2025-08-03 12:55:27,608 - hang_detection - INFO -    Detalhes: Simulação concluída
+2025-08-03 12:55:30,622 - hang_detection - INFO - 🔄 INICIANDO: HTTP_REQUEST
+2025-08-03 12:55:30,622 - hang_detection - INFO -    Detalhes: URL: https://fbref.com/en/
+2025-08-03 12:55:30,622 - hang_detection - INFO -    Timeout: 40s
+2025-08-03 12:55:30,623 - hang_detection - INFO -    ID: HTTP_REQUEST_1754236530
+2025-08-03 12:55:30,623 - Coleta_de_dados.apis.fbref.fbref_utils - INFO - 🔍 Detecção de travamentos ativada para: https://fbref.com/en/
+2025-08-03 12:55:30,865 - hang_detection - INFO - ✅ CONCLUÍDA: HTTP
+2025-08-03 12:55:30,865 - hang_detection - INFO -    Duração: 0.24s
+2025-08-03 12:55:30,865 - hang_detection - INFO -    Detalhes: Status: 200
