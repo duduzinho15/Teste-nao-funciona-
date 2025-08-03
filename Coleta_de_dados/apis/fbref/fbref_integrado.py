@@ -1,6 +1,7 @@
 import logging
 import sqlite3
 import os
+from bs4 import BeautifulSoup # Importar BeautifulSoup
 from .fbref_utils import close_driver, fazer_requisicao, extrair_tabelas_da_pagina, BASE_URL
 
 # --- CONFIGURAÇÕES ---
@@ -57,6 +58,25 @@ def coletar_competicoes():
     logger.info(f"Encontradas {len(competicoes_unicas)} competições únicas com contexto.")
     return competicoes_unicas
 
+def extrair_links_de_torneios_da_tabela(soup):
+    """
+    NOVO MÉTODO: Extrai links de temporadas de páginas de torneios que usam uma tabela de histórico.
+    Este método foi criado para lidar com o layout de páginas como Copa do Mundo, Olimpíadas, etc.
+    """
+    links = []
+    # A tabela de histórico geralmente é a primeira (ou única) tabela na página de torneios.
+    tabela_historico = soup.find('table') 
+    
+    if tabela_historico and tabela_historico.find('tbody'):
+        for linha in tabela_historico.find('tbody').find_all('tr'):
+            # O link da temporada/ano está no primeiro cabeçalho (th) de cada linha.
+            header = linha.find('th')
+            if header and header.find('a'):
+                link_relativo = header.find('a')['href']
+                links.append(BASE_URL + link_relativo)
+    
+    return links
+
 def coletar_temporadas_de_competicao(url_competicao):
     """Lógica de extração em múltiplos estágios, aprimorada com base nos HTMLs fornecidos."""
     soup = fazer_requisicao(url_competicao)
@@ -64,6 +84,7 @@ def coletar_temporadas_de_competicao(url_competicao):
 
     links, tipo = [], "NENHUM DADO ENCONTRADO"
 
+    # --- MÉTODO 1: TABELA DE TEMPORADAS (Padrão para Ligas) ---
     tabela_seasons = soup.find('table', id='seasons')
     if tabela_seasons:
         for tag in tabela_seasons.select('th[data-stat="year_id"] a'):
@@ -72,6 +93,7 @@ def coletar_temporadas_de_competicao(url_competicao):
             logger.info(f"  -> {len(links)} links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.")
             return sorted(list(set(links)), reverse=True), "TEMPORADAS"
 
+    # --- MÉTODO 2: CABEÇALHOS H2 (Padrão para Qualificatórias) ---
     content_div = soup.find('div', id='content')
     if content_div:
         for header in content_div.find_all('h2'):
@@ -80,6 +102,12 @@ def coletar_temporadas_de_competicao(url_competicao):
                 links.append(BASE_URL + link_tag['href'])
     if links:
         logger.info(f"  -> {len(links)} links encontrados pelo MÉTODO DE CABEÇALHOS H2.")
+        return sorted(list(set(links)), reverse=True), "TORNEIOS"
+    
+    # --- MÉTODO 3: TABELA DE HISTÓRICO DE TORNEIOS (Solução para Copas, Olimpíadas, etc.) ---
+    links = extrair_links_de_torneios_da_tabela(soup)
+    if links:
+        logger.info(f"  -> {len(links)} links encontrados pelo NOVO MÉTODO DE TABELA DE HISTÓRICO.")
         return sorted(list(set(links)), reverse=True), "TORNEIOS"
         
     logger.warning("  -> AVISO: Nenhum método de extração encontrou links de temporada válidos.")
