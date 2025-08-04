@@ -1,0 +1,6 @@
+name: flask-sqlalchemy
+version: 0.0.1
+schema: v1
+docs:
+  - name: Flask-SQLAlchemy
+    startUrl: https://flask-sqlalchemy.palletsprojects.com/
