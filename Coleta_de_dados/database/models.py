@@ -238,38 +238,46 @@ class EstatisticaPartida(Base, TimestampMixin):
         Integer, ForeignKey('partidas.id', ondelete='CASCADE'), nullable=False
     )
     
-    # Estatísticas gerais
+    # Estatísticas básicas
     posse_bola_casa: Mapped[Optional[float]] = mapped_column(Float)
     posse_bola_visitante: Mapped[Optional[float]] = mapped_column(Float)
     chutes_casa: Mapped[Optional[int]] = mapped_column(Integer)
     chutes_visitante: Mapped[Optional[int]] = mapped_column(Integer)
     chutes_no_gol_casa: Mapped[Optional[int]] = mapped_column(Integer)
     chutes_no_gol_visitante: Mapped[Optional[int]] = mapped_column(Integer)
-    
-    # Cartões
+    escanteios_casa: Mapped[Optional[int]] = mapped_column(Integer)
+    escanteios_visitante: Mapped[Optional[int]] = mapped_column(Integer)
+    faltas_casa: Mapped[Optional[int]] = mapped_column(Integer)
+    faltas_visitante: Mapped[Optional[int]] = mapped_column(Integer)
     cartoes_amarelos_casa: Mapped[Optional[int]] = mapped_column(Integer)
     cartoes_amarelos_visitante: Mapped[Optional[int]] = mapped_column(Integer)
     cartoes_vermelhos_casa: Mapped[Optional[int]] = mapped_column(Integer)
     cartoes_vermelhos_visitante: Mapped[Optional[int]] = mapped_column(Integer)
     
-    # Faltas
-    faltas_casa: Mapped[Optional[int]] = mapped_column(Integer)
-    faltas_visitante: Mapped[Optional[int]] = mapped_column(Integer)
+    # *** NOVOS CAMPOS - ESTATÍSTICAS AVANÇADAS ***
+    # Expected Goals (xG)
+    xg_casa: Mapped[Optional[float]] = mapped_column(Float, comment="Expected Goals do time da casa")
+    xg_visitante: Mapped[Optional[float]] = mapped_column(Float, comment="Expected Goals do time visitante")
     
-    # Escanteios
-    escanteios_casa: Mapped[Optional[int]] = mapped_column(Integer)
-    escanteios_visitante: Mapped[Optional[int]] = mapped_column(Integer)
+    # Expected Assists (xA)
+    xa_casa: Mapped[Optional[float]] = mapped_column(Float, comment="Expected Assists do time da casa")
+    xa_visitante: Mapped[Optional[float]] = mapped_column(Float, comment="Expected Assists do time visitante")
+    
+    # Formações táticas
+    formacao_casa: Mapped[Optional[str]] = mapped_column(String(20), comment="Formação tática do time da casa (ex: 4-3-3)")
+    formacao_visitante: Mapped[Optional[str]] = mapped_column(String(20), comment="Formação tática do time visitante (ex: 4-3-3)")
     
     # Relacionamentos
     partida: Mapped["Partida"] = relationship("Partida", back_populates="estatisticas")
     
-    # Índices
     __table_args__ = (
         Index('idx_estatisticas_partida', 'partida_id'),
+        Index('idx_estatisticas_partida_xg', 'xg_casa', 'xg_visitante'),  # Índice para consultas de xG
+        Index('idx_estatisticas_partida_formacao', 'formacao_casa', 'formacao_visitante'),  # Índice para formações
     )
     
     def __repr__(self):
-        return f"<EstatisticaPartida(id={self.id}, partida_id={self.partida_id})>"
+        return f"<EstatisticaPartida(id={self.id}, partida_id={self.partida_id}, xg_casa={self.xg_casa}, xg_visitante={self.xg_visitante})>"
 
 class EstatisticaClube(Base, TimestampMixin):
     """Modelo para estatísticas de clubes."""
@@ -485,6 +493,15 @@ class EstatisticaJogadorCompeticao(Base, TimestampMixin):
     chutes_no_gol: Mapped[Optional[int]] = mapped_column(Integer)
     passes_certos: Mapped[Optional[int]] = mapped_column(Integer)
     passes_tentados: Mapped[Optional[int]] = mapped_column(Integer)
+    
+    # *** NOVOS CAMPOS - ESTATÍSTICAS AVANÇADAS DE JOGADOR ***
+    # Expected Goals (xG) e Expected Assists (xA) individuais
+    xg: Mapped[Optional[float]] = mapped_column(Float, comment="Expected Goals do jogador")
+    xa: Mapped[Optional[float]] = mapped_column(Float, comment="Expected Assists do jogador")
+    
+    # Estatísticas de posicionamento
+    posicao_principal: Mapped[Optional[str]] = mapped_column(String(20), comment="Posição principal jogada na competição")
+    minutos_por_jogo: Mapped[Optional[float]] = mapped_column(Float, comment="Média de minutos por jogo")
     
     # Relacionamentos
     jogador: Mapped["Jogador"] = relationship("Jogador", back_populates="estatisticas_competicao")

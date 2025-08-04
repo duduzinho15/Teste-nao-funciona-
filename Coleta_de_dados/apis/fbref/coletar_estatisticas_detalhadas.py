@@ -13,6 +13,7 @@ from tqdm import tqdm
 import json
 
 from .fbref_utils import fazer_requisicao, limpar_recursos
+from .scraper_estatisticas_avancadas import AdvancedMatchScraper
 
 # Configurações com caminho absoluto
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -104,14 +105,18 @@ class EstatisticasJogador:
 class ColetorEstatisticas:
     """Classe principal para coleta de estatísticas detalhadas."""
     
-    def __init__(self, db_path: str = DB_NAME):
+    def __init__(self, db_path: str = DB_NAME, session=None):
         self.db_path = db_path
         self.stats = {
             'partidas_processadas': 0,
             'partidas_com_erro': 0,
             'jogadores_processados': 0,
-            'partidas_sem_stats': 0
+            'partidas_sem_stats': 0,
+            'partidas_com_stats_avancados': 0
         }
+        
+        # Inicializa o scraper de estatísticas avançadas
+        self.advanced_scraper = AdvancedMatchScraper(session) if session else None
         
         # Mapeamento de data-stat para campos da classe
         self.stat_mapping = self._create_stat_mapping()
@@ -429,18 +434,63 @@ class ColetorEstatisticas:
         else:
             return 'sum'  # Default para tabela summary
 
-    def processar_match_report(self, soup, partida_id: int) -> Tuple[bool, int]:
+    def processar_match_report(self, soup, partida_id: int, match_url: str = None) -> Tuple[bool, int]:
         """
         Extrai o conjunto completo de estatísticas de jogadores da página.
         
         Args:
             soup: BeautifulSoup object da página
             partida_id: ID da partida
+            match_url: URL da partida para coleta de estatísticas avançadas
             
         Returns:
             Tuple[bool, int]: (sucesso, número_de_jogadores_processados)
         """
         jogadores_processados = 0
+        
+        # Processa estatísticas avançadas se o scraper estiver disponível
+        if self.advanced_scraper and match_url:
+            try:
+                # Obtém estatísticas avançadas
+                advanced_stats = self.advanced_scraper.get_advanced_match_stats(match_url)
+                
+                # Atualiza o banco de dados com as estatísticas avançadas
+                if advanced_stats:
+                    with self.get_db_connection() as conn:
+                        cursor = conn.cursor()
+                        
+                        # Atualiza estatísticas da partida
+                        cursor.execute("""
+                            UPDATE estatisticas_partidas 
+                            SET xg_casa = ?, xg_visitante = ?, formacao_casa = ?, formacao_visitante = ?
+                            WHERE partida_id = ?
+                        """, (
+                            advanced_stats['expected_goals'].get('xg_casa'),
+                            advanced_stats['expected_goals'].get('xg_visitante'),
+                            advanced_stats['formacoes'].get('casa'),
+                            advanced_stats['formacoes'].get('visitante'),
+                            partida_id
+                        ))
+                        
+                        # Atualiza estatísticas de jogadores (xA, etc.)
+                        for team in ['home_players', 'away_players']:
+                            for player in advanced_stats['jogadores'].get(team, []):
+                                cursor.execute("""
+                                    UPDATE estatisticas_jogador_partida 
+                                    SET xa = ?
+                                    WHERE partida_id = ? AND jogador_nome = ?
+                                """, (
+                                    player.get('xa'),
+                                    partida_id,
+                                    player.get('nome')
+                                ))
+                        
+                        conn.commit()
+                        self.stats['partidas_com_stats_avancados'] += 1
+                        logger.info(f"  -> Estatísticas avançadas salvas para a partida {partida_id}")
+                        
+            except Exception as e:
+                logger.error(f"  -> Erro ao processar estatísticas avançadas: {e}")
         
         try:
             # Mapeia o ID da tabela no HTML para o nome do time
@@ -593,65 +643,68 @@ class ColetorEstatisticas:
         except sqlite3.Error as e:
             logger.error(f"Erro ao atualizar status da partida {partida_id}: {e}")
 
-    def executar_coleta(self) -> Dict[str, int]:
+    async def executar_coleta(self) -> Dict[str, int]:
         """
         Executa o processo completo de coleta de estatísticas detalhadas.
         
         Returns:
             Dict[str, int]: Estatísticas da execução
         """
-        logger.info("🚀 Iniciando Script 3: Coleta de Estatísticas COMPLETAS...")
+        logger.info("Iniciando coleta de estatísticas detalhadas...")
         
-        # Setup do banco
-        self.setup_database_stats()
+        # Obtém partidas pendentes
+        partidas = self.obter_partidas_pendentes()
+        total_partidas = len(partidas)
         
-        # Obter partidas para processar
-        partidas_a_processar = self.obter_partidas_pendentes()
-        
-        if not partidas_a_processar:
-            logger.info("Nenhuma partida pendente para processar. Script 3 finalizado.")
+        if not partidas:
+            logger.info("Nenhuma partida pendente para processamento.")
             return self.stats
-
-        logger.info(f"Encontrados {len(partidas_a_processar)} relatórios de partida pendentes.")
-        
-        # Processar cada partida com barra de progresso
-        for partida_id, url in tqdm(partidas_a_processar, desc="Coletando Estatísticas Detalhadas"):
-            logger.info(f"\n--- Processando Partida ID {partida_id} ---")
-            logger.debug(f"URL: {url}")
             
-            try:
-                soup = fazer_requisicao(url)
-                if not soup:
-                    logger.error(f"  -> Falha ao obter conteúdo da partida {partida_id}")
-                    self.stats['partidas_com_erro'] += 1
-                    self.atualizar_status_partida(partida_id, 'erro')
-                    continue
-
-                sucesso, jogadores_processados = self.processar_match_report(soup, partida_id)
-                
-                if sucesso:
-                    self.stats['partidas_processadas'] += 1
-                    self.stats['jogadores_processados'] += jogadores_processados
-                    self.atualizar_status_partida(partida_id, 'concluido')
-                    logger.info(f"  -> Partida {partida_id} processada: {jogadores_processados} jogadores")
-                else:
-                    self.stats['partidas_sem_stats'] += 1
-                    self.atualizar_status_partida(partida_id, 'sem_stats')
-                    logger.warning(f"  -> Partida {partida_id} sem estatísticas válidas")
-                    
-            except Exception as e:
-                logger.error(f"  -> Erro inesperado ao processar partida {partida_id}: {e}", exc_info=True)
-                self.stats['partidas_com_erro'] += 1
-                self.atualizar_status_partida(partida_id, 'erro')
-
-        # Log final com estatísticas
-        logger.info("\n=== ESTATÍSTICAS FINAIS ===")
-        logger.info(f"Partidas processadas com sucesso: {self.stats['partidas_processadas']}")
-        logger.info(f"Partidas sem estatísticas: {self.stats['partidas_sem_stats']}")
-        logger.info(f"Partidas com erro: {self.stats['partidas_com_erro']}")
-        logger.info(f"Total de jogadores processados: {self.stats['jogadores_processados']}")
-        logger.info("✅ Script 3 (Coleta de Estatísticas Completas) finalizado!")
+        logger.info(f"Encontradas {total_partidas} partidas para processar.")
         
+        # Configura a barra de progresso
+        with tqdm(total=total_partidas, desc="Processando partidas") as pbar:
+            for partida in partidas:
+                partida_id, url = partida
+                
+                try:
+                    # Atualiza status para 'processando'
+                    self.atualizar_status_partida(partida_id, 'processando')
+                    
+                    # Faz a requisição e processa a página
+                    soup = fazer_requisicao(url)
+                    if not soup:
+                        logger.warning(f"  -> Falha ao obter a página da partida {partida_id}")
+                        self.atualizar_status_partida(partida_id, 'erro')
+                        self.stats['partidas_com_erro'] += 1
+                        continue
+                    
+                    # Processa as estatísticas da partida
+                    sucesso, num_jogadores = self.processar_match_report(soup, partida_id, url)
+                    
+                    if sucesso and num_jogadores > 0:
+                        self.atualizar_status_partida(partida_id, 'concluido')
+                        self.stats['partidas_processadas'] += 1
+                        self.stats['jogadores_processados'] += num_jogadores
+                        logger.info(f"  -> Partida {partida_id} processada com sucesso ({num_jogadores} jogadores)")
+                    else:
+                        self.atualizar_status_partida(partida_id, 'sem_stats')
+                        self.stats['partidas_sem_stats'] += 1
+                        logger.warning(f"  -> Nenhuma estatística encontrada para a partida {partida_id}")
+                    
+                except Exception as e:
+                    logger.error(f"Erro ao processar partida {partida_id}: {e}")
+                    logger.error(traceback.format_exc())
+                    self.atualizar_status_partida(partida_id, 'erro')
+                    self.stats['partidas_com_erro'] += 1
+                
+                # Atualiza a barra de progresso
+                pbar.update(1)
+                
+                # Pequena pausa para evitar sobrecarga
+                time.sleep(1)
+        
+        logger.info("Coleta de estatísticas concluída.")
         return self.stats
 
 

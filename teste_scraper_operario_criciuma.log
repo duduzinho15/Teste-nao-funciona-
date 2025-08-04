@@ -1,0 +1,42 @@
+2025-08-03 23:40:19,246 - __main__ - INFO - Iniciando extração de estatísticas avançadas...
+2025-08-03 23:40:19,246 - __main__ - INFO - Acessando URL: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-03 23:40:19,557 - __main__ - ERROR - Erro ao extrair estatísticas da partida: 'NoneType' object has no attribute 'find_next'
+2025-08-03 23:40:19,558 - __main__ - INFO - Tempo total de execução: 0.31 segundos
+2025-08-03 23:40:49,390 - __main__ - INFO - Iniciando extração de estatísticas avançadas...
+2025-08-03 23:40:49,391 - __main__ - INFO - Acessando URL: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-03 23:40:49,546 - __main__ - ERROR - Elemento do time da casa não encontrado.
+2025-08-03 23:40:49,547 - __main__ - INFO - Tempo total de execução: 0.16 segundos
+2025-08-03 23:44:20,702 - __main__ - INFO - Iniciando extração de estatísticas avançadas...
+2025-08-03 23:44:20,703 - __main__ - INFO - Acessando URL: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-03 23:44:20,873 - __main__ - ERROR - Elemento do time da casa não encontrado.
+2025-08-03 23:44:20,873 - __main__ - INFO - Tempo total de execução: 0.17 segundos
+2025-08-03 23:45:19,726 - __main__ - INFO - Iniciando extração de estatísticas avançadas...
+2025-08-03 23:45:19,727 - __main__ - INFO - Acessando URL: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-03 23:45:19,803 - __main__ - INFO - Página salva como 'debug_page.html' para análise
+2025-08-03 23:45:19,904 - __main__ - ERROR - Dados da partida não encontrados na página.
+2025-08-03 23:45:19,904 - __main__ - INFO - Tempo total de execução: 0.18 segundos
+2025-08-03 23:47:00,444 - __main__ - INFO - Iniciando extração de estatísticas avançadas...
+2025-08-03 23:47:00,444 - __main__ - INFO - Acessando URL: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-03 23:47:00,501 - __main__ - INFO - Página salva como 'debug_page.html' para análise
+2025-08-03 23:47:00,597 - __main__ - INFO - Partida: Operário 1 Manager
+2025-08-03 23:47:00,627 - __main__ - INFO - Tempo total de execução: 0.18 segundos
+2025-08-03 23:48:46,161 - __main__ - INFO - Iniciando extração de estatísticas avançadas...
+2025-08-03 23:48:46,161 - __main__ - INFO - Acessando URL: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-03 23:48:46,219 - __main__ - INFO - Página salva como 'debug_page.html' para análise
+2025-08-03 23:48:46,315 - __main__ - ERROR - Erro ao extrair estatísticas: name 're' is not defined
+2025-08-03 23:48:46,315 - __main__ - INFO - Tempo total de execução: 0.15 segundos
+2025-08-03 23:50:34,907 - __main__ - INFO - Iniciando extração de estatísticas avançadas...
+2025-08-03 23:50:34,907 - __main__ - INFO - Acessando URL: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-03 23:50:34,977 - __main__ - INFO - Página salva como 'debug_page.html' para análise
+2025-08-03 23:50:35,075 - __main__ - ERROR - Erro ao extrair estatísticas: name 're' is not defined
+2025-08-03 23:50:35,076 - __main__ - INFO - Tempo total de execução: 0.17 segundos
+2025-08-03 23:53:59,105 - __main__ - INFO - Iniciando extração de estatísticas avançadas...
+2025-08-03 23:53:59,106 - __main__ - INFO - Acessando URL: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-03 23:53:59,161 - __main__ - INFO - Página salva como 'debug_page.html' para análise
+2025-08-03 23:53:59,263 - __main__ - ERROR - Erro ao extrair estatísticas: name 're' is not defined
+2025-08-03 23:53:59,263 - __main__ - INFO - Tempo total de execução: 0.16 segundos
+2025-08-03 23:55:21,595 - __main__ - INFO - Iniciando extração de estatísticas avançadas...
+2025-08-03 23:55:21,595 - __main__ - INFO - Acessando URL: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-03 23:55:21,653 - __main__ - INFO - Página salva como 'debug_page.html' para análise
+2025-08-03 23:55:21,752 - __main__ - ERROR - Erro ao extrair estatísticas: name 're' is not defined
+2025-08-03 23:55:21,753 - __main__ - INFO - Tempo total de execução: 0.16 segundos
