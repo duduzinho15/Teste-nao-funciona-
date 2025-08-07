@@ -1,0 +1,125 @@
+2025-08-03 12:03:08 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_12-03-08.log
+2025-08-03 12:03:08 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_12-03-08.log
+2025-08-03 12:03:09 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 12:03:09 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando verificação da completude da extração...
+2025-08-03 12:03:09 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 🔍 Iniciando verificação completa de extração...
+2025-08-03 12:03:09 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Bundesliga (Masculino)
+2025-08-03 12:03:09 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 🔍 Verificação rápida de temporadas: https://fbref.com/en/comps/20/history/Bundesliga-Seasons
+2025-08-03 12:03:12 - INFO - [Coleta_de_dados.apis.fbref.anti_429_state_machine] - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 12:03:12 - INFO - [Coleta_de_dados.apis.fbref.proxy_rotation_system] - Sistema de rotacao de proxies inicializado
+2025-08-03 12:03:12 - INFO - [Coleta_de_dados.apis.fbref.browser_emulation_headers] - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-03 12:03:12 - INFO - [Coleta_de_dados.apis.fbref.fbref_utils] - Sistemas anti-429 inicializados com sucesso
+2025-08-03 12:03:17 - WARNING - [Coleta_de_dados.apis.fbref.verificar_extracao] - ⏰ Verificação de temporadas demorou demais - usando fallback
+2025-08-03 12:03:17 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Gerando temporadas de fallback...
+2025-08-03 12:03:17 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Geradas 10 temporadas de fallback
+2025-08-03 12:03:17 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📋 Total de temporadas identificadas: 10
+2025-08-03 12:03:17 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Champions League (Masculino)
+2025-08-03 12:03:17 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 🔍 Verificação rápida de temporadas: https://fbref.com/en/comps/8/history/Champions-League-Seasons
+2025-08-03 12:03:25 - WARNING - [Coleta_de_dados.apis.fbref.verificar_extracao] - ⏰ Verificação de temporadas demorou demais - usando fallback
+2025-08-03 12:03:25 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Gerando temporadas de fallback...
+2025-08-03 12:03:25 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Geradas 6 temporadas de fallback
+2025-08-03 12:03:25 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📋 Total de temporadas identificadas: 6
+2025-08-03 12:03:25 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Europa League (Masculino)
+2025-08-03 12:03:25 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 🔍 Verificação rápida de temporadas: https://fbref.com/en/comps/19/history/Europa-League-Seasons
+2025-08-03 12:03:33 - WARNING - [Coleta_de_dados.apis.fbref.verificar_extracao] - ⏰ Verificação de temporadas demorou demais - usando fallback
+2025-08-03 12:03:33 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Gerando temporadas de fallback...
+2025-08-03 12:03:33 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Geradas 5 temporadas de fallback
+2025-08-03 12:03:33 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📋 Total de temporadas identificadas: 5
+2025-08-03 12:03:33 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: La Liga (Masculino)
+2025-08-03 12:03:33 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 🔍 Verificação rápida de temporadas: https://fbref.com/en/comps/12/history/La-Liga-Seasons
+2025-08-03 12:03:41 - WARNING - [Coleta_de_dados.apis.fbref.verificar_extracao] - ⏰ Verificação de temporadas demorou demais - usando fallback
+2025-08-03 12:03:41 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Gerando temporadas de fallback...
+2025-08-03 12:03:41 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Geradas 10 temporadas de fallback
+2025-08-03 12:03:41 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📋 Total de temporadas identificadas: 10
+2025-08-03 12:03:41 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Ligue 1 (Masculino)
+2025-08-03 12:03:41 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 🔍 Verificação rápida de temporadas: https://fbref.com/en/comps/13/history/Ligue-1-Seasons
+2025-08-03 12:03:49 - WARNING - [Coleta_de_dados.apis.fbref.verificar_extracao] - ⏰ Verificação de temporadas demorou demais - usando fallback
+2025-08-03 12:03:49 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Gerando temporadas de fallback...
+2025-08-03 12:03:49 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Geradas 10 temporadas de fallback
+2025-08-03 12:03:49 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📋 Total de temporadas identificadas: 10
+2025-08-03 12:03:49 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Premier League (Masculino)
+2025-08-03 12:03:49 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 🔍 Verificação rápida de temporadas: https://fbref.com/en/comps/9/history/Premier-League-Seasons
+2025-08-03 12:03:57 - WARNING - [Coleta_de_dados.apis.fbref.verificar_extracao] - ⏰ Verificação de temporadas demorou demais - usando fallback
+2025-08-03 12:03:57 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Gerando temporadas de fallback...
+2025-08-03 12:03:57 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Geradas 10 temporadas de fallback
+2025-08-03 12:03:57 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📋 Total de temporadas identificadas: 10
+2025-08-03 12:03:57 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Premier League (Feminino)
+2025-08-03 12:03:57 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 🔍 Verificação rápida de temporadas: https://fbref.com/en/comps/182/history/Womens-Super-League-Seasons
+2025-08-03 12:04:05 - WARNING - [Coleta_de_dados.apis.fbref.verificar_extracao] - ⏰ Verificação de temporadas demorou demais - usando fallback
+2025-08-03 12:04:05 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Gerando temporadas de fallback...
+2025-08-03 12:04:05 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Geradas 5 temporadas de fallback
+2025-08-03 12:04:05 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📋 Total de temporadas identificadas: 5
+2025-08-03 12:04:05 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Serie A (Masculino)
+2025-08-03 12:04:05 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 🔍 Verificação rápida de temporadas: https://fbref.com/en/comps/11/history/Serie-A-Seasons
+2025-08-03 12:04:13 - WARNING - [Coleta_de_dados.apis.fbref.verificar_extracao] - ⏰ Verificação de temporadas demorou demais - usando fallback
+2025-08-03 12:04:13 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Gerando temporadas de fallback...
+2025-08-03 12:04:13 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Geradas 10 temporadas de fallback
+2025-08-03 12:04:13 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📋 Total de temporadas identificadas: 10
+2025-08-03 12:04:13 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Serie A (W) (Feminino)
+2025-08-03 12:04:13 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 🔍 Verificação rápida de temporadas: https://fbref.com/en/comps/106/history/Serie-A-Seasons
+2025-08-03 12:04:21 - WARNING - [Coleta_de_dados.apis.fbref.verificar_extracao] - ⏰ Verificação de temporadas demorou demais - usando fallback
+2025-08-03 12:04:21 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Gerando temporadas de fallback...
+2025-08-03 12:04:21 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Geradas 10 temporadas de fallback
+2025-08-03 12:04:21 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📋 Total de temporadas identificadas: 10
+2025-08-03 12:04:21 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: World Cup (Masculino)
+2025-08-03 12:04:21 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 🔍 Verificação rápida de temporadas: https://fbref.com/en/comps/1/history/World-Cup-Seasons
+2025-08-03 12:04:29 - WARNING - [Coleta_de_dados.apis.fbref.verificar_extracao] - ⏰ Verificação de temporadas demorou demais - usando fallback
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Gerando temporadas de fallback...
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📦 Geradas 2 temporadas de fallback
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📋 Total de temporadas identificadas: 2
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 
+================================================================================
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📊 RELATÓRIO DE VERIFICAÇÃO DE EXTRAÇÃO
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - ================================================================================
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 📈 Total de competições: 10
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - ✅ Competições completas: 0
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - ⚠️  Competições incompletas: 1
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - ❌ Competições não extraídas: 0
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 
+📋 DETALHES POR COMPETIÇÃO:
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -   ⏳ Bundesliga (Masculino)
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Status: PENDENTE
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Temporadas: 67/10
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Pendentes: 67
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -   ⏳ Champions League (Masculino)
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Status: PENDENTE
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Temporadas: 73/6
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Pendentes: 73
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -   ⏳ Europa League (Masculino)
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Status: PENDENTE
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Temporadas: 57/5
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Pendentes: 57
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -   ⏳ La Liga (Masculino)
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Status: PENDENTE
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Temporadas: 40/10
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Pendentes: 37
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -   ⏳ Ligue 1 (Masculino)
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Status: PENDENTE
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Temporadas: 40/10
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Pendentes: 40
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -   ⏳ Premier League (Masculino)
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Status: PENDENTE
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Temporadas: 38/10
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Pendentes: 33
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -   ⏳ Premier League (Feminino)
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Status: PENDENTE
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Temporadas: 15/5
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Pendentes: 15
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -   ⏳ Serie A (Masculino)
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Status: PENDENTE
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Temporadas: 40/10
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Pendentes: 40
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -   ⚠️ Serie A (W) (Feminino)
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Status: INCOMPLETA
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Temporadas: 5/10
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Pendentes: 5
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -   ⏳ World Cup (Masculino)
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Status: PENDENTE
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Temporadas: 24/2
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ Pendentes: 24
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 
+🚨 COMPETIÇÕES QUE PRECISAM DE ATENÇÃO:
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -   ❗ Serie A (W) (Feminino)
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] -     └─ URL: https://fbref.com/en/comps/106/history/Serie-A-Seasons
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - ================================================================================
+2025-08-03 12:04:29 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - ✅ Verificação completa finalizada!

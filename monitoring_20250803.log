@@ -1,0 +1,3 @@
+2025-08-03 17:13:34,905 - SystemMonitor - INFO - 🔍 SISTEMA DE MONITORAMENTO INICIADO
+2025-08-03 17:13:34,906 - advanced_anti_blocking - INFO - Sistema avançado anti-bloqueio inicializado
+2025-08-03 17:13:34,906 - anti_429_state_machine - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL

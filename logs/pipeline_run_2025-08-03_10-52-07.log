@@ -1,0 +1,9 @@
+2025-08-03 10:52:07 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_10-52-07.log
+2025-08-03 10:52:07 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_10-52-07.log
+2025-08-03 10:52:08 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 10:52:08 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando coleta de dados de partidas...
+2025-08-03 10:52:08 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 🚀 Iniciando Script 2: Coleta de Dados de Partidas...
+2025-08-03 10:52:08 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - Encontrados 38 links pendentes para processar.
+2025-08-03 10:52:08 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 1: https://fbref.com/en/comps/9/2021-2022/Premier-League-Seasons ---
+2025-08-03 10:52:08 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Buscando link de 'Scores & Fixtures' em: https://fbref.com/en/comps/9/2021-2022/Premier-League-Seasons

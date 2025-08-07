@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-08-03T15:01:14.685470",
+  "etapas_executadas": 9,
+  "etapas_com_sucesso": 9,
+  "resultados": [
+    {
+      "nome": "preparacao_banco",
+      "sucesso": true,
+      "tempo_execucao": 0.888648509979248,
+      "erro": null
+    },
+    {
+      "nome": "descoberta_links",
+      "sucesso": true,
+      "tempo_execucao": 43.421913385391235,
+      "erro": null
+    },
+    {
+      "nome": "verificacao_extracao",
+      "sucesso": true,
+      "tempo_execucao": 479.20092034339905,
+      "erro": null
+    },
+    {
+      "nome": "coleta_partidas",
+      "sucesso": true,
+      "tempo_execucao": 1309.9967708587646,
+      "erro": null
+    },
+    {
+      "nome": "coleta_estatisticas",
+      "sucesso": true,
+      "tempo_execucao": 1526.8920543193817,
+      "erro": null
+    },
+    {
+      "nome": "coleta_clubes",
+      "sucesso": true,
+      "tempo_execucao": 14.033097505569458,
+      "erro": null
+    },
+    {
+      "nome": "coleta_jogadores",
+      "sucesso": true,
+      "tempo_execucao": 13.997132778167725,
+      "erro": null
+    },
+    {
+      "nome": "processamento_dados",
+      "sucesso": true,
+      "tempo_execucao": 0.967982292175293,
+      "erro": null
+    },
+    {
+      "nome": "geracao_relatorio",
+      "sucesso": true,
+      "tempo_execucao": 0.9833319187164307,
+      "erro": null
+    }
+  ]
+}

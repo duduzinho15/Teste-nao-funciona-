@@ -1,0 +1,38 @@
+# Dependências principais do projeto
+
+# Dependências da API (de requirements_api.txt)
+fastapi==0.104.1                # Framework FastAPI moderno
+uvicorn[standard]==0.24.0        # Servidor ASGI para FastAPI
+python-multipart==0.0.6         # Para upload de arquivos
+python-jose[cryptography]==3.3.0 # JWT tokens
+passlib[bcrypt]==1.7.4           # Hash de senhas
+python-dotenv==1.0.0             # Variáveis de ambiente
+email-validator==2.1.0          # Validação de emails
+httpx==0.25.2                    # Cliente HTTP para testes
+
+# Dependências do Banco de Dados (de requirements_database.txt)
+psycopg2-binary==2.9.9          # PostgreSQL adapter
+SQLAlchemy==2.0.23              # ORM moderno
+alembic==1.13.1                 # Migrations
+pydantic==2.5.0                 # Validação de configurações
+pydantic-settings==2.1.0        # Settings management
+
+# Dependências para Web Scraping
+requests>=2.31.0
+selenium>=4.15.0
+beautifulsoup4>=4.12.0
+pandas>=2.1.0
+lxml>=4.9.0
+webdriver-manager>=4.0.1        # Gerenciamento automático de drivers do Selenium
+
+# Dependências para Desenvolvimento e Testes
+pytest==7.4.3                   # Testing framework
+pytest-asyncio==0.21.1          # Async testing
+factory-boy==3.3.0              # Test data factories
+structlog==23.2.0               # Structured logging
+psutil==5.9.6                   # System monitoring
+
+# Outras dependências
+python-dateutil>=2.8.2          # Manipulação de datas
+tqdm>=4.66.1                    # Barras de progresso
+loguru>=0.7.2                   # Logging melhorado

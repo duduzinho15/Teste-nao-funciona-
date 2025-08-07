@@ -1,0 +1,637 @@
+2025-08-02 13:52:29,624 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-02_13-52-29.log
+2025-08-02 13:52:32,172 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🚀🚀🚀 INICIANDO A PIPELINE COMPLETA DE DADOS DO FBREF 🚀🚀🚀
+2025-08-02 13:52:32,172 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 0 de 6] Executando: Preparação do Banco de Dados ---
+2025-08-02 13:52:32,172 - INFO - [Banco_de_dados.criar_banco] - Verificando e configurando a estrutura completa do banco de dados em 'C:\ApostaPro\Banco_de_dados\aposta.db'...
+2025-08-02 13:52:32,173 - INFO - [Banco_de_dados.criar_banco] - Criando tabelas para o FBRef...
+2025-08-02 13:52:32,191 - INFO - [Banco_de_dados.criar_banco] - Criando tabelas para as outras APIs...
+2025-08-02 13:52:32,234 - INFO - [Banco_de_dados.criar_banco] - Banco de dados pronto com a estrutura completa.
+2025-08-02 13:52:32,234 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 0 de 6] Finalizada com sucesso! ---
+2025-08-02 13:52:32,234 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 1 de 6] Executando: Descoberta de Competições e Temporadas ---
+2025-08-02 13:52:32,234 - INFO - [root] - 🚀 Iniciando Script 1: Descoberta de Links...
+2025-08-02 13:52:32,236 - INFO - [root] - Buscando lista de competições com reconhecimento de contexto aprimorado...
+2025-08-02 13:52:32,236 - INFO - [root] - Iniciando o navegador (WebDriver)...
+2025-08-02 13:52:32,236 - INFO - [WDM] - ====== WebDriver manager ======
+2025-08-02 13:52:33,314 - INFO - [WDM] - Get LATEST chromedriver version for google-chrome
+2025-08-02 13:52:33,362 - INFO - [WDM] - Get LATEST chromedriver version for google-chrome
+2025-08-02 13:52:33,382 - INFO - [WDM] - Driver [C:\Users\Eduardo Vitorino\.wdm\drivers\chromedriver\win64\138.0.7204.183\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-02 13:52:34,539 - INFO - [root] - Navegador iniciado com sucesso em modo invisível.
+2025-08-02 13:52:39,308 - INFO - [root] - Encontradas 150 competições únicas com contexto.
+2025-08-02 13:52:39,308 - INFO - [root] - 
+--- Processando Competição 1/150: 2. Fußball-Bundesliga (Desconhecido) ---
+2025-08-02 13:52:44,523 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:52:44,523 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 13:52:44,526 - INFO - [root] - 
+--- Processando Competição 2/150: 3. Fußball-Liga (Desconhecido) ---
+2025-08-02 13:52:48,216 - INFO - [root] -   -> 17 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:52:48,216 - INFO - [root] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 13:52:48,219 - INFO - [root] - 
+--- Processando Competição 3/150: A-League Men (Desconhecido) ---
+2025-08-02 13:52:53,143 - INFO - [root] -   -> 20 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:52:53,143 - INFO - [root] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 13:52:53,146 - INFO - [root] - 
+--- Processando Competição 4/150: A-League Women (Desconhecido) ---
+2025-08-02 13:52:57,147 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:52:57,147 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 13:52:57,149 - INFO - [root] - 
+--- Processando Competição 5/150: AFC Asian Cup (Desconhecido) ---
+2025-08-02 13:53:01,265 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:53:01,265 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 13:53:01,267 - INFO - [root] - 
+--- Processando Competição 6/150: AFC Asian Cup qualification (Desconhecido) ---
+2025-08-02 13:53:05,381 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:53:05,381 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:53:05,384 - INFO - [root] - 
+--- Processando Competição 7/150: AFC Women's Asian Cup (Desconhecido) ---
+2025-08-02 13:53:09,230 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:53:09,231 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:53:09,234 - INFO - [root] - 
+--- Processando Competição 8/150: AFC Women's Asian Cup qualification (Desconhecido) ---
+2025-08-02 13:53:13,116 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:53:13,116 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:53:13,118 - INFO - [root] - 
+--- Processando Competição 9/150: Africa Cup of Nations (Desconhecido) ---
+2025-08-02 13:53:17,087 - INFO - [root] -   -> 8 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:53:17,087 - INFO - [root] -   -> Encontrados 8 links do tipo TEMPORADAS.
+2025-08-02 13:53:17,089 - INFO - [root] - 
+--- Processando Competição 10/150: Africa Cup of Nations qualification (Desconhecido) ---
+2025-08-02 13:53:21,308 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:53:21,309 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:53:21,311 - INFO - [root] - 
+--- Processando Competição 11/150: Africa Women Cup of Nations (Desconhecido) ---
+2025-08-02 13:53:25,160 - INFO - [root] -   -> 4 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:53:25,161 - INFO - [root] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 13:53:25,163 - INFO - [root] - 
+--- Processando Competição 12/150: Algarve Cup (Desconhecido) ---
+2025-08-02 13:53:28,954 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:53:28,954 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:53:28,957 - INFO - [root] - 
+--- Processando Competição 13/150: Allsvenskan (Desconhecido) ---
+2025-08-02 13:53:32,708 - INFO - [root] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:53:32,708 - INFO - [root] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 13:53:32,711 - INFO - [root] - 
+--- Processando Competição 14/150: Austrian Football Bundesliga (Desconhecido) ---
+2025-08-02 13:53:36,445 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:53:36,446 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 13:53:36,448 - INFO - [root] - 
+--- Processando Competição 15/150: Belgian Pro League (Desconhecido) ---
+2025-08-02 13:53:40,003 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:53:40,003 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 13:53:40,006 - INFO - [root] - 
+--- Processando Competição 16/150: Belgian Women's Super League (Desconhecido) ---
+2025-08-02 13:53:43,805 - INFO - [root] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:53:43,805 - INFO - [root] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 13:53:43,808 - INFO - [root] - 
+--- Processando Competição 17/150: Big 5 European Leagues Combined (Desconhecido) ---
+2025-08-02 13:53:47,508 - INFO - [root] -   -> 31 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:53:47,508 - INFO - [root] -   -> Encontrados 31 links do tipo TEMPORADAS.
+2025-08-02 13:53:47,511 - INFO - [root] - 
+--- Processando Competição 18/150: Brasileirão Feminino Série A1 (Desconhecido) ---
+2025-08-02 13:53:51,402 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:53:51,402 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 13:53:51,405 - INFO - [root] - 
+--- Processando Competição 19/150: CONCACAF Gold Cup (Desconhecido) ---
+2025-08-02 13:53:55,362 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:53:55,362 - INFO - [root] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 13:53:55,365 - INFO - [root] - 
+--- Processando Competição 20/150: CONCACAF W Championship (Desconhecido) ---
+2025-08-02 13:53:59,120 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:53:59,120 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:53:59,122 - INFO - [root] - 
+--- Processando Competição 21/150: CONMEBOL Copa América (Desconhecido) ---
+2025-08-02 13:54:02,992 - INFO - [root] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:54:02,992 - INFO - [root] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 13:54:02,994 - INFO - [root] - 
+--- Processando Competição 22/150: Campeonato Brasileiro Série A (Desconhecido) ---
+2025-08-02 13:54:06,550 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:54:06,551 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:54:06,553 - INFO - [root] - 
+--- Processando Competição 23/150: Campeonato Brasileiro Série B (Desconhecido) ---
+2025-08-02 13:54:10,554 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:54:10,555 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:54:10,557 - INFO - [root] - 
+--- Processando Competição 24/150: Canadian Premier League (Desconhecido) ---
+2025-08-02 13:54:14,445 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:54:14,445 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 13:54:14,448 - INFO - [root] - 
+--- Processando Competição 25/150: Categoría Primera A (Desconhecido) ---
+2025-08-02 13:54:18,400 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:54:18,400 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:54:18,403 - INFO - [root] - 
+--- Processando Competição 26/150: Challenger Pro League (Desconhecido) ---
+2025-08-02 13:54:22,338 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:54:22,339 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 13:54:22,342 - INFO - [root] - 
+--- Processando Competição 27/150: Chilean Primera División (Desconhecido) ---
+2025-08-02 13:54:26,294 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:54:26,295 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:54:26,298 - INFO - [root] - 
+--- Processando Competição 28/150: Chinese Football Association Super League (Desconhecido) ---
+2025-08-02 13:54:30,494 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:54:30,494 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:54:30,497 - INFO - [root] - 
+--- Processando Competição 29/150: Copa América Femenina (Desconhecido) ---
+2025-08-02 13:54:34,357 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:54:34,357 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:54:34,359 - INFO - [root] - 
+--- Processando Competição 30/150: Copa CONMEBOL Sudamericana (Desconhecido) ---
+2025-08-02 13:54:38,425 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:54:38,426 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:54:38,428 - INFO - [root] - 
+--- Processando Competição 31/150: Copa Libertadores de América (Desconhecido) ---
+2025-08-02 13:54:42,111 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:54:42,111 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:54:42,114 - INFO - [root] - 
+--- Processando Competição 32/150: Copa de la Liga Profesional (Desconhecido) ---
+2025-08-02 13:54:45,925 - INFO - [root] -   -> 4 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:54:45,925 - INFO - [root] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 13:54:45,927 - INFO - [root] - 
+--- Processando Competição 33/150: Copa del Rey (Desconhecido) ---
+2025-08-02 13:54:50,103 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:54:50,103 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 13:54:50,106 - INFO - [root] - 
+--- Processando Competição 34/150: Coppa Italia (Desconhecido) ---
+2025-08-02 13:54:54,343 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:54:54,343 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:54:54,346 - INFO - [root] - 
+--- Processando Competição 35/150: Coupe de France (Desconhecido) ---
+2025-08-02 13:54:58,626 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:54:58,626 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 13:54:58,629 - INFO - [root] - 
+--- Processando Competição 36/150: Coupe de la Ligue (Desconhecido) ---
+2025-08-02 13:55:02,502 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:02,502 - INFO - [root] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 13:55:02,505 - INFO - [root] - 
+--- Processando Competição 37/150: Croatian Football League (Desconhecido) ---
+2025-08-02 13:55:06,290 - INFO - [root] -   -> 19 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:06,290 - INFO - [root] -   -> Encontrados 19 links do tipo TEMPORADAS.
+2025-08-02 13:55:06,293 - INFO - [root] - 
+--- Processando Competição 38/150: Czech First League (Desconhecido) ---
+2025-08-02 13:55:10,035 - INFO - [root] -   -> 17 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:10,035 - INFO - [root] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 13:55:10,038 - INFO - [root] - 
+--- Processando Competição 39/150: DFB-Pokal (Desconhecido) ---
+2025-08-02 13:55:14,059 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:14,059 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:55:14,062 - INFO - [root] - 
+--- Processando Competição 40/150: DFB-Pokal Frauen (Desconhecido) ---
+2025-08-02 13:55:17,991 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:17,992 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 13:55:17,994 - INFO - [root] - 
+--- Processando Competição 41/150: Damallsvenskan (Desconhecido) ---
+2025-08-02 13:55:21,886 - INFO - [root] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:21,887 - INFO - [root] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 13:55:21,889 - INFO - [root] - 
+--- Processando Competição 42/150: Danish Superliga (Desconhecido) ---
+2025-08-02 13:55:25,555 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:25,555 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 13:55:25,558 - INFO - [root] - 
+--- Processando Competição 43/150: Danish Women's League (Desconhecido) ---
+2025-08-02 13:55:29,426 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:29,426 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 13:55:29,429 - INFO - [root] - 
+--- Processando Competição 44/150: División de Fútbol Profesional (Desconhecido) ---
+2025-08-02 13:55:33,411 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:33,411 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 13:55:33,413 - INFO - [root] - 
+--- Processando Competição 45/150: EFL Championship (Desconhecido) ---
+2025-08-02 13:55:36,999 - INFO - [root] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:36,999 - INFO - [root] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 13:55:37,002 - INFO - [root] - 
+--- Processando Competição 46/150: EFL Cup (Desconhecido) ---
+2025-08-02 13:55:41,148 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:41,148 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:55:41,151 - INFO - [root] - 
+--- Processando Competição 47/150: EFL League One (Desconhecido) ---
+2025-08-02 13:55:44,784 - INFO - [root] -   -> 24 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:44,784 - INFO - [root] -   -> Encontrados 24 links do tipo TEMPORADAS.
+2025-08-02 13:55:44,786 - INFO - [root] - 
+--- Processando Competição 48/150: EFL League Two (Desconhecido) ---
+2025-08-02 13:55:48,446 - INFO - [root] -   -> 24 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:48,446 - INFO - [root] -   -> Encontrados 24 links do tipo TEMPORADAS.
+2025-08-02 13:55:48,449 - INFO - [root] - 
+--- Processando Competição 49/150: Eerste Divisie (Desconhecido) ---
+2025-08-02 13:55:52,084 - INFO - [root] -   -> 19 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:52,084 - INFO - [root] -   -> Encontrados 19 links do tipo TEMPORADAS.
+2025-08-02 13:55:52,087 - INFO - [root] - 
+--- Processando Competição 50/150: Ekstraklasa (Desconhecido) ---
+2025-08-02 13:55:55,768 - INFO - [root] -   -> 24 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:55,768 - INFO - [root] -   -> Encontrados 24 links do tipo TEMPORADAS.
+2025-08-02 13:55:55,771 - INFO - [root] - 
+--- Processando Competição 51/150: Eliteserien (Desconhecido) ---
+2025-08-02 13:55:59,433 - INFO - [root] -   -> 26 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:55:59,434 - INFO - [root] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 13:55:59,437 - INFO - [root] - 
+--- Processando Competição 52/150: Eredivisie (Desconhecido) ---
+2025-08-02 13:56:03,630 - INFO - [root] -   -> 26 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:56:03,630 - INFO - [root] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 13:56:03,634 - INFO - [root] - 
+--- Processando Competição 53/150: Eredivisie Vrouwen (Desconhecido) ---
+2025-08-02 13:56:07,566 - INFO - [root] -   -> 8 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:56:07,566 - INFO - [root] -   -> Encontrados 8 links do tipo TEMPORADAS.
+2025-08-02 13:56:07,569 - INFO - [root] - 
+--- Processando Competição 54/150: FA Community Shield (Desconhecido) ---
+2025-08-02 13:56:11,470 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:56:11,470 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:56:11,472 - INFO - [root] - 
+--- Processando Competição 55/150: FA Cup (Desconhecido) ---
+2025-08-02 13:56:15,135 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:56:15,135 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:56:15,137 - INFO - [root] - 
+--- Processando Competição 56/150: FA Women's Super League (Desconhecido) ---
+2025-08-02 13:56:19,083 - INFO - [root] -   -> 10 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:56:19,083 - INFO - [root] -   -> Encontrados 10 links do tipo TEMPORADAS.
+2025-08-02 13:56:19,085 - INFO - [root] - 
+--- Processando Competição 57/150: FIFA Club World Cup (Desconhecido) ---
+2025-08-02 13:56:22,887 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:56:22,888 - INFO - [root] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 13:56:22,890 - INFO - [root] - 
+--- Processando Competição 58/150: FIFA Confederations Cup (Desconhecido) ---
+2025-08-02 13:56:26,772 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:56:26,772 - INFO - [root] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 13:56:26,774 - INFO - [root] - 
+--- Processando Competição 59/150: FIFA Women's World Cup (Desconhecido) ---
+2025-08-02 13:56:30,377 - INFO - [root] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:56:30,377 - INFO - [root] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 13:56:30,379 - INFO - [root] - 
+--- Processando Competição 60/150: FIFA Women's World Cup Qualification (UEFA) (Desconhecido) ---
+2025-08-02 13:56:34,119 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:56:34,119 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:56:34,121 - INFO - [root] - 
+--- Processando Competição 61/150: FIFA World Cup (Desconhecido) ---
+2025-08-02 13:56:37,823 - INFO - [root] -   -> 22 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:56:37,824 - INFO - [root] -   -> Encontrados 22 links do tipo TEMPORADAS.
+2025-08-02 13:56:37,827 - INFO - [root] - 
+--- Processando Competição 62/150: FIFA World Cup Qualification — AFC (Desconhecido) ---
+2025-08-02 13:56:41,874 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:56:41,875 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:56:41,877 - INFO - [root] - 
+--- Processando Competição 63/150: FIFA World Cup Qualification — CAF (Desconhecido) ---
+2025-08-02 13:56:45,795 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:56:45,795 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:56:45,797 - INFO - [root] - 
+--- Processando Competição 64/150: FIFA World Cup Qualification — CONCACAF (Desconhecido) ---
+2025-08-02 13:56:49,958 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:56:49,958 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:56:49,960 - INFO - [root] - 
+--- Processando Competição 65/150: FIFA World Cup Qualification — CONMEBOL (Desconhecido) ---
+2025-08-02 13:56:54,028 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:56:54,028 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:56:54,031 - INFO - [root] - 
+--- Processando Competição 66/150: FIFA World Cup Qualification — Inter-confederation play-offs (Desconhecido) ---
+2025-08-02 13:56:57,814 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:56:57,814 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:56:57,816 - INFO - [root] - 
+--- Processando Competição 67/150: FIFA World Cup Qualification — OFC (Desconhecido) ---
+2025-08-02 13:57:01,762 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:57:01,762 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:57:01,764 - INFO - [root] - 
+--- Processando Competição 68/150: FIFA World Cup Qualification — UEFA (Desconhecido) ---
+2025-08-02 13:57:06,217 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:57:06,218 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:57:06,220 - INFO - [root] - 
+--- Processando Competição 69/150: First Professional Football League (Desconhecido) ---
+2025-08-02 13:57:10,025 - INFO - [root] -   -> 17 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:57:10,026 - INFO - [root] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 13:57:10,033 - INFO - [root] - 
+--- Processando Competição 70/150: Franz Beckenbauer Supercup (Desconhecido) ---
+2025-08-02 13:57:13,997 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:57:13,998 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:57:14,001 - INFO - [root] - 
+--- Processando Competição 71/150: Frauen-Bundesliga (Desconhecido) ---
+2025-08-02 13:57:17,906 - INFO - [root] -   -> 10 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:57:17,906 - INFO - [root] -   -> Encontrados 10 links do tipo TEMPORADAS.
+2025-08-02 13:57:17,909 - INFO - [root] - 
+--- Processando Competição 72/150: Fußball-Bundesliga (Desconhecido) ---
+2025-08-02 13:57:21,622 - INFO - [root] -   -> 38 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:57:21,622 - INFO - [root] -   -> Encontrados 38 links do tipo TEMPORADAS.
+2025-08-02 13:57:21,625 - INFO - [root] - 
+--- Processando Competição 73/150: I-League (Desconhecido) ---
+2025-08-02 13:57:25,572 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:57:25,572 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:57:25,575 - INFO - [root] - 
+--- Processando Competição 74/150: Indian Super League (Desconhecido) ---
+2025-08-02 13:57:29,498 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:57:29,499 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 13:57:29,502 - INFO - [root] - 
+--- Processando Competição 75/150: International Friendlies (M) (Desconhecido) ---
+2025-08-02 13:57:33,932 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:57:33,932 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:57:33,935 - INFO - [root] - 
+--- Processando Competição 76/150: International Friendlies (W) (Desconhecido) ---
+2025-08-02 13:57:37,848 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:57:37,848 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 13:57:37,852 - INFO - [root] - 
+--- Processando Competição 77/150: J1 League (Desconhecido) ---
+2025-08-02 13:57:41,591 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:57:41,591 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:57:41,594 - INFO - [root] - 
+--- Processando Competição 78/150: J2 League (Desconhecido) ---
+2025-08-02 13:57:45,602 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:57:45,603 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:57:45,606 - INFO - [root] - 
+--- Processando Competição 79/150: K League 1 (Desconhecido) ---
+2025-08-02 13:57:49,553 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:57:49,553 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:57:49,556 - INFO - [root] - 
+--- Processando Competição 80/150: La Liga (Desconhecido) ---
+2025-08-02 13:57:53,300 - INFO - [root] -   -> 38 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:57:53,300 - INFO - [root] -   -> Encontrados 38 links do tipo TEMPORADAS.
+2025-08-02 13:57:53,303 - INFO - [root] - 
+--- Processando Competição 81/150: Lamar Hunt U.S. Open Cup (Desconhecido) ---
+2025-08-02 13:57:57,174 - INFO - [root] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:57:57,174 - INFO - [root] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 13:57:57,177 - INFO - [root] - 
+--- Processando Competição 82/150: Liga 1 de Fútbol Profesional (Desconhecido) ---
+2025-08-02 13:58:01,141 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:58:01,142 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:58:01,145 - INFO - [root] - 
+--- Processando Competição 83/150: Liga F (Desconhecido) ---
+2025-08-02 13:58:05,237 - INFO - [root] -   -> 4 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:58:05,238 - INFO - [root] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 13:58:05,241 - INFO - [root] - 
+--- Processando Competição 84/150: Liga I (Desconhecido) ---
+2025-08-02 13:58:08,933 - INFO - [root] -   -> 20 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:58:08,933 - INFO - [root] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 13:58:08,936 - INFO - [root] - 
+--- Processando Competição 85/150: Liga MX (Desconhecido) ---
+2025-08-02 13:58:12,644 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:58:12,644 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 13:58:12,647 - INFO - [root] - 
+--- Processando Competição 86/150: Liga Profesional Ecuador (Desconhecido) ---
+2025-08-02 13:58:16,617 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:58:16,617 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:58:16,620 - INFO - [root] - 
+--- Processando Competição 87/150: Liga Profesional de Fútbol Argentina (Desconhecido) ---
+2025-08-02 13:58:20,277 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:58:20,278 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:58:20,280 - INFO - [root] - 
+--- Processando Competição 88/150: Ligue 1 (Desconhecido) ---
+2025-08-02 13:58:23,975 - INFO - [root] -   -> 31 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:58:23,976 - INFO - [root] -   -> Encontrados 31 links do tipo TEMPORADAS.
+2025-08-02 13:58:23,978 - INFO - [root] - 
+--- Processando Competição 89/150: Ligue 2 (Desconhecido) ---
+2025-08-02 13:58:28,026 - INFO - [root] -   -> 17 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:58:28,026 - INFO - [root] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 13:58:28,028 - INFO - [root] - 
+--- Processando Competição 90/150: Major League Soccer (Desconhecido) ---
+2025-08-02 13:58:31,731 - INFO - [root] -   -> 30 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:58:31,731 - INFO - [root] -   -> Encontrados 30 links do tipo TEMPORADAS.
+2025-08-02 13:58:31,734 - INFO - [root] - 
+--- Processando Competição 91/150: NWSL Challenge Cup (Desconhecido) ---
+2025-08-02 13:58:35,565 - INFO - [root] -   -> 4 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:58:35,565 - INFO - [root] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 13:58:35,567 - INFO - [root] - 
+--- Processando Competição 92/150: NWSL Fall Series (Desconhecido) ---
+2025-08-02 13:58:39,313 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:58:39,313 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:58:39,315 - INFO - [root] - 
+--- Processando Competição 93/150: National League (Desconhecido) ---
+2025-08-02 13:58:43,454 - INFO - [root] -   -> 20 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:58:43,455 - INFO - [root] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 13:58:43,458 - INFO - [root] - 
+--- Processando Competição 94/150: National Women's Soccer League (Desconhecido) ---
+2025-08-02 13:58:47,258 - INFO - [root] -   -> 13 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:58:47,258 - INFO - [root] -   -> Encontrados 13 links do tipo TEMPORADAS.
+2025-08-02 13:58:47,261 - INFO - [root] - 
+--- Processando Competição 95/150: Nemzeti Bajnokság I (Desconhecido) ---
+2025-08-02 13:58:50,977 - INFO - [root] -   -> 21 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:58:50,977 - INFO - [root] -   -> Encontrados 21 links do tipo TEMPORADAS.
+2025-08-02 13:58:50,980 - INFO - [root] - 
+--- Processando Competição 96/150: North American Soccer League (Desconhecido) ---
+2025-08-02 13:58:54,834 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:58:54,834 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 13:58:54,837 - INFO - [root] - 
+--- Processando Competição 97/150: OFC Nations Cup (Desconhecido) ---
+2025-08-02 13:58:58,605 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:58:58,606 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:58:58,608 - INFO - [root] - 
+--- Processando Competição 98/150: OFC Women's Nations Cup (Desconhecido) ---
+2025-08-02 13:59:02,464 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 13:59:02,464 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 13:59:02,467 - INFO - [root] - 
+--- Processando Competição 99/150: Olympics — Women's Tournament (Desconhecido) ---
+2025-08-02 13:59:06,351 - INFO - [root] -   -> 8 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:59:06,351 - INFO - [root] -   -> Encontrados 8 links do tipo TEMPORADAS.
+2025-08-02 13:59:06,354 - INFO - [root] - 
+--- Processando Competição 100/150: Paraguayan Primera División (Desconhecido) ---
+2025-08-02 13:59:10,319 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:59:10,320 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:59:10,322 - INFO - [root] - 
+--- Processando Competição 101/150: Persian Gulf Pro League (Desconhecido) ---
+2025-08-02 13:59:14,324 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:59:14,324 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 13:59:14,327 - INFO - [root] - 
+--- Processando Competição 102/150: Premier League (Desconhecido) ---
+2025-08-02 13:59:17,992 - INFO - [root] -   -> 127 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:59:17,992 - INFO - [root] -   -> Encontrados 127 links do tipo TEMPORADAS.
+2025-08-02 13:59:17,995 - INFO - [root] - 
+--- Processando Competição 103/150: Premier League 2 (Desconhecido) ---
+2025-08-02 13:59:21,912 - INFO - [root] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:59:21,912 - INFO - [root] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 13:59:21,915 - INFO - [root] - 
+--- Processando Competição 104/150: Premier League 2 — Division 2 (Desconhecido) ---
+2025-08-02 13:59:25,798 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:59:25,799 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 13:59:25,802 - INFO - [root] - 
+--- Processando Competição 105/150: Première Ligue (Desconhecido) ---
+2025-08-02 13:59:29,671 - INFO - [root] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:59:29,671 - INFO - [root] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 13:59:29,675 - INFO - [root] - 
+--- Processando Competição 106/150: Primeira Liga (Desconhecido) ---
+2025-08-02 13:59:33,446 - INFO - [root] -   -> 26 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:59:33,446 - INFO - [root] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 13:59:33,449 - INFO - [root] - 
+--- Processando Competição 107/150: Russian Premier League (Desconhecido) ---
+2025-08-02 13:59:37,034 - INFO - [root] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:59:37,035 - INFO - [root] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 13:59:37,037 - INFO - [root] - 
+--- Processando Competição 108/150: Saudi Professional League (Desconhecido) ---
+2025-08-02 13:59:40,742 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:59:40,743 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 13:59:40,746 - INFO - [root] - 
+--- Processando Competição 109/150: Scottish Championship (Desconhecido) ---
+2025-08-02 13:59:44,820 - INFO - [root] -   -> 19 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:59:44,820 - INFO - [root] -   -> Encontrados 19 links do tipo TEMPORADAS.
+2025-08-02 13:59:44,822 - INFO - [root] - 
+--- Processando Competição 110/150: Scottish Premiership (Desconhecido) ---
+2025-08-02 13:59:48,538 - INFO - [root] -   -> 26 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:59:48,539 - INFO - [root] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 13:59:48,541 - INFO - [root] - 
+--- Processando Competição 111/150: Serbian SuperLiga (Desconhecido) ---
+2025-08-02 13:59:52,249 - INFO - [root] -   -> 18 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:59:52,249 - INFO - [root] -   -> Encontrados 18 links do tipo TEMPORADAS.
+2025-08-02 13:59:52,252 - INFO - [root] - 
+--- Processando Competição 112/150: Serie A (Desconhecido) ---
+2025-08-02 13:59:56,237 - INFO - [root] -   -> 38 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 13:59:56,237 - INFO - [root] -   -> Encontrados 38 links do tipo TEMPORADAS.
+2025-08-02 13:59:56,241 - INFO - [root] - 
+--- Processando Competição 113/150: Serie A (Desconhecido) ---
+2025-08-02 14:00:00,080 - INFO - [root] -   -> 8 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:00:00,081 - INFO - [root] -   -> Encontrados 8 links do tipo TEMPORADAS.
+2025-08-02 14:00:00,083 - INFO - [root] - 
+--- Processando Competição 114/150: Serie B (Desconhecido) ---
+2025-08-02 14:00:03,792 - INFO - [root] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:00:03,792 - INFO - [root] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 14:00:03,795 - INFO - [root] - 
+--- Processando Competição 115/150: SheBelieves Cup (Desconhecido) ---
+2025-08-02 14:00:07,772 - INFO - [root] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:00:07,772 - INFO - [root] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 14:00:07,775 - INFO - [root] - 
+--- Processando Competição 116/150: South African Premier Division (Desconhecido) ---
+2025-08-02 14:00:11,755 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:00:11,755 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 14:00:11,759 - INFO - [root] - 
+--- Processando Competição 117/150: Spanish Segunda División (Desconhecido) ---
+2025-08-02 14:00:15,518 - INFO - [root] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:00:15,518 - INFO - [root] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 14:00:15,521 - INFO - [root] - 
+--- Processando Competição 118/150: Super League Greece (Desconhecido) ---
+2025-08-02 14:00:19,224 - INFO - [root] -   -> 26 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:00:19,224 - INFO - [root] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 14:00:19,228 - INFO - [root] - 
+--- Processando Competição 119/150: Supercopa de España (Desconhecido) ---
+2025-08-02 14:00:23,205 - INFO - [root] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:00:23,205 - INFO - [root] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 14:00:23,208 - INFO - [root] - 
+--- Processando Competição 120/150: Supercoppa Italiana (Desconhecido) ---
+2025-08-02 14:00:27,175 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 14:00:27,175 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 14:00:27,177 - INFO - [root] - 
+--- Processando Competição 121/150: Superettan (Desconhecido) ---
+2025-08-02 14:00:30,855 - INFO - [root] -   -> 20 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:00:30,856 - INFO - [root] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 14:00:30,858 - INFO - [root] - 
+--- Processando Competição 122/150: Swiss Super League (Desconhecido) ---
+2025-08-02 14:00:34,551 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:00:34,551 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 14:00:34,554 - INFO - [root] - 
+--- Processando Competição 123/150: Swiss Women's Super League (Desconhecido) ---
+2025-08-02 14:00:38,420 - INFO - [root] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:00:38,420 - INFO - [root] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 14:00:38,423 - INFO - [root] - 
+--- Processando Competição 124/150: Süper Lig (Desconhecido) ---
+2025-08-02 14:00:42,087 - INFO - [root] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:00:42,089 - INFO - [root] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 14:00:42,092 - INFO - [root] - 
+--- Processando Competição 125/150: Toppserien (Desconhecido) ---
+2025-08-02 14:00:46,011 - INFO - [root] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:00:46,012 - INFO - [root] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 14:00:46,015 - INFO - [root] - 
+--- Processando Competição 126/150: Trophée des Champions (Desconhecido) ---
+2025-08-02 14:00:49,961 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 14:00:49,961 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 14:00:49,964 - INFO - [root] - 
+--- Processando Competição 127/150: U17 DFB Youth League (Desconhecido) ---
+2025-08-02 14:00:53,989 - INFO - [root] -   -> 10 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:00:53,990 - INFO - [root] -   -> Encontrados 10 links do tipo TEMPORADAS.
+2025-08-02 14:00:53,993 - INFO - [root] - 
+--- Processando Competição 128/150: U19 DFB Youth League (Desconhecido) ---
+2025-08-02 14:00:58,081 - INFO - [root] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:00:58,081 - INFO - [root] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 14:00:58,085 - INFO - [root] - 
+--- Processando Competição 129/150: UEFA Champions League (Desconhecido) ---
+2025-08-02 14:01:01,907 - INFO - [root] -   -> 36 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:01:01,907 - INFO - [root] -   -> Encontrados 36 links do tipo TEMPORADAS.
+2025-08-02 14:01:01,912 - INFO - [root] - 
+--- Processando Competição 130/150: UEFA Conference League (Desconhecido) ---
+2025-08-02 14:01:05,891 - INFO - [root] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:01:05,891 - INFO - [root] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 14:01:05,894 - INFO - [root] - 
+--- Processando Competição 131/150: UEFA Europa League (Desconhecido) ---
+2025-08-02 14:01:09,579 - INFO - [root] -   -> 36 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:01:09,580 - INFO - [root] -   -> Encontrados 36 links do tipo TEMPORADAS.
+2025-08-02 14:01:09,582 - INFO - [root] - 
+--- Processando Competição 132/150: UEFA European Football Championship (Desconhecido) ---
+2025-08-02 14:01:13,345 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:01:13,346 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 14:01:13,348 - INFO - [root] - 
+--- Processando Competição 133/150: UEFA European Football Championship Qualifying (Desconhecido) ---
+2025-08-02 14:01:17,603 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 14:01:17,604 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 14:01:17,606 - INFO - [root] - 
+--- Processando Competição 134/150: UEFA Nations League (Desconhecido) ---
+2025-08-02 14:01:21,498 - INFO - [root] -   -> 4 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:01:21,499 - INFO - [root] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 14:01:21,501 - INFO - [root] - 
+--- Processando Competição 135/150: UEFA Super Cup (Desconhecido) ---
+2025-08-02 14:01:25,607 - INFO - [root] -   -> 14 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:01:25,607 - INFO - [root] -   -> Encontrados 14 links do tipo TEMPORADAS.
+2025-08-02 14:01:25,610 - INFO - [root] - 
+--- Processando Competição 136/150: UEFA Women's Champions League (Desconhecido) ---
+2025-08-02 14:01:29,348 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:01:29,348 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 14:01:29,351 - INFO - [root] - 
+--- Processando Competição 137/150: UEFA Women's Championship (Desconhecido) ---
+2025-08-02 14:01:33,286 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:01:33,286 - INFO - [root] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 14:01:33,292 - INFO - [root] - 
+--- Processando Competição 138/150: UEFA Women's Euro Qualification (Desconhecido) ---
+2025-08-02 14:01:37,207 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 14:01:37,207 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 14:01:37,210 - INFO - [root] - 
+--- Processando Competição 139/150: USL Championship (Desconhecido) ---
+2025-08-02 14:01:41,296 - INFO - [root] -   -> 15 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:01:41,296 - INFO - [root] -   -> Encontrados 15 links do tipo TEMPORADAS.
+2025-08-02 14:01:41,300 - INFO - [root] - 
+--- Processando Competição 140/150: USL First Division (Desconhecido) ---
+2025-08-02 14:01:45,191 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:01:45,192 - INFO - [root] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 14:01:45,194 - INFO - [root] - 
+--- Processando Competição 141/150: USL League One (Desconhecido) ---
+2025-08-02 14:01:49,063 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:01:49,063 - INFO - [root] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 14:01:49,066 - INFO - [root] - 
+--- Processando Competição 142/150: USSF Division 2 Professional League (Desconhecido) ---
+2025-08-02 14:01:52,798 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 14:01:52,799 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 14:01:52,801 - INFO - [root] - 
+--- Processando Competição 143/150: Ukrainian Premier League (Desconhecido) ---
+2025-08-02 14:01:56,979 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:01:56,980 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 14:01:56,983 - INFO - [root] - 
+--- Processando Competição 144/150: Uruguayan Primera División (Desconhecido) ---
+2025-08-02 14:02:01,024 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:02:01,024 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 14:02:01,026 - INFO - [root] - 
+--- Processando Competição 145/150: Veikkausliiga (Desconhecido) ---
+2025-08-02 14:02:05,137 - INFO - [root] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:02:05,137 - INFO - [root] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 14:02:05,139 - INFO - [root] - 
+--- Processando Competição 146/150: Venezuelan Primera División (Desconhecido) ---
+2025-08-02 14:02:09,087 - INFO - [root] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:02:09,087 - INFO - [root] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 14:02:09,090 - INFO - [root] - 
+--- Processando Competição 147/150: Women Empowerment League (Desconhecido) ---
+2025-08-02 14:02:12,911 - INFO - [root] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:02:12,911 - INFO - [root] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 14:02:12,914 - INFO - [root] - 
+--- Processando Competição 148/150: Women's Professional Soccer (Desconhecido) ---
+2025-08-02 14:02:16,642 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 14:02:16,643 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 14:02:16,645 - INFO - [root] - 
+--- Processando Competição 149/150: Women's United Soccer Association (Desconhecido) ---
+2025-08-02 14:02:20,467 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 14:02:20,467 - INFO - [root] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 14:02:20,469 - INFO - [root] - 
+--- Processando Competição 150/150: ÖFB Frauen-Bundesliga (Desconhecido) ---
+2025-08-02 14:02:24,258 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 14:02:24,259 - INFO - [root] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 14:02:24,261 - INFO - [root] - 
+✅ Script 1 (Descoberta) finalizado com sucesso!
+2025-08-02 14:02:26,443 - INFO - [root] - Navegador (WebDriver) finalizado.
+2025-08-02 14:02:26,443 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 1 de 6] Finalizada com sucesso! ---
+2025-08-02 14:02:26,444 - INFO - [root] - 
+--- [ETAPA 2 de 6] Executando: Coleta de Dados de Partidas ---
+2025-08-02 14:02:26,444 - INFO - [root] - 🚀 Iniciando Script 2: Coleta de Dados de Partidas...
+2025-08-02 14:02:26,444 - CRITICAL - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🚨🚨🚨 ERRO CRÍTICO NA PIPELINE! 🚨🚨🚨
+Traceback (most recent call last):
+  File "C:\ApostaPro\Coleta_de_dados\apis\fbref\orquestrador_coleta.py", line 39, in executar_pipeline_completa
+    coletar_partidas()
+  File "C:\ApostaPro\Coleta_de_dados\apis\fbref\coletar_dados_partidas.py", line 63, in main
+    conn = sqlite3.connect(DB_NAME); cursor = conn.cursor()
+sqlite3.OperationalError: unable to open database file
+2025-08-02 14:02:26,445 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+✅✅✅ PIPELINE COMPLETA FINALIZADA! ✅✅✅
+2025-08-02 14:02:26,446 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Tempo total de execução: 00:09:54

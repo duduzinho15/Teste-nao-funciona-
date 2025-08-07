@@ -1,0 +1,91 @@
+2025-08-03 12:21:01 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_12-21-01.log
+2025-08-03 12:21:01 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_12-21-01.log
+2025-08-03 12:21:02 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 12:21:02 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando coleta de estatísticas detalhadas...
+2025-08-03 12:21:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 🚀 Iniciando Script 3: Coleta de Estatísticas COMPLETAS...
+2025-08-03 12:21:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - Configurando banco de dados com a estrutura completa de estatísticas...
+2025-08-03 12:21:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - Estrutura do banco de dados atualizada com sucesso.
+2025-08-03 12:21:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - Encontrados 615 relatórios de partida pendentes.
+2025-08-03 12:21:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 1 ---
+2025-08-03 12:21:05 - INFO - [Coleta_de_dados.apis.fbref.anti_429_state_machine] - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 12:21:05 - INFO - [Coleta_de_dados.apis.fbref.proxy_rotation_system] - Sistema de rotacao de proxies inicializado
+2025-08-03 12:21:05 - INFO - [Coleta_de_dados.apis.fbref.browser_emulation_headers] - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-03 12:21:05 - INFO - [Coleta_de_dados.apis.fbref.fbref_utils] - Sistemas anti-429 inicializados com sucesso
+2025-08-03 12:21:05 - INFO - [Coleta_de_dados.apis.fbref.advanced_anti_blocking] - Sistema avançado anti-bloqueio inicializado
+2025-08-03 12:48:56 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:48:56 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 1 sem estatísticas válidas
+2025-08-03 12:48:56 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 2 ---
+2025-08-03 12:49:08 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:49:08 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 2 sem estatísticas válidas
+2025-08-03 12:49:08 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 3 ---
+2025-08-03 12:49:21 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:49:21 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 3 sem estatísticas válidas
+2025-08-03 12:49:21 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 4 ---
+2025-08-03 12:49:36 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:49:36 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 4 sem estatísticas válidas
+2025-08-03 12:49:36 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 5 ---
+2025-08-03 12:49:47 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:49:47 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 5 sem estatísticas válidas
+2025-08-03 12:49:47 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 6 ---
+2025-08-03 12:49:58 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:49:58 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 6 sem estatísticas válidas
+2025-08-03 12:49:58 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 7 ---
+2025-08-03 12:50:01 - INFO - [Coleta_de_dados.apis.fbref.advanced_anti_blocking] - Simulando pausa humana: 56.1s
+2025-08-03 12:51:03 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:51:03 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 7 sem estatísticas válidas
+2025-08-03 12:51:03 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 8 ---
+2025-08-03 12:51:11 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:51:11 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 8 sem estatísticas válidas
+2025-08-03 12:51:11 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 9 ---
+2025-08-03 12:51:25 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:51:25 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 9 sem estatísticas válidas
+2025-08-03 12:51:25 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 10 ---
+2025-08-03 12:51:34 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:51:34 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 10 sem estatísticas válidas
+2025-08-03 12:51:34 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 11 ---
+2025-08-03 12:51:42 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:51:42 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 11 sem estatísticas válidas
+2025-08-03 12:51:42 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 12 ---
+2025-08-03 12:51:45 - INFO - [Coleta_de_dados.apis.fbref.advanced_anti_blocking] - Simulando pausa humana: 72.3s
+2025-08-03 12:53:03 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:53:03 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 12 sem estatísticas válidas
+2025-08-03 12:53:03 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 13 ---
+2025-08-03 12:53:16 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:53:16 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 13 sem estatísticas válidas
+2025-08-03 12:53:16 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 14 ---
+2025-08-03 12:53:19 - INFO - [Coleta_de_dados.apis.fbref.advanced_anti_blocking] - Simulando pausa humana: 75.0s
+2025-08-03 12:54:44 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:54:44 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 14 sem estatísticas válidas
+2025-08-03 12:54:44 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 15 ---
+2025-08-03 12:54:52 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:54:52 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 15 sem estatísticas válidas
+2025-08-03 12:54:52 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 16 ---
+2025-08-03 12:55:04 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:55:04 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 16 sem estatísticas válidas
+2025-08-03 12:55:04 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 17 ---
+2025-08-03 12:55:07 - INFO - [Coleta_de_dados.apis.fbref.advanced_anti_blocking] - Simulando pausa humana: 63.8s
+2025-08-03 12:56:18 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:56:18 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 17 sem estatísticas válidas
+2025-08-03 12:56:18 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 18 ---
+2025-08-03 12:56:29 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Nenhum time identificado nas tabelas.
+2025-08-03 12:56:29 - WARNING - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] -   -> Partida 18 sem estatísticas válidas
+2025-08-03 12:56:29 - INFO - [Coleta_de_dados.apis.fbref.coletar_estatisticas_detalhadas] - 
+--- Processando Partida ID 19 ---

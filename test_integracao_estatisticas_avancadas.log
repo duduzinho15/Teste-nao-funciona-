@@ -1,0 +1,209 @@
+2025-08-05 09:36:03,703 - INFO - ==================================================
+2025-08-05 09:36:03,704 - INFO - 🚀 INÍCIO DOS TESTES DE INTEGRAÇÃO
+2025-08-05 09:36:03,704 - INFO - ==================================================
+2025-08-05 09:36:03,704 - INFO - 🔍 Configurando conexão com o banco de dados...
+2025-08-05 09:36:03,704 - INFO - Conectando ao banco de dados: postgresql://apostapro_user:apostapro_pass@localhost:5432/apostapro_db
+2025-08-05 09:36:03,732 - ERROR - ❌ Falha na conexão com o banco de dados: No module named 'psycopg2'
+2025-08-05 09:36:03,734 - ERROR - Traceback (most recent call last):
+  File "C:\ApostaPro\tests\integration\test_estatisticas_avancadas_api.py", line 61, in setup_database
+    self.engine = create_engine(db_url, pool_pre_ping=True)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in create_engine
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\util\deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\create.py", line 602, in create_engine
+    dbapi = dbapi_meth(**dbapi_args)
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\dialects\postgresql\psycopg2.py", line 696, in import_dbapi
+    import psycopg2
+ModuleNotFoundError: No module named 'psycopg2'
+
+2025-08-05 09:36:03,734 - ERROR - ❌ Teste abortado: falha na configuração do banco de dados
+2025-08-05 09:36:03,734 - INFO - ==================================================
+2025-08-05 09:36:03,734 - INFO - 🏁 FIM DOS TESTES DE INTEGRAÇÃO
+2025-08-05 09:36:03,735 - INFO - ==================================================
+2025-08-05 09:37:20,219 - INFO - ==================================================
+2025-08-05 09:37:20,219 - INFO - 🚀 INÍCIO DOS TESTES DE INTEGRAÇÃO
+2025-08-05 09:37:20,219 - INFO - ==================================================
+2025-08-05 09:37:20,219 - INFO - 🔍 Configurando conexão com o banco de dados...
+2025-08-05 09:37:20,219 - INFO - Conectando ao banco de dados: postgresql://apostapro_user:apostapro_pass@localhost:5432/apostapro_db
+2025-08-05 09:37:20,468 - INFO - ✅ Conexão com o banco de dados bem-sucedida
+2025-08-05 09:37:20,468 - ERROR - Erro ao obter partida para teste: Textual SQL expression '\n                SELECT p...' should be explicitly declared as text('\n                SELECT p...')
+2025-08-05 09:37:20,471 - ERROR - Traceback (most recent call last):
+  File "C:\ApostaPro\tests\integration\test_estatisticas_avancadas_api.py", line 82, in obter_partida_teste
+    result = session.execute(
+             ~~~~~~~~~~~~~~~^
+        """
+        ^^^
+    ...<10 lines>...
+        """
+        ^^^
+    ).fetchone()
+    ^
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2149, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+        element, argname=argname, **kw
+    )
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\coercions.py", line 621, in _literal_coercion
+    return self._text_coercion(element, argname, **kw)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\coercions.py", line 614, in _text_coercion
+    return _no_text_coercion(element, argname)
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\coercions.py", line 584, in _no_text_coercion
+    raise exc_cls(
+    ...<7 lines>...
+    ) from err
+sqlalchemy.exc.ArgumentError: Textual SQL expression '\n                SELECT p...' should be explicitly declared as text('\n                SELECT p...')
+
+2025-08-05 09:37:20,471 - ERROR - ❌ Nenhuma partida com estatísticas avançadas disponível para teste
+2025-08-05 09:37:20,472 - INFO - ==================================================
+2025-08-05 09:37:20,472 - INFO - 🏁 FIM DOS TESTES DE INTEGRAÇÃO
+2025-08-05 09:37:20,472 - INFO - ==================================================
+2025-08-05 09:38:15,743 - INFO - ==================================================
+2025-08-05 09:38:15,743 - INFO - 🚀 INÍCIO DOS TESTES DE INTEGRAÇÃO
+2025-08-05 09:38:15,743 - INFO - ==================================================
+2025-08-05 09:38:15,743 - INFO - 🔍 Configurando conexão com o banco de dados...
+2025-08-05 09:38:15,744 - INFO - Conectando ao banco de dados: postgresql://apostapro_user:apostapro_pass@localhost:5432/apostapro_db
+2025-08-05 09:38:15,947 - INFO - ✅ Conexão com o banco de dados bem-sucedida
+2025-08-05 09:38:15,958 - ERROR - Erro ao obter partida para teste: (psycopg2.errors.UndefinedColumn) ERRO:  coluna p.url_match_report não existe
+LINE 2:                 SELECT p.id, p.url_match_report, 
+                                     ^
+
+[SQL: 
+                SELECT p.id, p.url_match_report, 
+                       ep.xg_casa, ep.xg_visitante, 
+                       ep.formacao_casa, ep.formacao_visitante
+                FROM partidas p
+                JOIN estatisticas_partidas ep ON p.id = ep.partida_id
+                WHERE ep.xg_casa IS NOT NULL 
+                AND ep.xg_visitante IS NOT NULL
+                AND ep.formacao_casa IS NOT NULL
+                AND ep.formacao_visitante IS NOT NULL
+                LIMIT 1
+            ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-08-05 09:38:15,964 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1961, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 944, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: ERRO:  coluna p.url_match_report não existe
+LINE 2:                 SELECT p.id, p.url_match_report, 
+                                     ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\ApostaPro\tests\integration\test_estatisticas_avancadas_api.py", line 94, in obter_partida_teste
+    result = session.execute(query).fetchone()
+             ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2260, in _execute_internal
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1413, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1840, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1980, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 2349, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1961, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Eduardo Vitorino\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 944, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) ERRO:  coluna p.url_match_report não existe
+LINE 2:                 SELECT p.id, p.url_match_report, 
+                                     ^
+
+[SQL: 
+                SELECT p.id, p.url_match_report, 
+                       ep.xg_casa, ep.xg_visitante, 
+                       ep.formacao_casa, ep.formacao_visitante
+                FROM partidas p
+                JOIN estatisticas_partidas ep ON p.id = ep.partida_id
+                WHERE ep.xg_casa IS NOT NULL 
+                AND ep.xg_visitante IS NOT NULL
+                AND ep.formacao_casa IS NOT NULL
+                AND ep.formacao_visitante IS NOT NULL
+                LIMIT 1
+            ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+2025-08-05 09:38:15,965 - ERROR - ❌ Nenhuma partida com estatísticas avançadas disponível para teste
+2025-08-05 09:38:15,965 - INFO - ==================================================
+2025-08-05 09:38:15,965 - INFO - 🏁 FIM DOS TESTES DE INTEGRAÇÃO
+2025-08-05 09:38:15,965 - INFO - ==================================================
+2025-08-05 09:47:43,937 - INFO - ==================================================
+2025-08-05 09:47:43,938 - INFO - 🚀 INÍCIO DOS TESTES DE INTEGRAÇÃO
+2025-08-05 09:47:43,938 - INFO - ==================================================
+2025-08-05 09:47:43,938 - INFO - 🔍 Configurando conexão com o banco de dados...
+2025-08-05 09:47:43,938 - INFO - Conectando ao banco de dados: postgresql://apostapro_user:apostapro_pass@localhost:5432/apostapro_db
+2025-08-05 09:47:44,023 - INFO - ✅ Conexão com o banco de dados bem-sucedida
+2025-08-05 09:47:44,031 - WARNING - Nenhuma partida com estatísticas avançadas encontrada
+2025-08-05 09:47:44,031 - ERROR - ❌ Nenhuma partida com estatísticas avançadas disponível para teste
+2025-08-05 09:47:44,032 - INFO - ==================================================
+2025-08-05 09:47:44,032 - INFO - 🏁 FIM DOS TESTES DE INTEGRAÇÃO
+2025-08-05 09:47:44,032 - INFO - ==================================================

@@ -1,0 +1,100 @@
+2025-08-03 01:28:18 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_01-28-18.log
+2025-08-03 01:28:18 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_01-28-18.log
+2025-08-03 01:28:18 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando preparação do banco de dados...
+2025-08-03 01:28:18 - INFO - [Banco_de_dados.criar_banco] - Verificando e configurando a estrutura completa do banco de dados em 'C:\ApostaPro\Banco_de_dados\aposta.db'...
+2025-08-03 01:28:18 - INFO - [Banco_de_dados.criar_banco] - Criando tabelas para o FBRef...
+2025-08-03 01:28:18 - INFO - [Banco_de_dados.criar_banco] - Criando tabelas para as outras APIs...
+2025-08-03 01:28:18 - INFO - [Banco_de_dados.criar_banco] - Banco de dados pronto com a estrutura completa para TODAS as fontes de dados.
+2025-08-03 01:28:18 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_01-28-18.log
+2025-08-03 01:28:18 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_01-28-18.log
+2025-08-03 01:28:19 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando descoberta de competições e temporadas...
+2025-08-03 01:28:19 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 🚀 Iniciando Script 1: Descoberta de Links...
+2025-08-03 01:28:19 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Buscando lista de competições com extração de gênero direta...
+2025-08-03 01:28:20 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Encontradas 150 competições únicas com contexto.
+2025-08-03 01:28:20 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 1/150: 2. Fußball-Bundesliga (Masculino) ---
+2025-08-03 01:28:20 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/33/history/2-Bundesliga-Seasons
+2025-08-03 01:28:22 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-03 01:28:22 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-03 01:28:22 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 01:28:22 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 2/150: 3. Fußball-Liga (Masculino) ---
+2025-08-03 01:28:22 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/59/history/3-Liga-Seasons
+2025-08-03 01:28:23 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 17 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-03 01:28:23 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-03 01:28:23 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 01:28:23 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 3/150: A-League Men (Masculino) ---
+2025-08-03 01:28:23 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/65/history/A-League-Men-Seasons
+2025-08-03 01:28:24 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 20 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-03 01:28:24 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-03 01:28:24 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 01:28:24 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 4/150: A-League Women (Feminino) ---
+2025-08-03 01:28:24 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/196/history/A-League-Women-Seasons
+2025-08-03 01:28:25 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-03 01:28:25 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-03 01:28:25 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 01:28:25 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 5/150: AFC Asian Cup (Masculino) ---
+2025-08-03 01:28:25 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/664/history/AFC-Asian-Cup-Seasons
+2025-08-03 01:28:26 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo NOVO MÉTODO DE TABELA DE HISTÓRICO.
+2025-08-03 01:28:26 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TORNEIOS.
+2025-08-03 01:28:26 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 01:28:26 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 6/150: AFC Asian Cup qualification (Masculino) ---
+2025-08-03 01:28:26 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/665/history/AFC-Asian-Cup-qualification-Seasons
+2025-08-03 01:28:27 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-03 01:28:27 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TORNEIOS.
+2025-08-03 01:28:27 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 01:28:27 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 7/150: AFC Women's Asian Cup (Feminino) ---
+2025-08-03 01:28:27 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/161/history/AFC-Womens-Asian-Cup-Seasons
+2025-08-03 01:28:28 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 links encontrados pelo NOVO MÉTODO DE TABELA DE HISTÓRICO.
+2025-08-03 01:28:28 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo TORNEIOS.
+2025-08-03 01:28:28 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 01:28:28 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 8/150: AFC Women's Asian Cup qualification (Feminino) ---
+2025-08-03 01:28:28 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/662/history/AFC-Womens-Asian-Cup-qualification-Seasons
+2025-08-03 01:28:29 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-03 01:28:29 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo TORNEIOS.
+2025-08-03 01:28:29 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 01:28:29 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 9/150: Africa Cup of Nations (Masculino) ---
+2025-08-03 01:28:29 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/656/history/Africa-Cup-of-Nations-Seasons
+2025-08-03 01:28:30 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 8 links encontrados pelo NOVO MÉTODO DE TABELA DE HISTÓRICO.
+2025-08-03 01:28:30 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 8 links do tipo TORNEIOS.
+2025-08-03 01:28:30 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 01:28:30 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 10/150: Africa Cup of Nations qualification (Masculino) ---
+2025-08-03 01:28:30 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/657/history/Africa-Cup-of-Nations-qualification-Seasons
+2025-08-03 01:28:31 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 6 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-03 01:28:31 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo TORNEIOS.
+2025-08-03 01:28:31 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 01:28:31 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 11/150: Africa Women Cup of Nations (Feminino) ---
+2025-08-03 01:28:31 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/156/history/Africa-Women-Cup-of-Nations-Seasons
+2025-08-03 01:28:32 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 4 links encontrados pelo NOVO MÉTODO DE TABELA DE HISTÓRICO.
+2025-08-03 01:28:32 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 4 links do tipo TORNEIOS.
+2025-08-03 01:28:32 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 01:28:32 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 12/150: Algarve Cup (Feminino) ---
+2025-08-03 01:28:32 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/214/history/Algarve-Cup-Seasons
+2025-08-03 01:28:33 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 links encontrados pelo NOVO MÉTODO DE TABELA DE HISTÓRICO.
+2025-08-03 01:28:33 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo TORNEIOS.
+2025-08-03 01:28:33 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 01:28:33 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 13/150: Allsvenskan (Masculino) ---
+2025-08-03 01:28:33 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/29/history/Allsvenskan-Seasons
+2025-08-03 01:28:34 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 25 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-03 01:28:34 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-03 01:28:34 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 01:28:34 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 14/150: Austrian Football Bundesliga (Masculino) ---
+2025-08-03 01:28:34 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/56/history/Austrian-Bundesliga-Seasons
+2025-08-03 01:28:35 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-03 01:28:35 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-03 01:28:35 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Nenhum link novo para salvar (todos já existem).
+2025-08-03 01:28:35 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 15/150: Belgian Pro League (Masculino) ---
+2025-08-03 01:28:35 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Coletando temporadas de: https://fbref.com/en/comps/37/history/Belgian-Pro-League-Seasons

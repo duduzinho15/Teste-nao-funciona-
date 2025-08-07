@@ -1,0 +1,16 @@
+2025-08-03 16:56:09,243 - __main__ - INFO - 🚀 INICIANDO VALIDAÇÃO DE PRODUÇÃO COMPLETA
+2025-08-03 16:56:09,243 - __main__ - INFO - 📋 Log será salvo em: producao_validation_20250803_165609.log
+2025-08-03 16:56:09,244 - advanced_anti_blocking - INFO - Sistema avançado anti-bloqueio inicializado
+2025-08-03 16:56:09,244 - anti_429_state_machine - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 16:56:09,244 - __main__ - INFO - 📊 Geradas 85 URLs para teste de produção
+2025-08-03 16:56:09,245 - __main__ - INFO - 🎯 INICIANDO TESTE DE PRODUÇÃO REAL
+2025-08-03 16:56:09,245 - __main__ - INFO - 📊 URLs a testar: 85
+2025-08-03 16:56:09,245 - __main__ - INFO - 🔄 Processando URL 1/85: https://fbref.com/en/comps/20/2023-2024/stats/2023-2024-Bund...
+2025-08-03 16:56:09,245 - __main__ - INFO - ⏱️  Delay calculado: 2.35s (Pattern: weekend, Success: 100.0%)
+2025-08-03 16:56:14,481 - __main__ - INFO - ✅ Status: 200 | Tempo: 2.86s | Estado: NOMINAL
+2025-08-03 16:56:14,481 - __main__ - INFO - 🔄 Processando URL 2/85: https://fbref.com/en/comps/20/2023-2024/shooting/2023-2024-B...
+2025-08-03 16:56:14,482 - __main__ - INFO - ⏱️  Delay calculado: 2.79s (Pattern: weekend, Success: 100.0%)
+2025-08-03 16:56:18,723 - __main__ - INFO - ✅ Status: 200 | Tempo: 1.43s | Estado: NOMINAL
+2025-08-03 16:56:18,723 - __main__ - INFO - 🔄 Processando URL 3/85: https://fbref.com/en/comps/20/2023-2024/passing/2023-2024-Bu...
+2025-08-03 16:56:18,723 - __main__ - INFO - ⏱️  Delay calculado: 1.49s (Pattern: weekend, Success: 100.0%)
+2025-08-03 16:56:21,236 - __main__ - ERROR - ❌ Erro durante validação: 'Anti429StateMachine' object has no attribute 'record_failure'

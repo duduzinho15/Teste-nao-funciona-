@@ -1,0 +1,12 @@
+2025-08-03 01:28:15 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_01-28-15.log
+2025-08-03 01:28:15 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_01-28-15.log
+2025-08-03 01:28:17 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🚀🚀🚀 INICIANDO A PIPELINE COMPLETA DE DADOS DO FBREF 🚀🚀🚀
+2025-08-03 01:28:17 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Configuração: {'continuar_em_erro': False, 'salvar_logs_detalhados': True, 'backup_antes_execucao': True, 'timeout_global': 14400, 'intervalo_checkpoint': 300}
+2025-08-03 01:28:17 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 1 de 6] Executando: Preparação do Banco de Dados ---
+2025-08-03 01:28:17 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Timeout não suportado neste sistema. Executando sem timeout.
+2025-08-03 01:28:18 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 1] Finalizada com sucesso! ---
+2025-08-03 01:28:18 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 2 de 6] Executando: Descoberta de Competições e Temporadas ---
+2025-08-03 01:28:18 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Timeout não suportado neste sistema. Executando sem timeout.
+2025-08-03 01:41:26 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 2] ERRO: Processo terminou sem retornar resultado ---

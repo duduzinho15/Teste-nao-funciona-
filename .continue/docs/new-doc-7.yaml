@@ -1,0 +1,6 @@
+name: flask-migrate
+version: 0.0.1
+schema: v1
+docs:
+  - name: Flask-Migrate
+    startUrl: https://flask-migrate.readthedocs.io/en/latest/

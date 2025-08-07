@@ -1,0 +1,7 @@
+2025-08-03 15:01:13 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_15-01-13.log
+2025-08-03 15:01:13 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_15-01-13.log
+2025-08-03 15:01:14 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 15:01:14 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando geração do relatório final...
+2025-08-03 15:01:14 - INFO - [root] - 🚀 Iniciando a geração do relatório final de coleta...
+2025-08-03 15:01:14 - INFO - [root] - Dados de 150 competições agregados.
+2025-08-03 15:01:14 - INFO - [root] - ✅ SUCESSO! Relatório final salvo em: C:\ApostaPro\relatorio_geral_coleta.csv

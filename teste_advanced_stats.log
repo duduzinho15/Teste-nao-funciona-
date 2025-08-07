@@ -1,0 +1,96 @@
+2025-08-04 00:32:57,244 - INFO - 🔍 Iniciando teste de extração de estatísticas avançadas...
+2025-08-04 00:32:57,244 - INFO - URL da partida: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-04 00:32:57,745 - INFO - Inicializando AdvancedStatsExtractor...
+2025-08-04 00:32:57,746 - INFO - AdvancedStatsExtractor inicializado (headless=True, timeout=30s)
+2025-08-04 00:32:57,746 - INFO - Extraindo estatísticas avançadas...
+2025-08-04 00:32:57,746 - INFO - Iniciando extração de estatísticas avançadas: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-04 00:33:00,754 - INFO - 🔍 Sistema de detecção de travamentos ATIVADO
+2025-08-04 00:33:00,754 - INFO - 🔄 INICIANDO: HTTP_REQUEST
+2025-08-04 00:33:00,754 - INFO -    Detalhes: URL: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-04 00:33:00,755 - INFO -    Timeout: 40s
+2025-08-04 00:33:00,755 - INFO -    ID: HTTP_REQUEST_1754278380
+2025-08-04 00:33:00,755 - INFO - 🔍 Detecção de travamentos ativada para: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-04 00:33:00,755 - INFO - Sistema de emergência inicializado
+2025-08-04 00:33:00,758 - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-04 00:33:00,758 - INFO - Sistema de rotacao de proxies inicializado
+2025-08-04 00:33:00,758 - INFO - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-04 00:33:00,759 - INFO - Sistemas anti-429 inicializados com sucesso
+2025-08-04 00:33:00,759 - INFO - Sistema anti-bloqueio simplificado inicializado
+2025-08-04 00:33:00,761 - INFO - Sistema avançado anti-bloqueio inicializado
+2025-08-04 00:33:00,761 - INFO - Sistema Fallback-First inicializado
+2025-08-04 00:33:00,947 - INFO - ✅ CONCLUÍDA: HTTP
+2025-08-04 00:33:00,948 - INFO -    Duração: 0.19s
+2025-08-04 00:33:00,948 - INFO -    Detalhes: Status: 200
+2025-08-04 00:33:01,076 - INFO - Estatísticas avançadas extraídas com sucesso para Desconhecido vs Desconhecido
+2025-08-04 00:33:01,077 - INFO - 
+✅ ESTATÍSTICAS AVANÇADAS EXTRAÍDAS COM SUCESSO!
+2025-08-04 00:33:01,077 - INFO - ============================================================
+2025-08-04 00:33:01,077 - INFO - 🏠 Desconhecido N/A xG - N/A xG Desconhecido 🏠
+2025-08-04 00:33:01,077 - INFO - 📅 Data: N/A
+2025-08-04 00:33:01,077 - INFO - 🏆 Competição: N/A
+2025-08-04 00:33:01,077 - INFO - 🔢 Formações: Desconhecido 3-1 vs Desconhecido 3-1
+2025-08-04 00:33:01,077 - INFO - 
+📊 ESTATÍSTICAS AVANÇADAS:
+2025-08-04 00:33:01,077 - INFO - - Desconhecido:
+2025-08-04 00:33:01,077 - INFO -   • xG: N/A
+2025-08-04 00:33:01,077 - INFO -   • xA: N/A
+2025-08-04 00:33:01,078 - INFO - - Desconhecido:
+2025-08-04 00:33:01,078 - INFO -   • xG: N/A
+2025-08-04 00:33:01,078 - INFO -   • xA: N/A
+2025-08-04 00:33:01,078 - INFO - 
+👥 JOGADORES - Desconhecido (top 3):
+2025-08-04 00:33:01,078 - INFO -   1. Ademilson:
+2025-08-04 00:33:01,078 - ERROR - ❌ Erro durante o teste: Unknown format code 'f' for object of type 'str'
+Traceback (most recent call last):
+  File "C:\ApostaPro\teste_advanced_stats.py", line 91, in test_advanced_stats_extraction
+    logger.info(f"     • xG: {player.get('xg', 'N/A'):.2f}")
+ValueError: Unknown format code 'f' for object of type 'str'
+2025-08-04 00:33:01,079 - INFO - ============================================================
+2025-08-04 00:48:31,473 - INFO - 🔍 Iniciando teste de extração de estatísticas avançadas...
+2025-08-04 00:48:31,474 - INFO - URL da partida: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-04 00:48:32,017 - INFO - Inicializando AdvancedStatsExtractor...
+2025-08-04 00:48:32,022 - INFO - AdvancedStatsExtractor inicializado (headless=True, timeout=30s)
+2025-08-04 00:48:32,022 - INFO - Extraindo estatísticas avançadas...
+2025-08-04 00:48:32,023 - INFO - Iniciando extração de estatísticas avançadas: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-04 00:48:35,024 - INFO - 🔍 Sistema de detecção de travamentos ATIVADO
+2025-08-04 00:48:35,024 - INFO - 🔄 INICIANDO: HTTP_REQUEST
+2025-08-04 00:48:35,024 - INFO -    Detalhes: URL: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-04 00:48:35,024 - INFO -    Timeout: 40s
+2025-08-04 00:48:35,024 - INFO -    ID: HTTP_REQUEST_1754279315
+2025-08-04 00:48:35,024 - INFO - 🔍 Detecção de travamentos ativada para: https://fbref.com/en/matches/0b52e9a9/Operario-Criciuma-August-1-2025-Serie-B
+2025-08-04 00:48:35,024 - INFO - Sistema de emergência inicializado
+2025-08-04 00:48:35,024 - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-04 00:48:35,030 - INFO - Sistema de rotacao de proxies inicializado
+2025-08-04 00:48:35,030 - INFO - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-04 00:48:35,030 - INFO - Sistemas anti-429 inicializados com sucesso
+2025-08-04 00:48:35,031 - INFO - Sistema anti-bloqueio simplificado inicializado
+2025-08-04 00:48:35,033 - INFO - Sistema avançado anti-bloqueio inicializado
+2025-08-04 00:48:35,034 - INFO - Sistema Fallback-First inicializado
+2025-08-04 00:48:35,226 - INFO - ✅ CONCLUÍDA: HTTP
+2025-08-04 00:48:35,226 - INFO -    Duração: 0.20s
+2025-08-04 00:48:35,226 - INFO -    Detalhes: Status: 200
+2025-08-04 00:48:35,359 - INFO - Estatísticas avançadas extraídas com sucesso para Desconhecido vs Desconhecido
+2025-08-04 00:48:35,359 - INFO - 
+✅ ESTATÍSTICAS AVANÇADAS EXTRAÍDAS COM SUCESSO!
+2025-08-04 00:48:35,359 - INFO - ============================================================
+2025-08-04 00:48:35,359 - INFO - 🏠 Desconhecido N/A xG - N/A xG Desconhecido 🏠
+2025-08-04 00:48:35,359 - INFO - 📅 Data: N/A
+2025-08-04 00:48:35,359 - INFO - 🏆 Competição: N/A
+2025-08-04 00:48:35,359 - INFO - 🔢 Formações: Desconhecido 3-1 vs Desconhecido 3-1
+2025-08-04 00:48:35,359 - INFO - 
+📊 ESTATÍSTICAS AVANÇADAS:
+2025-08-04 00:48:35,359 - INFO - - Desconhecido:
+2025-08-04 00:48:35,359 - INFO -   • xG: N/A
+2025-08-04 00:48:35,359 - INFO -   • xA: N/A
+2025-08-04 00:48:35,359 - INFO - - Desconhecido:
+2025-08-04 00:48:35,359 - INFO -   • xG: N/A
+2025-08-04 00:48:35,359 - INFO -   • xA: N/A
+2025-08-04 00:48:35,359 - INFO - 
+👥 JOGADORES - Desconhecido (top 3):
+2025-08-04 00:48:35,359 - INFO -   1. Ademilson:
+2025-08-04 00:48:35,364 - ERROR - ❌ Erro durante o teste: Unknown format code 'f' for object of type 'str'
+Traceback (most recent call last):
+  File "C:\ApostaPro\teste_advanced_stats.py", line 91, in test_advanced_stats_extraction
+    logger.info(f"     • xG: {player.get('xg', 'N/A'):.2f}")
+ValueError: Unknown format code 'f' for object of type 'str'
+2025-08-04 00:48:35,364 - INFO - ============================================================

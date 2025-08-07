@@ -1,0 +1,14 @@
+2025-08-05 15:45:06,059 - INFO - 🔌 Testando conexão com o banco de dados...
+2025-08-05 15:45:06,059 - DEBUG - Configuração de conexão: {'host': 'localhost', 'database': 'postgres', 'user': 'postgres', 'password': '***', 'port': '5432', 'client_encoding': 'utf-8', 'options': '-c client_encoding=utf8'}
+2025-08-05 15:45:06,104 - ERROR - ❌ Erro de decodificação Unicode: 'utf-8' codec can't decode byte 0xe7 in position 78: invalid continuation byte
+2025-08-05 15:45:06,105 - ERROR - Objeto: b'\xe7'
+2025-08-05 15:45:06,105 - ERROR - Posição: 78-79
+2025-08-05 15:45:06,105 - ERROR - Causa: invalid continuation byte
+2025-08-05 15:45:06,105 - ERROR - Dica: Verifique a codificação do banco de dados e as configurações de locale.
+2025-08-05 17:21:56,867 - INFO - 🔌 Testando conexão com o banco de dados...
+2025-08-05 17:21:56,867 - DEBUG - Configuração de conexão: {'host': 'localhost', 'database': 'postgres', 'user': 'postgres', 'password': '***', 'port': '5432', 'client_encoding': 'utf-8', 'options': '-c client_encoding=utf8'}
+2025-08-05 17:21:56,913 - ERROR - ❌ Erro de decodificação Unicode: 'utf-8' codec can't decode byte 0xe7 in position 78: invalid continuation byte
+2025-08-05 17:21:56,913 - ERROR - Objeto: b'\xe7'
+2025-08-05 17:21:56,914 - ERROR - Posição: 78-79
+2025-08-05 17:21:56,914 - ERROR - Causa: invalid continuation byte
+2025-08-05 17:21:56,914 - ERROR - Dica: Verifique a codificação do banco de dados e as configurações de locale.

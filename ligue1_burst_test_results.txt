@@ -1,0 +1,16 @@
+TESTE LIGUE 1 - BURST MODE OTIMIZADO
+==================================================
+Data/Hora: 2025-08-03 16:01:28
+Otimização: Burst mode threshold 80% → 75%
+
+total_requests: 8
+success_rate: 0.7500
+error_429_count: 2
+error_429_rate: 0.2500
+burst_activations: 0
+burst_rate: 0.0000
+avg_delay: 35.7575
+min_delay: 6.9767
+max_delay: 92.5782
+requests_per_minute: 7.1124
+elapsed_minutes: 1.1248

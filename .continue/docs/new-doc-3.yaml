@@ -1,0 +1,6 @@
+name: SQLAlchemy
+version: 0.0.1
+schema: v1
+docs:
+  - name: SQLAlchemy
+    startUrl: https://docs.sqlalchemy.org/en/20/

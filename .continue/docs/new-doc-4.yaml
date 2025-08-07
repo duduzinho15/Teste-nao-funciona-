@@ -1,0 +1,6 @@
+name: Pytest
+version: 0.0.1
+schema: v1
+docs:
+  - name: Pytest
+    startUrl: https://docs.pytest.org/en/stable/ 

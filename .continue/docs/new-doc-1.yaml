@@ -1,0 +1,6 @@
+name: Continue Documentation
+version: 0.0.1
+schema: v1
+docs:
+  - name: Continue Documentation
+    startUrl: https://docs.continue.dev

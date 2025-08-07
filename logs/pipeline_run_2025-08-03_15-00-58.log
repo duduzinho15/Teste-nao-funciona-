@@ -1,0 +1,27 @@
+2025-08-03 15:00:58 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_15-00-58.log
+2025-08-03 15:00:58 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_15-00-58.log
+2025-08-03 15:00:59 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 15:00:59 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando coleta de dados de jogadores...
+2025-08-03 15:00:59 - INFO - [Coleta_de_dados.apis.fbref.coletar_jogadores] - 🚀 Iniciando coleta completa de jogadores...
+2025-08-03 15:00:59 - INFO - [Coleta_de_dados.apis.fbref.coletar_jogadores] - Tabelas de jogadores criadas/verificadas com sucesso.
+2025-08-03 15:00:59 - INFO - [Coleta_de_dados.apis.fbref.coletar_jogadores] - Coletando lista de países com jogadores...
+2025-08-03 15:01:02 - INFO - [hang_detection] - 🔍 Sistema de detecção de travamentos ATIVADO
+2025-08-03 15:01:02 - INFO - [hang_detection] - 🔄 INICIANDO: HTTP_REQUEST
+2025-08-03 15:01:02 - INFO - [hang_detection] -    Detalhes: URL: https://fbref.com/en/squads/
+2025-08-03 15:01:02 - INFO - [hang_detection] -    Timeout: 40s
+2025-08-03 15:01:02 - INFO - [hang_detection] -    ID: HTTP_REQUEST_1754244062
+2025-08-03 15:01:02 - INFO - [Coleta_de_dados.apis.fbref.fbref_utils] - 🔍 Detecção de travamentos ativada para: https://fbref.com/en/squads/
+2025-08-03 15:01:02 - INFO - [Coleta_de_dados.apis.fbref.emergency_fallback_mode] - Sistema de emergência inicializado
+2025-08-03 15:01:02 - INFO - [Coleta_de_dados.apis.fbref.anti_429_state_machine] - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 15:01:02 - INFO - [Coleta_de_dados.apis.fbref.proxy_rotation_system] - Sistema de rotacao de proxies inicializado
+2025-08-03 15:01:02 - INFO - [Coleta_de_dados.apis.fbref.browser_emulation_headers] - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-03 15:01:02 - INFO - [Coleta_de_dados.apis.fbref.fbref_utils] - Sistemas anti-429 inicializados com sucesso
+2025-08-03 15:01:02 - INFO - [Coleta_de_dados.apis.fbref.simple_anti_blocking] - Sistema anti-bloqueio simplificado inicializado
+2025-08-03 15:01:02 - INFO - [Coleta_de_dados.apis.fbref.advanced_anti_blocking] - Sistema avançado anti-bloqueio inicializado
+2025-08-03 15:01:02 - INFO - [Coleta_de_dados.apis.fbref.fallback_first_system] - Sistema Fallback-First inicializado
+2025-08-03 15:01:12 - WARNING - [Coleta_de_dados.apis.fbref.fallback_first_system] - Timeout na requisição para https://fbref.com/en/squads/ após 10s
+2025-08-03 15:01:12 - INFO - [hang_detection] - ❌ FALHOU: HTTP
+2025-08-03 15:01:12 - INFO - [hang_detection] -    Duração: 10.02s
+2025-08-03 15:01:12 - INFO - [hang_detection] -    Detalhes:  | Erro: Requisição controlada falhou
+2025-08-03 15:01:12 - ERROR - [Coleta_de_dados.apis.fbref.coletar_jogadores] - Falha ao obter página de países
+2025-08-03 15:01:12 - ERROR - [Coleta_de_dados.apis.fbref.coletar_jogadores] - Nenhum país encontrado

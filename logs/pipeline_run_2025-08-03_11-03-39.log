@@ -1,0 +1,7 @@
+2025-08-03 11:03:39 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_11-03-39.log
+2025-08-03 11:03:39 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_11-03-39.log
+2025-08-03 11:03:40 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 11:03:40 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando verificação da completude da extração...
+2025-08-03 11:03:40 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - 🔍 Iniciando verificação completa de extração...
+2025-08-03 11:03:40 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando competição: Bundesliga (Masculino)
+2025-08-03 11:03:40 - INFO - [Coleta_de_dados.apis.fbref.verificar_extracao] - Verificando temporadas faltando em: https://fbref.com/en/comps/20/history/Bundesliga-Seasons

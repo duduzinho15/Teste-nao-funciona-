@@ -1,0 +1,28 @@
+2025-08-03 02:34:45 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_02-34-45.log
+2025-08-03 02:34:45 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_02-34-45.log
+2025-08-03 02:34:47 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🚀🚀🚀 INICIANDO A PIPELINE COMPLETA DE DADOS DO FBREF 🚀🚀🚀
+2025-08-03 02:34:47 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Configuração: {'continuar_em_erro': False, 'salvar_logs_detalhados': True, 'backup_antes_execucao': True, 'timeout_global': 14400, 'intervalo_checkpoint': 300}
+2025-08-03 02:34:47 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 1 de 9] Executando: Preparação do Banco de Dados ---
+2025-08-03 02:34:47 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Timeout não suportado neste sistema. Executando sem timeout.
+2025-08-03 02:34:48 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 1] Finalizada com sucesso! ---
+2025-08-03 02:34:48 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 2 de 9] Executando: Descoberta de Competições e Temporadas ---
+2025-08-03 02:34:48 - WARNING - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Timeout não suportado neste sistema. Executando sem timeout.
+2025-08-03 03:04:48 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 2] TIMEOUT: Timeout após 1800s ---
+2025-08-03 03:04:48 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Etapa obrigatória 'descoberta_links' falhou. Interrompendo pipeline.
+2025-08-03 03:04:48 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+================================================================================
+2025-08-03 03:04:48 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📊 RELATÓRIO FINAL DA PIPELINE
+2025-08-03 03:04:48 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ================================================================================
+2025-08-03 03:04:48 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ⏱️  Tempo total de execução: 00:30:00
+2025-08-03 03:04:48 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 📈 Etapas executadas: 2/9
+2025-08-03 03:04:48 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ✅ Etapas com sucesso: 1
+2025-08-03 03:04:48 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ❌ Etapas com erro: 1
+2025-08-03 03:04:48 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+📋 DETALHES POR ETAPA:
+2025-08-03 03:04:48 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -   ✅ SUCESSO | preparacao_banco     | 00:00:00
+2025-08-03 03:04:48 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -   ❌ ERRO | descoberta_links     | 00:30:00
+2025-08-03 03:04:48 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] -     └─ Erro: Timeout: Timeout após 1800s
+2025-08-03 03:04:48 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ================================================================================
+2025-08-03 03:04:48 - ERROR - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - ❌❌❌ PIPELINE FINALIZADA COM ERROS ❌❌❌
