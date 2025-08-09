@@ -1,0 +1,1193 @@
+2025-08-02 18:31:40,602 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-02_18-31-40.log
+2025-08-02 18:31:41,353 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🚀🚀🚀 INICIANDO A PIPELINE COMPLETA DE DADOS DO FBREF 🚀🚀🚀
+2025-08-02 18:31:41,354 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 0 de 6] Executando: Preparação do Banco de Dados ---
+2025-08-02 18:31:41,354 - INFO - [Banco_de_dados.criar_banco] - Verificando e configurando a estrutura completa do banco de dados em 'C:\ApostaPro\Banco_de_dados\aposta.db'...
+2025-08-02 18:31:41,355 - INFO - [Banco_de_dados.criar_banco] - Criando tabelas para o FBRef...
+2025-08-02 18:31:41,355 - INFO - [Banco_de_dados.criar_banco] - Criando tabelas para as outras APIs...
+2025-08-02 18:31:41,356 - INFO - [Banco_de_dados.criar_banco] - Banco de dados pronto com a estrutura completa para TODAS as fontes de dados.
+2025-08-02 18:31:41,356 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 0 de 6] Finalizada com sucesso! ---
+2025-08-02 18:31:41,356 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 1 de 6] Executando: Descoberta de Competições e Temporadas ---
+2025-08-02 18:31:41,357 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 🚀 Iniciando Script 1: Descoberta de Links...
+2025-08-02 18:31:41,357 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Buscando lista de competições com reconhecimento de contexto aprimorado...
+2025-08-02 18:31:41,357 - INFO - [Coleta_de_dados.apis.fbref.fbref_utils] - Iniciando o navegador (WebDriver)...
+2025-08-02 18:31:41,357 - INFO - [WDM] - ====== WebDriver manager ======
+2025-08-02 18:31:42,071 - INFO - [WDM] - Get LATEST chromedriver version for google-chrome
+2025-08-02 18:31:42,101 - INFO - [WDM] - Get LATEST chromedriver version for google-chrome
+2025-08-02 18:31:42,119 - INFO - [WDM] - Driver [C:\Users\Eduardo Vitorino\.wdm\drivers\chromedriver\win64\138.0.7204.183\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-02 18:31:43,185 - INFO - [Coleta_de_dados.apis.fbref.fbref_utils] - Navegador iniciado com sucesso em modo invisível.
+2025-08-02 18:31:47,548 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Encontradas 150 competições únicas com contexto.
+2025-08-02 18:31:47,548 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 1/150: 2. Fußball-Bundesliga (Desconhecido) ---
+2025-08-02 18:31:51,069 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:31:51,070 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 18:31:51,072 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 2/150: 3. Fußball-Liga (Desconhecido) ---
+2025-08-02 18:31:54,505 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 17 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:31:54,505 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 18:31:54,507 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 3/150: A-League Men (Desconhecido) ---
+2025-08-02 18:31:57,967 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 20 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:31:57,967 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 18:31:57,969 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 4/150: A-League Women (Desconhecido) ---
+2025-08-02 18:32:01,496 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:32:01,497 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 18:32:01,499 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 5/150: AFC Asian Cup (Desconhecido) ---
+2025-08-02 18:32:05,037 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:32:05,037 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo PARTIDAS.
+2025-08-02 18:32:05,040 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 6/150: AFC Asian Cup qualification (Desconhecido) ---
+2025-08-02 18:32:08,709 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-02 18:32:08,709 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TORNEIOS.
+2025-08-02 18:32:08,712 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 7/150: AFC Women's Asian Cup (Desconhecido) ---
+2025-08-02 18:32:12,315 - INFO - [root] -   -> 3 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:32:12,316 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo PARTIDAS.
+2025-08-02 18:32:12,319 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 8/150: AFC Women's Asian Cup qualification (Desconhecido) ---
+2025-08-02 18:32:16,022 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-02 18:32:16,022 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo TORNEIOS.
+2025-08-02 18:32:16,024 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 9/150: Africa Cup of Nations (Desconhecido) ---
+2025-08-02 18:32:19,626 - INFO - [root] -   -> 8 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:32:19,626 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 8 links do tipo PARTIDAS.
+2025-08-02 18:32:19,628 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 10/150: Africa Cup of Nations qualification (Desconhecido) ---
+2025-08-02 18:32:23,396 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 6 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-02 18:32:23,396 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo TORNEIOS.
+2025-08-02 18:32:23,399 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 11/150: Africa Women Cup of Nations (Desconhecido) ---
+2025-08-02 18:32:27,006 - INFO - [root] -   -> 4 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:32:27,006 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 4 links do tipo PARTIDAS.
+2025-08-02 18:32:27,010 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 12/150: Algarve Cup (Desconhecido) ---
+2025-08-02 18:32:30,660 - INFO - [root] -   -> 3 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:32:30,660 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo PARTIDAS.
+2025-08-02 18:32:30,662 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 13/150: Allsvenskan (Desconhecido) ---
+2025-08-02 18:32:34,293 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 25 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:32:34,294 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 18:32:34,297 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 14/150: Austrian Football Bundesliga (Desconhecido) ---
+2025-08-02 18:32:37,918 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:32:37,918 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 18:32:37,921 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 15/150: Belgian Pro League (Desconhecido) ---
+2025-08-02 18:32:41,518 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:32:41,518 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 18:32:41,521 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 16/150: Belgian Women's Super League (Desconhecido) ---
+2025-08-02 18:32:45,067 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:32:45,068 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 18:32:45,070 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 17/150: Big 5 European Leagues Combined (Desconhecido) ---
+2025-08-02 18:32:48,692 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 31 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:32:48,693 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 31 links do tipo TEMPORADAS.
+2025-08-02 18:32:48,696 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 18/150: Brasileirão Feminino Série A1 (Desconhecido) ---
+2025-08-02 18:32:52,336 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:32:52,337 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 18:32:52,340 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 19/150: CONCACAF Gold Cup (Desconhecido) ---
+2025-08-02 18:32:55,893 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:32:55,894 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo PARTIDAS.
+2025-08-02 18:32:55,896 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 20/150: CONCACAF W Championship (Desconhecido) ---
+2025-08-02 18:32:59,432 - INFO - [root] -   -> 3 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:32:59,432 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo PARTIDAS.
+2025-08-02 18:32:59,435 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 21/150: CONMEBOL Copa América (Desconhecido) ---
+2025-08-02 18:33:02,973 - INFO - [root] -   -> 5 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:33:02,973 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo PARTIDAS.
+2025-08-02 18:33:02,975 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 22/150: Campeonato Brasileiro Série A (Desconhecido) ---
+2025-08-02 18:33:06,495 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:33:06,496 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:33:06,499 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 23/150: Campeonato Brasileiro Série B (Desconhecido) ---
+2025-08-02 18:33:10,055 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:33:10,055 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:33:10,058 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 24/150: Canadian Premier League (Desconhecido) ---
+2025-08-02 18:33:13,653 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:33:13,653 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 18:33:13,656 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 25/150: Categoría Primera A (Desconhecido) ---
+2025-08-02 18:33:17,158 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:33:17,158 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:33:17,161 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 26/150: Challenger Pro League (Desconhecido) ---
+2025-08-02 18:33:20,692 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:33:20,692 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 18:33:20,694 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 27/150: Chilean Primera División (Desconhecido) ---
+2025-08-02 18:33:24,226 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:33:24,226 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:33:24,229 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 28/150: Chinese Football Association Super League (Desconhecido) ---
+2025-08-02 18:33:27,719 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:33:27,719 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:33:27,721 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 29/150: Copa América Femenina (Desconhecido) ---
+2025-08-02 18:33:31,198 - INFO - [root] -   -> 1 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:33:31,198 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 1 links do tipo PARTIDAS.
+2025-08-02 18:33:31,200 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 30/150: Copa CONMEBOL Sudamericana (Desconhecido) ---
+2025-08-02 18:33:34,656 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:33:34,656 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:33:34,659 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 31/150: Copa Libertadores de América (Desconhecido) ---
+2025-08-02 18:33:38,195 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:33:38,195 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:33:38,198 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 32/150: Copa de la Liga Profesional (Desconhecido) ---
+2025-08-02 18:33:41,687 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 4 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:33:41,688 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 18:33:41,691 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 33/150: Copa del Rey (Desconhecido) ---
+2025-08-02 18:33:45,167 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:33:45,167 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 18:33:45,169 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 34/150: Coppa Italia (Desconhecido) ---
+2025-08-02 18:33:48,651 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:33:48,651 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:33:48,654 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 35/150: Coupe de France (Desconhecido) ---
+2025-08-02 18:33:52,112 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:33:52,113 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 18:33:52,115 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 36/150: Coupe de la Ligue (Desconhecido) ---
+2025-08-02 18:33:55,592 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 6 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:33:55,592 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 18:33:55,595 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 37/150: Croatian Football League (Desconhecido) ---
+2025-08-02 18:33:59,156 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 19 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:33:59,156 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 19 links do tipo TEMPORADAS.
+2025-08-02 18:33:59,158 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 38/150: Czech First League (Desconhecido) ---
+2025-08-02 18:34:02,670 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 17 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:02,671 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 18:34:02,674 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 39/150: DFB-Pokal (Desconhecido) ---
+2025-08-02 18:34:06,168 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:06,168 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:34:06,171 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 40/150: DFB-Pokal Frauen (Desconhecido) ---
+2025-08-02 18:34:09,610 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:09,611 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 18:34:09,614 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 41/150: Damallsvenskan (Desconhecido) ---
+2025-08-02 18:34:13,067 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 9 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:13,067 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 18:34:13,070 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 42/150: Danish Superliga (Desconhecido) ---
+2025-08-02 18:34:16,515 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:16,515 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 18:34:16,518 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 43/150: Danish Women's League (Desconhecido) ---
+2025-08-02 18:34:20,021 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:20,021 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 18:34:20,023 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 44/150: División de Fútbol Profesional (Desconhecido) ---
+2025-08-02 18:34:23,539 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:23,539 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 18:34:23,542 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 45/150: EFL Championship (Desconhecido) ---
+2025-08-02 18:34:27,049 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 25 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:27,050 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 18:34:27,053 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 46/150: EFL Cup (Desconhecido) ---
+2025-08-02 18:34:30,535 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:30,536 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:34:30,539 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 47/150: EFL League One (Desconhecido) ---
+2025-08-02 18:34:34,059 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 24 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:34,060 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 24 links do tipo TEMPORADAS.
+2025-08-02 18:34:34,063 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 48/150: EFL League Two (Desconhecido) ---
+2025-08-02 18:34:37,554 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 24 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:37,554 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 24 links do tipo TEMPORADAS.
+2025-08-02 18:34:37,557 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 49/150: Eerste Divisie (Desconhecido) ---
+2025-08-02 18:34:41,097 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 19 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:41,097 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 19 links do tipo TEMPORADAS.
+2025-08-02 18:34:41,100 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 50/150: Ekstraklasa (Desconhecido) ---
+2025-08-02 18:34:44,624 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 24 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:44,625 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 24 links do tipo TEMPORADAS.
+2025-08-02 18:34:44,627 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 51/150: Eliteserien (Desconhecido) ---
+2025-08-02 18:34:48,172 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 26 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:48,173 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 18:34:48,175 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 52/150: Eredivisie (Desconhecido) ---
+2025-08-02 18:34:51,764 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 26 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:51,765 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 18:34:51,768 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 53/150: Eredivisie Vrouwen (Desconhecido) ---
+2025-08-02 18:34:55,248 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 8 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:55,249 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 8 links do tipo TEMPORADAS.
+2025-08-02 18:34:55,252 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 54/150: FA Community Shield (Desconhecido) ---
+2025-08-02 18:34:58,786 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:34:58,787 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 18:34:58,789 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 55/150: FA Cup (Desconhecido) ---
+2025-08-02 18:35:02,350 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:35:02,350 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:35:02,353 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 56/150: FA Women's Super League (Desconhecido) ---
+2025-08-02 18:35:05,902 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 10 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:35:05,902 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 10 links do tipo TEMPORADAS.
+2025-08-02 18:35:05,907 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 57/150: FIFA Club World Cup (Desconhecido) ---
+2025-08-02 18:35:09,379 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 6 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:35:09,379 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 18:35:09,383 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 58/150: FIFA Confederations Cup (Desconhecido) ---
+2025-08-02 18:35:12,933 - INFO - [root] -   -> 6 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:35:12,934 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo PARTIDAS.
+2025-08-02 18:35:12,938 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 59/150: FIFA Women's World Cup (Desconhecido) ---
+2025-08-02 18:35:16,484 - INFO - [root] -   -> 9 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:35:16,484 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 9 links do tipo PARTIDAS.
+2025-08-02 18:35:16,487 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 60/150: FIFA Women's World Cup Qualification (UEFA) (Desconhecido) ---
+2025-08-02 18:35:20,124 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 2 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-02 18:35:20,125 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 18:35:20,128 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 61/150: FIFA World Cup (Desconhecido) ---
+2025-08-02 18:35:23,835 - INFO - [root] -   -> 22 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:35:23,835 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 22 links do tipo PARTIDAS.
+2025-08-02 18:35:23,838 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 62/150: FIFA World Cup Qualification — AFC (Desconhecido) ---
+2025-08-02 18:35:27,556 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-02 18:35:27,556 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TORNEIOS.
+2025-08-02 18:35:27,559 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 63/150: FIFA World Cup Qualification — CAF (Desconhecido) ---
+2025-08-02 18:35:31,237 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-02 18:35:31,237 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TORNEIOS.
+2025-08-02 18:35:31,238 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 64/150: FIFA World Cup Qualification — CONCACAF (Desconhecido) ---
+2025-08-02 18:35:34,882 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 8 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-02 18:35:34,883 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 8 links do tipo TORNEIOS.
+2025-08-02 18:35:34,886 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 65/150: FIFA World Cup Qualification — CONMEBOL (Desconhecido) ---
+2025-08-02 18:35:38,544 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-02 18:35:38,544 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TORNEIOS.
+2025-08-02 18:35:38,548 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 66/150: FIFA World Cup Qualification — Inter-confederation play-offs (Desconhecido) ---
+2025-08-02 18:35:42,252 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 1 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-02 18:35:42,253 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 1 links do tipo TORNEIOS.
+2025-08-02 18:35:42,256 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 67/150: FIFA World Cup Qualification — OFC (Desconhecido) ---
+2025-08-02 18:35:45,841 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 4 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-02 18:35:45,841 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 4 links do tipo TORNEIOS.
+2025-08-02 18:35:45,845 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 68/150: FIFA World Cup Qualification — UEFA (Desconhecido) ---
+2025-08-02 18:35:49,734 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 8 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-02 18:35:49,734 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 8 links do tipo TORNEIOS.
+2025-08-02 18:35:49,736 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 69/150: First Professional Football League (Desconhecido) ---
+2025-08-02 18:35:53,347 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 17 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:35:53,347 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 18:35:53,350 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 70/150: Franz Beckenbauer Supercup (Desconhecido) ---
+2025-08-02 18:35:56,917 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:35:56,917 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:35:56,921 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 71/150: Frauen-Bundesliga (Desconhecido) ---
+2025-08-02 18:36:00,485 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 10 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:00,485 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 10 links do tipo TEMPORADAS.
+2025-08-02 18:36:00,488 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 72/150: Fußball-Bundesliga (Desconhecido) ---
+2025-08-02 18:36:04,051 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 38 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:04,051 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 38 links do tipo TEMPORADAS.
+2025-08-02 18:36:04,054 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 73/150: I-League (Desconhecido) ---
+2025-08-02 18:36:07,612 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:07,613 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:36:07,616 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 74/150: Indian Super League (Desconhecido) ---
+2025-08-02 18:36:11,236 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:11,236 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 18:36:11,239 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 75/150: International Friendlies (M) (Desconhecido) ---
+2025-08-02 18:36:14,741 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:14,741 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:36:14,744 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 76/150: International Friendlies (W) (Desconhecido) ---
+2025-08-02 18:36:18,298 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:18,299 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 18:36:18,301 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 77/150: J1 League (Desconhecido) ---
+2025-08-02 18:36:21,818 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:21,818 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:36:21,821 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 78/150: J2 League (Desconhecido) ---
+2025-08-02 18:36:25,351 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:25,352 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:36:25,354 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 79/150: K League 1 (Desconhecido) ---
+2025-08-02 18:36:28,843 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:28,843 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:36:28,845 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 80/150: La Liga (Desconhecido) ---
+2025-08-02 18:36:32,479 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 38 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:32,479 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 38 links do tipo TEMPORADAS.
+2025-08-02 18:36:32,482 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 81/150: Lamar Hunt U.S. Open Cup (Desconhecido) ---
+2025-08-02 18:36:35,974 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:35,975 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 18:36:35,977 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 82/150: Liga 1 de Fútbol Profesional (Desconhecido) ---
+2025-08-02 18:36:39,419 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:39,419 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:36:39,422 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 83/150: Liga F (Desconhecido) ---
+2025-08-02 18:36:42,925 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 4 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:42,925 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 18:36:42,927 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 84/150: Liga I (Desconhecido) ---
+2025-08-02 18:36:46,441 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 20 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:46,442 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 18:36:46,444 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 85/150: Liga MX (Desconhecido) ---
+2025-08-02 18:36:49,986 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:49,986 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 18:36:49,989 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 86/150: Liga Profesional Ecuador (Desconhecido) ---
+2025-08-02 18:36:53,566 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:53,566 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:36:53,568 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 87/150: Liga Profesional de Fútbol Argentina (Desconhecido) ---
+2025-08-02 18:36:57,034 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:36:57,034 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:36:57,036 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 88/150: Ligue 1 (Desconhecido) ---
+2025-08-02 18:37:00,532 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 31 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:37:00,532 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 31 links do tipo TEMPORADAS.
+2025-08-02 18:37:00,535 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 89/150: Ligue 2 (Desconhecido) ---
+2025-08-02 18:37:04,029 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 17 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:37:04,030 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 18:37:04,032 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 90/150: Major League Soccer (Desconhecido) ---
+2025-08-02 18:37:07,590 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 30 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:37:07,591 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 30 links do tipo TEMPORADAS.
+2025-08-02 18:37:07,593 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 91/150: NWSL Challenge Cup (Desconhecido) ---
+2025-08-02 18:37:11,123 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:37:11,124 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 18:37:11,126 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 92/150: NWSL Fall Series (Desconhecido) ---
+2025-08-02 18:37:14,737 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 1 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:37:14,738 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 1 links do tipo TEMPORADAS.
+2025-08-02 18:37:14,740 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 93/150: National League (Desconhecido) ---
+2025-08-02 18:37:18,244 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 20 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:37:18,245 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 18:37:18,248 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 94/150: National Women's Soccer League (Desconhecido) ---
+2025-08-02 18:37:21,732 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 13 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:37:21,733 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 13 links do tipo TEMPORADAS.
+2025-08-02 18:37:21,736 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 95/150: Nemzeti Bajnokság I (Desconhecido) ---
+2025-08-02 18:37:25,247 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 21 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:37:25,247 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 21 links do tipo TEMPORADAS.
+2025-08-02 18:37:25,250 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 96/150: North American Soccer League (Desconhecido) ---
+2025-08-02 18:37:28,745 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:37:28,746 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 18:37:28,748 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 97/150: OFC Nations Cup (Desconhecido) ---
+2025-08-02 18:37:32,227 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:37:32,227 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo PARTIDAS.
+2025-08-02 18:37:32,229 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 98/150: OFC Women's Nations Cup (Desconhecido) ---
+2025-08-02 18:37:35,750 - INFO - [root] -   -> 3 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:37:35,750 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo PARTIDAS.
+2025-08-02 18:37:35,753 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 99/150: Olympics — Women's Tournament (Desconhecido) ---
+2025-08-02 18:37:39,299 - INFO - [root] -   -> 8 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:37:39,299 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 8 links do tipo PARTIDAS.
+2025-08-02 18:37:39,302 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 100/150: Paraguayan Primera División (Desconhecido) ---
+2025-08-02 18:37:42,800 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:37:42,801 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:37:42,804 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 101/150: Persian Gulf Pro League (Desconhecido) ---
+2025-08-02 18:37:46,333 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:37:46,333 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:37:46,336 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 102/150: Premier League (Desconhecido) ---
+2025-08-02 18:37:49,909 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 127 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:37:49,910 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 127 links do tipo TEMPORADAS.
+2025-08-02 18:37:49,913 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 103/150: Premier League 2 (Desconhecido) ---
+2025-08-02 18:37:53,418 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 9 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:37:53,419 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 18:37:53,421 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 104/150: Premier League 2 — Division 2 (Desconhecido) ---
+2025-08-02 18:37:56,987 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:37:56,987 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 18:37:56,990 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 105/150: Première Ligue (Desconhecido) ---
+2025-08-02 18:38:00,534 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 9 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:00,535 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 18:38:00,537 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 106/150: Primeira Liga (Desconhecido) ---
+2025-08-02 18:38:04,051 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 26 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:04,051 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 18:38:04,054 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 107/150: Russian Premier League (Desconhecido) ---
+2025-08-02 18:38:07,527 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 25 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:07,527 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 18:38:07,530 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 108/150: Saudi Professional League (Desconhecido) ---
+2025-08-02 18:38:11,040 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:11,040 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 18:38:11,043 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 109/150: Scottish Championship (Desconhecido) ---
+2025-08-02 18:38:14,575 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 19 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:14,576 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 19 links do tipo TEMPORADAS.
+2025-08-02 18:38:14,579 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 110/150: Scottish Premiership (Desconhecido) ---
+2025-08-02 18:38:18,194 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 26 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:18,194 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 18:38:18,197 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 111/150: Serbian SuperLiga (Desconhecido) ---
+2025-08-02 18:38:21,728 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 18 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:21,728 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 18 links do tipo TEMPORADAS.
+2025-08-02 18:38:21,731 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 112/150: Serie A (Desconhecido) ---
+2025-08-02 18:38:25,302 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 38 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:25,302 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 38 links do tipo TEMPORADAS.
+2025-08-02 18:38:25,306 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 113/150: Serie A (Desconhecido) ---
+2025-08-02 18:38:28,827 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 8 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:28,827 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 8 links do tipo TEMPORADAS.
+2025-08-02 18:38:28,830 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 114/150: Serie B (Desconhecido) ---
+2025-08-02 18:38:32,416 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 25 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:32,416 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 18:38:32,420 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 115/150: SheBelieves Cup (Desconhecido) ---
+2025-08-02 18:38:35,933 - WARNING - [root] -   -> AVISO: Nenhum método de extração encontrou links válidos.
+2025-08-02 18:38:35,934 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 0 links do tipo NENHUM DADO ENCONTRADO.
+2025-08-02 18:38:35,936 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 116/150: South African Premier Division (Desconhecido) ---
+2025-08-02 18:38:39,482 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:39,482 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 18:38:39,485 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 117/150: Spanish Segunda División (Desconhecido) ---
+2025-08-02 18:38:42,964 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 25 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:42,964 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 18:38:42,967 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 118/150: Super League Greece (Desconhecido) ---
+2025-08-02 18:38:46,515 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 26 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:46,515 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 18:38:46,518 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 119/150: Supercopa de España (Desconhecido) ---
+2025-08-02 18:38:50,015 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 10 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:50,015 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 10 links do tipo TEMPORADAS.
+2025-08-02 18:38:50,018 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 120/150: Supercoppa Italiana (Desconhecido) ---
+2025-08-02 18:38:53,522 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:53,522 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 18:38:53,525 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 121/150: Superettan (Desconhecido) ---
+2025-08-02 18:38:57,026 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 20 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:38:57,026 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 18:38:57,029 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 122/150: Swiss Super League (Desconhecido) ---
+2025-08-02 18:39:00,688 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:39:00,689 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 18:39:00,692 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 123/150: Swiss Women's Super League (Desconhecido) ---
+2025-08-02 18:39:04,200 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:39:04,200 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 18:39:04,203 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 124/150: Süper Lig (Desconhecido) ---
+2025-08-02 18:39:07,729 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 25 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:39:07,729 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 18:39:07,732 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 125/150: Toppserien (Desconhecido) ---
+2025-08-02 18:39:11,204 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 9 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:39:11,204 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 18:39:11,207 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 126/150: Trophée des Champions (Desconhecido) ---
+2025-08-02 18:39:14,716 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:39:14,716 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 18:39:14,719 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 127/150: U17 DFB Youth League (Desconhecido) ---
+2025-08-02 18:39:18,203 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 10 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:39:18,203 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 10 links do tipo TEMPORADAS.
+2025-08-02 18:39:18,206 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 128/150: U19 DFB Youth League (Desconhecido) ---
+2025-08-02 18:39:21,676 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:39:21,677 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 18:39:21,679 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 129/150: UEFA Champions League (Desconhecido) ---
+2025-08-02 18:39:25,251 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 36 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:39:25,251 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 36 links do tipo TEMPORADAS.
+2025-08-02 18:39:25,254 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 130/150: UEFA Conference League (Desconhecido) ---
+2025-08-02 18:39:28,764 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:39:28,764 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 18:39:28,767 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 131/150: UEFA Europa League (Desconhecido) ---
+2025-08-02 18:39:32,273 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 36 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:39:32,273 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 36 links do tipo TEMPORADAS.
+2025-08-02 18:39:32,276 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 132/150: UEFA European Football Championship (Desconhecido) ---
+2025-08-02 18:39:35,810 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:39:35,810 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo PARTIDAS.
+2025-08-02 18:39:35,813 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 133/150: UEFA European Football Championship Qualifying (Desconhecido) ---
+2025-08-02 18:39:39,405 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-02 18:39:39,406 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo TORNEIOS.
+2025-08-02 18:39:39,409 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 134/150: UEFA Nations League (Desconhecido) ---
+2025-08-02 18:39:42,982 - INFO - [root] -   -> 4 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:39:42,982 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 4 links do tipo PARTIDAS.
+2025-08-02 18:39:42,985 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 135/150: UEFA Super Cup (Desconhecido) ---
+2025-08-02 18:39:46,592 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 26 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:39:46,592 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 18:39:46,596 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 136/150: UEFA Women's Champions League (Desconhecido) ---
+2025-08-02 18:39:50,104 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:39:50,104 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:39:50,107 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 137/150: UEFA Women's Championship (Desconhecido) ---
+2025-08-02 18:39:53,622 - INFO - [root] -   -> 7 links encontrados pelo MÉTODO DE PARTIDAS.
+2025-08-02 18:39:53,622 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo PARTIDAS.
+2025-08-02 18:39:53,625 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 138/150: UEFA Women's Euro Qualification (Desconhecido) ---
+2025-08-02 18:39:57,238 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 links encontrados pelo MÉTODO DE CABEÇALHOS H2.
+2025-08-02 18:39:57,239 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo TORNEIOS.
+2025-08-02 18:39:57,241 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 139/150: USL Championship (Desconhecido) ---
+2025-08-02 18:40:00,802 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 15 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:40:00,802 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 15 links do tipo TEMPORADAS.
+2025-08-02 18:40:00,806 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 140/150: USL First Division (Desconhecido) ---
+2025-08-02 18:40:04,300 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 6 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:40:04,300 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 18:40:04,303 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 141/150: USL League One (Desconhecido) ---
+2025-08-02 18:40:07,855 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 6 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:40:07,855 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 18:40:07,857 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 142/150: USSF Division 2 Professional League (Desconhecido) ---
+2025-08-02 18:40:11,392 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 1 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:40:11,393 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 1 links do tipo TEMPORADAS.
+2025-08-02 18:40:11,396 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 143/150: Ukrainian Premier League (Desconhecido) ---
+2025-08-02 18:40:14,941 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:40:14,941 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 18:40:14,944 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 144/150: Uruguayan Primera División (Desconhecido) ---
+2025-08-02 18:40:18,491 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:40:18,492 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:40:18,494 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 145/150: Veikkausliiga (Desconhecido) ---
+2025-08-02 18:40:22,020 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:40:22,020 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 18:40:22,022 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 146/150: Venezuelan Primera División (Desconhecido) ---
+2025-08-02 18:40:25,551 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:40:25,551 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 18:40:25,554 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 147/150: Women Empowerment League (Desconhecido) ---
+2025-08-02 18:40:29,046 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:40:29,046 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 18:40:29,049 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 148/150: Women's Professional Soccer (Desconhecido) ---
+2025-08-02 18:40:32,504 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:40:32,504 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo TEMPORADAS.
+2025-08-02 18:40:32,507 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 149/150: Women's United Soccer Association (Desconhecido) ---
+2025-08-02 18:40:36,011 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:40:36,012 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo TEMPORADAS.
+2025-08-02 18:40:36,014 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 150/150: ÖFB Frauen-Bundesliga (Desconhecido) ---
+2025-08-02 18:40:39,491 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 6 links encontrados pelo MÉTODO DE TABELA DE TEMPORADAS.
+2025-08-02 18:40:39,491 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 18:40:39,493 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+✅ Script 1 (Descoberta) finalizado com sucesso!
+2025-08-02 18:40:41,651 - INFO - [Coleta_de_dados.apis.fbref.fbref_utils] - Navegador (WebDriver) finalizado.
+2025-08-02 18:40:41,651 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 1 de 6] Finalizada com sucesso! ---
+2025-08-02 18:40:41,652 - INFO - [root] - 
+--- [ETAPA 2 de 6] Executando: Coleta de Dados de Partidas ---
+2025-08-02 18:40:41,652 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 🚀 Iniciando Script 2: Coleta de Dados de Partidas...
+2025-08-02 18:40:41,655 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - Encontrados 2060 links pendentes ou a revisar para processar.
+2025-08-02 18:40:41,655 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 1: https://fbref.com/en/comps/33/2024-2025/2024-2025-2-Bundesliga-Stats ---
+2025-08-02 18:40:41,655 - INFO - [Coleta_de_dados.apis.fbref.fbref_utils] - Iniciando o navegador (WebDriver)...
+2025-08-02 18:40:41,655 - INFO - [WDM] - ====== WebDriver manager ======
+2025-08-02 18:40:42,331 - INFO - [WDM] - Get LATEST chromedriver version for google-chrome
+2025-08-02 18:40:42,348 - INFO - [WDM] - Get LATEST chromedriver version for google-chrome
+2025-08-02 18:40:42,366 - INFO - [WDM] - Driver [C:\Users\Eduardo Vitorino\.wdm\drivers\chromedriver\win64\138.0.7204.183\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-02 18:40:43,376 - INFO - [Coleta_de_dados.apis.fbref.fbref_utils] - Navegador iniciado com sucesso em modo invisível.
+2025-08-02 18:40:47,672 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:40:51,758 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:40:51,760 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 2: https://fbref.com/en/comps/33/2023-2024/2023-2024-2-Bundesliga-Stats ---
+2025-08-02 18:40:55,772 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:40:59,552 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:40:59,554 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 3: https://fbref.com/en/comps/33/2022-2023/2022-2023-2-Bundesliga-Stats ---
+2025-08-02 18:41:03,526 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:41:07,359 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:41:07,362 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 4: https://fbref.com/en/comps/33/2021-2022/2021-2022-2-Bundesliga-Stats ---
+2025-08-02 18:41:11,458 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:41:15,297 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:41:15,301 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 5: https://fbref.com/en/comps/33/2020-2021/2020-2021-2-Bundesliga-Stats ---
+2025-08-02 18:41:19,303 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:41:23,141 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:41:23,145 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 6: https://fbref.com/en/comps/33/2019-2020/2019-2020-2-Bundesliga-Stats ---
+2025-08-02 18:41:26,903 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:41:30,714 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:41:30,717 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 7: https://fbref.com/en/comps/33/2018-2019/2018-2019-2-Bundesliga-Stats ---
+2025-08-02 18:41:34,732 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:41:38,552 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:41:38,554 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 8: https://fbref.com/en/comps/33/2017-2018/2017-2018-2-Bundesliga-Stats ---
+2025-08-02 18:41:42,606 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:41:46,428 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:41:46,430 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 9: https://fbref.com/en/comps/33/2016-2017/2016-2017-2-Bundesliga-Stats ---
+2025-08-02 18:41:50,509 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:41:54,262 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:41:54,265 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 10: https://fbref.com/en/comps/33/2015-2016/2015-2016-2-Bundesliga-Stats ---
+2025-08-02 18:41:58,240 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:42:02,016 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:42:02,018 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 11: https://fbref.com/en/comps/33/2014-2015/2014-2015-2-Bundesliga-Stats ---
+2025-08-02 18:42:05,960 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:42:09,810 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:42:09,812 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 12: https://fbref.com/en/comps/33/2013-2014/2013-2014-2-Bundesliga-Stats ---
+2025-08-02 18:42:13,708 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:42:17,511 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:42:17,513 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 13: https://fbref.com/en/comps/33/2012-2013/2012-2013-2-Bundesliga-Stats ---
+2025-08-02 18:42:21,494 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:42:25,250 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:42:25,252 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 14: https://fbref.com/en/comps/33/2011-2012/2011-2012-2-Bundesliga-Stats ---
+2025-08-02 18:42:29,368 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:42:33,189 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:42:33,192 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 15: https://fbref.com/en/comps/33/2010-2011/2010-2011-2-Bundesliga-Stats ---
+2025-08-02 18:42:37,127 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:42:40,848 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:42:40,851 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 16: https://fbref.com/en/comps/33/2009-2010/2009-2010-2-Bundesliga-Stats ---
+2025-08-02 18:42:44,723 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:42:48,568 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:42:48,570 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 17: https://fbref.com/en/comps/33/2008-2009/2008-2009-2-Bundesliga-Stats ---
+2025-08-02 18:42:52,458 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:42:56,344 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:42:56,346 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 18: https://fbref.com/en/comps/33/2007-2008/2007-2008-2-Bundesliga-Stats ---
+2025-08-02 18:43:00,221 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:43:04,146 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:43:04,149 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 19: https://fbref.com/en/comps/33/2006-2007/2006-2007-2-Bundesliga-Stats ---
+2025-08-02 18:43:08,032 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:43:11,777 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:43:11,780 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 20: https://fbref.com/en/comps/33/2005-2006/2005-2006-2-Bundesliga-Stats ---
+2025-08-02 18:43:15,799 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:43:19,591 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:43:19,594 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 21: https://fbref.com/en/comps/33/2004-2005/2004-2005-2-Bundesliga-Stats ---
+2025-08-02 18:43:23,573 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:43:27,346 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:43:27,349 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 22: https://fbref.com/en/comps/33/2003-2004/2003-2004-2-Bundesliga-Stats ---
+2025-08-02 18:43:31,378 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:43:35,176 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:43:35,179 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 23: https://fbref.com/en/comps/33/2-Bundesliga-Stats ---
+2025-08-02 18:43:38,917 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:43:42,678 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:43:42,681 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 24: https://fbref.com/en/comps/59/3-Liga-Stats ---
+2025-08-02 18:43:46,447 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:43:50,219 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:43:50,222 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 25: https://fbref.com/en/comps/59/2024-2025/2024-2025-3-Liga-Stats ---
+2025-08-02 18:43:54,217 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:43:57,953 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:43:57,955 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 26: https://fbref.com/en/comps/59/2023-2024/2023-2024-3-Liga-Stats ---
+2025-08-02 18:44:01,900 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:44:05,815 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:44:05,818 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 27: https://fbref.com/en/comps/59/2022-2023/2022-2023-3-Liga-Stats ---
+2025-08-02 18:44:09,737 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:44:13,631 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:44:13,635 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 28: https://fbref.com/en/comps/59/2021-2022/2021-2022-3-Liga-Stats ---
+2025-08-02 18:44:17,644 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:44:21,403 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:44:21,406 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 29: https://fbref.com/en/comps/59/2020-2021/2020-2021-3-Liga-Stats ---
+2025-08-02 18:44:25,557 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:44:29,331 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:44:29,335 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 30: https://fbref.com/en/comps/59/2019-2020/2019-2020-3-Liga-Stats ---
+2025-08-02 18:44:33,258 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:44:37,053 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:44:37,055 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 31: https://fbref.com/en/comps/59/2018-2019/2018-2019-3-Liga-Stats ---
+2025-08-02 18:44:41,156 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:44:44,994 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:44:44,996 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 32: https://fbref.com/en/comps/59/2017-2018/2017-2018-3-Liga-Stats ---
+2025-08-02 18:44:48,987 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:44:52,883 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:44:52,886 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 33: https://fbref.com/en/comps/59/2016-2017/2016-2017-3-Liga-Stats ---
+2025-08-02 18:44:56,904 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:45:00,697 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:45:00,700 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 34: https://fbref.com/en/comps/59/2015-2016/2015-2016-3-Liga-Stats ---
+2025-08-02 18:45:04,886 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:45:08,670 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:45:08,672 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 35: https://fbref.com/en/comps/59/2014-2015/2014-2015-3-Liga-Stats ---
+2025-08-02 18:45:12,765 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:45:16,625 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:45:16,627 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 36: https://fbref.com/en/comps/59/2013-2014/2013-2014-3-Liga-Stats ---
+2025-08-02 18:45:20,556 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:45:24,479 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:45:24,481 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 37: https://fbref.com/en/comps/59/2012-2013/2012-2013-3-Liga-Stats ---
+2025-08-02 18:45:28,562 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:45:32,398 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:45:32,401 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 38: https://fbref.com/en/comps/59/2011-2012/2011-2012-3-Liga-Stats ---
+2025-08-02 18:45:36,482 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:45:40,291 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:45:40,293 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 39: https://fbref.com/en/comps/59/2010-2011/2010-2011-3-Liga-Stats ---
+2025-08-02 18:45:44,406 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:45:48,207 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:45:48,210 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 40: https://fbref.com/en/comps/59/2009-2010/2009-2010-3-Liga-Stats ---
+2025-08-02 18:45:52,188 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:45:56,128 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:45:56,131 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 41: https://fbref.com/en/comps/65/A-League-Men-Stats ---
+2025-08-02 18:46:00,153 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:46:04,049 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:46:04,052 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 42: https://fbref.com/en/comps/65/2023-2024/2023-2024-A-League-Men-Stats ---
+2025-08-02 18:46:07,944 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:46:11,826 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:46:11,829 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 43: https://fbref.com/en/comps/65/2022-2023/2022-2023-A-League-Men-Stats ---
+2025-08-02 18:46:15,787 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:46:19,591 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:46:19,594 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 44: https://fbref.com/en/comps/65/2021-2022/2021-2022-A-League-Men-Stats ---
+2025-08-02 18:46:23,537 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:46:27,317 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:46:27,320 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 45: https://fbref.com/en/comps/65/2020-2021/2020-2021-A-League-Men-Stats ---
+2025-08-02 18:46:31,317 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:46:35,102 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:46:35,104 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 46: https://fbref.com/en/comps/65/2019-2020/2019-2020-A-League-Men-Stats ---
+2025-08-02 18:46:39,035 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:46:42,825 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:46:42,827 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 47: https://fbref.com/en/comps/65/2018-2019/2018-2019-A-League-Men-Stats ---
+2025-08-02 18:46:46,775 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:46:50,681 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:46:50,686 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 48: https://fbref.com/en/comps/65/2017-2018/2017-2018-A-League-Men-Stats ---
+2025-08-02 18:46:54,537 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:46:58,406 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:46:58,409 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 49: https://fbref.com/en/comps/65/2016-2017/2016-2017-A-League-Men-Stats ---
+2025-08-02 18:47:02,262 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:47:06,125 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:47:06,128 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 50: https://fbref.com/en/comps/65/2015-2016/2015-2016-A-League-Men-Stats ---
+2025-08-02 18:47:09,932 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:47:13,781 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:47:13,785 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 51: https://fbref.com/en/comps/65/2014-2015/2014-2015-A-League-Men-Stats ---
+2025-08-02 18:47:17,630 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:47:21,471 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:47:21,476 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 52: https://fbref.com/en/comps/65/2013-2014/2013-2014-A-League-Men-Stats ---
+2025-08-02 18:47:25,313 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:47:29,133 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:47:29,135 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 53: https://fbref.com/en/comps/65/2012-2013/2012-2013-A-League-Men-Stats ---
+2025-08-02 18:47:32,954 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:47:36,901 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:47:36,904 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 54: https://fbref.com/en/comps/65/2011-2012/2011-2012-A-League-Men-Stats ---
+2025-08-02 18:47:40,695 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:47:44,519 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:47:44,521 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 55: https://fbref.com/en/comps/65/2010-2011/2010-2011-A-League-Men-Stats ---
+2025-08-02 18:47:48,406 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:47:52,246 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:47:52,248 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 56: https://fbref.com/en/comps/65/2009-2010/2009-2010-A-League-Men-Stats ---
+2025-08-02 18:47:56,040 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:47:59,945 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:47:59,947 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 57: https://fbref.com/en/comps/65/2008-2009/2008-2009-A-League-Men-Stats ---
+2025-08-02 18:48:03,741 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:48:07,693 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:48:07,698 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 58: https://fbref.com/en/comps/65/2007-2008/2007-2008-A-League-Men-Stats ---
+2025-08-02 18:48:11,574 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:48:15,473 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:48:15,476 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 59: https://fbref.com/en/comps/65/2006-2007/2006-2007-A-League-Men-Stats ---
+2025-08-02 18:48:19,281 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:48:23,221 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:48:23,224 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 60: https://fbref.com/en/comps/65/2005-2006/2005-2006-A-League-Men-Stats ---
+2025-08-02 18:48:27,151 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:48:31,043 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:48:31,046 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 61: https://fbref.com/en/comps/196/A-League-Women-Stats ---
+2025-08-02 18:48:35,625 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:48:39,515 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:48:39,518 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 62: https://fbref.com/en/comps/196/2023-2024/2023-2024-A-League-Women-Stats ---
+2025-08-02 18:48:44,113 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:48:48,098 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:48:48,100 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 63: https://fbref.com/en/comps/196/2022-2023/2022-2023-A-League-Women-Stats ---
+2025-08-02 18:48:52,690 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:48:56,667 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:48:56,670 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 64: https://fbref.com/en/comps/196/2021-2022/2021-2022-A-League-Women-Stats ---
+2025-08-02 18:49:01,302 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:49:05,246 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:49:05,250 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 65: https://fbref.com/en/comps/196/2020-2021/2020-2021-A-League-Women-Stats ---
+2025-08-02 18:49:09,847 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:49:14,042 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:49:14,045 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 66: https://fbref.com/en/comps/196/2019-2020/2019-2020-A-League-Women-Stats ---
+2025-08-02 18:49:18,665 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:49:22,828 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:49:22,831 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 67: https://fbref.com/en/comps/196/2018-2019/2018-2019-A-League-Women-Stats ---
+2025-08-02 18:49:27,435 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:49:31,533 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:49:31,536 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 68: https://fbref.com/en/matches/edeace4d/Australia-Japan-January-29-2011-Asian-Cup ---
+2025-08-02 18:49:35,694 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:49:39,908 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:49:39,910 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 69: https://fbref.com/en/matches/a7940000/Japan-Qatar-February-1-2019-Asian-Cup ---
+2025-08-02 18:49:44,033 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:49:48,053 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:49:48,056 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 70: https://fbref.com/en/matches/a417b2e0/China-PR-Japan-August-7-2004-Asian-Cup ---
+2025-08-02 18:49:52,138 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:49:56,132 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:49:56,135 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 71: https://fbref.com/en/matches/6d9230c5/Jordan-Qatar-February-10-2024-Asian-Cup ---
+2025-08-02 18:50:00,316 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:50:04,251 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:50:04,255 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 72: https://fbref.com/en/matches/5a66576e/Saudi-Arabia-Japan-October-29-2000-Asian-Cup ---
+2025-08-02 18:50:08,284 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:50:12,241 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:50:12,243 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 73: https://fbref.com/en/matches/5618dc4d/Iraq-Saudi-Arabia-July-29-2007-Asian-Cup ---
+2025-08-02 18:50:16,062 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:50:19,936 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:50:19,939 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 74: https://fbref.com/en/matches/0624bb79/Korea-Republic-Australia-January-31-2015-Asian-Cup ---
+2025-08-02 18:50:24,104 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:50:27,962 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:50:27,965 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 75: https://fbref.com/en/comps/665/AFC-Asian-Cup-qualification-Stats ---
+2025-08-02 18:50:32,465 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:50:36,200 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:50:36,203 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 76: https://fbref.com/en/comps/665/2019/2019-AFC-Asian-Cup-qualification-Stats ---
+2025-08-02 18:50:40,077 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:50:43,902 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:50:43,904 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 77: https://fbref.com/en/comps/665/2015/2015-AFC-Asian-Cup-qualification-Stats ---
+2025-08-02 18:50:48,280 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:50:52,096 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:50:52,098 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 78: https://fbref.com/en/comps/665/2011/2011-AFC-Asian-Cup-qualification-Stats ---
+2025-08-02 18:50:55,917 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:50:59,688 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:50:59,690 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 79: https://fbref.com/en/comps/665/2007/2007-AFC-Asian-Cup-qualification-Stats ---
+2025-08-02 18:51:04,199 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:51:07,965 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:51:07,967 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 80: https://fbref.com/en/comps/665/2004/2004-AFC-Asian-Cup-qualification-Stats ---
+2025-08-02 18:51:12,954 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:51:16,730 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:51:16,732 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 81: https://fbref.com/en/comps/665/2000/2000-AFC-Asian-Cup-qualification-Stats ---
+2025-08-02 18:51:21,338 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:51:25,178 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:51:25,179 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 82: https://fbref.com/en/matches/e27d2c57/Japan-Australia-May-25-2014-AFC-Womens-Asian-Cup ---
+2025-08-02 18:51:32,231 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:51:36,042 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:51:36,045 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 83: https://fbref.com/en/matches/e1a334d1/Japan-Australia-April-20-2018-AFC-Womens-Asian-Cup ---
+2025-08-02 18:51:40,010 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:51:43,776 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:51:43,778 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 84: https://fbref.com/en/matches/85d6286b/China-PR-Korea-Republic-February-6-2022-AFC-Womens-Asian-Cup ---
+2025-08-02 18:51:47,762 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:51:51,586 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:51:51,589 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 85: https://fbref.com/en/comps/662/AFC-Womens-Asian-Cup-qualification-Stats ---
+2025-08-02 18:51:55,882 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:51:59,663 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:51:59,666 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 86: https://fbref.com/en/comps/662/2022/2022-AFC-Womens-Asian-Cup-qualification-Stats ---
+2025-08-02 18:52:04,049 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:52:07,809 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:52:07,812 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 87: https://fbref.com/en/comps/662/2018/2018-AFC-Womens-Asian-Cup-qualification-Stats ---
+2025-08-02 18:52:11,685 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:52:15,452 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:52:15,454 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 88: https://fbref.com/en/matches/deaede2a/Senegal-Algeria-July-19-2019-Africa-Cup-of-Nations ---
+2025-08-02 18:52:19,442 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:52:23,250 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:52:23,253 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 89: https://fbref.com/en/matches/cb967000/Ghana-Egypt-January-31-2010-Africa-Cup-of-Nations ---
+2025-08-02 18:52:27,194 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:52:30,993 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:52:30,996 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 90: https://fbref.com/en/matches/799cf803/Nigeria-Cote-dIvoire-February-11-2024-Africa-Cup-of-Nations ---
+2025-08-02 18:52:34,941 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:52:38,674 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:52:38,677 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 91: https://fbref.com/en/matches/6b73fbb7/Cote-dIvoire-Ghana-February-8-2015-Africa-Cup-of-Nations ---
+2025-08-02 18:52:42,662 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:52:46,395 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:52:46,397 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 92: https://fbref.com/en/matches/3e062cbc/Nigeria-Burkina-Faso-February-10-2013-Africa-Cup-of-Nations ---
+2025-08-02 18:52:50,559 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:52:54,347 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:52:54,350 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 93: https://fbref.com/en/matches/39d80bf2/Egypt-Cameroon-February-5-2017-Africa-Cup-of-Nations ---
+2025-08-02 18:52:58,294 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:53:02,010 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:53:02,012 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 94: https://fbref.com/en/matches/31b17b3a/Zambia-Cote-dIvoire-February-12-2012-Africa-Cup-of-Nations ---
+2025-08-02 18:53:05,994 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:53:09,752 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:53:09,755 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 95: https://fbref.com/en/matches/2ca5b81c/Senegal-Egypt-February-6-2022-Africa-Cup-of-Nations ---
+2025-08-02 18:53:13,694 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:53:17,523 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:53:17,526 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 96: https://fbref.com/en/comps/657/Africa-Cup-of-Nations-qualification-Stats ---
+2025-08-02 18:53:21,554 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:53:25,373 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:53:25,376 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 97: https://fbref.com/en/comps/657/2023/2023-Africa-Cup-of-Nations-qualification-Stats ---
+2025-08-02 18:53:30,068 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:53:33,906 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:53:33,909 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 98: https://fbref.com/en/comps/657/2021/2021-Africa-Cup-of-Nations-qualification-Stats ---
+2025-08-02 18:53:38,635 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:53:42,447 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:53:42,450 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 99: https://fbref.com/en/comps/657/2019/2019-Africa-Cup-of-Nations-qualification-Stats ---
+2025-08-02 18:53:47,129 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:53:50,948 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:53:50,951 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 100: https://fbref.com/en/comps/657/2017/2017-Africa-Cup-of-Nations-qualification-Stats ---
+2025-08-02 18:53:56,283 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:54:00,194 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:54:00,197 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 101: https://fbref.com/en/comps/657/2015/2015-Africa-Cup-of-Nations-qualification-Stats ---
+2025-08-02 18:54:05,213 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:54:09,198 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:54:09,201 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 102: https://fbref.com/en/matches/b63e7513/Nigeria-South-Africa-December-1-2018-Africa-Women-Cup-of-Nations ---
+2025-08-02 18:54:13,285 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:54:17,203 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:54:17,206 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 103: https://fbref.com/en/matches/62e70ac2/Cameroon-Nigeria-December-3-2016-Africa-Women-Cup-of-Nations ---
+2025-08-02 18:54:21,204 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:54:24,993 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:54:24,996 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 104: https://fbref.com/en/matches/1a4052ff/Morocco-South-Africa-July-23-2022-Africa-Women-Cup-of-Nations ---
+2025-08-02 18:54:28,982 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:54:32,783 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:54:32,785 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 105: https://fbref.com/en/matches/15f6f666/Morocco-Nigeria-July-26-2025-Africa-Women-Cup-of-Nations ---
+2025-08-02 18:54:36,734 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:54:40,511 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:54:40,513 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 106: https://fbref.com/en/matches/550a1e5c/Poland-Norway-March-6-2019-Algarve-Cup ---
+2025-08-02 18:54:44,499 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:54:48,235 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:54:48,238 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 107: https://fbref.com/en/matches/17eec5c4/Italy-Germany-March-11-2020-Algarve-Cup ---
+2025-08-02 18:54:52,029 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:54:55,817 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:54:55,819 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 108: https://fbref.com/en/matches/00de3119/Sweden-Italy-February-23-2022-Algarve-Cup ---
+2025-08-02 18:54:59,928 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:55:03,738 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:55:03,742 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 109: https://fbref.com/en/comps/29/Allsvenskan-Stats ---
+2025-08-02 18:55:07,873 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:55:11,673 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:55:11,676 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 110: https://fbref.com/en/comps/29/2024/2024-Allsvenskan-Stats ---
+2025-08-02 18:55:15,803 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:55:19,553 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:55:19,556 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 111: https://fbref.com/en/comps/29/2023/2023-Allsvenskan-Stats ---
+2025-08-02 18:55:23,745 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:55:27,502 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:55:27,505 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 112: https://fbref.com/en/comps/29/2022/2022-Allsvenskan-Stats ---
+2025-08-02 18:55:31,620 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:55:35,412 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:55:35,414 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 113: https://fbref.com/en/comps/29/2021/2021-Allsvenskan-Stats ---
+2025-08-02 18:55:39,713 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:55:43,622 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:55:43,625 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 114: https://fbref.com/en/comps/29/2020/2020-Allsvenskan-Stats ---
+2025-08-02 18:55:47,694 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:55:51,653 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:55:51,656 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 115: https://fbref.com/en/comps/29/2019/2019-Allsvenskan-Stats ---
+2025-08-02 18:55:56,969 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:56:00,745 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:56:00,748 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 116: https://fbref.com/en/comps/29/2018/2018-Allsvenskan-Stats ---
+2025-08-02 18:56:04,882 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:56:08,730 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:56:08,733 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 117: https://fbref.com/en/comps/29/2017/2017-Allsvenskan-Stats ---
+2025-08-02 18:56:13,035 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:56:16,821 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:56:16,823 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 118: https://fbref.com/en/comps/29/2016/2016-Allsvenskan-Stats ---
+2025-08-02 18:56:20,959 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:56:24,672 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:56:24,675 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 119: https://fbref.com/en/comps/29/2015/2015-Allsvenskan-Stats ---
+2025-08-02 18:56:29,064 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:56:33,042 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:56:33,045 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 120: https://fbref.com/en/comps/29/2014/2014-Allsvenskan-Stats ---
+2025-08-02 18:56:37,377 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:56:41,198 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:56:41,201 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 121: https://fbref.com/en/comps/29/2013/2013-Allsvenskan-Stats ---
+2025-08-02 18:56:46,468 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:56:50,416 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:56:50,419 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 122: https://fbref.com/en/comps/29/2012/2012-Allsvenskan-Stats ---
+2025-08-02 18:56:55,726 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:56:59,470 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:56:59,473 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 123: https://fbref.com/en/comps/29/2011/2011-Allsvenskan-Stats ---
+2025-08-02 18:57:04,797 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:57:08,524 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:57:08,527 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 124: https://fbref.com/en/comps/29/2010/2010-Allsvenskan-Stats ---
+2025-08-02 18:57:13,805 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:57:17,558 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:57:17,560 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 125: https://fbref.com/en/comps/29/2009/2009-Allsvenskan-Stats ---
+2025-08-02 18:57:21,697 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:57:25,462 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:57:25,464 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 126: https://fbref.com/en/comps/29/2008/2008-Allsvenskan-Stats ---
+2025-08-02 18:57:30,792 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:57:34,574 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:57:34,577 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 127: https://fbref.com/en/comps/29/2007/2007-Allsvenskan-Stats ---
+2025-08-02 18:57:39,706 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:57:43,463 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:57:43,466 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 128: https://fbref.com/en/comps/29/2006/2006-Allsvenskan-Stats ---
+2025-08-02 18:57:48,593 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:57:52,386 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:57:52,388 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 129: https://fbref.com/en/comps/29/2005/2005-Allsvenskan-Stats ---
+2025-08-02 18:57:57,451 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:58:01,240 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:58:01,242 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 130: https://fbref.com/en/comps/29/2004/2004-Allsvenskan-Stats ---
+2025-08-02 18:58:06,290 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:58:10,095 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:58:10,098 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 131: https://fbref.com/en/comps/29/2003/2003-Allsvenskan-Stats ---
+2025-08-02 18:58:15,307 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:58:19,122 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:58:19,125 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 132: https://fbref.com/en/comps/29/2002/2002-Allsvenskan-Stats ---
+2025-08-02 18:58:27,086 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:58:30,797 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:58:30,800 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 133: https://fbref.com/en/comps/29/2001/2001-Allsvenskan-Stats ---
+2025-08-02 18:58:34,904 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:58:38,801 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:58:38,805 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 134: https://fbref.com/en/comps/56/Austrian-Bundesliga-Stats ---
+2025-08-02 18:58:42,700 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:58:46,459 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:58:46,462 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 135: https://fbref.com/en/comps/56/2024-2025/2024-2025-Austrian-Bundesliga-Stats ---
+2025-08-02 18:58:50,717 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:58:54,464 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:58:54,467 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 136: https://fbref.com/en/comps/56/2023-2024/2023-2024-Austrian-Bundesliga-Stats ---
+2025-08-02 18:58:58,584 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:59:02,379 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:59:02,381 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 137: https://fbref.com/en/comps/56/2022-2023/2022-2023-Austrian-Bundesliga-Stats ---
+2025-08-02 18:59:06,522 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:59:10,299 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:59:10,302 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 138: https://fbref.com/en/comps/56/2021-2022/2021-2022-Austrian-Bundesliga-Stats ---
+2025-08-02 18:59:14,321 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:59:18,135 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:59:18,138 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 139: https://fbref.com/en/comps/56/2020-2021/2020-2021-Austrian-Bundesliga-Stats ---
+2025-08-02 18:59:22,355 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Navegando para a página de jogos: https://fbref.com/en/comps/1/schedule/World-Cup-Scores-and-Fixtures
+2025-08-02 18:59:26,130 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 68 partidas salvas no banco de dados.
+2025-08-02 18:59:26,133 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 140: https://fbref.com/en/comps/56/2019-2020/2019-2020-Austrian-Bundesliga-Stats ---
+2025-08-02 18:59:27,456 - WARNING - [urllib3.connectionpool] - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'Foi forçado o cancelamento de uma conexão existente pelo host remoto', None, 10054, None)': /session/afbda08a2c8bd2569bb02b585a0ca908

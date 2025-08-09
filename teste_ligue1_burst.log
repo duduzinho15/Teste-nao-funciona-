@@ -1,0 +1,121 @@
+2025-08-03 16:00:20,842 - __main__ - INFO - 🚀 INICIANDO TESTE LIGUE 1 - BURST MODE OTIMIZADO
+2025-08-03 16:00:20,842 - __main__ - INFO - Testando apenas threshold 80% → 75%
+2025-08-03 16:00:20,842 - __main__ - INFO - ============================================================
+2025-08-03 16:00:20,865 - Coleta_de_dados.apis.fbref.advanced_anti_blocking - INFO - Sistema avançado anti-bloqueio inicializado
+2025-08-03 16:00:20,865 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 16:00:20,865 - __main__ - INFO - 📋 Testando 8 URLs da Ligue 1
+2025-08-03 16:00:20,865 - __main__ - INFO - 
+--- REQUISIÇÃO 1/8 ---
+2025-08-03 16:00:20,865 - __main__ - INFO - 🔄 Requisição: https://fbref.com/en/comps/13/Ligue-1-Stats
+2025-08-03 16:00:20,866 - __main__ - INFO -    Delay: 8.11s | Burst: ❌
+2025-08-03 16:00:20,866 - __main__ - INFO -    Success rate atual: 100.00%
+2025-08-03 16:00:20,866 - __main__ - INFO - ⏳ Aguardando 8.11s...
+2025-08-03 16:00:28,982 - __main__ - INFO - ✅ SUCESSO: https://fbref.com/en/comps/13/Ligue-1-Stats (2.21s)
+2025-08-03 16:00:28,982 - __main__ - INFO - 
+--- REQUISIÇÃO 2/8 ---
+2025-08-03 16:00:28,983 - __main__ - INFO - 🔄 Requisição: https://fbref.com/en/comps/13/schedule/Ligue-1-Scores-and-Fixtures
+2025-08-03 16:00:28,983 - __main__ - INFO -    Delay: 6.98s | Burst: ❌
+2025-08-03 16:00:28,983 - __main__ - INFO -    Success rate atual: 100.00%
+2025-08-03 16:00:28,983 - __main__ - INFO - ⏳ Aguardando 6.98s...
+2025-08-03 16:00:35,962 - __main__ - INFO - ✅ SUCESSO: https://fbref.com/en/comps/13/schedule/Ligue-1-Scores-and-Fixtures (0.59s)
+2025-08-03 16:00:35,962 - __main__ - INFO - 
+--- REQUISIÇÃO 3/8 ---
+2025-08-03 16:00:35,962 - Coleta_de_dados.apis.fbref.advanced_anti_blocking - INFO - Simulando pausa humana: 69.4s
+2025-08-03 16:00:35,962 - __main__ - INFO - 🔄 Requisição: https://fbref.com/en/comps/13/stats/Ligue-1-Stats
+2025-08-03 16:00:35,963 - __main__ - INFO -    Delay: 78.01s | Burst: ❌
+2025-08-03 16:00:35,963 - __main__ - INFO -    Success rate atual: 100.00%
+2025-08-03 16:00:35,963 - __main__ - INFO - ⏳ Aguardando 78.01s...
+2025-08-03 16:00:45,977 - __main__ - INFO - ✅ SUCESSO: https://fbref.com/en/comps/13/stats/Ligue-1-Stats (1.13s)
+2025-08-03 16:00:45,977 - __main__ - INFO - ============================================================
+2025-08-03 16:00:45,978 - __main__ - INFO - 📊 ESTATÍSTICAS DO TESTE LIGUE 1 - BURST MODE
+2025-08-03 16:00:45,978 - __main__ - INFO - ============================================================
+2025-08-03 16:00:45,978 - __main__ - INFO - ⏱️  Tempo decorrido: 0.4 min
+2025-08-03 16:00:45,978 - __main__ - INFO - 📈 Total de requisições: 3
+2025-08-03 16:00:45,978 - __main__ - INFO - ✅ Taxa de sucesso: 100.00%
+2025-08-03 16:00:45,978 - __main__ - INFO - ❌ Erros 429: 0 (0.00%)
+2025-08-03 16:00:45,978 - __main__ - INFO - 🚀 Burst mode ativado: 0x (0.00%)
+2025-08-03 16:00:45,978 - __main__ - INFO - ⏳ Delay médio: 31.03s
+2025-08-03 16:00:45,979 - __main__ - INFO - ⏳ Delay min/max: 6.98s / 78.01s
+2025-08-03 16:00:45,979 - __main__ - INFO - 🔄 Requisições/min: 7.2
+2025-08-03 16:00:45,979 - __main__ - INFO - ============================================================
+2025-08-03 16:00:45,979 - __main__ - INFO - 
+--- REQUISIÇÃO 4/8 ---
+2025-08-03 16:00:45,979 - __main__ - INFO - 🔄 Requisição: https://fbref.com/en/comps/13/shooting/Ligue-1-Stats
+2025-08-03 16:00:45,979 - __main__ - INFO -    Delay: 7.26s | Burst: ❌
+2025-08-03 16:00:45,979 - __main__ - INFO -    Success rate atual: 100.00%
+2025-08-03 16:00:45,980 - __main__ - INFO - ⏳ Aguardando 7.26s...
+2025-08-03 16:00:53,244 - Coleta_de_dados.apis.fbref.anti_429_state_machine - WARNING - Erro 429 detectado: https://fbref.com/en/comps/13/shooting/Ligue-1-Stats (consecutivos: 1)
+2025-08-03 16:00:53,244 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Transicao de estado: NOMINAL -> THROTTLED
+2025-08-03 16:00:53,245 - __main__ - WARNING - ❌ 429 ERROR: https://fbref.com/en/comps/13/shooting/Ligue-1-Stats (Total 429s: 1)
+2025-08-03 16:00:53,245 - __main__ - INFO - 
+--- REQUISIÇÃO 5/8 ---
+2025-08-03 16:00:53,245 - Coleta_de_dados.apis.fbref.advanced_anti_blocking - INFO - Simulando pausa humana: 86.1s
+2025-08-03 16:00:53,245 - __main__ - INFO - 🔄 Requisição: https://fbref.com/en/comps/13/passing/Ligue-1-Stats
+2025-08-03 16:00:53,245 - __main__ - INFO -    Delay: 92.58s | Burst: ❌
+2025-08-03 16:00:53,245 - __main__ - INFO -    Success rate atual: 75.00%
+2025-08-03 16:00:53,245 - __main__ - INFO - ⏳ Aguardando 92.58s...
+2025-08-03 16:01:03,258 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Sucesso apos THROTTLED - voltando para NOMINAL
+2025-08-03 16:01:03,258 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Transicao de estado: THROTTLED -> NOMINAL
+2025-08-03 16:01:03,259 - __main__ - INFO - ✅ SUCESSO: https://fbref.com/en/comps/13/passing/Ligue-1-Stats (2.32s)
+2025-08-03 16:01:03,259 - __main__ - INFO - 
+--- REQUISIÇÃO 6/8 ---
+2025-08-03 16:01:03,259 - Coleta_de_dados.apis.fbref.advanced_anti_blocking - INFO - Simulando pausa humana: 71.1s
+2025-08-03 16:01:03,259 - __main__ - INFO - 🔄 Requisição: https://fbref.com/en/comps/13/defense/Ligue-1-Stats
+2025-08-03 16:01:03,259 - __main__ - INFO -    Delay: 78.07s | Burst: ❌
+2025-08-03 16:01:03,260 - __main__ - INFO -    Success rate atual: 80.00%
+2025-08-03 16:01:03,260 - __main__ - INFO - ⏳ Aguardando 78.07s...
+2025-08-03 16:01:13,262 - __main__ - INFO - ✅ SUCESSO: https://fbref.com/en/comps/13/defense/Ligue-1-Stats (1.50s)
+2025-08-03 16:01:13,262 - __main__ - INFO - ============================================================
+2025-08-03 16:01:13,263 - __main__ - INFO - 📊 ESTATÍSTICAS DO TESTE LIGUE 1 - BURST MODE
+2025-08-03 16:01:13,263 - __main__ - INFO - ============================================================
+2025-08-03 16:01:13,263 - __main__ - INFO - ⏱️  Tempo decorrido: 0.9 min
+2025-08-03 16:01:13,263 - __main__ - INFO - 📈 Total de requisições: 6
+2025-08-03 16:01:13,263 - __main__ - INFO - ✅ Taxa de sucesso: 83.33%
+2025-08-03 16:01:13,263 - __main__ - INFO - ❌ Erros 429: 1 (16.67%)
+2025-08-03 16:01:13,263 - __main__ - INFO - 🚀 Burst mode ativado: 0x (0.00%)
+2025-08-03 16:01:13,263 - __main__ - INFO - ⏳ Delay médio: 45.17s
+2025-08-03 16:01:13,264 - __main__ - INFO - ⏳ Delay min/max: 6.98s / 92.58s
+2025-08-03 16:01:13,264 - __main__ - INFO - 🔄 Requisições/min: 6.9
+2025-08-03 16:01:13,264 - __main__ - INFO - ============================================================
+2025-08-03 16:01:13,264 - __main__ - WARNING - ⚠️ ATENÇÃO: Taxa de 429 errors muito alta!
+2025-08-03 16:01:13,264 - __main__ - WARNING - Considere reverter otimização ou aplicar outras melhorias
+2025-08-03 16:01:13,264 - __main__ - INFO - 
+--- REQUISIÇÃO 7/8 ---
+2025-08-03 16:01:13,265 - __main__ - INFO - 🔄 Requisição: https://fbref.com/en/comps/13/possession/Ligue-1-Stats
+2025-08-03 16:01:13,265 - __main__ - INFO -    Delay: 7.76s | Burst: ❌
+2025-08-03 16:01:13,265 - __main__ - INFO -    Success rate atual: 83.33%
+2025-08-03 16:01:13,265 - __main__ - INFO - ⏳ Aguardando 7.76s...
+2025-08-03 16:01:21,030 - __main__ - INFO - ✅ SUCESSO: https://fbref.com/en/comps/13/possession/Ligue-1-Stats (2.06s)
+2025-08-03 16:01:21,030 - __main__ - INFO - 
+--- REQUISIÇÃO 8/8 ---
+2025-08-03 16:01:21,030 - __main__ - INFO - 🔄 Requisição: https://fbref.com/en/comps/13/misc/Ligue-1-Stats
+2025-08-03 16:01:21,030 - __main__ - INFO -    Delay: 7.29s | Burst: ❌
+2025-08-03 16:01:21,030 - __main__ - INFO -    Success rate atual: 85.71%
+2025-08-03 16:01:21,030 - __main__ - INFO - ⏳ Aguardando 7.29s...
+2025-08-03 16:01:28,327 - Coleta_de_dados.apis.fbref.anti_429_state_machine - WARNING - Erro 429 detectado: https://fbref.com/en/comps/13/misc/Ligue-1-Stats (consecutivos: 1)
+2025-08-03 16:01:28,327 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Transicao de estado: NOMINAL -> THROTTLED
+2025-08-03 16:01:28,327 - __main__ - WARNING - ❌ 429 ERROR: https://fbref.com/en/comps/13/misc/Ligue-1-Stats (Total 429s: 2)
+2025-08-03 16:01:28,327 - __main__ - INFO - 
+🏁 TESTE CONCLUÍDO!
+2025-08-03 16:01:28,327 - __main__ - INFO - ============================================================
+2025-08-03 16:01:28,327 - __main__ - INFO - 📊 ESTATÍSTICAS DO TESTE LIGUE 1 - BURST MODE
+2025-08-03 16:01:28,327 - __main__ - INFO - ============================================================
+2025-08-03 16:01:28,328 - __main__ - INFO - ⏱️  Tempo decorrido: 1.1 min
+2025-08-03 16:01:28,328 - __main__ - INFO - 📈 Total de requisições: 8
+2025-08-03 16:01:28,328 - __main__ - INFO - ✅ Taxa de sucesso: 75.00%
+2025-08-03 16:01:28,328 - __main__ - INFO - ❌ Erros 429: 2 (25.00%)
+2025-08-03 16:01:28,328 - __main__ - INFO - 🚀 Burst mode ativado: 0x (0.00%)
+2025-08-03 16:01:28,328 - __main__ - INFO - ⏳ Delay médio: 35.76s
+2025-08-03 16:01:28,328 - __main__ - INFO - ⏳ Delay min/max: 6.98s / 92.58s
+2025-08-03 16:01:28,328 - __main__ - INFO - 🔄 Requisições/min: 7.1
+2025-08-03 16:01:28,329 - __main__ - INFO - ============================================================
+2025-08-03 16:01:28,329 - __main__ - INFO - 
+📋 ANÁLISE DOS RESULTADOS:
+2025-08-03 16:01:28,329 - __main__ - WARNING - ⚠️ Burst mode pouco ativo - verificar success rate
+2025-08-03 16:01:28,329 - __main__ - WARNING - ❌ Taxa de 429 errors alta: 25.00%
+2025-08-03 16:01:28,329 - __main__ - INFO - ℹ️ Throughput: 7.1 req/min
+2025-08-03 16:01:28,329 - __main__ - INFO - 
+💡 RECOMENDAÇÕES:
+2025-08-03 16:01:28,329 - __main__ - WARNING - ⚠️ Taxa de 429 muito alta - considere reverter ou ajustar
+2025-08-03 16:01:28,330 - __main__ - INFO - 📄 Resultados salvos em: ligue1_burst_test_results.txt
+2025-08-03 16:01:28,331 - __main__ - WARNING - ⚠️ Teste com resultados mistos. Revisar configurações.

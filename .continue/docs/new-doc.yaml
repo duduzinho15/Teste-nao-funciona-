@@ -1,0 +1,6 @@
+name: Flask
+version: 0.0.1
+schema: v1
+docs:
+  - name: Flask
+    startUrl: https://flask.palletsprojects.com/

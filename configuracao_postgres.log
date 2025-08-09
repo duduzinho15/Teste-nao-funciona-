@@ -1,0 +1,4 @@
+2025-08-07 19:23:53,081 - INFO - === INÍCIO DA CONFIGURAÇÃO DO POSTGRESQL ===
+2025-08-07 19:23:53,081 - INFO - Procurando instalação do PostgreSQL...
+2025-08-07 19:23:53,082 - ERROR - PostgreSQL não encontrado no sistema.
+2025-08-07 19:23:53,082 - ERROR - Por favor, instale o PostgreSQL e tente novamente.

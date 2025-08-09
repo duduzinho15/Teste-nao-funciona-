@@ -1,0 +1,22 @@
+2025-08-02 16:24:41,184 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-02_16-24-41.log
+2025-08-02 16:24:41,919 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🚀🚀🚀 INICIANDO A PIPELINE COMPLETA DE DADOS DO FBREF 🚀🚀🚀
+2025-08-02 16:24:41,919 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 0 de 6] Executando: Preparação do Banco de Dados ---
+2025-08-02 16:24:41,919 - INFO - [Banco_de_dados.criar_banco] - Verificando e configurando a estrutura completa do banco de dados em 'C:\ApostaPro\Banco_de_dados\aposta.db'...
+2025-08-02 16:24:41,920 - INFO - [Banco_de_dados.criar_banco] - Criando tabelas para o FBRef...
+2025-08-02 16:24:41,921 - INFO - [Banco_de_dados.criar_banco] - Criando tabelas para as outras APIs...
+2025-08-02 16:24:41,922 - INFO - [Banco_de_dados.criar_banco] - Banco de dados pronto com a estrutura completa para TODAS as fontes de dados.
+2025-08-02 16:24:41,922 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 0 de 6] Finalizada com sucesso! ---
+2025-08-02 16:24:41,922 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 1 de 6] Executando: Descoberta de Competições e Temporadas ---
+2025-08-02 16:24:41,922 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 🚀 Iniciando Script 1: Descoberta de Links...
+2025-08-02 16:24:41,922 - CRITICAL - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🚨🚨🚨 ERRO CRÍTICO NA PIPELINE! 🚨🚨🚨
+Traceback (most recent call last):
+  File "C:\ApostaPro\Coleta_de_dados\apis\fbref\orquestrador_coleta.py", line 35, in executar_pipeline_completa
+    descobrir_links()
+  File "C:\ApostaPro\Coleta_de_dados\apis\fbref\fbref_integrado.py", line 79, in main
+    conn = sqlite3.connect(DB_NAME); cursor = conn.cursor()
+sqlite3.OperationalError: unable to open database file
+2025-08-02 16:24:41,923 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+✅✅✅ PIPELINE COMPLETA FINALIZADA! ✅✅✅
+2025-08-02 16:24:41,923 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Tempo total de execução: 00:00:00

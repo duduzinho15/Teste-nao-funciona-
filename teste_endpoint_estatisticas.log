@@ -1,0 +1,44 @@
+2025-08-06 22:08:12,342 - INFO - 
+================================================================================
+2025-08-06 22:08:12,343 - INFO - 1. PROCESSANDO PARTIDAS PENDENTES
+2025-08-06 22:08:12,343 - INFO - ================================================================================
+2025-08-06 22:08:48,037 - INFO - 
+================================================================================
+2025-08-06 22:08:48,037 - INFO - 1. PROCESSANDO PARTIDAS PENDENTES
+2025-08-06 22:08:48,038 - INFO - ================================================================================
+2025-08-06 22:10:01,307 - INFO - 🚀 Iniciando teste de integração de estatísticas avançadas...
+2025-08-06 22:10:01,308 - INFO - 
+================================================================================
+2025-08-06 22:10:01,308 - INFO - 1. PROCESSANDO PARTIDAS PENDENTES
+2025-08-06 22:10:01,308 - INFO - ================================================================================
+2025-08-06 22:10:01,308 - INFO - 🔍 Processando até 1 partida(s) pendente(s)...
+2025-08-06 22:10:01,624 - ERROR - ❌ Erro ao processar partidas: No module named 'selenium'
+Traceback (most recent call last):
+  File "C:\ApostaPro\teste_endpoint_estatisticas.py", line 65, in processar_partidas
+    from Coleta_de_dados.apis.fbref.fbref_integrado_orm import FBRefCollectorORM
+  File "C:\ApostaPro\Coleta_de_dados\apis\fbref\fbref_integrado_orm.py", line 29, in <module>
+    from .fbref_utils import fechar_driver, fazer_requisicao, extrair_tabelas_da_pagina, BASE_URL
+  File "C:\ApostaPro\Coleta_de_dados\apis\fbref\fbref_utils.py", line 6, in <module>
+    from selenium import webdriver
+ModuleNotFoundError: No module named 'selenium'
+2025-08-06 22:10:01,626 - ERROR - ❌ Falha ao processar partidas. Abortando teste.
+2025-08-06 22:10:45,674 - INFO - 🚀 Iniciando teste de integração de estatísticas avançadas...
+2025-08-06 22:10:45,674 - INFO - 
+================================================================================
+2025-08-06 22:10:45,674 - INFO - 1. PROCESSANDO PARTIDAS PENDENTES
+2025-08-06 22:10:45,674 - INFO - ================================================================================
+2025-08-06 22:10:45,675 - INFO - 🔍 Processando até 1 partida(s) pendente(s)...
+2025-08-06 22:10:46,435 - INFO - DatabaseManager inicializado
+2025-08-06 22:10:46,436 - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-06 22:10:46,478 - INFO - Engine criado com sucesso
+2025-08-06 22:10:46,478 - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-06 22:10:46,478 - INFO - Engine criado com sucesso
+2025-08-06 22:10:46,478 - INFO - DatabaseManager inicializado
+2025-08-06 22:10:46,507 - INFO - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-06 22:10:46,508 - ERROR - ❌ Erro ao processar partidas: 'FBRefCollectorORM' object has no attribute 'processar_partidas_pendentes_com_stats_avancadas'
+Traceback (most recent call last):
+  File "C:\ApostaPro\teste_endpoint_estatisticas.py", line 69, in processar_partidas
+    processadas = coletor.processar_partidas_pendentes_com_stats_avancadas(limite=limite)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'FBRefCollectorORM' object has no attribute 'processar_partidas_pendentes_com_stats_avancadas'
+2025-08-06 22:10:46,509 - ERROR - ❌ Falha ao processar partidas. Abortando teste.

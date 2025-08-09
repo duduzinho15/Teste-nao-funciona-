@@ -1,0 +1,327 @@
+"""
+Módulo para coleta de notícias sobre clubes de futebol.
+
+Este módulo fornece funcionalidades para coletar e armazenar notícias
+sobre os clubes de futebol de várias fontes na internet.
+"""
+from typing import List, Dict, Optional, Tuple
+from datetime import datetime, timedelta
+import logging
+import random
+from sqlalchemy.orm import Session
+
+# Importações locais
+from Coleta_de_dados.database.models import Clube, NoticiaClube
+from Coleta_de_dados.database.config import SessionLocal
+
+# Configuração de logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+class NewsCollector:
+    """
+    Coletor de notícias sobre clubes de futebol.
+    
+    Esta classe é responsável por coletar, processar e armazenar notícias
+    sobre os clubes de futebol de várias fontes na internet.
+    """
+    
+    # Fontes de notícias suportadas
+    FONTES_NOTICIAS = [
+        "Globo Esporte",
+        "ESPN Brasil",
+        "UOL Esporte",
+        "GE",
+        "TNT Sports",
+        "OneFootball",
+        "Goal",
+        "Lance!",
+        "Sofascore",
+        "Trivela"
+    ]
+    
+    def __init__(self, db_session: Optional[Session] = None):
+        """
+        Inicializa o coletor de notícias.
+        
+        Args:
+            db_session: Sessão do banco de dados. Se não fornecida, uma nova será criada.
+        """
+        self.db = db_session if db_session else SessionLocal()
+        self.logger = logging.getLogger(f"{__name__}.NewsCollector")
+    
+    def __del__(self):
+        """Garante que a sessão seja fechada quando o coletor for destruído."""
+        if hasattr(self, 'db') and self.db:
+            self.db.close()
+    
+    def coletar_noticias_clube(self, clube_id: int, limite: int = 10) -> Dict:
+        """
+        Coleta notícias recentes sobre um clube específico.
+        
+        Args:
+            clube_id: ID do clube para o qual coletar notícias
+            limite: Número máximo de notícias a coletar
+            
+        Returns:
+            Dict: Estatísticas da coleta
+        """
+        try:
+            self.logger.info(f"Iniciando coleta de notícias para o clube ID: {clube_id}")
+            
+            # Verifica se o clube existe
+            clube = self.db.query(Clube).filter(Clube.id == clube_id).first()
+            if not clube:
+                self.logger.error(f"Clube com ID {clube_id} não encontrado.")
+                return {
+                    'status': 'erro',
+                    'mensagem': f'Clube com ID {clube_id} não encontrado',
+                    'clube_id': clube_id,
+                    'noticias_coletadas': 0
+                }
+            
+            # Simula a coleta de notícias (substituir por implementação real)
+            noticias_coletadas = self._simular_coleta_noticias(clube, limite)
+            
+            # Salva as notícias no banco de dados
+            noticias_salvas = self._salvar_noticias(clube_id, noticias_coletadas)
+            
+            self.logger.info(f"Coleta concluída para o clube {clube.nome}. {noticias_salvas} notícias salvas.")
+            
+            return {
+                'status': 'sucesso',
+                'clube_id': clube_id,
+                'clube_nome': clube.nome,
+                'noticias_coletadas': noticias_salvas,
+                'timestamp': datetime.now().isoformat()
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Erro ao coletar notícias para o clube {clube_id}: {str(e)}", exc_info=True)
+            return {
+                'status': 'erro',
+                'mensagem': str(e),
+                'clube_id': clube_id,
+                'noticias_coletadas': 0
+            }
+    
+    def _simular_coleta_noticias(self, clube: Clube, limite: int) -> List[Dict]:
+        """
+        Simula a coleta de notícias para um clube.
+        
+        Em uma implementação real, este método faria requisições a APIs de notícias
+        ou faria web scraping de sites de notícias esportivas.
+        
+        Args:
+            clube: Objeto Clube para o qual coletar notícias
+            limite: Número máximo de notícias a retornar
+            
+        Returns:
+            List[Dict]: Lista de dicionários contendo as notícias coletadas
+        """
+        # Lista de títulos de notícias simuladas
+        temas = [
+            f"{clube.nome} anuncia novo reforço para a temporada",
+            f"Técnico do {clube.nome} fala sobre próximos jogos",
+            f"Análise: O que esperar do {clube.nome} no returno",
+            f"Jogador do {clube.nome} se destaca em amistoso",
+            f"{clube.nome} divulga balanço financeiro do último semestre",
+            f"Torcida do {clube.nome} se mobiliza para próxima partida",
+            f"Entrevista exclusiva com o capitão do {clube.nome}",
+            f"{clube.nome} inicia preparação para o clássico",
+            f"Diretoria do {clube.nome} planeja contratações",
+            f"Lesões preocupam o {clube.nome} para sequência do campeonato"
+        ]
+        
+        # Gera notícias simuladas
+        noticias = []
+        for i in range(min(limite, len(temas))):
+            # Seleciona uma fonte aleatória
+            fonte = random.choice(self.FONTES_NOTICIAS)
+            
+            # Gera uma data de publicação aleatória nos últimos 7 dias
+            dias_atras = random.randint(0, 7)
+            horas_atras = random.randint(0, 23)
+            minutos_atras = random.randint(0, 59)
+            data_publicacao = datetime.now() - timedelta(
+                days=dias_atras, 
+                hours=horas_atras, 
+                minutes=minutos_atras
+            )
+            
+            noticia = {
+                'titulo': temas[i],
+                'url_noticia': f"https://exemplo.com/noticia-{clube.id}-{i}",
+                'fonte': fonte,
+                'data_publicacao': data_publicacao,
+                'resumo': f"Resumo da notícia sobre {clube.nome}. " + 
+                         f"Esta é uma notícia simulada para fins de teste.",
+                'conteudo_completo': f"Conteúdo completo da notícia sobre {clube.nome}. " +
+                                   "Este é um conteúdo simulado para fins de teste. " +
+                                   "Em uma implementação real, este campo conteria o texto completo da notícia.",
+                'autor': f"Repórter {fonte.split()[0]}" if ' ' in fonte else f"Equipe {fonte}",
+                'imagem_destaque': f"https://exemplo.com/imagens/noticia-{clube.id}-{i}.jpg"
+            }
+            noticias.append(noticia)
+        
+        return noticias
+    
+    def _salvar_noticias(self, clube_id: int, noticias: List[Dict]) -> int:
+        """
+        Salva as notícias no banco de dados, evitando duplicatas.
+        
+        Args:
+            clube_id: ID do clube dono das notícias
+            noticias: Lista de dicionários contendo as notícias
+            
+        Returns:
+            int: Número de notícias salvas
+        """
+        contador = 0
+        
+        for noticia in noticias:
+            try:
+                # Verifica se a notícia já existe pela URL
+                existe = self.db.query(NoticiaClube).filter(
+                    NoticiaClube.url_noticia == noticia['url_noticia']
+                ).first()
+                
+                if not existe:
+                    # Cria um novo registro de notícia
+                    nova_noticia = NoticiaClube(
+                        clube_id=clube_id,
+                        titulo=noticia['titulo'],
+                        url_noticia=noticia['url_noticia'],
+                        fonte=noticia['fonte'],
+                        data_publicacao=noticia['data_publicacao'],
+                        resumo=noticia.get('resumo'),
+                        conteudo_completo=noticia.get('conteudo_completo'),
+                        autor=noticia.get('autor'),
+                        imagem_destaque=noticia.get('imagem_destaque')
+                    )
+                    
+                    self.db.add(nova_noticia)
+                    contador += 1
+                
+            except Exception as e:
+                self.logger.error(
+                    f"Erro ao salvar notícia '{noticia.get('titulo')}': {str(e)}", 
+                    exc_info=True
+                )
+        
+        try:
+            self.db.commit()
+            return contador
+        except Exception as e:
+            self.db.rollback()
+            self.logger.error(f"Erro ao fazer commit das notícias: {str(e)}", exc_info=True)
+            return 0
+    
+    def coletar_para_todos_clubes(self, limite_por_clube: int = 5) -> Dict:
+        """
+        Coleta notícias para todos os clubes ativos no banco de dados.
+        
+        Args:
+            limite_por_clube: Número máximo de notícias a coletar por clube
+            
+        Returns:
+            Dict: Estatísticas da coleta
+        """
+        self.logger.info(f"Iniciando coleta de notícias para todos os clubes ativos")
+        
+        try:
+            # Busca todos os clubes ativos
+            clubes = self.db.query(Clube).filter(Clube.ativo == True).all()
+            
+            if not clubes:
+                self.logger.warning("Nenhum clube ativo encontrado no banco de dados.")
+                return {
+                    'status': 'aviso',
+                    'mensagem': 'Nenhum clube ativo encontrado',
+                    'total_noticias_coletadas': 0,
+                    'clubes_processados': 0
+                }
+            
+            # Coleta notícias para cada clube
+            total_noticias = 0
+            for clube in clubes:
+                resultado = self.coletar_noticias_clube(clube.id, limite_por_clube)
+                if resultado['status'] == 'sucesso':
+                    total_noticias += resultado['noticias_coletadas']
+            
+            self.logger.info(
+                f"Coleta concluída para {len(clubes)} clubes. "
+                f"Total de notícias coletadas: {total_noticias}"
+            )
+            
+            return {
+                'status': 'sucesso',
+                'total_clubes': len(clubes),
+                'total_noticias_coletadas': total_noticias,
+                'limite_por_clube': limite_por_clube,
+                'timestamp': datetime.now().isoformat()
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Erro durante a coleta de notícias: {str(e)}", exc_info=True)
+            return {
+                'status': 'erro',
+                'mensagem': str(e),
+                'total_noticias_coletadas': 0,
+                'clubes_processados': 0
+            }
+
+def coletar_noticias_para_todos_clubes(limite_por_clube: int = 5) -> Dict:
+    """
+    Função de conveniência para coletar notícias para todos os clubes ativos.
+    
+    Args:
+        limite_por_clube: Número máximo de notícias a coletar por clube
+        
+    Returns:
+        Dict: Estatísticas da coleta
+    """
+    collector = NewsCollector()
+    try:
+        return collector.coletar_para_todos_clubes(limite_por_clube)
+    except Exception as e:
+        logging.error(f"Erro inesperado ao coletar notícias: {str(e)}", exc_info=True)
+        return {
+            'status': 'erro',
+            'mensagem': f"Erro inesperado: {str(e)}",
+            'total_noticias_coletadas': 0,
+            'clubes_processados': 0
+        }
+    finally:
+        # O coletor fecha a sessão no destruidor
+        pass
+
+if __name__ == "__main__":
+    # Exemplo de uso
+    import sys
+    
+    # Configura logging para o console
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        stream=sys.stdout
+    )
+    
+    # Cria um coletor e coleta notícias para todos os clubes
+    resultado = coletar_noticias_para_todos_clubes(limite_por_clube=3)
+    
+    # Exibe o resultado
+    print("\n" + "="*80)
+    print("RESULTADO DA COLETA DE NOTÍCIAS".center(80))
+    print("="*80)
+    print(f"Status: {resultado['status'].upper()}")
+    print(f"Clubes processados: {resultado.get('total_clubes', 0)}")
+    print(f"Notícias coletadas: {resultado.get('total_noticias_coletadas', 0)}")
+    
+    if 'mensagem' in resultado:
+        print(f"Mensagem: {resultado['mensagem']}")
+    
+    print("="*80)

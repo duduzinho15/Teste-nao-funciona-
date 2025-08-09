@@ -1,0 +1,6 @@
+name: PEP 8
+version: 0.0.1
+schema: v1
+docs:
+  - name: PEP 8
+    startUrl: https://peps.python.org/pep-0008/

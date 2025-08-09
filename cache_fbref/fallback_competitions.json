@@ -1,0 +1,55 @@
+{
+  "timestamp": "2025-08-06T22:10:46.507700",
+  "competitions": [
+    {
+      "nome": "Premier League",
+      "contexto": "Masculino",
+      "url": "https://fbref.com/en/comps/9/history/Premier-League-Seasons"
+    },
+    {
+      "nome": "La Liga",
+      "contexto": "Masculino",
+      "url": "https://fbref.com/en/comps/12/history/La-Liga-Seasons"
+    },
+    {
+      "nome": "Serie A",
+      "contexto": "Masculino",
+      "url": "https://fbref.com/en/comps/11/history/Serie-A-Seasons"
+    },
+    {
+      "nome": "Bundesliga",
+      "contexto": "Masculino",
+      "url": "https://fbref.com/en/comps/20/history/Bundesliga-Seasons"
+    },
+    {
+      "nome": "Ligue 1",
+      "contexto": "Masculino",
+      "url": "https://fbref.com/en/comps/13/history/Ligue-1-Seasons"
+    },
+    {
+      "nome": "Champions League",
+      "contexto": "Masculino",
+      "url": "https://fbref.com/en/comps/8/history/Champions-League-Seasons"
+    },
+    {
+      "nome": "Europa League",
+      "contexto": "Masculino",
+      "url": "https://fbref.com/en/comps/19/history/Europa-League-Seasons"
+    },
+    {
+      "nome": "World Cup",
+      "contexto": "Masculino",
+      "url": "https://fbref.com/en/comps/1/history/World-Cup-Seasons"
+    },
+    {
+      "nome": "Premier League",
+      "contexto": "Feminino",
+      "url": "https://fbref.com/en/comps/182/history/Womens-Super-League-Seasons"
+    },
+    {
+      "nome": "Serie A (W)",
+      "contexto": "Feminino",
+      "url": "https://fbref.com/en/comps/106/history/Serie-A-Seasons"
+    }
+  ]
+}

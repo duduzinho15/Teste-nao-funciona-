@@ -1,0 +1,649 @@
+2025-08-02 17:12:30,586 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-02_17-12-30.log
+2025-08-02 17:12:31,384 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 🚀🚀🚀 INICIANDO A PIPELINE COMPLETA DE DADOS DO FBREF 🚀🚀🚀
+2025-08-02 17:12:31,385 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 0 de 6] Executando: Preparação do Banco de Dados ---
+2025-08-02 17:12:31,385 - INFO - [Banco_de_dados.criar_banco] - Verificando e configurando a estrutura completa do banco de dados em 'C:\ApostaPro\Banco_de_dados\aposta.db'...
+2025-08-02 17:12:31,385 - INFO - [Banco_de_dados.criar_banco] - Criando tabelas para o FBRef...
+2025-08-02 17:12:31,398 - INFO - [Banco_de_dados.criar_banco] - Criando tabelas para as outras APIs...
+2025-08-02 17:12:31,429 - INFO - [Banco_de_dados.criar_banco] - Banco de dados pronto com a estrutura completa para TODAS as fontes de dados.
+2025-08-02 17:12:31,429 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 0 de 6] Finalizada com sucesso! ---
+2025-08-02 17:12:31,430 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - 
+--- [ETAPA 1 de 6] Executando: Descoberta de Competições e Temporadas ---
+2025-08-02 17:12:31,430 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 🚀 Iniciando Script 1: Descoberta de Links...
+2025-08-02 17:12:31,431 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Buscando lista de competições com reconhecimento de contexto aprimorado...
+2025-08-02 17:12:31,431 - INFO - [root] - Iniciando o navegador (WebDriver)...
+2025-08-02 17:12:31,431 - INFO - [WDM] - ====== WebDriver manager ======
+2025-08-02 17:12:32,141 - INFO - [WDM] - Get LATEST chromedriver version for google-chrome
+2025-08-02 17:12:32,168 - INFO - [WDM] - Get LATEST chromedriver version for google-chrome
+2025-08-02 17:12:32,188 - INFO - [WDM] - Driver [C:\Users\Eduardo Vitorino\.wdm\drivers\chromedriver\win64\138.0.7204.183\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-02 17:12:33,243 - INFO - [root] - Navegador iniciado com sucesso em modo invisível.
+2025-08-02 17:12:37,390 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - Encontradas 150 competições únicas com contexto.
+2025-08-02 17:12:37,390 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 1/150: 2. Fußball-Bundesliga (Desconhecido) ---
+2025-08-02 17:12:40,994 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:12:40,995 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 17:12:40,997 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 2/150: 3. Fußball-Liga (Desconhecido) ---
+2025-08-02 17:12:44,496 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 17 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:12:44,496 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 17:12:44,498 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 3/150: A-League Men (Desconhecido) ---
+2025-08-02 17:12:48,003 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 20 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:12:48,003 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 17:12:48,006 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 4/150: A-League Women (Desconhecido) ---
+2025-08-02 17:12:51,490 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:12:51,490 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 17:12:51,492 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 5/150: AFC Asian Cup (Desconhecido) ---
+2025-08-02 17:12:55,022 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:12:55,022 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 17:12:55,024 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 6/150: AFC Asian Cup qualification (Desconhecido) ---
+2025-08-02 17:12:58,691 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:12:58,692 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:12:58,694 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 7/150: AFC Women's Asian Cup (Desconhecido) ---
+2025-08-02 17:13:02,335 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:13:02,335 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo TEMPORADAS.
+2025-08-02 17:13:02,338 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 8/150: AFC Women's Asian Cup qualification (Desconhecido) ---
+2025-08-02 17:13:05,953 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:13:05,954 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:13:05,958 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 9/150: Africa Cup of Nations (Desconhecido) ---
+2025-08-02 17:13:09,587 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 8 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:13:09,587 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 8 links do tipo TEMPORADAS.
+2025-08-02 17:13:09,589 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 10/150: Africa Cup of Nations qualification (Desconhecido) ---
+2025-08-02 17:13:13,403 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:13:13,404 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:13:13,406 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 11/150: Africa Women Cup of Nations (Desconhecido) ---
+2025-08-02 17:13:16,994 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 4 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:13:16,995 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 17:13:17,001 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 12/150: Algarve Cup (Desconhecido) ---
+2025-08-02 17:13:20,623 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:13:20,623 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo TEMPORADAS.
+2025-08-02 17:13:20,626 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 13/150: Allsvenskan (Desconhecido) ---
+2025-08-02 17:13:24,222 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:13:24,223 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 17:13:24,226 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 14/150: Austrian Football Bundesliga (Desconhecido) ---
+2025-08-02 17:13:27,864 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:13:27,864 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 17:13:27,867 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 15/150: Belgian Pro League (Desconhecido) ---
+2025-08-02 17:13:31,500 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:13:31,500 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 17:13:31,503 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 16/150: Belgian Women's Super League (Desconhecido) ---
+2025-08-02 17:13:35,092 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:13:35,093 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 17:13:35,096 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 17/150: Big 5 European Leagues Combined (Desconhecido) ---
+2025-08-02 17:13:38,714 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 31 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:13:38,714 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 31 links do tipo TEMPORADAS.
+2025-08-02 17:13:38,717 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 18/150: Brasileirão Feminino Série A1 (Desconhecido) ---
+2025-08-02 17:13:42,304 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:13:42,304 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 17:13:42,307 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 19/150: CONCACAF Gold Cup (Desconhecido) ---
+2025-08-02 17:13:45,988 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:13:45,988 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 17:13:45,990 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 20/150: CONCACAF W Championship (Desconhecido) ---
+2025-08-02 17:13:49,510 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:13:49,510 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo TEMPORADAS.
+2025-08-02 17:13:49,513 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 21/150: CONMEBOL Copa América (Desconhecido) ---
+2025-08-02 17:13:53,062 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:13:53,063 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 17:13:53,065 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 22/150: Campeonato Brasileiro Série A (Desconhecido) ---
+2025-08-02 17:13:56,627 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:13:56,628 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:13:56,629 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 23/150: Campeonato Brasileiro Série B (Desconhecido) ---
+2025-08-02 17:14:00,172 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:00,172 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:14:00,175 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 24/150: Canadian Premier League (Desconhecido) ---
+2025-08-02 17:14:03,758 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:03,758 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 17:14:03,762 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 25/150: Categoría Primera A (Desconhecido) ---
+2025-08-02 17:14:07,267 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:07,267 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:14:07,268 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 26/150: Challenger Pro League (Desconhecido) ---
+2025-08-02 17:14:10,820 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:10,820 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 17:14:10,823 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 27/150: Chilean Primera División (Desconhecido) ---
+2025-08-02 17:14:14,376 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:14,377 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:14:14,380 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 28/150: Chinese Football Association Super League (Desconhecido) ---
+2025-08-02 17:14:17,939 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:17,940 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:14:17,943 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 29/150: Copa América Femenina (Desconhecido) ---
+2025-08-02 17:14:21,561 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:21,561 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo TEMPORADAS.
+2025-08-02 17:14:21,564 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 30/150: Copa CONMEBOL Sudamericana (Desconhecido) ---
+2025-08-02 17:14:25,119 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:25,120 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:14:25,123 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 31/150: Copa Libertadores de América (Desconhecido) ---
+2025-08-02 17:14:28,680 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:28,681 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:14:28,684 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 32/150: Copa de la Liga Profesional (Desconhecido) ---
+2025-08-02 17:14:32,208 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 4 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:32,209 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 17:14:32,211 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 33/150: Copa del Rey (Desconhecido) ---
+2025-08-02 17:14:35,912 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:35,913 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 17:14:35,916 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 34/150: Coppa Italia (Desconhecido) ---
+2025-08-02 17:14:39,523 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:39,523 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:14:39,527 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 35/150: Coupe de France (Desconhecido) ---
+2025-08-02 17:14:43,075 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:43,076 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 17:14:43,079 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 36/150: Coupe de la Ligue (Desconhecido) ---
+2025-08-02 17:14:46,603 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:46,603 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 17:14:46,606 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 37/150: Croatian Football League (Desconhecido) ---
+2025-08-02 17:14:50,173 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 19 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:50,174 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 19 links do tipo TEMPORADAS.
+2025-08-02 17:14:50,176 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 38/150: Czech First League (Desconhecido) ---
+2025-08-02 17:14:53,758 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 17 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:53,758 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 17:14:53,761 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 39/150: DFB-Pokal (Desconhecido) ---
+2025-08-02 17:14:57,294 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:14:57,294 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:14:57,297 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 40/150: DFB-Pokal Frauen (Desconhecido) ---
+2025-08-02 17:15:00,767 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:00,768 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 17:15:00,770 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 41/150: Damallsvenskan (Desconhecido) ---
+2025-08-02 17:15:04,257 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:04,257 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 17:15:04,259 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 42/150: Danish Superliga (Desconhecido) ---
+2025-08-02 17:15:07,841 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:07,841 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 17:15:07,843 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 43/150: Danish Women's League (Desconhecido) ---
+2025-08-02 17:15:11,404 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:11,404 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 17:15:11,407 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 44/150: División de Fútbol Profesional (Desconhecido) ---
+2025-08-02 17:15:14,977 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:14,977 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 17:15:14,980 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 45/150: EFL Championship (Desconhecido) ---
+2025-08-02 17:15:18,520 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:18,520 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 17:15:18,523 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 46/150: EFL Cup (Desconhecido) ---
+2025-08-02 17:15:22,006 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:22,006 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:15:22,008 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 47/150: EFL League One (Desconhecido) ---
+2025-08-02 17:15:25,549 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 24 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:25,550 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 24 links do tipo TEMPORADAS.
+2025-08-02 17:15:25,552 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 48/150: EFL League Two (Desconhecido) ---
+2025-08-02 17:15:29,114 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 24 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:29,114 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 24 links do tipo TEMPORADAS.
+2025-08-02 17:15:29,117 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 49/150: Eerste Divisie (Desconhecido) ---
+2025-08-02 17:15:32,696 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 19 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:32,697 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 19 links do tipo TEMPORADAS.
+2025-08-02 17:15:32,700 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 50/150: Ekstraklasa (Desconhecido) ---
+2025-08-02 17:15:36,215 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 24 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:36,216 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 24 links do tipo TEMPORADAS.
+2025-08-02 17:15:36,219 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 51/150: Eliteserien (Desconhecido) ---
+2025-08-02 17:15:39,770 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 26 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:39,770 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 17:15:39,773 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 52/150: Eredivisie (Desconhecido) ---
+2025-08-02 17:15:43,268 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 26 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:43,268 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 17:15:43,272 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 53/150: Eredivisie Vrouwen (Desconhecido) ---
+2025-08-02 17:15:46,780 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 8 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:46,780 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 8 links do tipo TEMPORADAS.
+2025-08-02 17:15:46,783 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 54/150: FA Community Shield (Desconhecido) ---
+2025-08-02 17:15:50,365 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:15:50,366 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:15:50,368 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 55/150: FA Cup (Desconhecido) ---
+2025-08-02 17:15:53,900 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:53,900 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:15:53,903 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 56/150: FA Women's Super League (Desconhecido) ---
+2025-08-02 17:15:57,387 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 10 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:15:57,387 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 10 links do tipo TEMPORADAS.
+2025-08-02 17:15:57,391 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 57/150: FIFA Club World Cup (Desconhecido) ---
+2025-08-02 17:16:00,945 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:16:00,945 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 17:16:00,948 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 58/150: FIFA Confederations Cup (Desconhecido) ---
+2025-08-02 17:16:04,501 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:16:04,501 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 17:16:04,504 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 59/150: FIFA Women's World Cup (Desconhecido) ---
+2025-08-02 17:16:08,045 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:16:08,045 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 17:16:08,048 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 60/150: FIFA Women's World Cup Qualification (UEFA) (Desconhecido) ---
+2025-08-02 17:16:11,603 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:16:11,603 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:16:11,605 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 61/150: FIFA World Cup (Desconhecido) ---
+2025-08-02 17:16:15,203 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 22 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:16:15,204 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 22 links do tipo TEMPORADAS.
+2025-08-02 17:16:15,207 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 62/150: FIFA World Cup Qualification — AFC (Desconhecido) ---
+2025-08-02 17:16:18,788 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:16:18,790 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:16:18,792 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 63/150: FIFA World Cup Qualification — CAF (Desconhecido) ---
+2025-08-02 17:16:22,486 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:16:22,486 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:16:22,489 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 64/150: FIFA World Cup Qualification — CONCACAF (Desconhecido) ---
+2025-08-02 17:16:26,112 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:16:26,112 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:16:26,115 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 65/150: FIFA World Cup Qualification — CONMEBOL (Desconhecido) ---
+2025-08-02 17:16:29,750 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:16:29,751 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:16:29,753 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 66/150: FIFA World Cup Qualification — Inter-confederation play-offs (Desconhecido) ---
+2025-08-02 17:16:33,333 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:16:33,333 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:16:33,336 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 67/150: FIFA World Cup Qualification — OFC (Desconhecido) ---
+2025-08-02 17:16:37,054 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:16:37,055 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:16:37,056 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 68/150: FIFA World Cup Qualification — UEFA (Desconhecido) ---
+2025-08-02 17:16:40,921 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:16:40,922 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:16:40,924 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 69/150: First Professional Football League (Desconhecido) ---
+2025-08-02 17:16:44,571 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 17 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:16:44,571 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 17:16:44,574 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 70/150: Franz Beckenbauer Supercup (Desconhecido) ---
+2025-08-02 17:16:48,223 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:16:48,223 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:16:48,226 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 71/150: Frauen-Bundesliga (Desconhecido) ---
+2025-08-02 17:16:51,847 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 10 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:16:51,847 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 10 links do tipo TEMPORADAS.
+2025-08-02 17:16:51,849 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 72/150: Fußball-Bundesliga (Desconhecido) ---
+2025-08-02 17:16:55,509 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 38 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:16:55,510 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 38 links do tipo TEMPORADAS.
+2025-08-02 17:16:55,513 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 73/150: I-League (Desconhecido) ---
+2025-08-02 17:16:59,091 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:16:59,091 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:16:59,094 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 74/150: Indian Super League (Desconhecido) ---
+2025-08-02 17:17:02,651 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:02,651 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 17:17:02,655 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 75/150: International Friendlies (M) (Desconhecido) ---
+2025-08-02 17:17:06,187 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:06,187 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:17:06,189 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 76/150: International Friendlies (W) (Desconhecido) ---
+2025-08-02 17:17:09,747 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:09,747 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 17:17:09,751 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 77/150: J1 League (Desconhecido) ---
+2025-08-02 17:17:13,396 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:13,396 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:17:13,399 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 78/150: J2 League (Desconhecido) ---
+2025-08-02 17:17:16,936 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:16,937 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:17:16,938 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 79/150: K League 1 (Desconhecido) ---
+2025-08-02 17:17:20,443 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:20,444 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:17:20,446 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 80/150: La Liga (Desconhecido) ---
+2025-08-02 17:17:23,939 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 38 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:23,939 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 38 links do tipo TEMPORADAS.
+2025-08-02 17:17:23,943 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 81/150: Lamar Hunt U.S. Open Cup (Desconhecido) ---
+2025-08-02 17:17:27,412 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:27,413 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 17:17:27,416 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 82/150: Liga 1 de Fútbol Profesional (Desconhecido) ---
+2025-08-02 17:17:30,937 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:30,937 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:17:30,939 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 83/150: Liga F (Desconhecido) ---
+2025-08-02 17:17:34,383 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 4 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:34,383 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 17:17:34,386 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 84/150: Liga I (Desconhecido) ---
+2025-08-02 17:17:37,896 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 20 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:37,897 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 17:17:37,899 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 85/150: Liga MX (Desconhecido) ---
+2025-08-02 17:17:41,411 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:41,411 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 17:17:41,414 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 86/150: Liga Profesional Ecuador (Desconhecido) ---
+2025-08-02 17:17:44,877 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:44,877 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:17:44,879 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 87/150: Liga Profesional de Fútbol Argentina (Desconhecido) ---
+2025-08-02 17:17:48,372 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:48,372 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:17:48,374 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 88/150: Ligue 1 (Desconhecido) ---
+2025-08-02 17:17:51,869 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 31 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:51,869 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 31 links do tipo TEMPORADAS.
+2025-08-02 17:17:51,872 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 89/150: Ligue 2 (Desconhecido) ---
+2025-08-02 17:17:55,343 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 17 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:55,344 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 17 links do tipo TEMPORADAS.
+2025-08-02 17:17:55,346 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 90/150: Major League Soccer (Desconhecido) ---
+2025-08-02 17:17:58,831 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 30 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:17:58,831 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 30 links do tipo TEMPORADAS.
+2025-08-02 17:17:58,834 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 91/150: NWSL Challenge Cup (Desconhecido) ---
+2025-08-02 17:18:02,328 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 4 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:02,328 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 17:18:02,331 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 92/150: NWSL Fall Series (Desconhecido) ---
+2025-08-02 17:18:05,938 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 1 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:05,938 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 1 links do tipo TEMPORADAS.
+2025-08-02 17:18:05,941 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 93/150: National League (Desconhecido) ---
+2025-08-02 17:18:09,480 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 20 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:09,481 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 17:18:09,483 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 94/150: National Women's Soccer League (Desconhecido) ---
+2025-08-02 17:18:13,009 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 13 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:13,010 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 13 links do tipo TEMPORADAS.
+2025-08-02 17:18:13,012 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 95/150: Nemzeti Bajnokság I (Desconhecido) ---
+2025-08-02 17:18:16,524 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 21 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:16,524 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 21 links do tipo TEMPORADAS.
+2025-08-02 17:18:16,527 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 96/150: North American Soccer League (Desconhecido) ---
+2025-08-02 17:18:20,019 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:20,019 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 17:18:20,022 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 97/150: OFC Nations Cup (Desconhecido) ---
+2025-08-02 17:18:23,625 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:23,626 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo TEMPORADAS.
+2025-08-02 17:18:23,628 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 98/150: OFC Women's Nations Cup (Desconhecido) ---
+2025-08-02 17:18:27,195 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:27,196 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo TEMPORADAS.
+2025-08-02 17:18:27,198 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 99/150: Olympics — Women's Tournament (Desconhecido) ---
+2025-08-02 17:18:30,730 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 8 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:30,730 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 8 links do tipo TEMPORADAS.
+2025-08-02 17:18:30,732 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 100/150: Paraguayan Primera División (Desconhecido) ---
+2025-08-02 17:18:34,336 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:34,337 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:18:34,339 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 101/150: Persian Gulf Pro League (Desconhecido) ---
+2025-08-02 17:18:37,910 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:37,910 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:18:37,913 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 102/150: Premier League (Desconhecido) ---
+2025-08-02 17:18:41,489 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 127 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:41,489 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 127 links do tipo TEMPORADAS.
+2025-08-02 17:18:41,493 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 103/150: Premier League 2 (Desconhecido) ---
+2025-08-02 17:18:45,006 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:45,006 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 17:18:45,009 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 104/150: Premier League 2 — Division 2 (Desconhecido) ---
+2025-08-02 17:18:48,537 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:48,537 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 17:18:48,541 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 105/150: Première Ligue (Desconhecido) ---
+2025-08-02 17:18:52,056 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:52,057 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 17:18:52,059 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 106/150: Primeira Liga (Desconhecido) ---
+2025-08-02 17:18:55,637 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 26 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:55,637 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 17:18:55,641 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 107/150: Russian Premier League (Desconhecido) ---
+2025-08-02 17:18:59,153 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:18:59,154 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 17:18:59,157 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 108/150: Saudi Professional League (Desconhecido) ---
+2025-08-02 17:19:02,631 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:02,632 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 17:19:02,635 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 109/150: Scottish Championship (Desconhecido) ---
+2025-08-02 17:19:06,170 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 19 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:06,170 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 19 links do tipo TEMPORADAS.
+2025-08-02 17:19:06,173 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 110/150: Scottish Premiership (Desconhecido) ---
+2025-08-02 17:19:09,662 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 26 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:09,662 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 17:19:09,665 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 111/150: Serbian SuperLiga (Desconhecido) ---
+2025-08-02 17:19:13,259 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 18 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:13,259 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 18 links do tipo TEMPORADAS.
+2025-08-02 17:19:13,262 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 112/150: Serie A (Desconhecido) ---
+2025-08-02 17:19:16,789 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 38 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:16,790 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 38 links do tipo TEMPORADAS.
+2025-08-02 17:19:16,792 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 113/150: Serie A (Desconhecido) ---
+2025-08-02 17:19:20,370 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 8 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:20,371 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 8 links do tipo TEMPORADAS.
+2025-08-02 17:19:20,374 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 114/150: Serie B (Desconhecido) ---
+2025-08-02 17:19:23,918 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:23,918 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 17:19:23,921 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 115/150: SheBelieves Cup (Desconhecido) ---
+2025-08-02 17:19:27,466 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:27,466 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 17:19:27,469 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 116/150: South African Premier Division (Desconhecido) ---
+2025-08-02 17:19:30,965 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:30,965 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 17:19:30,968 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 117/150: Spanish Segunda División (Desconhecido) ---
+2025-08-02 17:19:34,530 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:34,530 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 17:19:34,533 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 118/150: Super League Greece (Desconhecido) ---
+2025-08-02 17:19:38,087 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 26 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:38,087 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 26 links do tipo TEMPORADAS.
+2025-08-02 17:19:38,090 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 119/150: Supercopa de España (Desconhecido) ---
+2025-08-02 17:19:41,600 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:41,600 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 17:19:41,604 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 120/150: Supercoppa Italiana (Desconhecido) ---
+2025-08-02 17:19:45,170 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 2 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:45,170 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TEMPORADAS.
+2025-08-02 17:19:45,173 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 121/150: Superettan (Desconhecido) ---
+2025-08-02 17:19:48,706 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 20 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:48,707 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 20 links do tipo TEMPORADAS.
+2025-08-02 17:19:48,710 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 122/150: Swiss Super League (Desconhecido) ---
+2025-08-02 17:19:52,243 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:52,244 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 17:19:52,247 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 123/150: Swiss Women's Super League (Desconhecido) ---
+2025-08-02 17:19:55,734 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:55,734 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 17:19:55,735 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 124/150: Süper Lig (Desconhecido) ---
+2025-08-02 17:19:59,280 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 25 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:19:59,280 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 25 links do tipo TEMPORADAS.
+2025-08-02 17:19:59,283 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 125/150: Toppserien (Desconhecido) ---
+2025-08-02 17:20:02,874 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 9 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:20:02,874 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 9 links do tipo TEMPORADAS.
+2025-08-02 17:20:02,877 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 126/150: Trophée des Champions (Desconhecido) ---
+2025-08-02 17:20:06,478 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:20:06,479 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:20:06,482 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 127/150: U17 DFB Youth League (Desconhecido) ---
+2025-08-02 17:20:10,012 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 10 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:20:10,012 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 10 links do tipo TEMPORADAS.
+2025-08-02 17:20:10,015 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 128/150: U19 DFB Youth League (Desconhecido) ---
+2025-08-02 17:20:13,517 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 11 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:20:13,517 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 11 links do tipo TEMPORADAS.
+2025-08-02 17:20:13,520 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 129/150: UEFA Champions League (Desconhecido) ---
+2025-08-02 17:20:17,141 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 36 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:20:17,141 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 36 links do tipo TEMPORADAS.
+2025-08-02 17:20:17,143 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 130/150: UEFA Conference League (Desconhecido) ---
+2025-08-02 17:20:20,726 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:20:20,727 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 17:20:20,729 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 131/150: UEFA Europa League (Desconhecido) ---
+2025-08-02 17:20:24,272 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 36 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:20:24,272 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 36 links do tipo TEMPORADAS.
+2025-08-02 17:20:24,274 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 132/150: UEFA European Football Championship (Desconhecido) ---
+2025-08-02 17:20:27,798 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:20:27,798 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 17:20:27,801 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 133/150: UEFA European Football Championship Qualifying (Desconhecido) ---
+2025-08-02 17:20:31,458 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:20:31,458 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:20:31,460 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 134/150: UEFA Nations League (Desconhecido) ---
+2025-08-02 17:20:35,054 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 4 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:20:35,055 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 4 links do tipo TEMPORADAS.
+2025-08-02 17:20:35,057 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 135/150: UEFA Super Cup (Desconhecido) ---
+2025-08-02 17:20:38,671 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 14 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:20:38,671 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 14 links do tipo TEMPORADAS.
+2025-08-02 17:20:38,673 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 136/150: UEFA Women's Champions League (Desconhecido) ---
+2025-08-02 17:20:42,216 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:20:42,216 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:20:42,220 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 137/150: UEFA Women's Championship (Desconhecido) ---
+2025-08-02 17:20:45,805 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 7 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:20:45,805 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 7 links do tipo TEMPORADAS.
+2025-08-02 17:20:45,808 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 138/150: UEFA Women's Euro Qualification (Desconhecido) ---
+2025-08-02 17:20:49,392 - INFO - [root] -   -> 2 links encontrados pelo MÉTODO DE LISTAS.
+2025-08-02 17:20:49,392 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 2 links do tipo TORNEIOS.
+2025-08-02 17:20:49,395 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 139/150: USL Championship (Desconhecido) ---
+2025-08-02 17:20:53,040 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 15 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:20:53,040 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 15 links do tipo TEMPORADAS.
+2025-08-02 17:20:53,043 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 140/150: USL First Division (Desconhecido) ---
+2025-08-02 17:20:56,616 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:20:56,616 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 17:20:56,618 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 141/150: USL League One (Desconhecido) ---
+2025-08-02 17:21:00,147 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:21:00,147 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 17:21:00,150 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 142/150: USSF Division 2 Professional League (Desconhecido) ---
+2025-08-02 17:21:03,718 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 1 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:21:03,718 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 1 links do tipo TEMPORADAS.
+2025-08-02 17:21:03,721 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 143/150: Ukrainian Premier League (Desconhecido) ---
+2025-08-02 17:21:07,289 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:21:07,289 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 17:21:07,292 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 144/150: Uruguayan Primera División (Desconhecido) ---
+2025-08-02 17:21:10,898 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:21:10,898 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:21:10,901 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 145/150: Veikkausliiga (Desconhecido) ---
+2025-08-02 17:21:14,448 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 23 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:21:14,448 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 23 links do tipo TEMPORADAS.
+2025-08-02 17:21:14,450 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 146/150: Venezuelan Primera División (Desconhecido) ---
+2025-08-02 17:21:18,014 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 12 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:21:18,014 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 12 links do tipo TEMPORADAS.
+2025-08-02 17:21:18,017 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 147/150: Women Empowerment League (Desconhecido) ---
+2025-08-02 17:21:21,556 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 5 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:21:21,557 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 5 links do tipo TEMPORADAS.
+2025-08-02 17:21:21,559 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 148/150: Women's Professional Soccer (Desconhecido) ---
+2025-08-02 17:21:25,080 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:21:25,080 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo TEMPORADAS.
+2025-08-02 17:21:25,082 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 149/150: Women's United Soccer Association (Desconhecido) ---
+2025-08-02 17:21:28,680 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 3 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:21:28,681 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 3 links do tipo TEMPORADAS.
+2025-08-02 17:21:28,682 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+--- Processando Competição 150/150: ÖFB Frauen-Bundesliga (Desconhecido) ---
+2025-08-02 17:21:32,241 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> 6 links encontrados pelo MÉTODO PADRÃO.
+2025-08-02 17:21:32,241 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] -   -> Encontrados 6 links do tipo TEMPORADAS.
+2025-08-02 17:21:32,245 - INFO - [Coleta_de_dados.apis.fbref.fbref_integrado] - 
+✅ Script 1 (Descoberta) finalizado com sucesso!
+2025-08-02 17:21:34,401 - INFO - [root] - Navegador (WebDriver) finalizado.
+2025-08-02 17:21:34,401 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - --- [ETAPA 1 de 6] Finalizada com sucesso! ---
+2025-08-02 17:21:34,401 - INFO - [root] - 
+--- [ETAPA 2 de 6] Executando: Coleta de Dados de Partidas ---
+2025-08-02 17:21:34,402 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 🚀 Iniciando Script 2: Coleta de Dados de Partidas...
+2025-08-02 17:21:34,405 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - Encontrados 1949 links pendentes ou a revisar para processar.
+2025-08-02 17:21:34,405 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 1: https://fbref.com/en/comps/33/2024-2025/2024-2025-2-Bundesliga-Stats ---
+2025-08-02 17:21:34,406 - INFO - [root] - Iniciando o navegador (WebDriver)...
+2025-08-02 17:21:34,406 - INFO - [WDM] - ====== WebDriver manager ======
+2025-08-02 17:21:35,118 - INFO - [WDM] - Get LATEST chromedriver version for google-chrome
+2025-08-02 17:21:35,136 - INFO - [WDM] - Get LATEST chromedriver version for google-chrome
+2025-08-02 17:21:35,155 - INFO - [WDM] - Driver [C:\Users\Eduardo Vitorino\.wdm\drivers\chromedriver\win64\138.0.7204.183\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-02 17:21:36,203 - INFO - [root] - Navegador iniciado com sucesso em modo invisível.
+2025-08-02 17:21:40,758 - WARNING - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> AVISO: Nenhuma tabela com múltiplos 'Match Reports' foi encontrada.
+2025-08-02 17:21:40,761 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 2: https://fbref.com/en/comps/33/2023-2024/2023-2024-2-Bundesliga-Stats ---
+2025-08-02 17:21:44,930 - WARNING - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> AVISO: Nenhuma tabela com múltiplos 'Match Reports' foi encontrada.
+2025-08-02 17:21:44,932 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 3: https://fbref.com/en/comps/33/2022-2023/2022-2023-2-Bundesliga-Stats ---
+2025-08-02 17:21:49,102 - WARNING - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> AVISO: Nenhuma tabela com múltiplos 'Match Reports' foi encontrada.
+2025-08-02 17:21:49,106 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 4: https://fbref.com/en/comps/33/2021-2022/2021-2022-2-Bundesliga-Stats ---
+2025-08-02 17:21:53,261 - WARNING - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> AVISO: Nenhuma tabela com múltiplos 'Match Reports' foi encontrada.
+2025-08-02 17:21:53,264 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 5: https://fbref.com/en/comps/33/2020-2021/2020-2021-2-Bundesliga-Stats ---
+2025-08-02 17:21:54,200 - WARNING - [urllib3.connectionpool] - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'Foi forçado o cancelamento de uma conexão existente pelo host remoto', None, 10054, None)': /session/443a0fbed8f30c0cd69e272451b95bbe

@@ -1,0 +1,7 @@
+2025-08-03 15:01:12 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_15-01-12.log
+2025-08-03 15:01:12 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_15-01-12.log
+2025-08-03 15:01:13 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 15:01:13 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando processamento e rotulação dos dados...
+2025-08-03 15:01:13 - INFO - [root] - 🚀 Iniciando Script 4: Processamento e Rotulação de Dados...
+2025-08-03 15:01:13 - INFO - [root] - Carregados 0 registros de partidas com estatísticas completas.
+2025-08-03 15:01:13 - ERROR - [root] - Ocorreu um erro durante o processamento: Columns must be same length as key

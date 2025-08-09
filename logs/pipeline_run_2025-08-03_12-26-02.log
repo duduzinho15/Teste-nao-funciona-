@@ -1,0 +1,14 @@
+2025-08-03 12:26:02 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_12-26-02.log
+2025-08-03 12:26:02 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_12-26-02.log
+2025-08-03 12:26:02 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 12:26:02 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando coleta de dados de partidas...
+2025-08-03 12:26:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 🚀 Iniciando Script 2: Coleta de Dados de Partidas...
+2025-08-03 12:26:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - Encontrados 391 links pendentes para processar.
+2025-08-03 12:26:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 9: https://fbref.com/en/comps/12/2024-2025/La-Liga-Seasons ---
+2025-08-03 12:26:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Buscando link de 'Scores & Fixtures' em: https://fbref.com/en/comps/12/2024-2025/La-Liga-Seasons
+2025-08-03 12:26:05 - INFO - [Coleta_de_dados.apis.fbref.anti_429_state_machine] - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 12:26:05 - INFO - [Coleta_de_dados.apis.fbref.proxy_rotation_system] - Sistema de rotacao de proxies inicializado
+2025-08-03 12:26:05 - INFO - [Coleta_de_dados.apis.fbref.browser_emulation_headers] - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-03 12:26:05 - INFO - [Coleta_de_dados.apis.fbref.fbref_utils] - Sistemas anti-429 inicializados com sucesso
+2025-08-03 12:26:05 - INFO - [Coleta_de_dados.apis.fbref.advanced_anti_blocking] - Sistema avançado anti-bloqueio inicializado

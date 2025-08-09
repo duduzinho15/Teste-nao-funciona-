@@ -1,0 +1,105 @@
+"""
+Configuração global para testes pytest.
+
+Este arquivo é carregado automaticamente pelo pytest e contém configurações
+e fixtures que podem ser usadas em todos os testes do projeto.
+"""
+import os
+import sys
+from pathlib import Path
+
+# Adiciona o diretório raiz ao path do Python
+root_dir = str(Path(__file__).parent.absolute())
+if root_dir not in sys.path:
+    sys.path.insert(0, root_dir)
+
+import pytest
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.pool import StaticPool
+
+# Importações locais
+from Coleta_de_dados.database.config import Base
+
+# Configuração do banco de dados em memória para testes
+TEST_DATABASE_URL = "sqlite:///:memory:"
+
+# Configuração para testes
+class TestSettings:
+    DB_HOST = "localhost"
+    DB_PORT = 5432
+    DB_NAME = "test_db"
+    DB_USER = "test_user"
+    DB_PASSWORD = "test_pass"
+    DATABASE_URL = TEST_DATABASE_URL
+    ENVIRONMENT = "test"
+    DEBUG = True
+    LOG_LEVEL = "INFO"
+
+@pytest.fixture(scope="session")
+def engine():
+    """Cria um engine SQLite em memória para testes."""
+    # Configura o ambiente de teste
+    os.environ["ENVIRONMENT"] = "test"
+    os.environ["DB_NAME"] = "test_db"
+    os.environ["DATABASE_URL"] = TEST_DATABASE_URL
+    
+    # Recarrega as configurações
+    from Coleta_de_dados.database.config import db_manager
+    
+    # Cria um novo engine para testes
+    engine = create_engine(
+        TEST_DATABASE_URL,
+        connect_args={"check_same_thread": False},
+        poolclass=StaticPool,
+    )
+    
+    # Cria todas as tabelas
+    Base.metadata.create_all(engine)
+    
+    yield engine
+    
+    # Limpa as tabelas após os testes
+    Base.metadata.drop_all(engine)
+
+@pytest.fixture(scope="function")
+def db_session(engine):
+    """Cria uma sessão de banco de dados para cada teste."""
+    connection = engine.connect()
+    transaction = connection.begin()
+    Session = sessionmaker(bind=connection)
+    
+    # Cria a sessão
+    session = Session()
+    
+    # Adiciona um clube de teste
+    from Coleta_de_dados.database.models import Clube
+    clube = Clube(
+        id=1,
+        nome="Flamengo",
+        nome_completo="Clube de Regatas do Flamengo",
+        ativo=True
+    )
+    session.add(clube)
+    session.commit()
+    
+    yield session
+    
+    # Limpa a sessão após o teste
+    session.close()
+    transaction.rollback()
+    connection.close()
+
+@pytest.fixture
+def mock_requests():
+    """Cria um mock para o módulo requests."""
+    with pytest.MonkeyPatch.context() as mp:
+        mp.setattr('requests.Session', MagicMock())
+        yield mp
+
+@pytest.fixture
+def mock_bs4():
+    """Cria um mock para o módulo BeautifulSoup."""
+    with pytest.MonkeyPatch.context() as mp:
+        mp.setattr('bs4.BeautifulSoup', MagicMock())
+        yield mp

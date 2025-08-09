@@ -1,0 +1,71 @@
+2025-08-03 12:17:03,108 - __main__ - INFO - INICIANDO TESTE COMPLETO DO SISTEMA ANTI-BLOQUEIO AVANCADO
+2025-08-03 12:17:03,108 - __main__ - INFO - Data/Hora: 2025-08-03 12:17:03
+2025-08-03 12:17:03,108 - __main__ - INFO - ================================================================================
+2025-08-03 12:17:03,108 - __main__ - INFO - TESTE: Sistema Anti-Bloqueio Avancado
+2025-08-03 12:17:03,108 - __main__ - INFO - ==================================================
+2025-08-03 12:17:03,132 - Coleta_de_dados.apis.fbref.advanced_anti_blocking - INFO - Sistema avançado anti-bloqueio inicializado
+2025-08-03 12:17:03,133 - __main__ - INFO - Padrao de trafego atual: weekend
+2025-08-03 12:17:03,133 - __main__ - INFO - Delay inteligente calculado: 8.41s
+2025-08-03 12:17:03,133 - __main__ - INFO - Simulando historico de requisicoes...
+2025-08-03 12:17:03,133 - __main__ - INFO - Deve trocar identidade: False
+2025-08-03 12:17:03,134 - __main__ - INFO - Estatisticas da sessao:
+2025-08-03 12:17:03,134 - __main__ - INFO -   session_duration_minutes: 3.0216666666666665e-05
+2025-08-03 12:17:03,134 - __main__ - INFO -   total_requests: 8
+2025-08-03 12:17:03,134 - __main__ - INFO -   successful_requests: 5
+2025-08-03 12:17:03,134 - __main__ - INFO -   blocked_requests: 3
+2025-08-03 12:17:03,134 - __main__ - INFO -   success_rate: 0.625
+2025-08-03 12:17:03,135 - __main__ - INFO -   requests_per_minute: 8.0
+2025-08-03 12:17:03,135 - __main__ - INFO -   current_traffic_pattern: weekend
+2025-08-03 12:17:03,135 - __main__ - INFO -   recent_success_rate: 0.625
+2025-08-03 12:17:03,135 - __main__ - INFO - Analise de bloqueios:
+2025-08-03 12:17:03,135 - __main__ - INFO -   total_blocks: 3
+2025-08-03 12:17:03,135 - __main__ - INFO -   best_hours: [12]
+2025-08-03 12:17:03,135 - __main__ - INFO -   worst_hours: [12]
+2025-08-03 12:17:03,136 - __main__ - INFO -   problematic_urls: [('https://fbref.com/blocked/0', 1), ('https://fbref.com/blocked/1', 1), ('https://fbref.com/blocked/2', 1)]
+2025-08-03 12:17:03,136 - __main__ - INFO -   blocking_patterns: {'hour_12': 3}
+2025-08-03 12:17:03,136 - __main__ - INFO -   optimal_request_time: 2025-08-04 00:00:00
+2025-08-03 12:17:03,136 - __main__ - INFO - SUCESSO: Sistema anti-bloqueio funcionando
+2025-08-03 12:17:03,136 - __main__ - INFO - 
+TESTE: Estrategias de Horarios
+2025-08-03 12:17:03,136 - __main__ - INFO - ==================================================
+2025-08-03 12:17:03,136 - __main__ - INFO - Simulando bloqueios em diferentes horarios...
+2025-08-03 12:17:03,137 - __main__ - INFO - Horario otimo sugerido: 2025-08-04 00:00:00
+2025-08-03 12:17:03,137 - __main__ - INFO - Analise de padroes de bloqueio:
+2025-08-03 12:17:03,137 - __main__ - INFO -   total_blocks: 11
+2025-08-03 12:17:03,137 - __main__ - INFO -   best_hours: [13, 14, 15]
+2025-08-03 12:17:03,137 - __main__ - INFO -   worst_hours: [12, 13, 14]
+2025-08-03 12:17:03,137 - __main__ - INFO -   problematic_urls: [('https://fbref.com/blocked/0', 1), ('https://fbref.com/blocked/1', 1), ('https://fbref.com/blocked/2', 1)]
+2025-08-03 12:17:03,137 - __main__ - INFO -   blocking_patterns: {'hour_12': 3}
+2025-08-03 12:17:03,137 - __main__ - INFO -   optimal_request_time: 2025-08-04 00:00:00
+2025-08-03 12:17:03,137 - __main__ - INFO - SUCESSO: Analise de horarios funcionando
+2025-08-03 12:17:03,137 - __main__ - INFO - 
+TESTE: Monitoramento Tempo Real
+2025-08-03 12:17:03,137 - __main__ - INFO - ==================================================
+2025-08-03 12:17:03,139 - __main__ - INFO - Iniciando monitoramento por 30 segundos...
+2025-08-03 12:17:03,139 - __main__ - INFO - [0s] Monitoramento:
+2025-08-03 12:17:03,139 - __main__ - INFO -   Requisicoes: 8
+2025-08-03 12:17:03,139 - __main__ - INFO -   Taxa sucesso: 62.50%
+2025-08-03 12:17:03,139 - __main__ - INFO -   Padrao trafego: weekend
+2025-08-03 12:17:13,183 - __main__ - INFO - [10s] Monitoramento:
+2025-08-03 12:17:13,183 - __main__ - INFO -   Requisicoes: 8
+2025-08-03 12:17:13,183 - __main__ - INFO -   Taxa sucesso: 62.50%
+2025-08-03 12:17:13,183 - __main__ - INFO -   Padrao trafego: weekend
+2025-08-03 12:17:23,253 - __main__ - INFO - [20s] Monitoramento:
+2025-08-03 12:17:23,253 - __main__ - INFO -   Requisicoes: 8
+2025-08-03 12:17:23,254 - __main__ - INFO -   Taxa sucesso: 62.50%
+2025-08-03 12:17:23,254 - __main__ - INFO -   Padrao trafego: weekend
+2025-08-03 12:17:33,332 - __main__ - INFO - Monitoramento concluido
+2025-08-03 12:17:33,333 - __main__ - INFO - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2025-08-03 12:17:33,334 - __main__ - INFO - TESTE CRITICO: Integracao com FBRef Real
+2025-08-03 12:17:33,334 - __main__ - INFO - Este teste fara requisicoes reais ao FBRef
+2025-08-03 12:17:33,335 - __main__ - INFO - !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2025-08-03 12:17:33,336 - __main__ - INFO - 
+TESTE: Integracao com FBRef Real
+2025-08-03 12:17:33,338 - __main__ - INFO - ==================================================
+2025-08-03 12:17:33,970 - __main__ - INFO - Testando 3 URLs do FBRef...
+2025-08-03 12:17:33,970 - __main__ - INFO - Requisicao 1/3: https://fbref.com/en/comps/9/Premier-League-Stats
+2025-08-03 12:17:36,975 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 12:17:36,975 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Sistema de rotacao de proxies inicializado
+2025-08-03 12:17:36,975 - Coleta_de_dados.apis.fbref.browser_emulation_headers - INFO - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-03 12:17:36,976 - Coleta_de_dados.apis.fbref.fbref_utils - INFO - Sistemas anti-429 inicializados com sucesso

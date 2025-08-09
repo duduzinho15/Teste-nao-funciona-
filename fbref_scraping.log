@@ -1,0 +1,105 @@
+2025-08-03 01:58:03,004 - __main__ - INFO - Iniciando teste de coleta de competições...
+2025-08-03 01:58:03,004 - Coleta_de_dados.apis.fbref.fbref_integrado - INFO - Buscando lista de competições com extração de gênero direta...
+2025-08-03 02:28:37,584 - Coleta_de_dados.apis.fbref.fbref_integrado - INFO - Encontradas 150 competições únicas com contexto.
+2025-08-03 02:28:37,585 - __main__ - INFO - Teste bem-sucedido: 150 competições encontradas
+2025-08-03 09:51:26,282 - __main__ - INFO - Iniciando teste rápido...
+2025-08-03 09:51:26,282 - Coleta_de_dados.apis.fbref.fbref_integrado - INFO - 🚀 Iniciando Script 1: Descoberta de Links...
+2025-08-03 09:51:26,283 - Coleta_de_dados.apis.fbref.fbref_integrado - INFO - Buscando lista de competições com extração de gênero direta...
+2025-08-03 09:52:53,634 - __main__ - INFO - Iniciando teste super rápido...
+2025-08-03 09:52:53,635 - Coleta_de_dados.apis.fbref.fbref_integrado - INFO - Buscando lista de competições com extração de gênero direta...
+2025-08-03 11:34:59,427 - Coleta_de_dados.apis.fbref.fbref_utils - INFO - Conteudo extraido de 1 comentarios HTML - reparsing...
+2025-08-03 12:44:39,673 - Coleta_de_dados.apis.fbref.fallback_first_system - WARNING - Entrando em modo fallback por 1 minutos
+2025-08-03 12:44:39,673 - Coleta_de_dados.apis.fbref.fallback_first_system - INFO - Modo fallback forçado por 1 minutos
+2025-08-03 12:44:42,681 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 12:44:42,681 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Sistema de rotacao de proxies inicializado
+2025-08-03 12:44:42,681 - Coleta_de_dados.apis.fbref.browser_emulation_headers - INFO - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-03 12:44:42,681 - Coleta_de_dados.apis.fbref.fbref_utils - INFO - Sistemas anti-429 inicializados com sucesso
+2025-08-03 12:44:42,681 - Coleta_de_dados.apis.fbref.simple_anti_blocking - INFO - Sistema anti-bloqueio simplificado inicializado
+2025-08-03 12:44:42,681 - Coleta_de_dados.apis.fbref.advanced_anti_blocking - INFO - Sistema avançado anti-bloqueio inicializado
+2025-08-03 12:48:59,390 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 12:48:59,390 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Sistema de rotacao de proxies inicializado
+2025-08-03 12:48:59,391 - Coleta_de_dados.apis.fbref.browser_emulation_headers - INFO - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-03 12:48:59,391 - Coleta_de_dados.apis.fbref.fbref_utils - INFO - Sistemas anti-429 inicializados com sucesso
+2025-08-03 12:48:59,392 - Coleta_de_dados.apis.fbref.advanced_anti_blocking - INFO - Sistema avançado anti-bloqueio inicializado
+2025-08-03 12:48:59,392 - Coleta_de_dados.apis.fbref.fallback_first_system - INFO - Sistema Fallback-First inicializado
+2025-08-03 12:55:16,374 - hang_detection - INFO - 🔄 INICIANDO: HTTP_REQUEST
+2025-08-03 12:55:16,375 - hang_detection - INFO -    Detalhes: URL: https://httpbin.org/delay/2
+2025-08-03 12:55:16,375 - hang_detection - INFO -    Timeout: 40s
+2025-08-03 12:55:16,375 - hang_detection - INFO -    ID: HTTP_REQUEST_1754236516
+2025-08-03 12:55:16,375 - Coleta_de_dados.apis.fbref.fbref_utils - INFO - 🔍 Detecção de travamentos ativada para: https://httpbin.org/delay/2
+2025-08-03 12:55:16,378 - Coleta_de_dados.apis.fbref.anti_429_state_machine - INFO - Maquina de estados anti-429 inicializada em estado NOMINAL
+2025-08-03 12:55:16,379 - Coleta_de_dados.apis.fbref.proxy_rotation_system - INFO - Sistema de rotacao de proxies inicializado
+2025-08-03 12:55:16,379 - Coleta_de_dados.apis.fbref.browser_emulation_headers - INFO - Sistema de emulacao de cabecalhos HTTP inicializado
+2025-08-03 12:55:16,379 - Coleta_de_dados.apis.fbref.fbref_utils - INFO - Sistemas anti-429 inicializados com sucesso
+2025-08-03 12:55:16,379 - Coleta_de_dados.apis.fbref.simple_anti_blocking - INFO - Sistema anti-bloqueio simplificado inicializado
+2025-08-03 12:55:16,381 - Coleta_de_dados.apis.fbref.advanced_anti_blocking - INFO - Sistema avançado anti-bloqueio inicializado
+2025-08-03 12:55:16,382 - Coleta_de_dados.apis.fbref.fallback_first_system - INFO - Sistema Fallback-First inicializado
+2025-08-03 12:55:19,604 - hang_detection - INFO - ✅ CONCLUÍDA: HTTP
+2025-08-03 12:55:19,605 - hang_detection - INFO -    Duração: 3.23s
+2025-08-03 12:55:19,605 - hang_detection - INFO -    Detalhes: Status: 200
+2025-08-03 12:55:19,606 - hang_detection - INFO - 🔄 INICIANDO: OPERACAO_TRAVADA
+2025-08-03 12:55:19,606 - hang_detection - INFO -    Detalhes: Simulação de travamento
+2025-08-03 12:55:19,606 - hang_detection - INFO -    Timeout: 5s
+2025-08-03 12:55:19,606 - hang_detection - INFO -    ID: OPERACAO_TRAVADA_1754236519
+2025-08-03 12:55:27,608 - hang_detection - INFO - ✅ CONCLUÍDA: OPERACAO
+2025-08-03 12:55:27,608 - hang_detection - INFO -    Duração: 8.00s
+2025-08-03 12:55:27,608 - hang_detection - INFO -    Detalhes: Simulação concluída
+2025-08-03 12:55:30,622 - hang_detection - INFO - 🔄 INICIANDO: HTTP_REQUEST
+2025-08-03 12:55:30,622 - hang_detection - INFO -    Detalhes: URL: https://fbref.com/en/
+2025-08-03 12:55:30,622 - hang_detection - INFO -    Timeout: 40s
+2025-08-03 12:55:30,623 - hang_detection - INFO -    ID: HTTP_REQUEST_1754236530
+2025-08-03 12:55:30,623 - Coleta_de_dados.apis.fbref.fbref_utils - INFO - 🔍 Detecção de travamentos ativada para: https://fbref.com/en/
+2025-08-03 12:55:30,865 - hang_detection - INFO - ✅ CONCLUÍDA: HTTP
+2025-08-03 12:55:30,865 - hang_detection - INFO -    Duração: 0.24s
+2025-08-03 12:55:30,865 - hang_detection - INFO -    Detalhes: Status: 200
+2025-08-03 17:47:02,756 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 17:47:02,756 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 17:47:02,797 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 17:47:02,798 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 17:47:02,798 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 17:47:02,798 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 17:47:02,828 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 17:47:11,617 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 17:47:11,617 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 17:47:11,659 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 17:47:11,659 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 17:47:11,660 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 17:47:11,660 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 17:47:11,690 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 17:47:19,541 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 17:47:19,542 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 17:47:19,585 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 17:47:19,585 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 17:47:19,585 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 17:47:19,586 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 17:47:19,615 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 19:59:15,016 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 19:59:15,016 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 19:59:15,064 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 19:59:15,064 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 19:59:15,065 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 19:59:15,065 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 19:59:15,101 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 19:59:15,101 - Coleta_de_dados.apis.fbref.fbref_integrado_orm - INFO - Buscando lista de competições com sistema de fallback...
+2025-08-03 19:59:15,102 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Cache válido encontrado: 150 competições
+2025-08-03 19:59:15,102 - Coleta_de_dados.apis.fbref.fbref_integrado_orm - INFO - Usando competições do cache: 150 competições
+2025-08-03 19:59:39,155 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 19:59:39,155 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 19:59:39,211 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 19:59:39,211 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 19:59:39,212 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 19:59:39,212 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 19:59:39,244 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 19:59:39,244 - Coleta_de_dados.apis.fbref.fbref_integrado_orm - INFO - Buscando lista de competições com sistema de fallback...
+2025-08-03 19:59:39,245 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Cache válido encontrado: 150 competições
+2025-08-03 19:59:39,245 - Coleta_de_dados.apis.fbref.fbref_integrado_orm - INFO - Usando competições do cache: 150 competições
+2025-08-03 19:59:52,231 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 19:59:52,231 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 19:59:52,269 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 19:59:52,269 - Coleta_de_dados.database.config - INFO - Criando engine para: postgresql://apostapro_user:***@localhost:5432/apostapro_db
+2025-08-03 19:59:52,270 - Coleta_de_dados.database.config - INFO - Engine criado com sucesso
+2025-08-03 19:59:52,270 - Coleta_de_dados.database.config - INFO - DatabaseManager inicializado
+2025-08-03 19:59:52,298 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 19:59:52,298 - Coleta_de_dados.apis.fbref.fbref_integrado_orm - INFO - Buscando lista de competições com sistema de fallback...
+2025-08-03 19:59:52,299 - Coleta_de_dados.apis.fbref.fbref_fallback_system - INFO - Cache válido encontrado: 150 competições
+2025-08-03 19:59:52,299 - Coleta_de_dados.apis.fbref.fbref_integrado_orm - INFO - Usando competições do cache: 150 competições

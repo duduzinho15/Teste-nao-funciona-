@@ -1,0 +1,65 @@
+2025-08-03 11:21:01 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_11-21-01.log
+2025-08-03 11:21:01 - INFO - [utils.log_utils] - Sistema de log configurado. A saída será salva em: logs\pipeline_run_2025-08-03_11-21-01.log
+2025-08-03 11:21:02 - INFO - [Coleta_de_dados.apis.fbref.fbref_fallback_system] - Dados de fallback salvos em: C:\ApostaPro\cache_fbref\fallback_competitions.json
+2025-08-03 11:21:02 - INFO - [Coleta_de_dados.apis.fbref.orquestrador_coleta] - Iniciando coleta de dados de partidas...
+2025-08-03 11:21:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 🚀 Iniciando Script 2: Coleta de Dados de Partidas...
+2025-08-03 11:21:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - Encontrados 399 links pendentes para processar.
+2025-08-03 11:21:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 1: https://fbref.com/en/comps/9/2021-2022/Premier-League-Seasons ---
+2025-08-03 11:21:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Buscando link de 'Scores & Fixtures' em: https://fbref.com/en/comps/9/2021-2022/Premier-League-Seasons
+2025-08-03 11:47:58 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Link encontrado pelo inner_nav: https://fbref.com/en/comps/9/2021-2022/schedule/2021-2022-Premier-League-Scores-and-Fixtures
+2025-08-03 11:47:58 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Extraindo dados de partidas de: https://fbref.com/en/comps/9/2021-2022/schedule/2021-2022-Premier-League-Scores-and-Fixtures
+2025-08-03 11:48:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Encontradas 123 partidas únicas com 'Match Report'.
+2025-08-03 11:48:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 123 partidas salvas no banco de dados.
+2025-08-03 11:48:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 2: https://fbref.com/en/comps/9/2022-2023/Premier-League-Seasons ---
+2025-08-03 11:48:02 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Buscando link de 'Scores & Fixtures' em: https://fbref.com/en/comps/9/2022-2023/Premier-League-Seasons
+2025-08-03 11:48:06 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Link encontrado pelo inner_nav: https://fbref.com/en/comps/9/2022-2023/schedule/2022-2023-Premier-League-Scores-and-Fixtures
+2025-08-03 11:48:06 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Extraindo dados de partidas de: https://fbref.com/en/comps/9/2022-2023/schedule/2022-2023-Premier-League-Scores-and-Fixtures
+2025-08-03 11:48:09 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Encontradas 117 partidas únicas com 'Match Report'.
+2025-08-03 11:48:09 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 117 partidas salvas no banco de dados.
+2025-08-03 11:48:09 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 3: https://fbref.com/en/comps/9/2023-2024/Premier-League-Seasons ---
+2025-08-03 11:48:09 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Buscando link de 'Scores & Fixtures' em: https://fbref.com/en/comps/9/2023-2024/Premier-League-Seasons
+2025-08-03 11:48:13 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Link encontrado pelo inner_nav: https://fbref.com/en/comps/9/2023-2024/schedule/2023-2024-Premier-League-Scores-and-Fixtures
+2025-08-03 11:48:13 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Extraindo dados de partidas de: https://fbref.com/en/comps/9/2023-2024/schedule/2023-2024-Premier-League-Scores-and-Fixtures
+2025-08-03 11:48:16 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Encontradas 120 partidas únicas com 'Match Report'.
+2025-08-03 11:48:16 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 120 partidas salvas no banco de dados.
+2025-08-03 11:48:16 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 4: https://fbref.com/en/comps/9/2024-2025/Premier-League-Seasons ---
+2025-08-03 11:48:16 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Buscando link de 'Scores & Fixtures' em: https://fbref.com/en/comps/9/2024-2025/Premier-League-Seasons
+2025-08-03 11:48:20 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Link encontrado pelo inner_nav: https://fbref.com/en/comps/9/2024-2025/schedule/2024-2025-Premier-League-Scores-and-Fixtures
+2025-08-03 11:48:20 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Extraindo dados de partidas de: https://fbref.com/en/comps/9/2024-2025/schedule/2024-2025-Premier-League-Scores-and-Fixtures
+2025-08-03 11:48:24 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Encontradas 109 partidas únicas com 'Match Report'.
+2025-08-03 11:48:24 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 109 partidas salvas no banco de dados.
+2025-08-03 11:48:24 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 5: https://fbref.com/en/comps/9/2025-2026/Premier-League-Seasons ---
+2025-08-03 11:48:24 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Buscando link de 'Scores & Fixtures' em: https://fbref.com/en/comps/9/2025-2026/Premier-League-Seasons
+2025-08-03 11:48:27 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Link encontrado pelo inner_nav: https://fbref.com/en/comps/9/schedule/Premier-League-Scores-and-Fixtures
+2025-08-03 11:48:27 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Extraindo dados de partidas de: https://fbref.com/en/comps/9/schedule/Premier-League-Scores-and-Fixtures
+2025-08-03 11:48:31 - WARNING - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> AVISO: Nenhuma partida com 'Match Report' foi encontrada.
+2025-08-03 11:48:31 - WARNING - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Nenhuma partida encontrada para o link ID 5.
+2025-08-03 11:48:31 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 6: https://fbref.com/en/comps/12/2021-2022/La-Liga-Seasons ---
+2025-08-03 11:48:31 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Buscando link de 'Scores & Fixtures' em: https://fbref.com/en/comps/12/2021-2022/La-Liga-Seasons
+2025-08-03 11:48:34 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Link encontrado pelo inner_nav: https://fbref.com/en/comps/12/2021-2022/schedule/2021-2022-La-Liga-Scores-and-Fixtures
+2025-08-03 11:48:34 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Extraindo dados de partidas de: https://fbref.com/en/comps/12/2021-2022/schedule/2021-2022-La-Liga-Scores-and-Fixtures
+2025-08-03 11:48:38 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Encontradas 138 partidas únicas com 'Match Report'.
+2025-08-03 11:48:38 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 47 partidas salvas no banco de dados.
+2025-08-03 11:48:38 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 7: https://fbref.com/en/comps/12/2022-2023/La-Liga-Seasons ---
+2025-08-03 11:48:38 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Buscando link de 'Scores & Fixtures' em: https://fbref.com/en/comps/12/2022-2023/La-Liga-Seasons
+2025-08-03 11:48:42 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Link encontrado pelo inner_nav: https://fbref.com/en/comps/12/2022-2023/schedule/2022-2023-La-Liga-Scores-and-Fixtures
+2025-08-03 11:48:42 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Extraindo dados de partidas de: https://fbref.com/en/comps/12/2022-2023/schedule/2022-2023-La-Liga-Scores-and-Fixtures
+2025-08-03 11:48:45 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Encontradas 139 partidas únicas com 'Match Report'.
+2025-08-03 11:48:45 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 51 partidas salvas no banco de dados.
+2025-08-03 11:48:45 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 8: https://fbref.com/en/comps/12/2023-2024/La-Liga-Seasons ---
+2025-08-03 11:48:45 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Buscando link de 'Scores & Fixtures' em: https://fbref.com/en/comps/12/2023-2024/La-Liga-Seasons
+2025-08-03 11:48:49 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Link encontrado pelo inner_nav: https://fbref.com/en/comps/12/2023-2024/schedule/2023-2024-La-Liga-Scores-and-Fixtures
+2025-08-03 11:48:49 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Extraindo dados de partidas de: https://fbref.com/en/comps/12/2023-2024/schedule/2023-2024-La-Liga-Scores-and-Fixtures
+2025-08-03 11:48:52 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -    -> Encontradas 143 partidas únicas com 'Match Report'.
+2025-08-03 11:48:52 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> 48 partidas salvas no banco de dados.
+2025-08-03 11:48:52 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] - 
+--- Processando link ID 9: https://fbref.com/en/comps/12/2024-2025/La-Liga-Seasons ---
+2025-08-03 11:48:52 - INFO - [Coleta_de_dados.apis.fbref.coletar_dados_partidas] -   -> Buscando link de 'Scores & Fixtures' em: https://fbref.com/en/comps/12/2024-2025/La-Liga-Seasons

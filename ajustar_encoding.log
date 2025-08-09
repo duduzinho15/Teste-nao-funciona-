@@ -1,0 +1,5 @@
+2025-08-05 19:19:14,199 - INFO - ============================================================
+2025-08-05 19:19:14,199 - INFO - VERIFICAÇÃO E AJUSTE DE CODIFICAÇÃO DO BANCO DE DADOS
+2025-08-05 19:19:14,199 - INFO - ============================================================
+2025-08-05 19:19:14,251 - ERROR - ❌ Erro ao conectar ao banco de dados: 'utf-8' codec can't decode byte 0xe7 in position 78: invalid continuation byte
+2025-08-05 19:19:14,252 - ERROR - Não foi possível conectar ao servidor PostgreSQL.
