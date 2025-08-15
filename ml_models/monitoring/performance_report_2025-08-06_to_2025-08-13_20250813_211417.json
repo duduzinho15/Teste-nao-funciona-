@@ -1,0 +1,21 @@
+{
+  "period": "2025-08-06 a 2025-08-13",
+  "generated_at": "2025-08-13T21:14:17.235928",
+  "summary": {
+    "total_predictions": 0,
+    "avg_accuracy": 0,
+    "system_uptime": 0.0,
+    "total_alerts": 0,
+    "critical_alerts": 0
+  },
+  "model_performance": {
+    "error": "Nenhum dado de performance disponível"
+  },
+  "system_health": {
+    "error": "Nenhum dado de saúde disponível"
+  },
+  "alerts_analysis": {
+    "total_alerts": 0,
+    "analysis": "Nenhum alerta no período"
+  }
+}

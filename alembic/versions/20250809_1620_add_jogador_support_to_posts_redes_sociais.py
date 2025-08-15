@@ -1,7 +1,7 @@
 """Add jogador support to posts_redes_sociais
 
 Revision ID: 20250809_1620
-Revises: 20250809_1026_e80615e1f202
+Revises: 3c958e4a60b7
 Create Date: 2025-08-09 16:20:00.000000
 
 """
@@ -11,7 +11,7 @@ from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
 revision = '20250809_1620'
-down_revision = '20250809_1026_e80615e1f202'
+down_revision = '3c958e4a60b7'
 branch_labels = None
 depends_on = None
 

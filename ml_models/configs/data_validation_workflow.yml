@@ -1,0 +1,74 @@
+jobs:
+  data_validation_data_cleaning:
+    needs: []
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install -r requirements_ml.txt
+    - name: 'Run: python -m ml_models.data_cleaning'
+      run: python -m ml_models.data_cleaning
+      timeout-minutes: 30
+    - name: 'Run: python -m ml_models.data_normalization'
+      run: python -m ml_models.data_normalization
+      timeout-minutes: 30
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: data_validation-data_cleaning-artifacts
+        path: ml_models/results/*
+  data_validation_data_collection:
+    needs: []
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install -r requirements_ml.txt
+    - name: 'Run: python -m ml_models.data_collector'
+      run: python -m ml_models.data_collector
+      timeout-minutes: 30
+    - name: 'Run: python -m ml_models.betting_apis_integration'
+      run: python -m ml_models.betting_apis_integration
+      timeout-minutes: 30
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: data_validation-data_collection-artifacts
+        path: ml_models/results/*
+  data_validation_data_validation:
+    needs: []
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install -r requirements_ml.txt
+    - name: 'Run: python -m ml_models.data_validation'
+      run: python -m ml_models.data_validation
+      timeout-minutes: 45
+    - name: 'Run: python -m ml_models.outlier_detection'
+      run: python -m ml_models.outlier_detection
+      timeout-minutes: 45
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: data_validation-data_validation-artifacts
+        path: ml_models/results/*
+name: Data_Validation Pipeline
+'on':
+  schedule:
+  - cron: 0 */6 * * *

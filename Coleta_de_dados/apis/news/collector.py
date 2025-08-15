@@ -340,7 +340,7 @@ class NewsCollector:
     
     def coletar_para_todos_clubes(self, limite_por_clube: int = 5) -> Dict:
         """
-        Coleta notícias para todos os clubes ativos no banco de dados.
+        Coleta notícias para todos os clubes no banco de dados.
         
         Args:
             limite_por_clube: Número máximo de notícias a coletar por clube
@@ -348,17 +348,17 @@ class NewsCollector:
         Returns:
             Dict: Estatísticas da coleta
         """
-        self.logger.info(f"Iniciando coleta de notícias para todos os clubes ativos")
+        self.logger.info(f"Iniciando coleta de notícias para todos os clubes")
         
         try:
-            # Busca todos os clubes ativos
-            clubes = self.db.query(Clube).filter(Clube.ativo == True).all()
+            # Busca todos os clubes
+            clubes = self.db.query(Clube).all()
             
             if not clubes:
-                self.logger.warning("Nenhum clube ativo encontrado no banco de dados.")
+                self.logger.warning("Nenhum clube encontrado no banco de dados.")
                 return {
                     'status': 'aviso',
-                    'mensagem': 'Nenhum clube ativo encontrado',
+                    'mensagem': 'Nenhum clube encontrado',
                     'total_noticias_coletadas': 0,
                     'clubes_processados': 0
                 }
@@ -394,7 +394,7 @@ class NewsCollector:
 
 def coletar_noticias_para_todos_clubes(limite_por_clube: int = 5) -> Dict:
     """
-    Função de conveniência para coletar notícias para todos os clubes ativos.
+    Função de conveniência para coletar notícias para todos os clubes.
     
     Args:
         limite_por_clube: Número máximo de notícias a coletar por clube

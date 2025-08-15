@@ -10,7 +10,8 @@ Data: 2025-08-06
 Versão: 1.0
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException
+from fastapi import status as http_status
 from sqlalchemy.orm import Session
 from typing import Optional
 import logging
@@ -61,7 +62,7 @@ async def get_match_details(
         match = db.query(Partida).filter(Partida.id == match_id).first()
         if not match:
             raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
+                status_code=http_status.HTTP_404_NOT_FOUND,
                 detail=f"Partida com ID {match_id} não encontrada"
             )
         
@@ -125,7 +126,7 @@ async def get_match_details(
     except Exception as e:
         logger.error(f"Erro ao obter detalhes da partida {match_id}: {e}", exc_info=True)
         raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            status_code=http_status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Erro interno ao processar a requisição"
         )
 
@@ -158,66 +159,128 @@ async def list_matches(
     - **status**: Filtrar por status (ex: "finalizada", "agendada")
     """
     try:
+        logger.info(f"Iniciando listagem de partidas - Página: {page}, Tamanho: {size}")
+        logger.info(f"Filtros - competition_id: {competition_id}, season: {season}, status: {status}")
+        
         # Validação dos parâmetros
         if page < 1:
             page = 1
         if size < 1 or size > 100:
             size = 50
             
+        logger.info(f"Parâmetros validados - Página: {page}, Tamanho: {size}")
+            
         # Construção da query
+        logger.info("Criando query base para partidas")
         query = db.query(Partida)
         
         # Aplicação dos filtros
         if competition_id is not None:
+            logger.info(f"Aplicando filtro de competição: {competition_id}")
             query = query.filter(Partida.competicao_id == competition_id)
             
         if season:
+            logger.info(f"Aplicando filtro de temporada: {season}")
             query = query.filter(Partida.temporada == season)
             
         if status:
+            logger.info(f"Aplicando filtro de status: {status}")
             query = query.filter(Partida.status == status)
+            
+        logger.info("Filtros aplicados com sucesso")
         
         # Ordenação e paginação
-        query = query.order_by(Partida.data_partida.desc(), Partida.horario.desc())
-        total = query.count()
-        matches = query.offset((page - 1) * size).limit(size).all()
+        logger.info("Aplicando ordenação e paginação")
+        try:
+            # Ordena por data da partida (mais recentes primeiro) e depois por horário
+            # Usando nulls_last() para lidar com valores nulos
+            from sqlalchemy import desc, nulls_last
+            
+            # Primeiro ordena por data (mais recente primeiro)
+            query = query.order_by(
+                nulls_last(desc(Partida.data_partida)),
+                nulls_last(desc(Partida.horario))
+            )
+            
+            total = query.count()
+            logger.info(f"Total de partidas encontradas: {total}")
+            
+            # Aplica paginação
+            matches = query.offset((page - 1) * size).limit(size).all()
+            logger.info(f"Partidas recuperadas: {len(matches)}")
+            
+            # Cálculo do total de páginas
+            pages = (total + size - 1) // size if total > 0 else 1
+            logger.info(f"Total de páginas: {pages}")
+            
+        except Exception as e:
+            logger.error(f"Erro ao executar consulta: {str(e)}", exc_info=True)
+            raise HTTPException(
+                status_code=http_status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Erro ao executar consulta no banco de dados: {str(e)}"
+            )
         
-        # Cálculo do total de páginas
-        pages = (total + size - 1) // size if total > 0 else 1
-        
-        # Prepara os itens da resposta
-        items = []
-        for match in matches:
-            items.append({
-                "id": match.id,
-                "data_partida": match.data_partida,
-                "hora_partida": match.horario,
-                "competicao_id": match.competicao_id,
-                "clube_casa_id": match.clube_casa_id,
-                "clube_visitante_id": match.clube_visitante_id,
-                "gols_casa": match.gols_casa,
-                "gols_visitante": match.gols_visitante,
-                "resultado": match.resultado,
-                "rodada": match.rodada,
-                "temporada": match.temporada,
-                "status": match.status
-            })
-        
-        # Cria a resposta usando o schema
-        response_data = schemas.MatchList(
-            items=items,
-            total=total,
-            page=page,
-            size=size,
-            pages=pages
-        )
-        
-        logger.info(f"Listadas {len(response_data.items)} de {total} partidas")
-        return response_data
+        try:
+            # Prepara os itens da resposta com tratamento de campos nulos
+            items = []
+            logger.info(f"Preparando {len(matches)} itens para resposta")
+            
+            for match in matches:
+                try:
+                    # Garantir que os campos obrigatórios tenham valores padrão
+                    match_data = {
+                        "id": match.id,
+                        "data_partida": match.data_partida.isoformat() if match.data_partida else None,
+                        "hora_partida": match.horario if match.horario else None,
+                        "competicao_id": match.competicao_id,
+                        "clube_casa_id": match.clube_casa_id,
+                        "clube_visitante_id": match.clube_visitante_id,
+                        "gols_casa": match.gols_casa if match.gols_casa is not None else 0,
+                        "gols_visitante": match.gols_visitante if match.gols_visitante is not None else 0,
+                        "resultado": match.resultado if match.resultado else None,
+                        "rodada": match.rodada if match.rodada else None,
+                        "temporada": match.temporada if match.temporada else None,
+                        "status": match.status if match.status else 'agendada'
+                    }
+                    
+                    # Cria o objeto MatchItem e valida os dados
+                    match_item = schemas.MatchItem(**match_data)
+                    items.append(match_item)
+                    
+                except Exception as item_error:
+                    logger.error(f"Erro ao processar partida ID {match.id}: {str(item_error)}", exc_info=True)
+                    # Continua para a próxima partida em vez de falhar completamente
+                    continue
+            
+            logger.info(f"Itens processados com sucesso: {len(items)} de {len(matches)}")
+            
+            # Cria a resposta usando o schema
+            response_data = schemas.MatchList(
+                items=items,
+                total=total,
+                page=page,
+                size=size,
+                pages=pages
+            )
+            
+            logger.info(f"Listadas {len(items)} partidas (página {page}/{pages})")
+            return response_data
+            
+        except Exception as e:
+            logger.error(f"Erro ao formatar resposta das partidas: {str(e)}", exc_info=True)
+            raise HTTPException(
+                status_code=http_status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Erro ao formatar resposta: {str(e)}"
+            )
+            
+    except HTTPException as http_exc:
+        # Re-lança exceções HTTP existentes
+        logger.error(f"Erro HTTP ao listar partidas: {http_exc.detail}")
+        raise http_exc
         
     except Exception as e:
-        logger.error(f"Erro ao listar partidas: {e}", exc_info=True)
+        logger.error(f"Erro inesperado ao listar partidas: {str(e)}", exc_info=True)
         raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Erro interno ao processar a requisição"
+            status_code=http_status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Erro interno ao processar a requisição: {str(e)}"
         )

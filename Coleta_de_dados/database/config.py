@@ -13,60 +13,74 @@ Versão: 1.0
 import os
 from typing import Optional
 from pydantic_settings import BaseSettings
-from pydantic import Field, validator
-from sqlalchemy import create_engine, MetaData
-from sqlalchemy.engine import Engine
+from pydantic import Field, field_validator, ConfigDict
+from sqlalchemy import create_engine, MetaData, Engine, text
 from sqlalchemy.orm import sessionmaker, declarative_base
 from sqlalchemy.pool import QueuePool
 import logging
 from dotenv import load_dotenv
+from contextlib import contextmanager
+import time
 
 # Carregar variáveis de ambiente
 load_dotenv()
 
+# Configuração de logging
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Criar base declarativa real
+Base = declarative_base()
+
+# Garantir que Base seja sempre válida
+if Base is None:
+    Base = declarative_base()
+
 class DatabaseSettings(BaseSettings):
-    """Configurações do banco de dados com validação."""
+    """Configurações do banco de dados."""
     
-    # PostgreSQL Configuration
-    db_host: str = Field(default="localhost", env="DB_HOST")
-    db_port: int = Field(default=5432, env="DB_PORT")
-    db_name: str = Field(default="apostapro_db", env="DB_NAME")
-    db_user: str = Field(default="apostapro_user", env="DB_USER")
-    db_password: str = Field(default="apostapro_pass", env="DB_PASSWORD")
-    database_url: Optional[str] = Field(default=None, env="DATABASE_URL")
+    # Configuração principal
+    database_url: Optional[str] = Field(default=None, description="URL completa do banco de dados")
     
-    # Connection Pool Settings
-    pool_size: int = Field(default=10, env="DB_POOL_SIZE")
-    max_overflow: int = Field(default=20, env="DB_MAX_OVERFLOW")
-    pool_timeout: int = Field(default=30, env="DB_POOL_TIMEOUT")
-    pool_recycle: int = Field(default=3600, env="DB_POOL_RECYCLE")
+    # Configurações individuais (usadas se database_url não for fornecida)
+    db_host: str = Field(default="localhost", description="Host do banco de dados")
+    db_port: int = Field(default=5432, description="Porta do banco de dados")
+    db_name: str = Field(default="apostapro_db", description="Nome do banco de dados")
+    db_user: str = Field(default="apostapro_user", description="Usuário do banco de dados")
+    db_password: str = Field(default="apostapro_password", description="Senha do banco de dados")
     
-    # Application Settings
-    environment: str = Field(default="development", env="ENVIRONMENT")
-    debug: bool = Field(default=True, env="DEBUG")
-    log_level: str = Field(default="INFO", env="LOG_LEVEL")
+    # Configurações de pool de conexões
+    pool_size: int = Field(default=5, description="Tamanho do pool de conexões")
+    max_overflow: int = Field(default=10, description="Máximo de conexões extras")
+    pool_timeout: int = Field(default=30, description="Timeout para obter conexão do pool")
+    pool_recycle: int = Field(default=3600, description="Reciclagem de conexões (segundos)")
+    
+    # Configurações de logging e debug
+    log_level: str = Field(default="INFO", description="Nível de logging")
+    debug: bool = Field(default=False, description="Modo debug")
     
     # Monitoring
-    enable_monitoring: bool = Field(default=True, env="ENABLE_DB_MONITORING")
-    metrics_interval: int = Field(default=300, env="METRICS_COLLECTION_INTERVAL")
+    enable_monitoring: bool = Field(default=True, description="Habilitar monitoramento")
+    metrics_interval: int = Field(default=300, description="Intervalo de coleta de métricas")
     
-    @validator('database_url', pre=True, always=True)
-    def build_database_url(cls, v, values):
+    @field_validator('database_url', mode='before')
+    @classmethod
+    def build_database_url(cls, v, info):
         """Constrói a URL do banco se não fornecida."""
         if v:
             return v
         
+        values = info.data
         return (
             f"postgresql://{values.get('db_user')}:{values.get('db_password')}"
             f"@{values.get('db_host')}:{values.get('db_port')}/{values.get('db_name')}"
         )
     
-    class Config:
-        env_file = ".env"
-        case_sensitive = False
-        extra = "ignore"  # Ignorar campos extras do .env
+    model_config = ConfigDict(
+        env_file=".env",
+        case_sensitive=False,
+        extra="ignore"  # Ignorar campos extras do .env
+    )
 
 class DatabaseManager:
     """Gerenciador centralizado de conexões do banco de dados."""
@@ -77,7 +91,8 @@ class DatabaseManager:
         self.using_fallback = False
         self._engine: Optional[Engine] = None
         self._session_factory: Optional[sessionmaker] = None
-        self._base = declarative_base()
+        # Usar a Base global em vez de criar uma nova
+        self._base = Base
         self._metadata = MetaData()
         
         self.logger.info("DatabaseManager inicializado")
@@ -121,33 +136,65 @@ class DatabaseManager:
     
     def _create_engine(self) -> Engine:
         """Cria o engine do SQLAlchemy com configurações otimizadas."""
-        logger.info(f"Criando engine para: {self._mask_password(self.settings.database_url)}")
-        
-        engine = create_engine(
-            self.settings.database_url,
-            # Pool de conexões
-            poolclass=QueuePool,
-            pool_size=self.settings.pool_size,
-            max_overflow=self.settings.max_overflow,
-            pool_timeout=self.settings.pool_timeout,
-            pool_recycle=self.settings.pool_recycle,
-            pool_pre_ping=True,  # Verifica conexões antes de usar
+        try:
+            # Tentar PostgreSQL primeiro
+            logger.info(f"🔄 Tentando conectar ao PostgreSQL: {self._mask_password(self.settings.database_url)}")
             
-            # Configurações de performance
-            echo=self.settings.debug,  # Log SQL queries em debug
-            echo_pool=self.settings.debug,  # Log pool events em debug
-            future=True,  # SQLAlchemy 2.0 style
+            engine = create_engine(
+                self.settings.database_url,
+                # Pool de conexões
+                poolclass=QueuePool,
+                pool_size=self.settings.pool_size,
+                max_overflow=self.settings.max_overflow,
+                pool_timeout=self.settings.pool_timeout,
+                pool_recycle=self.settings.pool_recycle,
+                pool_pre_ping=True,  # Verifica conexões antes de usar
+                
+                # Configurações de performance
+                echo=self.settings.debug,  # Log SQL queries em debug
+                echo_pool=self.settings.debug,  # Log pool events em debug
+                future=True,  # SQLAlchemy 2.0 style
+                
+                # Configurações de conexão
+                connect_args={
+                    "connect_timeout": 10,
+                    "application_name": "ApostaPro_FBRef_Scraper",
+                    "options": "-c timezone=America/Sao_Paulo"
+                }
+            )
             
-            # Configurações de conexão
-            connect_args={
-                "connect_timeout": 10,
-                "application_name": "ApostaPro_FBRef_Scraper",
-                "options": "-c timezone=America/Sao_Paulo"
-            }
-        )
-        
-        logger.info("Engine criado com sucesso")
-        return engine
+            # Testar conexão
+            with engine.connect() as conn:
+                conn.execute(text("SELECT 1"))
+            
+            logger.info("✅ Engine PostgreSQL criado com sucesso")
+            self.using_fallback = False
+            return engine
+            
+        except Exception as e:
+            logger.warning(f"⚠️ Falha na conexão PostgreSQL: {e}")
+            logger.info("🔄 Fallback para SQLite...")
+            
+            # Fallback para SQLite
+            sqlite_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "Banco_de_dados", "aposta.db")
+            sqlite_url = f"sqlite:///{sqlite_path}"
+            
+            logger.info(f"📁 Usando SQLite: {sqlite_url}")
+            
+            engine = create_engine(
+                sqlite_url,
+                # Configurações específicas para SQLite
+                echo=self.settings.debug,
+                future=True,
+                connect_args={
+                    "check_same_thread": False,  # Permite uso em múltiplas threads
+                    "timeout": 30
+                }
+            )
+            
+            self.using_fallback = True
+            logger.info("✅ Engine SQLite criado com sucesso (fallback)")
+            return engine
     
     def _create_session_factory(self):
         """Cria a factory de sessões."""
@@ -251,13 +298,60 @@ class DatabaseManager:
         
         return url
 
-# Instância global do gerenciador de banco
-db_manager = DatabaseManager()
+# Instância global do gerenciador de banco (lazy initialization)
+_db_manager = None
 
-# Aliases para compatibilidade
-engine = db_manager.engine
-SessionLocal = db_manager.session_factory
-Base = db_manager.base
+def get_db_manager():
+    """Retorna a instância do DatabaseManager, criando se necessário."""
+    global _db_manager
+    if _db_manager is None:
+        _db_manager = DatabaseManager()
+    return _db_manager
+
+# Para compatibilidade com código existente
+def _get_engine():
+    return get_db_manager().engine
+
+def _get_session_factory():
+    return get_db_manager().session_factory
+
+def _get_base():
+    return get_db_manager().base
+
+# Criar os objetos quando necessário
+engine = None
+SessionLocal = None
+Base = Base  # Usar a Base global definida no topo
+db_manager = None
+
+def _ensure_objects():
+    """Garante que os objetos estão criados."""
+    global engine, SessionLocal, Base, db_manager
+    if engine is None:
+        try:
+            engine = _get_engine()
+            SessionLocal = _get_session_factory()
+            # Base já está definido globalmente, não precisa ser alterado
+            db_manager = get_db_manager()
+        except Exception as e:
+            # Se falhar na inicialização, não é crítico
+            print(f"⚠️ Inicialização lazy falhou: {e}")
+            # Criar objetos vazios para evitar erros
+            engine = None
+            SessionLocal = None
+            # Base permanece válido
+            db_manager = None
+
+# Garantir que SessionLocal seja sempre válido
+if SessionLocal is None:
+    try:
+        SessionLocal = _get_session_factory()
+    except:
+        # Se falhar, criar uma sessão básica
+        from sqlalchemy.orm import sessionmaker
+        from sqlalchemy import create_engine
+        test_engine = create_engine('sqlite:///:memory:')
+        SessionLocal = sessionmaker(bind=test_engine)
 
 def get_db():
     """
@@ -275,11 +369,11 @@ def init_database():
     logger.info("🚀 Inicializando banco de dados...")
     
     # Testar conexão
-    if not db_manager.test_connection():
+    if not get_db_manager().test_connection():
         raise ConnectionError("Não foi possível conectar ao banco de dados")
     
     # Criar tabelas
-    db_manager.create_all_tables()
+    get_db_manager().create_all_tables()
     
     logger.info("✅ Banco de dados inicializado com sucesso!")
 
@@ -289,19 +383,19 @@ if __name__ == "__main__":
     print("=" * 50)
     
     print(f"📊 Configurações:")
-    print(f"  Host: {db_manager.settings.db_host}")
-    print(f"  Porta: {db_manager.settings.db_port}")
-    print(f"  Banco: {db_manager.settings.db_name}")
-    print(f"  Usuário: {db_manager.settings.db_user}")
-    print(f"  Pool Size: {db_manager.settings.pool_size}")
-    print(f"  Environment: {db_manager.settings.environment}")
+    print(f"  Host: {get_db_manager().settings.db_host}")
+    print(f"  Porta: {get_db_manager().settings.db_port}")
+    print(f"  Banco: {get_db_manager().settings.db_name}")
+    print(f"  Usuário: {get_db_manager().settings.db_user}")
+    print(f"  Pool Size: {get_db_manager().settings.pool_size}")
+    print(f"  Environment: {get_db_manager().settings.environment}")
     
     print(f"\n🔗 Testando conexão...")
-    success = db_manager.test_connection()
+    success = get_db_manager().test_connection()
     
     if success:
         print("✅ Configuração válida!")
-        pool_status = db_manager.get_pool_status()
+        pool_status = get_db_manager().get_pool_status()
         print(f"📊 Status do pool: {pool_status}")
     else:
         print("❌ Erro na configuração!")

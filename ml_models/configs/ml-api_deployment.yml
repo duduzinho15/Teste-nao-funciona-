@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ml-api
+  name: ml-api
+  namespace: apostapro-ml
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ml-api
+  template:
+    metadata:
+      labels:
+        app: ml-api
+    spec:
+      containers:
+      - env:
+        - name: ML_ENV
+          value: production
+        - name: LOG_LEVEL
+          value: INFO
+        - name: API_VERSION
+          value: v1
+        image: apostapro/ml-api:latest
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        name: ml-api
+        ports:
+        - containerPort: 8080
+        - containerPort: 9090
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 2Gi
+          requests:
+            cpu: 500m
+            memory: 1Gi
+        volumeMounts:
+        - mountPath: /app/models
+          name: ml-models
+        - mountPath: /app/data
+          name: ml-data
+      volumes:
+      - name: ml-models
+        persistentVolumeClaim:
+          claimName: ml-models-pvc
+      - name: ml-data
+        persistentVolumeClaim:
+          claimName: ml-data-pvc

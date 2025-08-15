@@ -1,345 +1,399 @@
+#!/usr/bin/env python3
 """
-ROUTER DE ANÁLISE DE SENTIMENTO
-==============================
+Roteador para Endpoints de Análise de Sentimento
+================================================
 
-Este módulo fornece endpoints para análise de sentimento de notícias e posts de redes sociais.
-Permite a análise em tempo real e o processamento em lote de conteúdo textual.
+Este módulo fornece endpoints para análise de sentimento de notícias e posts
+de redes sociais dos clubes.
 
-Endpoints:
-- POST /api/v1/analise/sentimento: Analisa o sentimento de um texto
-- POST /api/v1/analise/noticias/{noticia_id}: Analisa o sentimento de uma notícia específica
-- POST /api/v1/analise/noticias/lote: Processa análise de sentimento em lote para múltiplas notícias
-- GET /api/v1/analise/estatisticas: Obtém estatísticas sobre as análises realizadas
-
-Autor: Sistema de Análise de Sentimento
-Data: 2025-08-10
+Autor: Sistema de Análise de Sentimento ApostaPro
+Data: 2025-01-15
 Versão: 1.0
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status, Query
-from typing import List, Dict, Any, Optional
-from datetime import datetime, timedelta
-import logging
-from pydantic import BaseModel, Field
-
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
+from sqlalchemy import func, and_
+from typing import List, Optional
+from datetime import datetime, timedelta
+import sqlite3
+import os
 
-from Coleta_de_dados.database import get_db
-from Coleta_de_dados.analise.sentimento import (
-    analisar_sentimento_texto,
-    analisar_noticia,
-    analisar_lote_noticias
-)
-from ..schemas import (
-    SentimentoClubeSchema,
-    NoticiaClubeResponse,
-    MessageResponse,
-    ErrorResponse
-)
-from Coleta_de_dados.database.models import NoticiaClube
+from api import schemas
+from api.database import get_db
 
-# Configuração de logging
-logger = logging.getLogger(__name__)
+router = APIRouter(prefix="/analise", tags=["Análise"])
 
-router = APIRouter(
-    prefix="/api/v1/analise",
-    tags=["Análise de Sentimento"],
-    responses={
-        404: {"description": "Recurso não encontrado"},
-        500: {"description": "Erro interno do servidor"}
-    }
-)
-
-class AnaliseTextoRequest(BaseModel):
-    """Schema para requisição de análise de texto."""
-    texto: str = Field(..., description="Texto a ser analisado")
-    titulo: Optional[str] = Field(None, description="Título do conteúdo (opcional)")
+def get_db_path():
+    """Obtém o caminho para o banco de dados."""
+    possible_paths = [
+        "Banco_de_dados/aposta.db",
+        "Coleta_de_dados/database/football_data.db",
+        "aposta.db"
+    ]
     
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "texto": "O time jogou muito bem e garantiu uma vitória espetacular no clássico.",
-                "titulo": "Vitória espetacular no clássico"
-            }
-        }
-
-class AnaliseLoteRequest(BaseModel):
-    """Schema para requisição de análise em lote."""
-    noticias: List[Dict[str, Any]] = Field(
-        ...,
-        description="Lista de notícias para análise. Cada item deve conter 'id', 'titulo' e 'conteudo_completo'"
-    )
+    for path in possible_paths:
+        if os.path.exists(path):
+            return path
     
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "noticias": [
-                    {
-                        "id": 1,
-                        "titulo": "Time vence partida emocionante",
-                        "conteudo_completo": "Em um jogo emocionante, o time venceu por 2x1..."
-                    },
-                    {
-                        "id": 2,
-                        "titulo": "Derrota amarga no clássico",
-                        "conteudo_completo": "O time perdeu por 3x0 em uma atuação abaixo do esperado..."
-                    }
-                ]
-            }
-        }
+    return None
 
-@router.post(
-    "/sentimento",
-    response_model=SentimentoClubeSchema,
-    summary="Analisa o sentimento de um texto",
-    description="""
-    Realiza a análise de sentimento de um texto fornecido.
-    Retorna uma pontuação de sentimento entre -1 (negativo) e 1 (positivo),
-    juntamente com informações sobre a análise.
-    """
-)
-async def analisar_texto(request: AnaliseTextoRequest):
-    """
-    Analisa o sentimento de um texto fornecido.
-    
-    Args:
-        request: Objeto contendo o texto a ser analisado e título opcional
-        
-    Returns:
-        Resultado da análise de sentimento
-    """
-    try:
-        resultado = analisar_sentimento_texto(request.texto, request.titulo)
-        return resultado
-    except Exception as e:
-        logger.error(f"Erro ao analisar texto: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Erro ao processar a análise de sentimento: {str(e)}"
-        )
-
-@router.post(
-    "/noticias/{noticia_id}",
-    response_model=NoticiaClubeResponse,
-    summary="Analisa o sentimento de uma notícia específica",
-    description="""
-    Busca uma notícia pelo ID, realiza a análise de sentimento e atualiza
-    os campos correspondentes no banco de dados.
-    """
-)
-async def analisar_noticia_endpoint(
-    noticia_id: int,
-    db: Session = Depends(get_db)
+@router.get("/sentimento/{clube_id}", response_model=schemas.SentimentoClubeSchema)
+def get_sentimento_clube(
+    clube_id: int, 
+    db: Session = Depends(get_db),
+    incluir_posts: bool = Query(True, description="Incluir análise de posts de redes sociais")
 ):
     """
-    Analisa o sentimento de uma notícia específica e atualiza o banco de dados.
+    Obtém a análise de sentimento para um clube específico.
     
     Args:
-        noticia_id: ID da notícia a ser analisada
-        db: Sessão do banco de dados
+        clube_id: ID do clube
+        incluir_posts: Se deve incluir análise de posts de redes sociais
         
     Returns:
-        Notícia atualizada com os resultados da análise de sentimento
+        Análise de sentimento do clube
     """
     try:
-        # Busca a notícia no banco de dados
-        noticia = db.query(NoticiaClube).filter(NoticiaClube.id == noticia_id).first()
+        # Conectar ao banco SQLite
+        db_path = get_db_path()
+        if not db_path:
+            raise HTTPException(status_code=500, detail="Banco de dados não encontrado")
         
-        if not noticia:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail=f"Notícia com ID {noticia_id} não encontrada"
-            )
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
         
-        # Converte o objeto SQLAlchemy para dicionário para análise
-        noticia_dict = {
-            "id": noticia.id,
-            "titulo": noticia.titulo,
-            "conteudo_completo": noticia.conteudo_completo or "",
-            "resumo": noticia.resumo or ""
+        # Verificar se o clube existe
+        cursor.execute("SELECT nome FROM clubes WHERE id = ?", (clube_id,))
+        clube = cursor.fetchone()
+        
+        if not clube:
+            raise HTTPException(status_code=404, detail="Clube não encontrado")
+        
+        nome_clube = clube[0]
+        
+        # Análise de sentimento das notícias
+        cursor.execute("""
+            SELECT 
+                COUNT(*) as total,
+                AVG(score_sentimento) as score_medio,
+                AVG(confianca_sentimento) as confianca_media,
+                MAX(analisado_em) as ultima_analise
+            FROM noticias_clubes 
+            WHERE clube_id = ? AND sentimento IS NOT NULL
+        """, (clube_id,))
+        
+        stats_noticias = cursor.fetchone()
+        total_noticias = stats_noticias[0] or 0
+        score_medio_noticias = stats_noticias[1] or 0.0
+        confianca_media = stats_noticias[3] or 0.0
+        ultima_analise = stats_noticias[4]
+        
+        # Análise de sentimento dos posts (se solicitado)
+        sentimento_medio_posts = None
+        posts_analisados = None
+        
+        if incluir_posts:
+            cursor.execute("""
+                SELECT 
+                    COUNT(*) as total,
+                    AVG(score_sentimento) as score_medio
+                FROM posts_redes_sociais 
+                WHERE clube_id = ? AND sentimento IS NOT NULL
+            """, (clube_id,))
+            
+            stats_posts = cursor.fetchone()
+            posts_analisados = stats_posts[0] or 0
+            sentimento_medio_posts = stats_posts[1] or 0.0
+        
+        # Calcular sentimento geral
+        scores = [score_medio_noticias]
+        if sentimento_medio_posts is not None:
+            scores.append(sentimento_medio_posts)
+        
+        score_medio_geral = sum(scores) / len(scores) if scores else 0.0
+        
+        if score_medio_geral > 0.1:
+            sentimento_geral = 'positivo'
+        elif score_medio_geral < -0.1:
+            sentimento_geral = 'negativo'
+        else:
+            sentimento_geral = 'neutro'
+        
+        conn.close()
+        
+        return {
+            "clube_id": clube_id,
+            "nome_clube": nome_clube,
+            "sentimento_medio_noticias": score_medio_noticias,
+            "noticias_analisadas": total_noticias,
+            "sentimento_medio_posts": sentimento_medio_posts,
+            "posts_analisados": posts_analisados,
+            "sentimento_geral": sentimento_geral,
+            "confianca_media": confianca_media,
+            "ultima_atualizacao": ultima_analise
         }
-        
-        # Realiza a análise de sentimento
-        resultado = analisar_noticia(noticia_dict)
-        
-        # Atualiza os campos da notícia com os resultados da análise
-        noticia.sentimento_geral = resultado["sentimento_geral"]
-        noticia.confianca_sentimento = resultado["confianca"]
-        noticia.polaridade = resultado["polaridade"]
-        noticia.topicos = ", ".join(resultado["topicos"]) if resultado["topicos"] else None
-        noticia.palavras_chave = ", ".join(resultado["palavras_chave"]) if resultado["palavras_chave"] else None
-        noticia.modelo_analise = resultado["modelo"]
-        noticia.analisado_em = datetime.now()
-        
-        # Salva as alterações no banco de dados
-        db.commit()
-        db.refresh(noticia)
-        
-        return noticia
         
     except HTTPException:
         raise
     except Exception as e:
-        db.rollback()
-        logger.error(f"Erro ao analisar notícia {noticia_id}: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Erro ao processar a análise da notícia: {str(e)}"
-        )
+        raise HTTPException(status_code=500, detail=f"Erro interno: {str(e)}")
 
-@router.post(
-    "/noticias/lote",
-    response_model=List[Dict[str, Any]],
-    summary="Analisa o sentimento de múltiplas notícias em lote",
-    description="""
-    Processa a análise de sentimento para várias notícias de uma só vez.
-    Retorna os resultados da análise para cada notícia processada.
-    """
-)
-async def analisar_lote_noticias_endpoint(
-    request: AnaliseLoteRequest,
-    db: Session = Depends(get_db)
+@router.get("/sentimento/estatisticas", response_model=schemas.SentimentoEstatisticasSchema)
+def get_estatisticas_sentimento(
+    db: Session = Depends(get_db),
+    dias_atras: int = Query(30, description="Número de dias para análise", ge=1, le=365)
 ):
     """
-    Analisa o sentimento de múltiplas notícias em lote.
+    Obtém estatísticas gerais de sentimento.
     
     Args:
-        request: Objeto contendo a lista de notícias a serem analisadas
-        db: Sessão do banco de dados
+        dias_atras: Número de dias para análise
         
     Returns:
-        Lista de resultados da análise para cada notícia
+        Estatísticas gerais de sentimento
     """
     try:
-        if not request.noticias:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Nenhuma notícia fornecida para análise"
+        # Conectar ao banco SQLite
+        db_path = get_db_path()
+        if not db_path:
+            raise HTTPException(status_code=500, detail="Banco de dados não encontrado")
+        
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        
+        # Data limite para análise
+        data_limite = datetime.now() - timedelta(days=dias_atras)
+        
+        # Estatísticas de notícias
+        cursor.execute("""
+            SELECT 
+                COUNT(*) as total,
+                COUNT(CASE WHEN sentimento = 'positivo' THEN 1 END) as positivas,
+                COUNT(CASE WHEN sentimento = 'negativo' THEN 1 END) as negativas,
+                COUNT(CASE WHEN sentimento = 'neutro' THEN 1 END) as neutras,
+                AVG(score_sentimento) as score_medio
+            FROM noticias_clubes 
+            WHERE sentimento IS NOT NULL AND created_at >= ?
+        """, (data_limite,))
+        
+        stats_noticias = cursor.fetchone()
+        total_noticias = stats_noticias[0] or 0
+        score_medio_noticias = stats_noticias[4] or 0.0
+        
+        # Estatísticas de posts
+        cursor.execute("""
+            SELECT 
+                COUNT(*) as total,
+                COUNT(CASE WHEN sentimento = 'positivo' THEN 1 END) as positivos,
+                COUNT(CASE WHEN sentimento = 'negativo' THEN 1 END) as negativos,
+                COUNT(CASE WHEN sentimento = 'neutro' THEN 1 END) as neutros,
+                AVG(score_sentimento) as score_medio
+            FROM posts_redes_sociais 
+            WHERE sentimento IS NOT NULL AND created_at >= ?
+        """, (data_limite,))
+        
+        stats_posts = cursor.fetchone()
+        total_posts = stats_posts[0] or 0
+        score_medio_posts = stats_posts[4] or 0.0
+        
+        # Calcular score médio geral
+        total_items = total_noticias + total_posts
+        if total_items > 0:
+            score_medio_geral = (
+                (score_medio_noticias * total_noticias + score_medio_posts * total_posts) / total_items
             )
+        else:
+            score_medio_geral = 0.0
         
-        # Realiza a análise em lote
-        resultados = analisar_lote_noticias(request.noticias)
+        # Distribuição de sentimento
+        distribuicao_sentimento = {
+            'positivo': (stats_noticias[1] or 0) + (stats_posts[1] or 0),
+            'negativo': (stats_noticias[2] or 0) + (stats_posts[2] or 0),
+            'neutro': (stats_noticias[3] or 0) + (stats_posts[3] or 0)
+        }
         
-        # Atualiza as notícias no banco de dados (se tiverem IDs)
-        for resultado in resultados:
-            if 'noticia_id' in resultado:
-                try:
-                    noticia = db.query(NoticiaClube).get(resultado['noticia_id'])
-                    if noticia:
-                        noticia.sentimento_geral = resultado["sentimento_geral"]
-                        noticia.confianca_sentimento = resultado["confianca"]
-                        noticia.polaridade = resultado["polaridade"]
-                        noticia.topicos = ", ".join(resultado["topicos"]) if resultado["topicos"] else None
-                        noticia.palavras_chave = ", ".join(resultado["palavras_chave"]) if resultado["palavras_chave"] else None
-                        noticia.modelo_analise = resultado["modelo"]
-                        noticia.analisado_em = datetime.now()
-                        
-                        db.add(noticia)
-                except Exception as e:
-                    logger.error(f"Erro ao atualizar notícia {resultado.get('noticia_id')}: {str(e)}")
-                    continue
+        # Top clubes com sentimento positivo
+        cursor.execute("""
+            SELECT 
+                c.nome as clube,
+                COUNT(n.id) as total_noticias,
+                AVG(n.score_sentimento) as score_medio
+            FROM noticias_clubes n
+            JOIN clubes c ON n.clube_id = c.id
+            WHERE n.sentimento = 'positivo' AND n.created_at >= ?
+            GROUP BY c.id, c.nome
+            ORDER BY score_medio DESC
+            LIMIT 5
+        """, (data_limite,))
         
-        db.commit()
+        top_positivos = [
+            {
+                'nome': clube[0],
+                'total_noticias': clube[1],
+                'score_medio': clube[2] or 0.0
+            }
+            for clube in cursor.fetchall()
+        ]
         
-        return resultados
+        # Top clubes com sentimento negativo
+        cursor.execute("""
+            SELECT 
+                c.nome as clube,
+                COUNT(n.id) as total_noticias,
+                AVG(n.score_sentimento) as score_medio
+            FROM noticias_clubes n
+            JOIN clubes c ON n.clube_id = c.id
+            WHERE n.sentimento = 'negativo' AND n.created_at >= ?
+            GROUP BY c.id, c.nome
+            ORDER BY score_medio ASC
+            LIMIT 5
+        """, (data_limite,))
         
-    except HTTPException:
-        raise
-    except Exception as e:
-        db.rollback()
-        logger.error(f"Erro ao processar análise em lote: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Erro ao processar a análise em lote: {str(e)}"
-        )
-
-@router.get(
-    "/estatisticas",
-    response_model=Dict[str, Any],
-    summary="Obtém estatísticas sobre as análises realizadas",
-    description="""
-    Retorna estatísticas sobre as análises de sentimento realizadas,
-    como total de análises, média de sentimento, distribuição de polaridades, etc.
-    """
-)
-async def obter_estatisticas(
-    dias: int = Query(30, description="Número de dias para análise (padrão: 30)", ge=1),
-    db: Session = Depends(get_db)
-):
-    """
-    Obtém estatísticas sobre as análises de sentimento realizadas.
-    
-    Args:
-        dias: Número de dias para análise (padrão: 30)
-        db: Sessão do banco de dados
+        top_negativos = [
+            {
+                'nome': clube[0],
+                'total_noticias': clube[1],
+                'score_medio': clube[2] or 0.0
+            }
+            for clube in cursor.fetchall()
+        ]
         
-    Returns:
-        Dicionário com estatísticas das análises
-    """
-    try:
-        data_limite = datetime.now() - timedelta(days=dias)
+        conn.close()
         
-        # Consulta para obter estatísticas básicas
-        total_noticias = db.query(NoticiaClube).count()
-        total_analisadas = db.query(NoticiaClube).filter(NoticiaClube.analisado_em.isnot(None)).count()
-        
-        # Média de sentimento
-        media_sentimento = db.query(
-            db.func.avg(NoticiaClube.sentimento_geral)
-        ).filter(NoticiaClube.sentimento_geral.isnot(None)).scalar() or 0.0
-        
-        # Distribuição de polaridades
-        polaridades = db.query(
-            NoticiaClube.polaridade,
-            db.func.count(NoticiaClube.id)
-        ).filter(
-            NoticiaClube.polaridade.isnot(None)
-        ).group_by(NoticiaClube.polaridade).all()
-        
-        # Distribuição por confiança
-        confianca_media = db.query(
-            db.func.avg(NoticiaClube.confianca_sentimento)
-        ).filter(NoticiaClube.confianca_sentimento.isnot(None)).scalar() or 0.0
-        
-        # Últimas análises
-        ultimas_analises = db.query(NoticiaClube).filter(
-            NoticiaClube.analisado_em.isnot(None)
-        ).order_by(
-            NoticiaClube.analisado_em.desc()
-        ).limit(5).all()
-        
-        # Prepara a resposta
-        estatisticas = {
+        return {
             "total_noticias": total_noticias,
-            "total_analisadas": total_analisadas,
-            "porcentagem_analisada": (total_analisadas / total_noticias * 100) if total_noticias > 0 else 0,
-            "media_sentimento": round(float(media_sentimento), 4),
-            "confianca_media": round(float(confianca_media), 4),
-            "distribuicao_polaridades": {
-                polaridade: count for polaridade, count in polaridades
-            },
-            "ultimas_analises": [
-                {
-                    "id": n.id,
-                    "titulo": n.titulo,
-                    "sentimento_geral": n.sentimento_geral,
-                    "polaridade": n.polaridade,
-                    "analisado_em": n.analisado_em.isoformat() if n.analisado_em else None
-                }
-                for n in ultimas_analises
-            ],
-            "periodo_analisado": {
-                "inicio": data_limite.isoformat(),
-                "fim": datetime.now().isoformat(),
-                "dias": dias
-            }
+            "total_posts": total_posts,
+            "distribuicao_sentimento": distribuicao_sentimento,
+            "score_medio_geral": score_medio_geral,
+            "top_clubes_positivos": top_positivos,
+            "top_clubes_negativos": top_negativos,
+            "ultima_atualizacao": datetime.now()
         }
         
-        return estatisticas
-        
     except Exception as e:
-        logger.error(f"Erro ao obter estatísticas: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Erro ao obter estatísticas: {str(e)}"
-        )
+        raise HTTPException(status_code=500, detail=f"Erro interno: {str(e)}")
+
+@router.get("/sentimento/clubes/ranking", response_model=List[schemas.SentimentoClubeSchema])
+def get_ranking_sentimento_clubes(
+    db: Session = Depends(get_db),
+    limite: int = Query(10, description="Número de clubes a retornar", ge=1, le=50),
+    tipo_sentimento: Optional[str] = Query(None, description="Filtrar por tipo de sentimento (positivo, negativo, neutro)")
+):
+    """
+    Obtém ranking de clubes por sentimento.
+    
+    Args:
+        limite: Número de clubes a retornar
+        tipo_sentimento: Filtrar por tipo de sentimento
+        
+    Returns:
+        Ranking de clubes por sentimento
+    """
+    try:
+        # Conectar ao banco SQLite
+        db_path = get_db_path()
+        if not db_path:
+            raise HTTPException(status_code=500, detail="Banco de dados não encontrado")
+        
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        
+        # Construir query baseada no filtro
+        if tipo_sentimento:
+            if tipo_sentimento not in ['positivo', 'negativo', 'neutro']:
+                raise HTTPException(status_code=400, detail="Tipo de sentimento inválido")
+            
+            where_clause = "WHERE n.sentimento = ?"
+            params = [tipo_sentimento]
+        else:
+            where_clause = "WHERE n.sentimento IS NOT NULL"
+            params = []
+        
+        # Query para ranking
+        query = f"""
+            SELECT 
+                c.id as clube_id,
+                c.nome as nome_clube,
+                COUNT(n.id) as total_noticias,
+                AVG(n.score_sentimento) as score_medio,
+                AVG(n.confianca_sentimento) as confianca_media,
+                MAX(n.analisado_em) as ultima_analise
+            FROM noticias_clubes n
+            JOIN clubes c ON n.clube_id = c.id
+            {where_clause}
+            GROUP BY c.id, c.nome
+            ORDER BY score_medio DESC
+            LIMIT ?
+        """
+        
+        params.append(limite)
+        cursor.execute(query, params)
+        
+        ranking = []
+        for row in cursor.fetchall():
+            score_medio = row[3] or 0.0
+            
+            if score_medio > 0.1:
+                sentimento_geral = 'positivo'
+            elif score_medio < -0.1:
+                sentimento_geral = 'negativo'
+            else:
+                sentimento_geral = 'neutro'
+            
+            ranking.append({
+                "clube_id": row[0],
+                "nome_clube": row[1],
+                "sentimento_medio_noticias": score_medio,
+                "noticias_analisadas": row[2],
+                "sentimento_medio_posts": None,
+                "posts_analisados": None,
+                "sentimento_geral": sentimento_geral,
+                "confianca_media": row[4],
+                "ultima_atualizacao": row[5]
+            })
+        
+        conn.close()
+        
+        return ranking
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro interno: {str(e)}")
+
+@router.post("/sentimento/reprocessar")
+def reprocessar_sentimento(
+    db: Session = Depends(get_db),
+    clube_id: Optional[int] = Query(None, description="ID do clube específico (opcional)")
+):
+    """
+    Reprocessa a análise de sentimento para todos os textos ou um clube específico.
+    
+    Args:
+        clube_id: ID do clube específico (opcional)
+        
+    Returns:
+        Resumo do reprocessamento
+    """
+    try:
+        # Importar função de análise
+        import sys
+        sys.path.append('Coleta_de_dados/analise')
+        
+        from sentimento import analisar_sentimento_textos
+        
+        # Executar análise
+        success = analisar_sentimento_textos()
+        
+        if success:
+            return {
+                "message": "Análise de sentimento reprocessada com sucesso",
+                "success": True,
+                "clube_id": clube_id
+            }
+        else:
+            raise HTTPException(status_code=500, detail="Falha no reprocessamento")
+            
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro ao reprocessar sentimento: {str(e)}")

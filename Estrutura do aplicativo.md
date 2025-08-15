@@ -560,7 +560,7 @@ recomendações para um projeto robusto, escalável e organizado:
 
 9.  **Lesões e Suspensões**:
 
-    - Jogadores titulares ou chavelesionados/suspendidos.
+    - Jogadores titulares ou chave lesionados/suspendidos.
 
     - Tempo estimado de recuperação de lesionados.
 

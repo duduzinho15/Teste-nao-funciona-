@@ -23,35 +23,16 @@ Data: 2025-08-03
 Versão: 1.0
 """
 
+# Importar apenas configuração básica
 from .config import (
-    db_manager,
-    engine,
-    SessionLocal,
-    Base,
+    get_db_manager,
     get_db,
-    init_database
+    init_database,
+    SessionLocal
 )
 
-from .models import (
-    # Modelos principais
-    Competicao,
-    LinkParaColeta,
-    Partida,
-    EstatisticaPartida,
-    
-    # Clubes
-    PaisClube,
-    Clube,
-    EstatisticaClube,
-    RecordVsOpponent,
-    
-    # Jogadores
-    PaisJogador,
-    Jogador,
-    
-    # Mixins
-    TimestampMixin
-)
+# Criar instância global do db_manager
+db_manager = get_db_manager()
 
 # Versão do módulo
 __version__ = "1.0.0"
@@ -59,23 +40,9 @@ __version__ = "1.0.0"
 # Exports principais
 __all__ = [
     # Configuração
-    "db_manager",
-    "engine", 
-    "SessionLocal",
-    "Base",
+    "get_db_manager",
     "get_db",
     "init_database",
-    
-    # Modelos
-    "Competicao",
-    "LinkParaColeta", 
-    "Partida",
-    "EstatisticaPartida",
-    "PaisClube",
-    "Clube",
-    "EstatisticaClube",
-    "RecordVsOpponent",
-    "PaisJogador",
-    "Jogador",
-    "TimestampMixin",
+    "SessionLocal",
+    "db_manager",
 ]

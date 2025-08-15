@@ -25,7 +25,7 @@ import uvicorn
 # Imports locais
 from .config import get_api_settings, DOCS_CONFIG, MIDDLEWARE_CONFIG
 from .security import rate_limiter, init_api_keys
-from .routers import competitions, clubs, players, health, matches, social, news, analise
+from .routers import competitions, clubs, players, health, matches, social, news, analise, recomendacoes, ml_router
 
 # Configuração de logging
 logging.basicConfig(
@@ -60,12 +60,13 @@ async def lifespan(app: FastAPI):
         init_api_keys()
         logger.info("✅ Sistema de API Keys inicializado")
         
-        # Verificar conectividade do banco
-        from Coleta_de_dados.database import db_manager
-        if db_manager.test_connection():
-            logger.info("✅ Conectividade do banco verificada")
-        else:
-            logger.warning("⚠️ Problema na conectividade do banco")
+        # Verificar conectividade do banco (comentado temporariamente)
+        # from Coleta_de_dados.database import db_manager
+        # if db_manager.test_connection():
+        #     logger.info("✅ Conectividade do banco verificada")
+        # else:
+        #     logger.warning("⚠️ Problema na conectividade do banco")
+        logger.info("✅ Verificação de banco temporariamente desabilitada")
         
         logger.info("🎉 API FastAPI iniciada com sucesso!")
         
@@ -236,6 +237,8 @@ def create_app() -> FastAPI:
     app.include_router(social.router, prefix="/api/v1")
     app.include_router(news.router, prefix="/api/v1")
     app.include_router(analise.router, prefix="/api/v1")
+    app.include_router(recomendacoes.router, prefix="/api/v1")
+    app.include_router(ml_router.router, prefix="/api/v1")
     
     # ========================================================================
     # ENDPOINTS RAIZ
@@ -258,6 +261,8 @@ def create_app() -> FastAPI:
                 "social": "/api/v1/social",
                 "news": "/api/v1/news",
                 "analysis": "/api/v1/analise",
+                "recommendations": "/api/v1/recomendacoes",
+                "machine_learning": "/api/v1/ml",
                 "health": "/api/v1/health"
             },
             "timestamp": datetime.now().isoformat()
@@ -278,7 +283,10 @@ def create_app() -> FastAPI:
                 "players": "/api/v1/players",
                 "matches": "/api/v1/matches",
                 "social": "/api/v1/social",
-                "news": "/api/v1/news"
+                "news": "/api/v1/news",
+                "analysis": "/api/v1/analise",
+                "recommendations": "/api/v1/recomendacoes",
+                "machine_learning": "/api/v1/ml"
             },
             "authentication": "API Key required (X-API-Key header)",
             "rate_limit": f"{settings.api_rate_limit} requests per {settings.api_rate_limit_period} seconds",

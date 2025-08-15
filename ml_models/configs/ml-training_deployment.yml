@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ml-training
+  name: ml-training
+  namespace: apostapro-ml
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ml-training
+  template:
+    metadata:
+      labels:
+        app: ml-training
+    spec:
+      containers:
+      - env:
+        - name: ML_ENV
+          value: production
+        - name: LOG_LEVEL
+          value: INFO
+        - name: TRAINING_MODE
+          value: distributed
+        image: apostapro/ml-training:latest
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 30
+        name: ml-training
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 4Gi
+          requests:
+            cpu: 1000m
+            memory: 2Gi
+        volumeMounts:
+        - mountPath: /app/models
+          name: ml-models
+        - mountPath: /app/data
+          name: ml-data
+        - mountPath: /app/cache
+          name: ml-cache
+      volumes:
+      - name: ml-models
+        persistentVolumeClaim:
+          claimName: ml-models-pvc
+      - name: ml-data
+        persistentVolumeClaim:
+          claimName: ml-data-pvc
+      - name: ml-cache
+        persistentVolumeClaim:
+          claimName: ml-cache-pvc

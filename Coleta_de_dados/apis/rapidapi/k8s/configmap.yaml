@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rapidapi-config
+  namespace: rapidapi-production
+data:
+  # Configurações do ambiente
+  ENVIRONMENT: "production"
+  LOG_LEVEL: "INFO"
+  
+  # Configurações ML
+  ML_TRAINING_INTERVAL_HOURS: "24"
+  ML_MIN_TRAINING_SAMPLES: "1000"
+  ML_ANOMALY_THRESHOLD: "0.7"
+  
+  # Configurações Prometheus
+  PROMETHEUS_EXPORT_INTERVAL: "15"
+  PROMETHEUS_METRICS_RETENTION_HOURS: "168"
+  
+  # Configurações de cache
+  REDIS_HOST: "rapidapi-redis"
+  REDIS_PORT: "6379"
+  REDIS_DB: "0"
+  
+  # Configurações de banco
+  POSTGRES_HOST: "rapidapi-postgres"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: "rapidapi"
+  
+  # Configurações de segurança
+  JWT_SECRET: "rapidapi-jwt-secret-production"
+  SESSION_SECRET: "rapidapi-session-secret-production"
+  
+  # Configurações de rate limiting
+  RATE_LIMIT_REQUESTS: "100"
+  RATE_LIMIT_WINDOW: "60"
+  
+  # Configurações de monitoramento
+  HEALTH_CHECK_INTERVAL: "30"
+  METRICS_COLLECTION_INTERVAL: "15"
+  
+  # Configurações de alertas
+  ALERT_CHECK_INTERVAL: "30"
+  ALERT_ESCALATION_DELAY: "300"
+  
+  # Configurações de notificações
+  NOTIFICATION_COOLDOWN: "300"
+  MAX_NOTIFICATIONS_PER_HOUR: "10"

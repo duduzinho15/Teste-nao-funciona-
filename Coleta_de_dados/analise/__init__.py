@@ -1,11 +1,11 @@
 """
 Módulo de análise de dados para o ApostaPro.
-
-Este pacote contém os módulos para análise de dados, incluindo análise de sentimento
-de notícias e posts de redes sociais.
+Inclui análise de sentimento, preparação de dados para ML e outras análises.
 """
 
-from typing import List, Dict, Any, Optional
-from datetime import datetime
+from .sentimento import AnalisadorSentimento, executar_analise_sentimento
 
-__all__ = ['sentimento']
+__all__ = [
+    'AnalisadorSentimento',
+    'executar_analise_sentimento'
+]

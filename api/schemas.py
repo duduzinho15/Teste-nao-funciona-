@@ -513,3 +513,112 @@ class MessageResponse(BaseSchema):
     message: str = Field(..., description="Mensagem")
     success: bool = Field(default=True, description="Indica sucesso")
     data: Optional[Dict[str, Any]] = Field(None, description="Dados adicionais")
+
+
+# ============================================================================
+# SCHEMAS DE RECOMENDAÇÕES DE APOSTAS
+# ============================================================================
+
+class RecomendacaoApostaBase(BaseSchema):
+    """Schema base para recomendações de apostas."""
+    partida_id: int = Field(..., description="ID da partida")
+    mercado_aposta: str = Field(..., description="Tipo de mercado de aposta (ex: '1X2', 'Over/Under')", max_length=100)
+    previsao: str = Field(..., description="Previsão do resultado", max_length=100)
+    probabilidade: float = Field(..., description="Probabilidade calculada pelo modelo", ge=0.0, le=1.0)
+    odd_justa: float = Field(..., description="Odd justa calculada", ge=1.0)
+    rating: float = Field(..., description="Rating da recomendação (1-5 estrelas)", ge=1.0, le=5.0)
+    confianca_modelo: float = Field(..., description="Confiança do modelo na previsão", ge=0.0, le=1.0)
+    modelo_utilizado: str = Field(..., description="Nome/versão do modelo utilizado", max_length=100)
+    features_utilizadas: Optional[str] = Field(None, description="Features utilizadas para a previsão")
+    status: str = Field(default="pendente", description="Status da recomendação", max_length=50)
+
+class RecomendacaoApostaCreate(RecomendacaoApostaBase):
+    """Schema para criação de recomendação de aposta."""
+    pass
+
+class RecomendacaoApostaUpdate(BaseSchema):
+    """Schema para atualização de recomendação de aposta."""
+    mercado_aposta: Optional[str] = Field(None, max_length=100)
+    previsao: Optional[str] = Field(None, max_length=100)
+    probabilidade: Optional[float] = Field(None, ge=0.0, le=1.0)
+    odd_justa: Optional[float] = Field(None, ge=1.0)
+    rating: Optional[float] = Field(None, ge=1.0, le=5.0)
+    confianca_modelo: Optional[float] = Field(None, ge=0.0, le=1.0)
+    modelo_utilizado: Optional[str] = Field(None, max_length=100)
+    features_utilizadas: Optional[str] = None
+    status: Optional[str] = Field(None, max_length=50)
+    resultado_real: Optional[str] = Field(None, description="Resultado real da aposta", max_length=100)
+    roi: Optional[float] = Field(None, description="ROI da aposta se foi realizada")
+
+class RecomendacaoApostaResponse(RecomendacaoApostaBase, TimestampMixin):
+    """Schema de resposta para recomendação de aposta."""
+    id: int = Field(..., description="ID único da recomendação")
+    resultado_real: Optional[str] = Field(None, description="Resultado real da aposta")
+    roi: Optional[float] = Field(None, description="ROI da aposta se foi realizada")
+    partida_info: Optional[Dict[str, Any]] = Field(None, description="Informações básicas da partida")
+
+class RecomendacaoApostaList(BaseSchema):
+    """Schema para lista de recomendações de apostas."""
+    items: List[RecomendacaoApostaResponse] = Field(..., description="Lista de recomendações")
+    total: int = Field(..., description="Total de recomendações")
+    page: int = Field(default=1, description="Página atual")
+    size: int = Field(default=20, description="Itens por página")
+    pages: int = Field(..., description="Total de páginas")
+
+class RecomendacaoEstatisticas(BaseSchema):
+    """Schema para estatísticas de recomendações."""
+    total_recomendacoes: int = Field(..., description="Total de recomendações")
+    recomendacoes_por_mercado: List[Dict[str, Any]] = Field(..., description="Recomendações agrupadas por mercado")
+    taxa_acerto: Optional[float] = Field(None, description="Taxa de acerto das recomendações")
+    roi_medio: Optional[float] = Field(None, description="ROI médio das apostas realizadas")
+
+# ============================================================================
+# SCHEMAS DE ANÁLISE DE SENTIMENTO
+# ============================================================================
+
+class SentimentoClubeSchema(BaseModel):
+    """Schema para resposta de análise de sentimento de um clube."""
+    clube_id: int = Field(..., description="ID do clube")
+    nome_clube: str = Field(..., description="Nome do clube")
+    sentimento_medio_noticias: float = Field(..., description="Score médio de sentimento das notícias")
+    noticias_analisadas: int = Field(..., description="Número de notícias analisadas")
+    sentimento_medio_posts: Optional[float] = Field(None, description="Score médio de sentimento dos posts")
+    posts_analisados: Optional[int] = Field(None, description="Número de posts analisados")
+    sentimento_geral: str = Field(..., description="Classificação geral do sentimento")
+    confianca_media: Optional[float] = Field(None, description="Confiança média da análise")
+    ultima_atualizacao: Optional[datetime] = Field(None, description="Data da última atualização da análise")
+
+class SentimentoEstatisticasSchema(BaseModel):
+    """Schema para estatísticas gerais de sentimento."""
+    total_noticias: int = Field(..., description="Total de notícias analisadas")
+    total_posts: int = Field(..., description="Total de posts analisados")
+    distribuicao_sentimento: Dict[str, int] = Field(..., description="Distribuição por tipo de sentimento")
+    score_medio_geral: float = Field(..., description="Score médio geral de sentimento")
+    top_clubes_positivos: List[Dict[str, Any]] = Field(..., description="Top clubes com sentimento positivo")
+    top_clubes_negativos: List[Dict[str, Any]] = Field(..., description="Top clubes com sentimento negativo")
+    ultima_atualizacao: datetime = Field(..., description="Data da última atualização das estatísticas")
+
+# Schemas para Recomendações de Apostas
+class RecomendacaoApostaSchema(BaseModel):
+    id: int = Field(..., description="ID da recomendação")
+    partida_id: int = Field(..., description="ID da partida")
+    mercado_aposta: str = Field(..., description="Tipo de mercado (ex: 'Resultado Final', 'Ambas Marcam')")
+    previsao: str = Field(..., description="Previsão gerada pelo modelo")
+    probabilidade: float = Field(..., description="Probabilidade da previsão (0.0 a 1.0)")
+    odd_justa: float = Field(..., description="Odd justa calculada (1/probabilidade)")
+    data_geracao: datetime = Field(..., description="Data de geração da recomendação")
+    
+    # Dados da partida
+    time_casa: str = Field(..., description="Nome do time da casa")
+    time_visitante: str = Field(..., description="Nome do time visitante")
+    data_partida: str = Field(..., description="Data da partida")
+
+class RecomendacaoResumoSchema(BaseModel):
+    total_recomendacoes: int = Field(..., description="Total de recomendações geradas")
+    recomendacoes_por_mercado: Dict[str, int] = Field(..., description="Distribuição por tipo de mercado")
+    probabilidade_media: float = Field(..., description="Probabilidade média das recomendações")
+    ultima_atualizacao: datetime = Field(..., description="Data da última atualização")
+
+class GerarRecomendacoesRequest(BaseModel):
+    dias_futuros: int = Field(default=7, description="Número de dias no futuro para gerar recomendações")
+    forcar_reprocessamento: bool = Field(default=False, description="Forçar reprocessamento mesmo se já existirem recomendações")

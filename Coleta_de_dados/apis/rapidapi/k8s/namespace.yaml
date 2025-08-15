@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: rapidapi-production
+  labels:
+    name: rapidapi-production
+    environment: production
+    app: rapidapi
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: rapidapi-monitoring
+  labels:
+    name: rapidapi-monitoring
+    environment: production
+    app: monitoring

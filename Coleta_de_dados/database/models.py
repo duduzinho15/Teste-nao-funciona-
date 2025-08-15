@@ -21,7 +21,7 @@ Versão: 1.0
 """
 
 from datetime import datetime, date, timezone
-from typing import Optional, List
+from typing import Optional, List, Union
 from sqlalchemy import (
     Column, Integer, String, Text, DateTime, Date, Float, Boolean,
     ForeignKey, Index, UniqueConstraint, CheckConstraint
@@ -30,8 +30,34 @@ from sqlalchemy.orm import relationship, Mapped, mapped_column
 from sqlalchemy.sql import func
 from .config import Base
 
-class TimestampMixin:
-    """Mixin para campos de timestamp automáticos."""
+# TimestampMixin temporariamente removido para resolver conflito de metaclasses
+# class TimestampMixin(object):
+#     """Mixin para campos de timestamp automáticos."""
+#     created_at: Mapped[datetime] = mapped_column(
+#         DateTime(timezone=True), 
+#         server_default=func.now(),
+#         nullable=False
+#     )
+#     updated_at: Mapped[datetime] = mapped_column(
+#         DateTime(timezone=True), 
+#         server_default=func.now(),
+#         onupdate=func.now(),
+#         nullable=False
+#     )
+
+class Competicao(Base):
+    """Modelo para competições/torneios."""
+    __tablename__ = 'competicoes'
+    
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    nome: Mapped[str] = mapped_column(String(255), nullable=False)
+    url: Mapped[str] = mapped_column(Text, nullable=False)
+    contexto: Mapped[Optional[str]] = mapped_column(String(100))  # Masculino/Feminino
+    pais: Mapped[Optional[str]] = mapped_column(String(100))
+    tipo: Mapped[Optional[str]] = mapped_column(String(50))  # Liga, Copa, etc.
+    ativa: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
+    
+    # Campos de timestamp
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), 
         server_default=func.now(),
@@ -43,18 +69,6 @@ class TimestampMixin:
         onupdate=func.now(),
         nullable=False
     )
-
-class Competicao(Base, TimestampMixin):
-    """Modelo para competições/torneios."""
-    __tablename__ = 'competicoes'
-    
-    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    nome: Mapped[str] = mapped_column(String(255), nullable=False)
-    url: Mapped[str] = mapped_column(Text, nullable=False)
-    contexto: Mapped[Optional[str]] = mapped_column(String(100))  # Masculino/Feminino
-    pais: Mapped[Optional[str]] = mapped_column(String(100))
-    tipo: Mapped[Optional[str]] = mapped_column(String(50))  # Liga, Copa, etc.
-    ativa: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
     
     # Relacionamentos
     links_coleta: Mapped[List["LinkParaColeta"]] = relationship(
@@ -75,7 +89,7 @@ class Competicao(Base, TimestampMixin):
     def __repr__(self):
         return f"<Competicao(id={self.id}, nome='{self.nome}', contexto='{self.contexto}')>"
 
-class LinkParaColeta(Base, TimestampMixin):
+class LinkParaColeta(Base):
     """Modelo para links de coleta (fila de trabalho)."""
     __tablename__ = 'links_para_coleta'
     
@@ -91,6 +105,19 @@ class LinkParaColeta(Base, TimestampMixin):
     tentativas: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     ultimo_erro: Mapped[Optional[str]] = mapped_column(Text)
     processado_em: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True))
+    
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
+    )
     
     # Relacionamentos
     competicao: Mapped["Competicao"] = relationship("Competicao", back_populates="links_coleta")
@@ -110,7 +137,7 @@ class LinkParaColeta(Base, TimestampMixin):
     def __repr__(self):
         return f"<LinkParaColeta(id={self.id}, tipo='{self.tipo}', status='{self.status}')>"
 
-class PaisClube(Base, TimestampMixin):
+class PaisClube(Base):
     """Modelo para países dos clubes."""
     __tablename__ = 'paises_clubes'
     
@@ -119,26 +146,50 @@ class PaisClube(Base, TimestampMixin):
     codigo_iso: Mapped[Optional[str]] = mapped_column(String(3))  # BRA, ENG, etc.
     continente: Mapped[Optional[str]] = mapped_column(String(50))
     
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
+    )
+    
     # Relacionamentos
     clubes: Mapped[List["Clube"]] = relationship("Clube", back_populates="pais")
     
     def __repr__(self):
         return f"<PaisClube(id={self.id}, nome='{self.nome}')>"
 
-class Clube(Base, TimestampMixin):
+class Clube(Base):
     """Modelo para clubes/times."""
     __tablename__ = 'clubes'
     
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     nome: Mapped[str] = mapped_column(String(255), nullable=False)
-    nome_completo: Mapped[Optional[str]] = mapped_column(String(500))
-    url_fbref: Mapped[Optional[str]] = mapped_column(Text)
+    abreviacao: Mapped[Optional[str]] = mapped_column(String(50))
     pais_id: Mapped[Optional[int]] = mapped_column(
         Integer, ForeignKey('paises_clubes.id'), nullable=True
     )
     cidade: Mapped[Optional[str]] = mapped_column(String(100))
-    fundacao: Mapped[Optional[int]] = mapped_column(Integer)
-    ativo: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
+    fundacao: Mapped[Optional[date]] = mapped_column(Date)
+    
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
+    )
     
     # Relacionamentos
     pais: Mapped[Optional["PaisClube"]] = relationship("PaisClube", back_populates="clubes")
@@ -160,7 +211,6 @@ class Clube(Base, TimestampMixin):
     __table_args__ = (
         Index('idx_clubes_nome', 'nome'),
         Index('idx_clubes_pais', 'pais_id'),
-        Index('idx_clubes_ativo', 'ativo'),
     )
     
     # Relacionamento com posts de redes sociais
@@ -171,7 +221,7 @@ class Clube(Base, TimestampMixin):
     def __repr__(self):
         return f"<Clube(id={self.id}, nome='{self.nome}')>"
 
-class Partida(Base, TimestampMixin):
+class Partida(Base):
     """Modelo para partidas."""
     __tablename__ = 'partidas'
     
@@ -201,6 +251,19 @@ class Partida(Base, TimestampMixin):
     url_fbref: Mapped[Optional[str]] = mapped_column(Text)
     status: Mapped[str] = mapped_column(String(20), default='agendada', nullable=False)
     
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
+    )
+    
     # Relacionamentos
     competicao: Mapped["Competicao"] = relationship("Competicao", back_populates="partidas")
     clube_casa: Mapped["Clube"] = relationship(
@@ -211,6 +274,9 @@ class Partida(Base, TimestampMixin):
     )
     estatisticas: Mapped[List["EstatisticaPartida"]] = relationship(
         "EstatisticaPartida", back_populates="partida", cascade="all, delete-orphan"
+    )
+    recomendacoes: Mapped[List["RecomendacaoAposta"]] = relationship(
+        "RecomendacaoAposta", back_populates="partida", cascade="all, delete-orphan"
     )
     
     # Índices
@@ -234,7 +300,7 @@ class Partida(Base, TimestampMixin):
     def __repr__(self):
         return f"<Partida(id={self.id}, data={self.data_partida}, status='{self.status}')>"
 
-class EstatisticaPartida(Base, TimestampMixin):
+class EstatisticaPartida(Base):
     """Modelo para estatísticas de partidas."""
     __tablename__ = 'estatisticas_partidas'
     
@@ -272,6 +338,19 @@ class EstatisticaPartida(Base, TimestampMixin):
     formacao_casa: Mapped[Optional[str]] = mapped_column(String(20), comment="Formação tática do time da casa (ex: 4-3-3)")
     formacao_visitante: Mapped[Optional[str]] = mapped_column(String(20), comment="Formação tática do time visitante (ex: 4-3-3)")
     
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
+    )
+    
     # Relacionamentos
     partida: Mapped["Partida"] = relationship("Partida", back_populates="estatisticas")
     
@@ -284,7 +363,7 @@ class EstatisticaPartida(Base, TimestampMixin):
     def __repr__(self):
         return f"<EstatisticaPartida(id={self.id}, partida_id={self.partida_id}, xg_casa={self.xg_casa}, xg_visitante={self.xg_visitante})>"
 
-class EstatisticaClube(Base, TimestampMixin):
+class EstatisticaClube(Base):
     """Modelo para estatísticas de clubes."""
     __tablename__ = 'estatisticas_clube'
     
@@ -308,6 +387,19 @@ class EstatisticaClube(Base, TimestampMixin):
     pontos: Mapped[Optional[int]] = mapped_column(Integer)
     posicao: Mapped[Optional[int]] = mapped_column(Integer)
     
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
+    )
+    
     # Relacionamentos
     clube: Mapped["Clube"] = relationship("Clube", back_populates="estatisticas")
     competicao: Mapped["Competicao"] = relationship("Competicao")
@@ -326,7 +418,7 @@ class EstatisticaClube(Base, TimestampMixin):
     def __repr__(self):
         return f"<EstatisticaClube(clube_id={self.clube_id}, temporada='{self.temporada}')>"
 
-class RecordVsOpponent(Base, TimestampMixin):
+class RecordVsOpponent(Base):
     """Modelo para records contra oponentes."""
     __tablename__ = 'records_vs_opponents'
     
@@ -345,6 +437,19 @@ class RecordVsOpponent(Base, TimestampMixin):
     derrotas: Mapped[Optional[int]] = mapped_column(Integer)
     gols_pro: Mapped[Optional[int]] = mapped_column(Integer)
     gols_contra: Mapped[Optional[int]] = mapped_column(Integer)
+    
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
+    )
     
     # Relacionamentos
     clube: Mapped["Clube"] = relationship(
@@ -371,7 +476,7 @@ class RecordVsOpponent(Base, TimestampMixin):
     def __repr__(self):
         return f"<RecordVsOpponent(clube_id={self.clube_id}, oponente_id={self.oponente_id})>"
 
-class PaisJogador(Base, TimestampMixin):
+class PaisJogador(Base):
     """Modelo para países dos jogadores."""
     __tablename__ = 'paises_jogadores'
     
@@ -380,13 +485,26 @@ class PaisJogador(Base, TimestampMixin):
     codigo_iso: Mapped[Optional[str]] = mapped_column(String(3))
     continente: Mapped[Optional[str]] = mapped_column(String(50))
     
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
+    )
+    
     # Relacionamentos
     jogadores: Mapped[List["Jogador"]] = relationship("Jogador", back_populates="pais")
     
     def __repr__(self):
         return f"<PaisJogador(id={self.id}, nome='{self.nome}')>"
 
-class Jogador(Base, TimestampMixin):
+class Jogador(Base):
     """Modelo para jogadores."""
     __tablename__ = 'jogadores'
     
@@ -411,8 +529,20 @@ class Jogador(Base, TimestampMixin):
     )
     
     # Status
-    ativo: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
     aposentado: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
+    )
     
     # Relacionamentos
     pais: Mapped[Optional["PaisJogador"]] = relationship("PaisJogador", back_populates="jogadores")
@@ -433,13 +563,12 @@ class Jogador(Base, TimestampMixin):
         Index('idx_jogadores_pais', 'pais_id'),
         Index('idx_jogadores_posicao', 'posicao'),
         Index('idx_jogadores_clube_atual', 'clube_atual_id'),
-        Index('idx_jogadores_ativo', 'ativo'),
     )
     
     def __repr__(self):
         return f"<Jogador(id={self.id}, nome='{self.nome}')>"
 
-class EstatisticaJogadorGeral(Base, TimestampMixin):
+class EstatisticaJogadorGeral(Base):
     """Modelo para estatísticas gerais de jogadores."""
     __tablename__ = 'estatisticas_jogador_geral'
     
@@ -458,6 +587,20 @@ class EstatisticaJogadorGeral(Base, TimestampMixin):
     xg: Mapped[Optional[float]] = mapped_column(Float, comment="Expected Goals do jogador")
     xa: Mapped[Optional[float]] = mapped_column(Float, comment="Expected Assists do jogador")
     
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
+    )
+    
+    # Relacionamentos
     jogador: Mapped["Jogador"] = relationship("Jogador", back_populates="estatisticas_gerais")
     
     __table_args__ = (
@@ -473,7 +616,7 @@ class EstatisticaJogadorGeral(Base, TimestampMixin):
         return f"<EstatisticaJogadorGeral(jogador_id={self.jogador_id}, temporada='{self.temporada}')>"
 
 
-class EstatisticaJogadorCompeticao(Base, TimestampMixin):
+class EstatisticaJogadorCompeticao(Base):
     """Modelo para estatísticas de jogadores por competição."""
     __tablename__ = 'estatisticas_jogador_competicao'
     
@@ -510,6 +653,19 @@ class EstatisticaJogadorCompeticao(Base, TimestampMixin):
     posicao_principal: Mapped[Optional[str]] = mapped_column(String(20), comment="Posição principal jogada na competição")
     minutos_por_jogo: Mapped[Optional[float]] = mapped_column(Float, comment="Média de minutos por jogo")
     
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
+    )
+    
     # Relacionamentos
     jogador: Mapped["Jogador"] = relationship("Jogador", back_populates="estatisticas_competicao")
     competicao: Mapped["Competicao"] = relationship("Competicao")
@@ -529,7 +685,7 @@ class EstatisticaJogadorCompeticao(Base, TimestampMixin):
         return f"<EstatisticaJogadorCompeticao(jogador_id={self.jogador_id}, competicao_id={self.competicao_id}, temporada='{self.temporada}')>"
 
 
-class PostRedeSocial(Base, TimestampMixin):
+class PostRedeSocial(Base):
     """Modelo para posts de redes sociais de clubes e jogadores."""
     __tablename__ = 'posts_redes_sociais'
     
@@ -544,15 +700,47 @@ class PostRedeSocial(Base, TimestampMixin):
     )
     
     # Dados do post
-    rede_social: Mapped[str] = mapped_column(String(50), nullable=False, comment="Plataforma de rede social (ex: 'Twitter', 'Instagram', 'Facebook')")
-    post_id: Mapped[str] = mapped_column(String(100), nullable=False, comment="ID único do post na plataforma de origem")
-    conteudo: Mapped[str] = mapped_column(Text, nullable=False, comment="Conteúdo textual do post")
-    data_postagem: Mapped[datetime] = mapped_column(DateTime, nullable=False, comment="Data e hora em que o post foi publicado")
-    curtidas: Mapped[int] = mapped_column(Integer, default=0, nullable=False, comment="Número de curtidas/reactions do post")
-    comentarios: Mapped[int] = mapped_column(Integer, default=0, nullable=False, comment="Número de comentários no post")
-    compartilhamentos: Mapped[int] = mapped_column(Integer, default=0, nullable=False, comment="Número de compartilhamentos/retweets")
-    url_post: Mapped[Optional[str]] = mapped_column(Text, comment="URL direta para o post na rede social")
-    midia_url: Mapped[Optional[str]] = mapped_column(Text, comment="URL da mídia anexada ao post (imagem/vídeo)")
+    rede_social: Mapped[str] = mapped_column(String(50), nullable=False)  # 'twitter', 'facebook', 'instagram', etc.
+    post_id: Mapped[str] = mapped_column(String(100), nullable=False)  # ID único do post na rede social
+    conteudo: Mapped[Optional[str]] = mapped_column(Text)  # Texto do post
+    url_post: Mapped[Optional[str]] = mapped_column(Text)  # URL direta para o post
+    data_postagem: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True))  # Quando o post foi publicado
+    
+    # Métricas de engajamento
+    curtidas: Mapped[Optional[int]] = mapped_column(Integer, default=0)
+    comentarios: Mapped[Optional[int]] = mapped_column(Integer, default=0)
+    compartilhamentos: Mapped[Optional[int]] = mapped_column(Integer, default=0)
+    visualizacoes: Mapped[Optional[int]] = mapped_column(Integer, default=0)
+    
+    # Metadados
+    tipo_conteudo: Mapped[Optional[str]] = mapped_column(String(20))  # 'texto', 'imagem', 'video', 'link', etc.
+    url_imagem: Mapped[Optional[str]] = mapped_column(Text)  # URL da imagem em anexo
+    url_video: Mapped[Optional[str]] = mapped_column(Text)  # URL do vídeo em anexo
+    
+    # Análise de Sentimento
+    sentimento: Mapped[Optional[str]] = mapped_column(
+        String(50), 
+        nullable=True, 
+        comment="Ex: 'positivo', 'negativo', 'neutro'"
+    )
+    score_sentimento: Mapped[Optional[float]] = mapped_column(
+        Float, 
+        nullable=True, 
+        comment="Score numérico do sentimento, ex: de -1.0 a 1.0"
+    )
+    
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
+    )
     
     # Relacionamentos
     clube: Mapped[Optional["Clube"]] = relationship("Clube", back_populates="posts_redes_sociais")
@@ -564,19 +752,18 @@ class PostRedeSocial(Base, TimestampMixin):
         Index('idx_posts_redes_sociais_jogador', 'jogador_id'),
         Index('idx_posts_redes_sociais_rede', 'rede_social'),
         Index('idx_posts_redes_sociais_data', 'data_postagem'),
-        Index('idx_posts_redes_sociais_post_id', 'post_id'),
+        UniqueConstraint('rede_social', 'post_id', name='uq_post_rede_social'),
         CheckConstraint(
             'clube_id IS NOT NULL OR jogador_id IS NOT NULL',
-            name='ck_posts_redes_sociais_owner'
+            name='ck_posts_redes_sociais_dono'
         ),
-        UniqueConstraint('rede_social', 'post_id', name='uq_post_rede_social_id')
     )
     
     def __repr__(self):
-        owner = f"clube_id={self.clube_id}" if self.clube_id else f"jogador_id={self.jogador_id}"
-        return f"<PostRedeSocial(id={self.id}, rede_social='{self.rede_social}', {owner})>"
+        dono = f"clube_id={self.clube_id}" if self.clube_id else f"jogador_id={self.jogador_id}"
+        return f"<PostRedeSocial(id={self.id}, {dono}, rede_social='{self.rede_social}')>"
 
-class NoticiaClube(Base, TimestampMixin):
+class NoticiaClube(Base):
     """
     Modelo para notícias sobre clubes de futebol.
     
@@ -615,6 +802,18 @@ class NoticiaClube(Base, TimestampMixin):
         comment="Classificação geral do sentimento (positivo, negativo, neutro)"
     )
     
+    # Campos adicionais para compatibilidade com o prompt
+    sentimento: Mapped[Optional[str]] = mapped_column(
+        String(50), 
+        nullable=True, 
+        comment="Ex: 'positivo', 'negativo', 'neutro'"
+    )
+    score_sentimento: Mapped[Optional[float]] = mapped_column(
+        Float, 
+        nullable=True, 
+        comment="Score numérico do sentimento, ex: de -1.0 a 1.0"
+    )
+    
     # Tópicos e Palavras-chave
     topicos: Mapped[Optional[str]] = mapped_column(
         String(255), 
@@ -637,6 +836,19 @@ class NoticiaClube(Base, TimestampMixin):
         String(100), 
         nullable=True,
         comment="Nome/versão do modelo de análise de sentimento utilizado"
+    )
+    
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
     )
     
     # Relacionamentos
@@ -678,7 +890,7 @@ class NoticiaClube(Base, TimestampMixin):
                 self.polaridade = 'neutro'
 
 
-class User(Base, TimestampMixin):
+class User(Base):
     """Modelo para usuários do sistema."""
     __tablename__ = 'users'
     
@@ -692,6 +904,19 @@ class User(Base, TimestampMixin):
     last_login: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True))
     scopes: Mapped[str] = mapped_column(Text, default='', nullable=False)  # Lista de escopos separados por espaço
     
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
+    )
+    
     # Relacionamentos
     refresh_tokens: Mapped[List["RefreshToken"]] = relationship(
         "RefreshToken", back_populates="user", cascade="all, delete-orphan"
@@ -701,7 +926,7 @@ class User(Base, TimestampMixin):
         return f"<User(id={self.id}, username='{self.username}')>"
 
 
-class RefreshToken(Base, TimestampMixin):
+class RefreshToken(Base):
     """Modelo para tokens de refresh JWT."""
     __tablename__ = 'refresh_tokens'
     
@@ -712,6 +937,19 @@ class RefreshToken(Base, TimestampMixin):
     revoked: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     user_agent: Mapped[Optional[str]] = mapped_column(Text)
     ip_address: Mapped[Optional[str]] = mapped_column(String(45))  # IPv6 pode ter até 45 caracteres
+    
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
+    )
     
     # Relacionamentos
     user: Mapped["User"] = relationship("User", back_populates="refresh_tokens")
@@ -737,3 +975,121 @@ class RefreshToken(Base, TimestampMixin):
     
     def __repr__(self):
         return f"<RefreshToken(id={self.id}, user_id={self.user_id}, expires_at={self.expires_at})>"
+
+class RecomendacaoAposta(Base):
+    """
+    Modelo para armazenar recomendações de apostas geradas pelos modelos de IA.
+    
+    Cada recomendação contém uma previsão para uma partida específica,
+    incluindo o mercado de aposta, probabilidade e odd justa calculada.
+    """
+    __tablename__ = 'recomendacoes_apostas'
+    
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    
+    # Referência à partida
+    partida_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey('partidas.id', ondelete='CASCADE'), nullable=False
+    )
+    
+    # Tipo de mercado de aposta
+    mercado_aposta: Mapped[str] = mapped_column(
+        String(100), nullable=False, comment="Tipo de aposta (ex: '1X2', 'Over/Under', 'Ambos marcam')"
+    )
+    
+    # Resultado previsto
+    previsao: Mapped[str] = mapped_column(
+        String(50), nullable=False, comment="Resultado previsto (ex: '1', 'X', '2', 'Over 2.5')"
+    )
+    
+    # Probabilidade calculada pelo modelo
+    probabilidade: Mapped[float] = mapped_column(
+        Float, nullable=False, comment="Probabilidade da previsão (0.0 a 1.0)"
+    )
+    
+    # Odd justa calculada
+    odd_justa: Mapped[float] = mapped_column(
+        Float, nullable=False, comment="Odd justa calculada (1/probabilidade)"
+    )
+    
+    # Rating da recomendação (1-5 estrelas)
+    rating: Mapped[int] = mapped_column(
+        Integer, nullable=False, comment="Rating da recomendação (1-5 estrelas)"
+    )
+    
+    # Confiança do modelo
+    confianca_modelo: Mapped[float] = mapped_column(
+        Float, nullable=False, comment="Confiança do modelo na previsão (0.0 a 1.0)"
+    )
+    
+    # Modelo utilizado
+    modelo_utilizado: Mapped[str] = mapped_column(
+        String(100), nullable=False, comment="Nome/versão do modelo de IA utilizado"
+    )
+    
+    # Features utilizadas para a previsão
+    features_utilizadas: Mapped[Optional[str]] = mapped_column(
+        Text, comment="Lista de features utilizadas para a previsão (JSON)"
+    )
+    
+    # Status da recomendação
+    status: Mapped[str] = mapped_column(
+        String(20), default='ativa', nullable=False, comment="Status: 'ativa', 'realizada', 'cancelada'"
+    )
+    
+    # Resultado real (preenchido após a partida)
+    resultado_real: Mapped[Optional[str]] = mapped_column(
+        String(50), comment="Resultado real da aposta (preenchido após a partida)"
+    )
+    
+    # ROI da aposta (se realizada)
+    roi: Mapped[Optional[float]] = mapped_column(
+        Float, comment="ROI da aposta se foi realizada"
+    )
+    
+    # Campos de timestamp
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        nullable=False
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), 
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False
+    )
+    
+    # Relacionamentos
+    partida: Mapped["Partida"] = relationship("Partida", back_populates="recomendacoes")
+    
+    # Índices
+    __table_args__ = (
+        Index('idx_recomendacoes_partida', 'partida_id'),
+        Index('idx_recomendacoes_mercado', 'mercado_aposta'),
+        Index('idx_recomendacoes_rating', 'rating'),
+        Index('idx_recomendacoes_status', 'status'),
+        Index('idx_recomendacoes_modelo', 'modelo_utilizado'),
+        Index('idx_recomendacoes_probabilidade', 'probabilidade'),
+        UniqueConstraint('partida_id', 'mercado_aposta', 'previsao', name='uq_recomendacao_partida_mercado'),
+    )
+    
+    def __repr__(self):
+        return f"<RecomendacaoAposta(id={self.id}, partida_id={self.partida_id}, mercado='{self.mercado_aposta}', previsao='{self.previsao}', rating={self.rating}★)>"
+    
+    def calcular_roi(self, odd_apostada: float) -> float:
+        """
+        Calcula o ROI da aposta.
+        
+        Args:
+            odd_apostada: Odd em que a aposta foi realizada
+            
+        Returns:
+            ROI calculado
+        """
+        if self.resultado_real == self.previsao:
+            return odd_apostada - 1.0  # Vitória
+        else:
+            return -1.0  # Perda
+
+

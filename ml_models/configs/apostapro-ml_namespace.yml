@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  description: "Namespace para aplica\xE7\xF5es de Machine Learning"
+  labels:
+    app: apostapro
+    component: ml
+  name: apostapro-ml

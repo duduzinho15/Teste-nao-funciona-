@@ -19,7 +19,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
 # Importações locais
-from Coleta_de_dados.database.config import Base
+# Não importar Base aqui para evitar conflitos de metaclasse
 
 # Configuração do banco de dados em memória para testes
 TEST_DATABASE_URL = "sqlite:///:memory:"

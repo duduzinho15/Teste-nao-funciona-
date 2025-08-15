@@ -1,0 +1,74 @@
+jobs:
+  performance_monitoring_alert_generation:
+    needs: []
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install -r requirements_ml.txt
+    - name: 'Run: python -m ml_models.alert_system'
+      run: python -m ml_models.alert_system
+      timeout-minutes: 10
+    - name: 'Run: python -m ml_models.notification_service'
+      run: python -m ml_models.notification_service
+      timeout-minutes: 10
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: performance_monitoring-alert_generation-artifacts
+        path: ml_models/results/*
+  performance_monitoring_metrics_collection:
+    needs: []
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install -r requirements_ml.txt
+    - name: 'Run: python -m ml_models.production_monitoring'
+      run: python -m ml_models.production_monitoring
+      timeout-minutes: 15
+    - name: 'Run: python -m ml_models.performance_metrics'
+      run: python -m ml_models.performance_metrics
+      timeout-minutes: 15
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: performance_monitoring-metrics_collection-artifacts
+        path: ml_models/results/*
+  performance_monitoring_performance_analysis:
+    needs: []
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install -r requirements_ml.txt
+    - name: 'Run: python -m ml_models.performance_analysis'
+      run: python -m ml_models.performance_analysis
+      timeout-minutes: 20
+    - name: 'Run: python -m ml_models.anomaly_detection'
+      run: python -m ml_models.anomaly_detection
+      timeout-minutes: 20
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: performance_monitoring-performance_analysis-artifacts
+        path: ml_models/results/*
+name: Performance_Monitoring Pipeline
+'on':
+  schedule:
+  - cron: '*/15 * * * *'

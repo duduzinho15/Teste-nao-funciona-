@@ -4,15 +4,13 @@ Módulo para coleta de dados de redes sociais dos clubes.
 Este módulo fornece funcionalidades para coletar e armazenar dados de redes sociais
 dos clubes de futebol, como posts, curtidas, comentários e compartilhamentos.
 """
-from typing import List, Dict, Optional, Tuple
+from typing import List, Dict, Optional, Tuple, Any
 from datetime import datetime, timedelta
 import logging
 import re
 import time
-import random
-import logging
+import requests
 from urllib.parse import urljoin, urlparse
-from typing import List, Dict, Optional, Tuple, Any
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -22,13 +20,14 @@ from selenium.common.exceptions import (
     TimeoutException, NoSuchElementException, WebDriverException
 )
 from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.chrome import ChromeType
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 from sqlalchemy.orm import Session
 from sqlalchemy import text
 
 # Importações locais
-from Coleta_de_dados.database.models import Clube
+from Coleta_de_dados.database.models import Clube, PostRedeSocial
 from Coleta_de_dados.database.config import SessionLocal
 
 # Configuração de logging
@@ -62,7 +61,8 @@ class SocialMediaCollector:
             db_session: Sessão do banco de dados. Se não fornecida, uma nova será criada.
             headless: Se True, executa o navegador em modo headless (sem interface gráfica).
         """
-        self.db = db_session if db_session else SessionLocal()
+        self.session = db_session if db_session else SessionLocal()
+        self.db = self.session  # For backward compatibility
         self.logger = logging.getLogger(f"{__name__}.SocialMediaCollector")
         self.headless = headless
         self.driver = self._init_webdriver()
@@ -73,11 +73,6 @@ class SocialMediaCollector:
     def _init_webdriver(self):
         """Inicializa e retorna uma instância do WebDriver do Selenium."""
         try:
-            from selenium import webdriver
-            from selenium.webdriver.chrome.service import Service
-            from webdriver_manager.chrome import ChromeDriverManager
-            from selenium.webdriver.chrome.options import Options
-            
             options = Options()
             if self.headless:
                 options.add_argument('--headless')
@@ -97,7 +92,7 @@ class SocialMediaCollector:
             options.add_argument(f'user-agent={user_agent}')
             
             # Inicializa o WebDriver
-            service = Service(ChromeDriverManager().install())
+            service = ChromeService(ChromeDriverManager().install())
             driver = webdriver.Chrome(service=service, options=options)
             
             # Configurações adicionais para evitar detecção
@@ -108,6 +103,136 @@ class SocialMediaCollector:
         except Exception as e:
             self.logger.error(f"Erro ao inicializar o WebDriver: {e}")
             raise
+            
+    def _extrair_metricas_tweet(self, soup) -> Dict[str, int]:
+        """
+        Extrai as métricas de um tweet a partir do HTML.
+        
+        Args:
+            soup: Objeto BeautifulSoup com o conteúdo do tweet
+            
+        Returns:
+            Dict com as métricas extraídas (replies, retweets, likes, views)
+        """
+        metrics = {
+            'replies': 0,
+            'retweets': 0,
+            'likes': 0,
+            'views': 0
+        }
+        
+        try:
+            # Tenta encontrar o grupo de métricas
+            metric_groups = soup.find_all('div', {'role': 'group'})
+            if not metric_groups:
+                return metrics
+                
+            # Para cada grupo de métricas
+            for group in metric_groups:
+                # Itera sobre os spans de métricas
+                for span in group.find_all('span', recursive=False):
+                    # Verifica se é um span de métrica
+                    metric_type = span.get('data-testid', '')
+                    if not metric_type:
+                        continue
+                        
+                    # Encontra o span com o valor numérico
+                    value_span = span.find('span')
+                    if not value_span:
+                        continue
+                        
+                    # Obtém o texto do valor
+                    value_text = ''
+                    if hasattr(value_span, 'get_text'):
+                        value_text = value_span.get_text(strip=True)
+                    elif hasattr(value_span, 'text'):
+                        value_text = value_span.text.strip()
+                    
+                    if not value_text:
+                        continue
+                    
+                    # Converte o texto para número
+                    try:
+                        if 'K' in value_text:
+                            value = int(float(value_text.replace('K', '').replace(',', '.')) * 1000)
+                        elif 'M' in value_text:
+                            value = int(float(value_text.replace('M', '').replace(',', '.')) * 1000000)
+                        else:
+                            value = int(value_text.replace(',', '').replace('.', ''))
+                    except (ValueError, AttributeError):
+                        continue
+                    
+                    # Atribui o valor à métrica correta
+                    if 'reply' in metric_type:
+                        metrics['replies'] = value
+                    elif 'retweet' in metric_type:
+                        metrics['retweets'] = value
+                    elif 'like' in metric_type:
+                        metrics['likes'] = value
+                    elif 'view' in metric_type:
+                        metrics['views'] = value
+                    
+        except Exception as e:
+            self.logger.error(f"Erro ao extrair métricas do tweet: {e}")
+            self.logger.exception(e)
+            
+        return metrics
+    
+    def _rolar_pagina_para_baixo(self, scroll_pause_time: float = 2, max_attempts: int = 5) -> None:
+        """
+        Rola a página para baixo para carregar mais tweets.
+        
+        Args:
+            scroll_pause_time: Tempo de espera entre as rolagens
+            max_attempts: Número máximo de tentativas de rolagem
+        """
+        last_height = self.driver.execute_script("return document.body.scrollHeight")
+        attempts = 0
+        
+        while attempts < max_attempts:
+            # Rola até o final da página
+            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            
+            # Aguarda o carregamento da página
+            time.sleep(scroll_pause_time)
+            
+            # Calcula a nova altura da página
+            new_height = self.driver.execute_script("return document.body.scrollHeight")
+            
+            # Se a altura não mudou, para de rolar
+            if new_height == last_height:
+                break
+                
+            last_height = new_height
+            attempts += 1
+    
+    def _extrair_url_midia(self, soup) -> Optional[str]:
+        """
+        Extrai a URL da mídia (imagem/vídeo) de um tweet.
+        
+        Args:
+            soup: Objeto BeautifulSoup com o conteúdo do tweet
+            
+        Returns:
+            URL da mídia ou None se não encontrada
+        """
+        try:
+            # Tenta encontrar uma imagem
+            img = soup.find('img')
+            if img and 'src' in img.attrs:
+                url = img['src']
+                # Remove parâmetros da URL, se houver
+                return url.split('?')[0]
+                
+            # Tenta encontrar um vídeo (se necessário no futuro)
+            # video = soup.find('video')
+            # if video and video.find('source'):
+            #     return video.find('source')['src']
+                
+        except Exception as e:
+            self.logger.error(f"Erro ao extrair URL de mídia: {e}")
+            
+        return None
     
     def __del__(self):
         """Garante que os recursos sejam liberados quando o coletor for destruído."""
@@ -446,13 +571,13 @@ def coletar_dados_para_todos_clubes(limite_por_clube: int = 3) -> Dict:
     """
     db = SessionLocal()
     try:
-        # Obtém todos os clubes ativos
-        clubes = db.query(Clube).filter(Clube.ativo == True).all()
+        # Obtém todos os clubes
+        clubes = db.query(Clube).all()
         
         if not clubes:
             return {
                 'status': 'erro',
-                'mensagem': 'Nenhum clube ativo encontrado.',
+                'mensagem': 'Nenhum clube encontrado.',
                 'clubes_processados': 0,
                 'total_posts': 0
             }

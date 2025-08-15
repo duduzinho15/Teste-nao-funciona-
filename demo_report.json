@@ -1,0 +1,28 @@
+{
+  "demonstracao": {
+    "data": "2025-08-15T20:23:32.714797",
+    "versao": "1.0.0",
+    "status": "sucesso"
+  },
+  "analise_partida": {
+    "home_team": "Flamengo",
+    "away_team": "Palmeiras",
+    "competition": "Brasileirão 2025",
+    "features_extraidas": 10
+  },
+  "previsoes": {
+    "total_tipos": 3,
+    "tipos_disponiveis": [
+      "match_result",
+      "total_goals",
+      "both_teams_score"
+    ]
+  },
+  "recomendacoes": {
+    "total": 2,
+    "por_tipo": {
+      "both_teams_score": 1,
+      "match_result": 1
+    }
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "strategy": "value_betting",
+  "initial_bankroll": 10000.0,
+  "final_bankroll": 6743.7942755879,
+  "total_profit": -3256.2057244120997,
+  "roi": -32.56205724412099,
+  "total_bets": 37,
+  "winning_bets": 11,
+  "win_rate": 0.2972972972972973,
+  "bets": [
+    {
+      "match": "Botafogo vs Atlético-MG",
+      "bet_type": "Away Win",
+      "odds": 3.49,
+      "bet_amount": 500.0,
+      "profit": -500.0,
+      "result": "L",
+      "bankroll": 9500.0
+    },
+    {
+      "match": "Santos vs Fluminense",
+      "bet_type": "Home Win",
+      "odds": 2.38,
+      "bet_amount": 475.0,
+      "profit": 655.5,
+      "result": "W",
+      "bankroll": 10155.5
+    },
+    {
+      "match": "Santos vs Fluminense",
+      "bet_type": "Away Win",
+      "odds": 2.82,
+      "bet_amount": 507.77500000000003,
+      "profit": -507.77500000000003,
+      "result": "L",
+      "bankroll": 9647.725
+    },
+    {
+      "match": "Botafogo vs Internacional",
+      "bet_type": "Away Win",
+      "odds": 2.76,
+      "bet_amount": 482.38625,
+      "profit": -482.38625,
+      "result": "L",
+      "bankroll": 9165.33875
+    },
+    {
+      "match": "Corinthians vs Palmeiras",
+      "bet_type": "Away Win",
+      "odds": 3.75,
+      "bet_amount": 458.26693750000004,
+      "profit": 1260.234078125,
+      "result": "W",
+      "bankroll": 10425.572828125001
+    },
+    {
+      "match": "Internacional vs Ceará",
+      "bet_type": "Away Win",
+      "odds": 2.58,
+      "bet_amount": 521.2786414062501,
+      "profit": -521.2786414062501,
+      "result": "L",
+      "bankroll": 9904.294186718751
+    },
+    {
+      "match": "Fortaleza vs Palmeiras",
+      "bet_type": "Away Win",
+      "odds": 3.52,
+      "bet_amount": 495.2147093359376,
+      "profit": -495.2147093359376,
+      "result": "L",
+      "bankroll": 9409.079477382813
+    },
+    {
+      "match": "Internacional vs Corinthians",
+      "bet_type": "Home Win",
+      "odds": 2.17,
+      "bet_amount": 470.45397386914067,
+      "profit": -470.45397386914067,
+      "result": "L",
+      "bankroll": 8938.625503513673
+    },
+    {
+      "match": "Athletico-PR vs Palmeiras",
+      "bet_type": "Away Win",
+      "odds": 3.08,
+      "bet_amount": 446.93127517568365,
+      "profit": -446.93127517568365,
+      "result": "L",
+      "bankroll": 8491.694228337989
+    },
+    {
+      "match": "Atlético-MG vs Ceará",
+      "bet_type": "Away Win",
+      "odds": 2.54,
+      "bet_amount": 424.58471141689944,
+      "profit": 653.8604555820251,
+      "result": "W",
+      "bankroll": 9145.554683920014
+    },
+    {
+      "match": "Corinthians vs Fortaleza",
+      "bet_type": "Away Win",
+      "odds": 2.92,
+      "bet_amount": 457.2777341960007,
+      "profit": -457.2777341960007,
+      "result": "L",
+      "bankroll": 8688.276949724013
+    },
+    {
+      "match": "Santos vs Fluminense",
+      "bet_type": "Away Win",
+      "odds": 2.69,
+      "bet_amount": 434.41384748620067,
+      "profit": 734.1594022516791,
+      "result": "W",
+      "bankroll": 9422.436351975692
+    },
+    {
+      "match": "Santos vs Fluminense",
+      "bet_type": "Home Win",
+      "odds": 2.3,
+      "bet_amount": 471.1218175987846,
+      "profit": -471.1218175987846,
+      "result": "L",
+      "bankroll": 8951.314534376907
+    },
+    {
+      "match": "Botafogo vs Fortaleza",
+      "bet_type": "Home Win",
+      "odds": 2.47,
+      "bet_amount": 447.5657267188453,
+      "profit": -447.5657267188453,
+      "result": "L",
+      "bankroll": 8503.748807658061
+    },
+    {
+      "match": "Fortaleza vs Fluminense",
+      "bet_type": "Home Win",
+      "odds": 2.04,
+      "bet_amount": 425.1874403829031,
+      "profit": 442.19493799821925,
+      "result": "W",
+      "bankroll": 8945.943745656281
+    },
+    {
+      "match": "Grêmio vs Santos",
+      "bet_type": "Away Win",
+      "odds": 2.86,
+      "bet_amount": 447.2971872828141,
+      "profit": 831.9727683460342,
+      "result": "W",
+      "bankroll": 9777.916514002314
+    },
+    {
+      "match": "Ceará vs Palmeiras",
+      "bet_type": "Away Win",
+      "odds": 2.93,
+      "bet_amount": 488.8958257001157,
+      "profit": -488.8958257001157,
+      "result": "L",
+      "bankroll": 9289.020688302198
+    },
+    {
+      "match": "Vasco vs Corinthians",
+      "bet_type": "Away Win",
+      "odds": 2.64,
+      "bet_amount": 464.4510344151099,
+      "profit": -464.4510344151099,
+      "result": "L",
+      "bankroll": 8824.569653887089
+    },
+    {
+      "match": "Flamengo vs Fortaleza",
+      "bet_type": "Away Win",
+      "odds": 2.57,
+      "bet_amount": 441.22848269435445,
+      "profit": -441.22848269435445,
+      "result": "L",
+      "bankroll": 8383.341171192735
+    },
+    {
+      "match": "São Paulo vs Cruzeiro",
+      "bet_type": "Away Win",
+      "odds": 2.9,
+      "bet_amount": 419.16705855963676,
+      "profit": 796.4174112633098,
+      "result": "W",
+      "bankroll": 9179.758582456045
+    },
+    {
+      "match": "Athletico-PR vs Vasco",
+      "bet_type": "Away Win",
+      "odds": 3.26,
+      "bet_amount": 458.98792912280226,
+      "profit": -458.98792912280226,
+      "result": "L",
+      "bankroll": 8720.770653333242
+    },
+    {
+      "match": "Botafogo vs Ceará",
+      "bet_type": "Away Win",
+      "odds": 3.06,
+      "bet_amount": 436.03853266666215,
+      "profit": -436.03853266666215,
+      "result": "L",
+      "bankroll": 8284.73212066658
+    },
+    {
+      "match": "Grêmio vs Fortaleza",
+      "bet_type": "Away Win",
+      "odds": 2.63,
+      "bet_amount": 414.23660603332905,
+      "profit": -414.23660603332905,
+      "result": "L",
+      "bankroll": 7870.495514633251
+    },
+    {
+      "match": "Santos vs Fluminense",
+      "bet_type": "Away Win",
+      "odds": 3.7,
+      "bet_amount": 393.5247757316626,
+      "profit": 1062.5168944754892,
+      "result": "W",
+      "bankroll": 8933.01240910874
+    },
+    {
+      "match": "Atlético-MG vs Grêmio",
+      "bet_type": "Home Win",
+      "odds": 2.54,
+      "bet_amount": 446.65062045543704,
+      "profit": -446.65062045543704,
+      "result": "L",
+      "bankroll": 8486.361788653303
+    },
+    {
+      "match": "Athletico-PR vs Atlético-MG",
+      "bet_type": "Away Win",
+      "odds": 2.91,
+      "bet_amount": 424.31808943266515,
+      "profit": -424.31808943266515,
+      "result": "L",
+      "bankroll": 8062.043699220638
+    },
+    {
+      "match": "Corinthians vs Grêmio",
+      "bet_type": "Away Win",
+      "odds": 2.56,
+      "bet_amount": 403.1021849610319,
+      "profit": 628.8394085392098,
+      "result": "W",
+      "bankroll": 8690.883107759848
+    },
+    {
+      "match": "Palmeiras vs Ceará",
+      "bet_type": "Away Win",
+      "odds": 2.67,
+      "bet_amount": 434.5441553879924,
+      "profit": 725.6887394979473,
+      "result": "W",
+      "bankroll": 9416.571847257796
+    },
+    {
+      "match": "Palmeiras vs Ceará",
+      "bet_type": "Home Win",
+      "odds": 2.34,
+      "bet_amount": 470.8285923628898,
+      "profit": -470.8285923628898,
+      "result": "L",
+      "bankroll": 8945.743254894905
+    },
+    {
+      "match": "Fluminense vs Corinthians",
+      "bet_type": "Home Win",
+      "odds": 2.73,
+      "bet_amount": 447.2871627447453,
+      "profit": -447.2871627447453,
+      "result": "L",
+      "bankroll": 8498.45609215016
+    },
+    {
+      "match": "Atlético-MG vs Athletico-PR",
+      "bet_type": "Home Win",
+      "odds": 2.19,
+      "bet_amount": 424.922804607508,
+      "profit": -424.922804607508,
+      "result": "L",
+      "bankroll": 8073.533287542652
+    },
+    {
+      "match": "São Paulo vs Ceará",
+      "bet_type": "Away Win",
+      "odds": 2.59,
+      "bet_amount": 403.6766643771326,
+      "profit": 641.8458963596408,
+      "result": "W",
+      "bankroll": 8715.379183902292
+    },
+    {
+      "match": "Athletico-PR vs Fortaleza",
+      "bet_type": "Home Win",
+      "odds": 2.44,
+      "bet_amount": 435.76895919511463,
+      "profit": -435.76895919511463,
+      "result": "L",
+      "bankroll": 8279.610224707178
+    },
+    {
+      "match": "Flamengo vs Corinthians",
+      "bet_type": "Away Win",
+      "odds": 3.59,
+      "bet_amount": 413.9805112353589,
+      "profit": -413.9805112353589,
+      "result": "L",
+      "bankroll": 7865.629713471819
+    },
+    {
+      "match": "Flamengo vs Atlético-MG",
+      "bet_type": "Home Win",
+      "odds": 2.15,
+      "bet_amount": 393.28148567359096,
+      "profit": -393.28148567359096,
+      "result": "L",
+      "bankroll": 7472.3482277982275
+    },
+    {
+      "match": "Palmeiras vs Grêmio",
+      "bet_type": "Home Win",
+      "odds": 2.89,
+      "bet_amount": 373.6174113899114,
+      "profit": -373.6174113899114,
+      "result": "L",
+      "bankroll": 7098.730816408316
+    },
+    {
+      "match": "Vasco vs Atlético-MG",
+      "bet_type": "Home Win",
+      "odds": 2.52,
+      "bet_amount": 354.9365408204158,
+      "profit": -354.9365408204158,
+      "result": "L",
+      "bankroll": 6743.7942755879
+    }
+  ]
+}

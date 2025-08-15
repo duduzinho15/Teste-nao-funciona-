@@ -1,0 +1,325 @@
+{
+  "namespaces": {
+    "apostapro-ml": {
+      "name": "apostapro-ml",
+      "description": "Namespace para aplicações de Machine Learning",
+      "labels": {
+        "app": "apostapro",
+        "component": "ml"
+      },
+      "resource_quota": {
+        "requests.cpu": "4",
+        "requests.memory": "8Gi",
+        "limits.cpu": "8",
+        "limits.memory": "16Gi"
+      }
+    },
+    "monitoring": {
+      "name": "monitoring",
+      "description": "Namespace para ferramentas de monitoramento",
+      "labels": {
+        "app": "apostapro",
+        "component": "monitoring"
+      },
+      "resource_quota": null
+    },
+    "logging": {
+      "name": "logging",
+      "description": "Namespace para sistema de logging",
+      "labels": {
+        "app": "apostapro",
+        "component": "logging"
+      },
+      "resource_quota": null
+    }
+  },
+  "deployments": {
+    "ml-api": {
+      "name": "ml-api",
+      "image": "apostapro/ml-api",
+      "image_tag": "latest",
+      "replicas": 3,
+      "cpu_request": "500m",
+      "memory_request": "1Gi",
+      "cpu_limit": "1000m",
+      "memory_limit": "2Gi",
+      "ports": [
+        8080,
+        9090
+      ],
+      "environment_vars": {
+        "ML_ENV": "production",
+        "LOG_LEVEL": "INFO",
+        "API_VERSION": "v1"
+      },
+      "volume_mounts": [
+        {
+          "name": "ml-models",
+          "mountPath": "/app/models"
+        },
+        {
+          "name": "ml-data",
+          "mountPath": "/app/data"
+        }
+      ],
+      "health_check_path": "/health",
+      "liveness_probe": {
+        "httpGet": {
+          "path": "/health",
+          "port": 8080
+        },
+        "initialDelaySeconds": 30,
+        "periodSeconds": 10
+      },
+      "readiness_probe": {
+        "httpGet": {
+          "path": "/ready",
+          "port": 8080
+        },
+        "initialDelaySeconds": 5,
+        "periodSeconds": 5
+      },
+      "auto_scaling": true,
+      "min_replicas": 2,
+      "max_replicas": 10,
+      "target_cpu_utilization": 70,
+      "target_memory_utilization": 80
+    },
+    "ml-training": {
+      "name": "ml-training",
+      "image": "apostapro/ml-training",
+      "image_tag": "latest",
+      "replicas": 2,
+      "cpu_request": "1000m",
+      "memory_request": "2Gi",
+      "cpu_limit": "2000m",
+      "memory_limit": "4Gi",
+      "ports": [
+        8080
+      ],
+      "environment_vars": {
+        "ML_ENV": "production",
+        "LOG_LEVEL": "INFO",
+        "TRAINING_MODE": "distributed"
+      },
+      "volume_mounts": [
+        {
+          "name": "ml-models",
+          "mountPath": "/app/models"
+        },
+        {
+          "name": "ml-data",
+          "mountPath": "/app/data"
+        },
+        {
+          "name": "ml-cache",
+          "mountPath": "/app/cache"
+        }
+      ],
+      "health_check_path": "/health",
+      "liveness_probe": {
+        "httpGet": {
+          "path": "/health",
+          "port": 8080
+        },
+        "initialDelaySeconds": 60,
+        "periodSeconds": 30
+      },
+      "readiness_probe": {
+        "httpGet": {
+          "path": "/ready",
+          "port": 8080
+        },
+        "initialDelaySeconds": 30,
+        "periodSeconds": 10
+      },
+      "auto_scaling": true,
+      "min_replicas": 1,
+      "max_replicas": 5,
+      "target_cpu_utilization": 80,
+      "target_memory_utilization": 80
+    },
+    "ml-inference": {
+      "name": "ml-inference",
+      "image": "apostapro/ml-inference",
+      "image_tag": "latest",
+      "replicas": 5,
+      "cpu_request": "250m",
+      "memory_request": "512Mi",
+      "cpu_limit": "500m",
+      "memory_limit": "1Gi",
+      "ports": [
+        8080
+      ],
+      "environment_vars": {
+        "ML_ENV": "production",
+        "LOG_LEVEL": "INFO",
+        "INFERENCE_MODE": "real-time"
+      },
+      "volume_mounts": [
+        {
+          "name": "ml-models",
+          "mountPath": "/app/models"
+        },
+        {
+          "name": "ml-cache",
+          "mountPath": "/app/cache"
+        }
+      ],
+      "health_check_path": "/health",
+      "liveness_probe": {
+        "httpGet": {
+          "path": "/health",
+          "port": 8080
+        },
+        "initialDelaySeconds": 15,
+        "periodSeconds": 10
+      },
+      "readiness_probe": {
+        "httpGet": {
+          "path": "/ready",
+          "port": 8080
+        },
+        "initialDelaySeconds": 5,
+        "periodSeconds": 5
+      },
+      "auto_scaling": true,
+      "min_replicas": 3,
+      "max_replicas": 15,
+      "target_cpu_utilization": 75,
+      "target_memory_utilization": 80
+    }
+  },
+  "services": {
+    "ml-api-service": {
+      "name": "ml-api-service",
+      "type": "LoadBalancer",
+      "ports": [
+        {
+          "name": "http",
+          "port": 80,
+          "targetPort": 8080
+        },
+        {
+          "name": "metrics",
+          "port": 9090,
+          "targetPort": 9090
+        }
+      ],
+      "selector": {
+        "app": "ml-api"
+      },
+      "external_name": null,
+      "annotations": {
+        "service.beta.kubernetes.io/aws-load-balancer-type": "nlb",
+        "service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled": "true"
+      }
+    },
+    "ml-training-service": {
+      "name": "ml-training-service",
+      "type": "ClusterIP",
+      "ports": [
+        {
+          "name": "http",
+          "port": 8080,
+          "targetPort": 8080
+        }
+      ],
+      "selector": {
+        "app": "ml-training"
+      },
+      "external_name": null,
+      "annotations": null
+    },
+    "ml-inference-service": {
+      "name": "ml-inference-service",
+      "type": "ClusterIP",
+      "ports": [
+        {
+          "name": "http",
+          "port": 8080,
+          "targetPort": 8080
+        }
+      ],
+      "selector": {
+        "app": "ml-inference"
+      },
+      "external_name": null,
+      "annotations": null
+    }
+  },
+  "ingresses": {
+    "ml-api-ingress": {
+      "name": "ml-api-ingress",
+      "host": "api.apostapro.com",
+      "tls_secret": "apostapro-tls",
+      "annotations": {
+        "kubernetes.io/ingress.class": "nginx",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true"
+      },
+      "rules": [
+        {
+          "host": "api.apostapro.com",
+          "http": {
+            "paths": [
+              {
+                "path": "/",
+                "pathType": "Prefix",
+                "backend": {
+                  "service": {
+                    "name": "ml-api-service",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "monitoring": {
+    "prometheus_enabled": true,
+    "grafana_enabled": true,
+    "alertmanager_enabled": true,
+    "node_exporter_enabled": true,
+    "cadvisor_enabled": true,
+    "custom_metrics_enabled": true
+  },
+  "resource_config": {
+    "storage_class": "gp2",
+    "persistent_volumes": {
+      "ml-models": {
+        "size": "10Gi",
+        "access_mode": "ReadWriteMany",
+        "storage_class": "gp2"
+      },
+      "ml-data": {
+        "size": "100Gi",
+        "access_mode": "ReadWriteMany",
+        "storage_class": "gp2"
+      },
+      "ml-cache": {
+        "size": "50Gi",
+        "access_mode": "ReadWriteMany",
+        "storage_class": "gp2"
+      }
+    },
+    "config_maps": {
+      "ml-config": {
+        "ML_ENV": "production",
+        "LOG_LEVEL": "INFO",
+        "API_VERSION": "v1"
+      }
+    },
+    "secrets": {
+      "ml-secrets": {
+        "API_KEYS": "base64_encoded_api_keys",
+        "DATABASE_URL": "base64_encoded_db_url"
+      }
+    }
+  }
+}

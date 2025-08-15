@@ -5,7 +5,7 @@ Este módulo contém testes unitários e de integração para o NewsCollector.
 """
 import pytest
 from unittest.mock import patch, MagicMock, ANY
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from sqlalchemy.orm import Session
 from bs4 import BeautifulSoup
 import json
@@ -41,10 +41,9 @@ def sample_clube():
     return Clube(
         id=1,
         nome="Flamengo",
-        nome_completo="Clube de Regatas do Flamengo",
-        url_fbref="https://fbref.com/teams/598bc722/Flamengo",
-        ativo=True,
-        cidade="Rio de Janeiro"
+        abreviacao="FLA",
+        cidade="Rio de Janeiro",
+        fundacao=date(1895, 11, 15)
     )
 
 # Fixture para HTML de exemplo do Globo Esporte

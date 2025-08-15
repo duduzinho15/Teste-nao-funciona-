@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  description: Namespace para sistema de logging
+  labels:
+    app: apostapro
+    component: logging
+  name: logging

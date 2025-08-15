@@ -1,0 +1,120 @@
+jobs:
+  ml_training_data_preparation:
+    needs: []
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install -r requirements_ml.txt
+    - name: 'Run: python -m ml_models.data_preparation'
+      run: python -m ml_models.data_preparation
+      timeout-minutes: 45
+    - name: 'Run: python -m ml_models.data_validation'
+      run: python -m ml_models.data_validation
+      timeout-minutes: 45
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: ml_training-data_preparation-artifacts
+        path: ml_models/results/*
+  ml_training_feature_engineering:
+    needs: []
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install -r requirements_ml.txt
+    - name: 'Run: python -m ml_models.advanced_features'
+      run: python -m ml_models.advanced_features
+      timeout-minutes: 30
+    - name: 'Run: python -m ml_models.feature_selection'
+      run: python -m ml_models.feature_selection
+      timeout-minutes: 30
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: ml_training-feature_engineering-artifacts
+        path: ml_models/results/*
+  ml_training_model_deployment:
+    needs: []
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install -r requirements_ml.txt
+    - name: 'Run: python -m ml_models.model_deployment'
+      run: python -m ml_models.model_deployment
+      timeout-minutes: 30
+    - name: 'Run: python -m ml_models.health_check'
+      run: python -m ml_models.health_check
+      timeout-minutes: 30
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: ml_training-model_deployment-artifacts
+        path: ml_models/results/*
+  ml_training_model_evaluation:
+    needs: []
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install -r requirements_ml.txt
+    - name: 'Run: python -m ml_models.model_evaluation'
+      run: python -m ml_models.model_evaluation
+      timeout-minutes: 60
+    - name: 'Run: python -m ml_models.cross_validation'
+      run: python -m ml_models.cross_validation
+      timeout-minutes: 60
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: ml_training-model_evaluation-artifacts
+        path: ml_models/results/*
+  ml_training_model_training:
+    needs: []
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install -r requirements_ml.txt
+    - name: 'Run: python -m ml_models.model_trainer'
+      run: python -m ml_models.model_trainer
+      timeout-minutes: 120
+    - name: 'Run: python -m ml_models.hyperparameter_tuning'
+      run: python -m ml_models.hyperparameter_tuning
+      timeout-minutes: 120
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: ml_training-model_training-artifacts
+        path: ml_models/results/*
+name: Ml_Training Pipeline
+'on':
+  schedule:
+  - cron: 0 2 * * *

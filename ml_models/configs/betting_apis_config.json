@@ -1,0 +1,186 @@
+{
+  "apis": {
+    "football_data_org": {
+      "name": "Football Data Org",
+      "base_url": "https://api.football-data.org/v4",
+      "rate_limit": 10,
+      "timeout": 30,
+      "enabled": true
+    },
+    "api_football": {
+      "name": "API Football",
+      "base_url": "https://v3.football.api-sports.io",
+      "rate_limit": 100,
+      "timeout": 45,
+      "enabled": true
+    },
+    "odds_api": {
+      "name": "The Odds API",
+      "base_url": "https://api.the-odds-api.com/v4",
+      "rate_limit": 500,
+      "timeout": 30,
+      "enabled": true
+    },
+    "betfair": {
+      "name": "Betfair",
+      "base_url": "https://api.betfair.com/exchange/betting/json/rpc/v1",
+      "rate_limit": 50,
+      "timeout": 60,
+      "enabled": true
+    },
+    "pinnacle": {
+      "name": "Pinnacle Sports",
+      "base_url": "https://api.pinnacle.com/0.1",
+      "rate_limit": 20,
+      "timeout": 30,
+      "enabled": true
+    },
+    "william_hill": {
+      "name": "William Hill",
+      "base_url": "https://api.williamhill.com/v1",
+      "rate_limit": 30,
+      "timeout": 45,
+      "enabled": true
+    }
+  },
+  "competitions": {
+    "premier_league": {
+      "id": "PL",
+      "name": "Premier League",
+      "country": "England",
+      "priority": "high",
+      "apis": [
+        "football_data_org",
+        "api_football",
+        "odds_api"
+      ]
+    },
+    "la_liga": {
+      "id": "PD",
+      "name": "La Liga",
+      "country": "Spain",
+      "priority": "high",
+      "apis": [
+        "football_data_org",
+        "api_football",
+        "odds_api"
+      ]
+    },
+    "bundesliga": {
+      "id": "BL1",
+      "name": "Bundesliga",
+      "country": "Germany",
+      "priority": "high",
+      "apis": [
+        "football_data_org",
+        "api_football",
+        "odds_api"
+      ]
+    },
+    "serie_a": {
+      "id": "SA",
+      "name": "Serie A",
+      "country": "Italy",
+      "priority": "high",
+      "apis": [
+        "football_data_org",
+        "api_football",
+        "odds_api"
+      ]
+    },
+    "brasileirao": {
+      "id": "BSA",
+      "name": "Brasileirão",
+      "country": "Brazil",
+      "priority": "high",
+      "apis": [
+        "api_football",
+        "odds_api"
+      ]
+    },
+    "champions_league": {
+      "id": "CL",
+      "name": "UEFA Champions League",
+      "country": "Europe",
+      "priority": "high",
+      "apis": [
+        "football_data_org",
+        "api_football",
+        "odds_api"
+      ]
+    }
+  },
+  "betting_types": {
+    "match_winner": {
+      "name": "Vencedor da Partida",
+      "markets": [
+        "1",
+        "X",
+        "2"
+      ],
+      "priority": "high"
+    },
+    "over_under": {
+      "name": "Mais/Menos Gols",
+      "markets": [
+        "Over 0.5",
+        "Over 1.5",
+        "Over 2.5",
+        "Under 2.5",
+        "Under 1.5"
+      ],
+      "priority": "high"
+    },
+    "both_teams_score": {
+      "name": "Ambas Equipes Marcam",
+      "markets": [
+        "Yes",
+        "No"
+      ],
+      "priority": "medium"
+    },
+    "double_chance": {
+      "name": "Dupla Chance",
+      "markets": [
+        "1X",
+        "12",
+        "X2"
+      ],
+      "priority": "medium"
+    },
+    "correct_score": {
+      "name": "Placar Exato",
+      "markets": [
+        "1-0",
+        "2-0",
+        "2-1",
+        "1-1",
+        "0-0",
+        "0-1",
+        "1-2",
+        "0-2"
+      ],
+      "priority": "low"
+    }
+  },
+  "data_collection": {
+    "real_time_odds_interval": 300,
+    "historical_data_days": 365,
+    "odds_history_days": 30,
+    "max_concurrent_requests": 5,
+    "cache_duration": 1800,
+    "retry_delay": 60
+  },
+  "validation": {
+    "min_odds_value": 1.01,
+    "max_odds_value": 1000.0,
+    "min_market_count": 3,
+    "required_fields": [
+      "home_team",
+      "away_team",
+      "match_date",
+      "odds"
+    ],
+    "data_freshness_hours": 24
+  }
+}

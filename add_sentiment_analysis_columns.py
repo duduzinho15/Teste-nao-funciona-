@@ -1,107 +1,157 @@
-import psycopg2
-from dotenv import load_dotenv
+#!/usr/bin/env python3
+"""
+Script para adicionar colunas de análise de sentimento ao banco de dados
+======================================================================
+
+Este script adiciona as colunas necessárias para análise de sentimento
+nas tabelas de notícias e posts de redes sociais.
+
+Autor: Sistema de Análise de Sentimento ApostaPro
+Data: 2025-01-15
+Versão: 1.0
+"""
+
+import sqlite3
 import os
+from pathlib import Path
 
-# Carrega as variáveis de ambiente do arquivo .env
-load_dotenv()
+def get_db_path():
+    """Obtém o caminho para o banco de dados."""
+    # Tentar diferentes localizações possíveis
+    possible_paths = [
+        "Banco_de_dados/aposta.db",
+        "Coleta_de_dados/database/football_data.db",
+        "aposta.db"
+    ]
+    
+    for path in possible_paths:
+        if os.path.exists(path):
+            return path
+    
+    return None
 
-# Parâmetros de conexão
-params = {
-    'host': os.getenv('DB_HOST', 'localhost'),
-    'port': os.getenv('DB_PORT', '5432'),
-    'database': os.getenv('DB_NAME', 'apostapro_db'),
-    'user': os.getenv('DB_USER', 'apostapro_user'),
-    'password': os.getenv('DB_PASSWORD', 'senha_segura_123')
-}
-
-def add_sentiment_analysis_columns():
-    """Adiciona as colunas de análise de sentimento à tabela noticias_clubes."""
+def add_sentiment_columns():
+    """Adiciona colunas de sentimento às tabelas necessárias."""
+    db_path = get_db_path()
+    
+    if not db_path:
+        print("❌ Nenhum banco de dados encontrado!")
+        return False
+    
+    print(f"🔍 Conectando ao banco: {db_path}")
+    
     try:
-        # Conecta ao banco de dados
-        print("Conectando ao banco de dados...")
-        conn = psycopg2.connect(**params)
-        conn.autocommit = True
-        cur = conn.cursor()
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
         
-        # SQL para adicionar as colunas
-        sql_commands = [
-            # Adiciona colunas de análise de sentimento
-            # Adiciona colunas de análise de sentimento com comentários separados
-            """
-            ALTER TABLE noticias_clubes 
-            ADD COLUMN IF NOT EXISTS sentimento_geral FLOAT;
-            COMMENT ON COLUMN noticias_clubes.sentimento_geral IS 'Pontuação de sentimento entre -1 (negativo) e 1 (positivo)';
-            """,
-            
-            """
-            ALTER TABLE noticias_clubes 
-            ADD COLUMN IF NOT EXISTS confianca_sentimento FLOAT;
-            COMMENT ON COLUMN noticias_clubes.confianca_sentimento IS 'Nível de confiança da análise de sentimento (0 a 1)';
-            """,
-            
-            """
-            ALTER TABLE noticias_clubes 
-            ADD COLUMN IF NOT EXISTS polaridade VARCHAR(20);
-            COMMENT ON COLUMN noticias_clubes.polaridade IS 'Classificação geral do sentimento (positivo, negativo, neutro)';
-            """,
-            
-            # Adiciona colunas para tópicos e palavras-chave
-            """
-            ALTER TABLE noticias_clubes 
-            ADD COLUMN IF NOT EXISTS topicos VARCHAR(255);
-            COMMENT ON COLUMN noticias_clubes.topicos IS 'Tópicos principais identificados na notícia (separados por vírgula)';
-            """,
-            
-            """
-            ALTER TABLE noticias_clubes 
-            ADD COLUMN IF NOT EXISTS palavras_chave VARCHAR(500);
-            COMMENT ON COLUMN noticias_clubes.palavras_chave IS 'Palavras-chave extraídas do conteúdo (separadas por vírgula)';
-            """,
-            
-            # Adiciona metadados da análise
-            """
-            ALTER TABLE noticias_clubes 
-            ADD COLUMN IF NOT EXISTS analisado_em TIMESTAMP;
-            COMMENT ON COLUMN noticias_clubes.analisado_em IS 'Data e hora em que a análise de sentimento foi realizada';
-            """,
-            
-            """
-            ALTER TABLE noticias_clubes 
-            ADD COLUMN IF NOT EXISTS modelo_analise VARCHAR(100);
-            COMMENT ON COLUMN noticias_clubes.modelo_analise IS 'Nome/versão do modelo de análise de sentimento utilizado';
-            """,
-            
-            # Cria índices para melhorar consultas
-            """
-            CREATE INDEX IF NOT EXISTS idx_noticias_sentimento 
-            ON noticias_clubes(sentimento_geral)
-            """,
-            
-            """
-            CREATE INDEX IF NOT EXISTS idx_noticias_polaridade 
-            ON noticias_clubes(polaridade)
-            """
-        ]
+        # Verificar se as tabelas existem
+        cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
+        tables = [row[0] for row in cursor.fetchall()]
+        print(f"📋 Tabelas encontradas: {tables}")
         
-        # Executa cada comando SQL
-        for i, sql in enumerate(sql_commands, 1):
-            print(f"Executando comando {i}/{len(sql_commands)}...")
+        # Adicionar colunas à tabela noticias_clubes (se existir)
+        if 'noticias_clubes' in tables:
+            print("🔧 Adicionando colunas de sentimento à tabela noticias_clubes...")
             try:
-                cur.execute(sql)
-                print(f"  ✅ Comando {i} executado com sucesso")
-            except Exception as e:
-                print(f"  ⚠️ Erro ao executar comando {i}: {e}")
+                cursor.execute("""
+                    ALTER TABLE noticias_clubes 
+                    ADD COLUMN sentimento TEXT DEFAULT NULL
+                """)
+                print("✅ Coluna 'sentimento' adicionada com sucesso!")
+            except sqlite3.OperationalError as e:
+                if "duplicate column name" in str(e):
+                    print("ℹ️ Coluna 'sentimento' já existe")
+                else:
+                    print(f"⚠️ Erro ao adicionar coluna 'sentimento': {e}")
+            
+            try:
+                cursor.execute("""
+                    ALTER TABLE noticias_clubes 
+                    ADD COLUMN score_sentimento REAL DEFAULT NULL
+                """)
+                print("✅ Coluna 'score_sentimento' adicionada com sucesso!")
+            except sqlite3.OperationalError as e:
+                if "duplicate column name" in str(e):
+                    print("ℹ️ Coluna 'score_sentimento' já existe")
+                else:
+                    print(f"⚠️ Erro ao adicionar coluna 'score_sentimento': {e}")
+        else:
+            print("⚠️ Tabela 'noticias_clubes' não encontrada")
         
-        print("\n✅ Todas as alterações foram aplicadas com sucesso!")
+        # Adicionar colunas à tabela posts_redes_sociais (se existir)
+        if 'posts_redes_sociais' in tables:
+            print("🔧 Adicionando colunas de sentimento à tabela posts_redes_sociais...")
+            try:
+                cursor.execute("""
+                    ALTER TABLE posts_redes_sociais 
+                    ADD COLUMN sentimento TEXT DEFAULT NULL
+                """)
+                print("✅ Coluna 'sentimento' adicionada com sucesso!")
+            except sqlite3.OperationalError as e:
+                if "duplicate column name" in str(e):
+                    print("ℹ️ Coluna 'sentimento' já existe")
+                else:
+                    print(f"⚠️ Erro ao adicionar coluna 'sentimento': {e}")
+            
+            try:
+                cursor.execute("""
+                    ALTER TABLE posts_redes_sociais 
+                    ADD COLUMN score_sentimento REAL DEFAULT NULL
+                """)
+                print("✅ Coluna 'score_sentimento' adicionada com sucesso!")
+            except sqlite3.OperationalError as e:
+                if "duplicate column name" in str(e):
+                    print("ℹ️ Coluna 'score_sentimento' já existe")
+                else:
+                    print(f"⚠️ Erro ao adicionar coluna 'score_sentimento': {e}")
+        else:
+            print("⚠️ Tabela 'posts_redes_sociais' não encontrada")
+        
+        # Verificar a estrutura das tabelas após as modificações
+        print("\n📊 Estrutura das tabelas após modificações:")
+        
+        if 'noticias_clubes' in tables:
+            cursor.execute("PRAGMA table_info(noticias_clubes)")
+            columns = cursor.fetchall()
+            print(f"\n📋 Tabela 'noticias_clubes':")
+            for col in columns:
+                print(f"  - {col[1]} ({col[2]})")
+        
+        if 'posts_redes_sociais' in tables:
+            cursor.execute("PRAGMA table_info(posts_redes_sociais)")
+            columns = cursor.fetchall()
+            print(f"\n📋 Tabela 'posts_redes_sociais':")
+            for col in columns:
+                print(f"  - {col[1]} ({col[2]})")
+        
+        conn.commit()
+        print("\n✅ Modificações aplicadas com sucesso!")
+        return True
         
     except Exception as e:
-        print(f"❌ Erro ao conectar ao banco de dados: {e}")
+        print(f"❌ Erro ao modificar banco de dados: {e}")
+        return False
+    
     finally:
         if 'conn' in locals():
-            cur.close()
             conn.close()
-            print("Conexão com o banco de dados encerrada.")
+
+def main():
+    """Função principal."""
+    print("🚀 Iniciando adição de colunas de análise de sentimento...")
+    print("=" * 60)
+    
+    success = add_sentiment_columns()
+    
+    print("=" * 60)
+    if success:
+        print("🎉 Processo concluído com sucesso!")
+        print("💡 As colunas de sentimento foram adicionadas ao banco de dados.")
+        print("🔧 Agora você pode executar o script de análise de sentimento.")
+    else:
+        print("❌ Processo falhou. Verifique os erros acima.")
+    
+    return success
 
 if __name__ == "__main__":
-    print("=== Adicionando colunas de análise de sentimento à tabela noticias_clubes ===\n")
-    add_sentiment_analysis_columns()
+    main()

@@ -1,7 +1,7 @@
 """Add sentiment analysis fields to noticias_clubes table
 
 Revision ID: e80615e1f202
-Revises: f2641ea635ff
+Revises: 3c958e4a60b7
 Create Date: 2025-08-09 10:26:53.056199
 
 """
@@ -11,7 +11,7 @@ from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
 revision = 'e80615e1f202'
-down_revision = 'f2641ea635ff'
+down_revision = '3c958e4a60b7'
 branch_labels = None
 depends_on = None
 

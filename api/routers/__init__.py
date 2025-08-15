@@ -13,6 +13,8 @@ Routers disponíveis:
 - social: Endpoints para redes sociais
 - news: Endpoints para notícias
 - analise: Endpoints para análise de dados
+- recomendacoes: Endpoints para recomendações de apostas
+- ml_router: Endpoints para Machine Learning e IA
 - health: Endpoints de health check e monitoramento
 
 Autor: Sistema de API RESTful
@@ -20,7 +22,7 @@ Data: 2025-08-03
 Versão: 1.0
 """
 
-from . import competitions, clubs, players, health, social, news, matches, analise
+from . import competitions, clubs, players, health, social, news, matches, analise, recomendacoes, ml_router
 
 __all__ = [
     "competitions", 
@@ -30,5 +32,7 @@ __all__ = [
     "social", 
     "news", 
     "matches", 
-    "analise"
+    "analise",
+    "recomendacoes",
+    "ml_router"
 ]

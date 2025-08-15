@@ -1,0 +1,23 @@
+{
+  "id": "data_validation_20250813_213428_537dd1e0",
+  "pipeline_name": "data_validation",
+  "start_time": "2025-08-13 21:34:28.867026",
+  "end_time": "2025-08-13 21:34:34.870391",
+  "status": "success",
+  "steps_completed": [
+    "data_quality_check",
+    "schema_validation",
+    "anomaly_detection",
+    "automatic_cleaning"
+  ],
+  "steps_failed": [],
+  "logs": [
+    "Verificação de qualidade dos dados concluída",
+    "Validação de esquemas concluída",
+    "Detecção de anomalias concluída",
+    "Limpeza automática de dados concluída"
+  ],
+  "artifacts": [],
+  "error_message": null,
+  "retry_count": 0
+}

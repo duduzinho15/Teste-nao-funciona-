@@ -1,0 +1,30 @@
+{
+  "id": "ml_training_20250813_213341_9dd593bf",
+  "pipeline_name": "ml_training",
+  "start_time": "2025-08-13 21:33:41.134799",
+  "end_time": "2025-08-13 21:34:18.849898",
+  "status": "success",
+  "steps_completed": [
+    "data_validation",
+    "model_training",
+    "performance_evaluation",
+    "model_versioning",
+    "automated_tests"
+  ],
+  "steps_failed": [],
+  "logs": [
+    "Dados de treinamento validados com sucesso",
+    "Modelo result_prediction treinado com sucesso",
+    "Modelo total_goals_prediction treinado com sucesso",
+    "Modelo both_teams_score_prediction treinado com sucesso",
+    "Todos os modelos treinados com sucesso",
+    "Performance dos modelos avaliada com sucesso",
+    "Modelos versionados: v1.0.20250813_213415",
+    "Testes automatizados executados com sucesso"
+  ],
+  "artifacts": [
+    "ml_models\\monitoring\\automation\\artifacts\\version_20250813_213415.json"
+  ],
+  "error_message": null,
+  "retry_count": 0
+}

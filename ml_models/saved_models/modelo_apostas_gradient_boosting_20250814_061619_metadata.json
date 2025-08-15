@@ -1,0 +1,30 @@
+{
+  "nome_modelo": "gradient_boosting",
+  "accuracy": 0.6666666666666666,
+  "data_treinamento": "2025-08-14T06:16:19.418936",
+  "feature_names": [
+    "casa_forma_score",
+    "casa_vitorias",
+    "casa_empates",
+    "casa_derrotas",
+    "casa_gols_marcados",
+    "casa_gols_sofridos",
+    "casa_sentimento",
+    "casa_confianca_sentimento",
+    "visitante_forma_score",
+    "visitante_vitorias",
+    "visitante_empates",
+    "visitante_derrotas",
+    "visitante_gols_marcados",
+    "visitante_gols_sofridos",
+    "visitante_sentimento",
+    "visitante_confianca_sentimento",
+    "diferenca_forma",
+    "diferenca_sentimento"
+  ],
+  "classes_target": [
+    "casa",
+    "empate",
+    "visitante"
+  ]
+}

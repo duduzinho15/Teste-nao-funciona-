@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ml-inference
+  name: ml-inference
+  namespace: apostapro-ml
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: ml-inference
+  template:
+    metadata:
+      labels:
+        app: ml-inference
+    spec:
+      containers:
+      - env:
+        - name: ML_ENV
+          value: production
+        - name: LOG_LEVEL
+          value: INFO
+        - name: INFERENCE_MODE
+          value: real-time
+        image: apostapro/ml-inference:latest
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        name: ml-inference
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1Gi
+          requests:
+            cpu: 250m
+            memory: 512Mi
+        volumeMounts:
+        - mountPath: /app/models
+          name: ml-models
+        - mountPath: /app/cache
+          name: ml-cache
+      volumes:
+      - name: ml-models
+        persistentVolumeClaim:
+          claimName: ml-models-pvc
+      - name: ml-cache
+        persistentVolumeClaim:
+          claimName: ml-cache-pvc

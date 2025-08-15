@@ -1,0 +1,27 @@
+{
+    "include": [
+        ".",
+        "api",
+        "Coleta_de_dados",
+        "ml_models"
+    ],
+    "exclude": [
+        "**/node_modules",
+        "**/__pycache__",
+        "venv",
+        "legacy (nao usar)",
+        "testes (nao usar)"
+    ],
+    "pythonVersion": "3.13",
+    "pythonPlatform": "Windows",
+    "venvPath": ".",
+    "venv": "venv",
+    "extraPaths": [
+        ".",
+        "api",
+        "Coleta_de_dados",
+        "ml_models"
+    ],
+    "typeCheckingMode": "basic",
+    "useLibraryCodeForTypes": true
+}

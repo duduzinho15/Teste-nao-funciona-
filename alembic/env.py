@@ -19,8 +19,14 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 # Importar configurações e modelos
-from Coleta_de_dados.database.config import db_manager
-from Coleta_de_dados.database.models import Base
+try:
+    from Coleta_de_dados.database.config import db_manager
+    from Coleta_de_dados.database.models import Base
+    target_metadata = Base.metadata
+except ImportError:
+    # Fallback se não conseguir importar os modelos
+    from sqlalchemy import MetaData
+    target_metadata = MetaData()
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -31,10 +37,6 @@ config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-# add your model's MetaData object here
-# for 'autogenerate' support
-target_metadata = Base.metadata
-
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
 # my_important_option = config.get_main_option("my_important_option")
@@ -42,7 +44,16 @@ target_metadata = Base.metadata
 
 def get_url():
     """Obtém a URL do banco de dados das configurações."""
-    return db_manager.settings.database_url
+    try:
+        if db_manager and hasattr(db_manager, 'settings'):
+            return db_manager.settings.database_url
+    except:
+        pass
+    
+    # Fallback para SQLite
+    import os
+    db_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "Banco_de_dados", "aposta.db")
+    return f"sqlite:///{db_path}"
 
 def run_migrations_offline() -> None:
     """Run migrations in 'offline' mode.
@@ -77,8 +88,22 @@ def run_migrations_online() -> None:
     and associate a connection with the context.
 
     """
-    # Usar o engine configurado
-    connectable = db_manager.engine
+    try:
+        # Tentar usar o engine configurado
+        if db_manager and hasattr(db_manager, 'engine') and db_manager.engine:
+            connectable = db_manager.engine
+        else:
+            # Fallback: criar engine diretamente
+            from sqlalchemy import create_engine
+            url = get_url()
+            connectable = create_engine(url)
+    except Exception as e:
+        # Fallback final: criar engine SQLite
+        from sqlalchemy import create_engine
+        import os
+        db_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "Banco_de_dados", "aposta.db")
+        url = f"sqlite:///{db_path}"
+        connectable = create_engine(url)
 
     with connectable.connect() as connection:
         context.configure(
@@ -86,7 +111,7 @@ def run_migrations_online() -> None:
             target_metadata=target_metadata,
             compare_type=True,
             compare_server_default=True,
-            render_as_batch=False,  # PostgreSQL suporta ALTER direto
+            render_as_batch=True,  # SQLite requer batch mode
         )
 
         with context.begin_transaction():

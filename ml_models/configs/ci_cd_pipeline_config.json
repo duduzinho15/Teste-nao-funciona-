@@ -1,0 +1,321 @@
+{
+  "pipelines": {
+    "ml_training": {
+      "name": "ml_training",
+      "version": "1.0.0",
+      "description": "Pipeline de treinamento de modelos ML",
+      "trigger_type": "schedule",
+      "schedule": "0 2 * * *",
+      "enabled": true,
+      "stages": [
+        {
+          "name": "data_preparation",
+          "description": "Preparação e validação dos dados",
+          "commands": [
+            "python -m ml_models.data_preparation",
+            "python -m ml_models.data_validation"
+          ],
+          "timeout_minutes": 45,
+          "retry_count": 2,
+          "required": true,
+          "parallel": false,
+          "dependencies": null
+        },
+        {
+          "name": "feature_engineering",
+          "description": "Engenharia de features",
+          "commands": [
+            "python -m ml_models.advanced_features",
+            "python -m ml_models.feature_selection"
+          ],
+          "timeout_minutes": 30,
+          "retry_count": 2,
+          "required": true,
+          "parallel": false,
+          "dependencies": null
+        },
+        {
+          "name": "model_training",
+          "description": "Treinamento dos modelos",
+          "commands": [
+            "python -m ml_models.model_trainer",
+            "python -m ml_models.hyperparameter_tuning"
+          ],
+          "timeout_minutes": 120,
+          "retry_count": 2,
+          "required": true,
+          "parallel": false,
+          "dependencies": null
+        },
+        {
+          "name": "model_evaluation",
+          "description": "Avaliação e validação dos modelos",
+          "commands": [
+            "python -m ml_models.model_evaluation",
+            "python -m ml_models.cross_validation"
+          ],
+          "timeout_minutes": 60,
+          "retry_count": 2,
+          "required": true,
+          "parallel": false,
+          "dependencies": null
+        },
+        {
+          "name": "model_deployment",
+          "description": "Deploy dos modelos em produção",
+          "commands": [
+            "python -m ml_models.model_deployment",
+            "python -m ml_models.health_check"
+          ],
+          "timeout_minutes": 30,
+          "retry_count": 2,
+          "required": true,
+          "parallel": false,
+          "dependencies": null
+        }
+      ],
+      "environment": "production",
+      "notification_channels": [
+        "email",
+        "slack"
+      ],
+      "artifacts": [
+        "models",
+        "metrics",
+        "logs"
+      ],
+      "cache": null
+    },
+    "data_validation": {
+      "name": "data_validation",
+      "version": "1.0.0",
+      "description": "Pipeline de validação de dados",
+      "trigger_type": "schedule",
+      "schedule": "0 */6 * * *",
+      "enabled": true,
+      "stages": [
+        {
+          "name": "data_collection",
+          "description": "Coleta de dados das APIs",
+          "commands": [
+            "python -m ml_models.data_collector",
+            "python -m ml_models.betting_apis_integration"
+          ],
+          "timeout_minutes": 30,
+          "retry_count": 2,
+          "required": true,
+          "parallel": false,
+          "dependencies": null
+        },
+        {
+          "name": "data_validation",
+          "description": "Validação de qualidade dos dados",
+          "commands": [
+            "python -m ml_models.data_validation",
+            "python -m ml_models.outlier_detection"
+          ],
+          "timeout_minutes": 45,
+          "retry_count": 2,
+          "required": true,
+          "parallel": false,
+          "dependencies": null
+        },
+        {
+          "name": "data_cleaning",
+          "description": "Limpeza e normalização dos dados",
+          "commands": [
+            "python -m ml_models.data_cleaning",
+            "python -m ml_models.data_normalization"
+          ],
+          "timeout_minutes": 30,
+          "retry_count": 2,
+          "required": true,
+          "parallel": false,
+          "dependencies": null
+        }
+      ],
+      "environment": "production",
+      "notification_channels": [
+        "email"
+      ],
+      "artifacts": [
+        "validation_reports",
+        "data_quality_metrics"
+      ],
+      "cache": null
+    },
+    "performance_monitoring": {
+      "name": "performance_monitoring",
+      "version": "1.0.0",
+      "description": "Pipeline de monitoramento de performance",
+      "trigger_type": "schedule",
+      "schedule": "*/15 * * * *",
+      "enabled": true,
+      "stages": [
+        {
+          "name": "metrics_collection",
+          "description": "Coleta de métricas do sistema",
+          "commands": [
+            "python -m ml_models.production_monitoring",
+            "python -m ml_models.performance_metrics"
+          ],
+          "timeout_minutes": 15,
+          "retry_count": 2,
+          "required": true,
+          "parallel": false,
+          "dependencies": null
+        },
+        {
+          "name": "performance_analysis",
+          "description": "Análise de performance",
+          "commands": [
+            "python -m ml_models.performance_analysis",
+            "python -m ml_models.anomaly_detection"
+          ],
+          "timeout_minutes": 20,
+          "retry_count": 2,
+          "required": true,
+          "parallel": false,
+          "dependencies": null
+        },
+        {
+          "name": "alert_generation",
+          "description": "Geração de alertas",
+          "commands": [
+            "python -m ml_models.alert_system",
+            "python -m ml_models.notification_service"
+          ],
+          "timeout_minutes": 10,
+          "retry_count": 2,
+          "required": true,
+          "parallel": false,
+          "dependencies": null
+        }
+      ],
+      "environment": "production",
+      "notification_channels": [
+        "slack"
+      ],
+      "artifacts": [
+        "performance_reports",
+        "alert_logs"
+      ],
+      "cache": null
+    },
+    "model_deployment": {
+      "name": "model_deployment",
+      "version": "1.0.0",
+      "description": "Pipeline de deploy de modelos",
+      "trigger_type": "manual",
+      "schedule": "0 2 * * *",
+      "enabled": true,
+      "stages": [
+        {
+          "name": "pre_deployment_check",
+          "description": "Verificações pré-deploy",
+          "commands": [
+            "python -m ml_models.pre_deployment_check",
+            "python -m ml_models.model_compatibility_test"
+          ],
+          "timeout_minutes": 20,
+          "retry_count": 2,
+          "required": true,
+          "parallel": false,
+          "dependencies": null
+        },
+        {
+          "name": "deployment",
+          "description": "Deploy do modelo",
+          "commands": [
+            "python -m ml_models.model_deployment",
+            "python -m ml_models.load_balancer_update"
+          ],
+          "timeout_minutes": 30,
+          "retry_count": 2,
+          "required": true,
+          "parallel": false,
+          "dependencies": null
+        },
+        {
+          "name": "post_deployment_validation",
+          "description": "Validação pós-deploy",
+          "commands": [
+            "python -m ml_models.post_deployment_test",
+            "python -m ml_models.performance_validation"
+          ],
+          "timeout_minutes": 25,
+          "retry_count": 2,
+          "required": true,
+          "parallel": false,
+          "dependencies": null
+        }
+      ],
+      "environment": "production",
+      "notification_channels": [
+        "email",
+        "slack"
+      ],
+      "artifacts": [
+        "deployment_logs",
+        "rollback_scripts"
+      ],
+      "cache": null
+    }
+  },
+  "environments": {
+    "development": {
+      "name": "Development",
+      "description": "Ambiente de desenvolvimento",
+      "variables": {
+        "ML_ENV": "development",
+        "DEBUG": "true",
+        "LOG_LEVEL": "DEBUG"
+      }
+    },
+    "staging": {
+      "name": "Staging",
+      "description": "Ambiente de homologação",
+      "variables": {
+        "ML_ENV": "staging",
+        "DEBUG": "false",
+        "LOG_LEVEL": "INFO"
+      }
+    },
+    "production": {
+      "name": "Production",
+      "description": "Ambiente de produção",
+      "variables": {
+        "ML_ENV": "production",
+        "DEBUG": "false",
+        "LOG_LEVEL": "WARNING"
+      }
+    }
+  },
+  "notification_config": {
+    "email": {
+      "enabled": true,
+      "smtp_server": "smtp.gmail.com",
+      "smtp_port": 587,
+      "username": "",
+      "password": "",
+      "recipients": [
+        ""
+      ]
+    },
+    "slack": {
+      "enabled": true,
+      "webhook_url": "",
+      "channel": "#ml-pipeline",
+      "username": "ApostaPro ML Pipeline"
+    }
+  },
+  "cache_config": {
+    "enabled": true,
+    "type": "redis",
+    "redis_host": "localhost",
+    "redis_port": 6379,
+    "redis_db": 0,
+    "ttl": 3600,
+    "max_size": 1000
+  }
+}

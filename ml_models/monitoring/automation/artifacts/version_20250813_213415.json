@@ -1,0 +1,10 @@
+{
+  "version": "v1.0.20250813_213415",
+  "timestamp": "20250813_213415",
+  "pipeline_run_id": "ml_training_20250813_213341_9dd593bf",
+  "models": [
+    "result_prediction",
+    "total_goals_prediction",
+    "both_teams_score_prediction"
+  ]
+}

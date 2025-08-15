@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: performance_monitoring-deployment
+  namespace: apostapro-ml
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: performance_monitoring
+  template:
+    metadata:
+      labels:
+        app: performance_monitoring
+    spec:
+      containers:
+      - env:
+        - name: ML_ENV
+          value: production
+        - name: DEBUG
+          value: 'false'
+        - name: LOG_LEVEL
+          value: WARNING
+        image: apostapro/performance_monitoring:1.0.0
+        name: performance_monitoring
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1Gi
+          requests:
+            cpu: 250m
+            memory: 512Mi

@@ -1,0 +1,13 @@
+{
+  "model_type": "both_teams_score_prediction",
+  "training_date": "2025-08-13T20:55:16.606230",
+  "features_count": 56,
+  "model_class": "VotingClassifier",
+  "metrics": {
+    "accuracy": 1.0,
+    "precision_macro": 1.0,
+    "recall_macro": 1.0,
+    "f1_macro": 1.0,
+    "roc_auc": 1.0
+  }
+}

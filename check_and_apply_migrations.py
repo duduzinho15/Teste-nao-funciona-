@@ -14,13 +14,15 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 def check_database_structure():
     """Verifica a estrutura do banco de dados."""
     try:
-        # Importar configurações do banco de dados
-        from Coleta_de_dados.database.config import db_manager
+        # Usar SQLite diretamente
+        import sqlite3
+        from sqlalchemy import create_engine, inspect
         
-        print("✅ Módulo de configuração do banco de dados importado com sucesso!")
+        print("✅ Usando SQLite diretamente!")
         
-        # Criar uma conexão com o banco de dados
-        engine = db_manager.engine
+        # Criar uma conexão com o banco de dados SQLite
+        db_path = 'Banco_de_dados/aposta.db'
+        engine = create_engine(f'sqlite:///{db_path}')
         inspector = inspect(engine)
         
         # Listar todas as tabelas

@@ -1,0 +1,65 @@
+# Arquivos temporários
+.tmp.driveupload/
+*.tmp
+*.temp
+temp_*
+
+# Logs
+logs/
+*.log
+logs_teste/
+
+# Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.cache
+
+# Arquivos de ambiente
+.env
+.env.*
+*.env
+
+# Banco de dados
+*.db
+*.sqlite
+*.sqlite3
+
+# Arquivos de backup
+*.backup
+*.bak
+*.sql.backup
+
+# Arquivos de configuração local
+*.local
+local_*
+
+# Arquivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de teste
+test_output.txt
+test_*.txt
+
+# Arquivos de dados grandes
+*.csv
+*.json
+!requirements*.txt
+!*.md
+
+# Arquivos de modelo ML (opcional - comentar se quiser incluir)
+# ml_models/saved_models/*.joblib
+# ml_models/data/*.csv
+
+# Arquivos de configuração de produção
+production_*.py
+deploy_*.py

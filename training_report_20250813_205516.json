@@ -1,0 +1,86 @@
+{
+  "training_session": {
+    "timestamp": "2025-08-13T20:55:16.610138",
+    "session_id": "20250813_205516"
+  },
+  "training_results": {
+    "result_prediction": {
+      "status": "success",
+      "model_type": "result_prediction",
+      "target_column": "result",
+      "problem_type": "classification",
+      "training_samples": 338,
+      "test_samples": 85,
+      "features_count": 56,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0
+      },
+      "feature_importance": {},
+      "timestamp": "2025-08-13T20:55:16.147805",
+      "model_path": "ml_models\\saved_models\\result_prediction_model.joblib"
+    },
+    "total_goals_prediction": {
+      "status": "error",
+      "error": "The estimator RandomForestClassifier should be a regressor.",
+      "timestamp": "2025-08-13T20:55:16.221653"
+    },
+    "both_teams_score_prediction": {
+      "status": "success",
+      "model_type": "both_teams_score_prediction",
+      "target_column": "both_teams_score",
+      "problem_type": "classification",
+      "training_samples": 338,
+      "test_samples": 85,
+      "features_count": 56,
+      "metrics": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0,
+        "roc_auc": 1.0
+      },
+      "feature_importance": {},
+      "timestamp": "2025-08-13T20:55:16.607378",
+      "model_path": "ml_models\\saved_models\\both_teams_score_prediction_model.joblib"
+    }
+  },
+  "performance_summary": {
+    "total_models": 2,
+    "models": {
+      "result_prediction": {
+        "metrics": {
+          "accuracy": 1.0,
+          "precision_macro": 1.0,
+          "recall_macro": 1.0,
+          "f1_macro": 1.0
+        },
+        "status": "trained"
+      },
+      "both_teams_score_prediction": {
+        "metrics": {
+          "accuracy": 1.0,
+          "precision_macro": 1.0,
+          "recall_macro": 1.0,
+          "f1_macro": 1.0,
+          "roc_auc": 1.0
+        },
+        "status": "trained"
+      }
+    },
+    "overall_performance": {
+      "classification": {
+        "avg_accuracy": 1.0,
+        "avg_f1": 1.0
+      }
+    }
+  },
+  "summary": {
+    "total_models": 3,
+    "successful_models": 2,
+    "failed_models": 1,
+    "loaded_models": 0
+  }
+}

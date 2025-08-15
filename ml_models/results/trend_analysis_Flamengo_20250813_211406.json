@@ -1,0 +1,39 @@
+{
+  "team_name": "Flamengo",
+  "total_matches": 25,
+  "period": "2025-05-17 a 2025-08-10",
+  "trends": {
+    "results": {
+      "current_form": "Poor",
+      "win_rate_recent": 0.2,
+      "last_5_results": [
+        "L",
+        "W",
+        "D",
+        "L",
+        "D"
+      ],
+      "trend_direction": "Down"
+    },
+    "goals": {
+      "avg_goals_scored": 1.76,
+      "avg_goals_conceded": 2.0,
+      "scored_trend": "Down",
+      "conceded_trend": "Down",
+      "goal_difference": -0.24
+    },
+    "performance": {
+      "avg_possession": 51.1,
+      "avg_shot_efficiency": 0.51,
+      "avg_xg_efficiency": 0.146,
+      "possession_trend": "Average",
+      "efficiency_trend": "Good"
+    },
+    "market": {
+      "avg_odds": 2.87,
+      "avg_implied_probability": 0.373,
+      "market_value": "Fair",
+      "betting_opportunity": "No"
+    }
+  }
+}

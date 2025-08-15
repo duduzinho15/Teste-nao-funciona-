@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ml_training-service
+  namespace: apostapro-ml
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: ml_training
+  type: ClusterIP

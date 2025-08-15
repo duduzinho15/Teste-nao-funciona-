@@ -1,0 +1,56 @@
+{
+  "competition": "Brasileirão",
+  "total_matches": 180,
+  "period": "2025-05-15 a 2025-08-12",
+  "trends": {
+    "goals": {
+      "avg_total_goals": 3.838888888888889,
+      "goals_trend": "Stable",
+      "both_teams_score_rate": 0.65,
+      "high_scoring_matches": 0.7666666666666667
+    },
+    "results": {
+      "home_win_rate": 0.37222222222222223,
+      "away_win_rate": 0.4222222222222222,
+      "draw_rate": 0.20555555555555555,
+      "home_advantage_strength": -0.04999999999999999
+    },
+    "market": {
+      "avg_home_odds": 2.8322777777777777,
+      "avg_away_odds": 2.8021666666666665,
+      "avg_draw_odds": 3.6593333333333335,
+      "value_betting_opportunities": [
+        {
+          "match": "Fortaleza vs Fluminense",
+          "bet_type": "Away Win",
+          "odds": 3.48,
+          "value_score": 0.09
+        },
+        {
+          "match": "Corinthians vs Internacional",
+          "bet_type": "Away Win",
+          "odds": 3.45,
+          "value_score": 0.081
+        },
+        {
+          "match": "Internacional vs Fortaleza",
+          "bet_type": "Away Win",
+          "odds": 3.4,
+          "value_score": 0.08
+        },
+        {
+          "match": "Cruzeiro vs Flamengo",
+          "bet_type": "Away Win",
+          "odds": 3.49,
+          "value_score": 0.076
+        },
+        {
+          "match": "Athletico-PR vs Corinthians",
+          "bet_type": "Away Win",
+          "odds": 2.74,
+          "value_score": 0.062
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,74 @@
+jobs:
+  model_deployment_deployment:
+    needs: []
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install -r requirements_ml.txt
+    - name: 'Run: python -m ml_models.model_deployment'
+      run: python -m ml_models.model_deployment
+      timeout-minutes: 30
+    - name: 'Run: python -m ml_models.load_balancer_update'
+      run: python -m ml_models.load_balancer_update
+      timeout-minutes: 30
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: model_deployment-deployment-artifacts
+        path: ml_models/results/*
+  model_deployment_post_deployment_validation:
+    needs: []
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install -r requirements_ml.txt
+    - name: 'Run: python -m ml_models.post_deployment_test'
+      run: python -m ml_models.post_deployment_test
+      timeout-minutes: 25
+    - name: 'Run: python -m ml_models.performance_validation'
+      run: python -m ml_models.performance_validation
+      timeout-minutes: 25
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: model_deployment-post_deployment_validation-artifacts
+        path: ml_models/results/*
+  model_deployment_pre_deployment_check:
+    needs: []
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install -r requirements_ml.txt
+    - name: 'Run: python -m ml_models.pre_deployment_check'
+      run: python -m ml_models.pre_deployment_check
+      timeout-minutes: 20
+    - name: 'Run: python -m ml_models.model_compatibility_test'
+      run: python -m ml_models.model_compatibility_test
+      timeout-minutes: 20
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: model_deployment-pre_deployment_check-artifacts
+        path: ml_models/results/*
+name: Model_Deployment Pipeline
+'on':
+  schedule: []
+  workflow_dispatch: {}

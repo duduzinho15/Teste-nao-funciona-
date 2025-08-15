@@ -1,0 +1,20 @@
+networks:
+  apostapro_network:
+    driver: bridge
+services:
+  performance_monitoring_pipeline:
+    build: .
+    container_name: performance_monitoring_pipeline
+    environment:
+      DEBUG: 'false'
+      LOG_LEVEL: WARNING
+      ML_ENV: production
+    image: apostapro/performance_monitoring:1.0.0
+    networks:
+    - apostapro_network
+    restart: unless-stopped
+    volumes:
+    - ./ml_models:/app/ml_models
+    - ./data:/app/data
+    - ./logs:/app/logs
+version: '3.8'
