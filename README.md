@@ -166,6 +166,8 @@ python demo_ml_system.py              # Sistema ML básico
 python demo_training_ml.py            # Treinamento de modelos
 python demo_pipeline_ml.py            # Pipeline completo
 ```
+> Para o workflow completo em produção utilize `python executar_workflow_ml.py`.
+> O script `demo_pipeline_ml.py` é indicado apenas para demonstrações e testes.
 
 ### **APIs e Integrações**
 ```bash
