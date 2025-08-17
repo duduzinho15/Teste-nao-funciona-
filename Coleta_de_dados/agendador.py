@@ -1,31 +1,53 @@
-import schedule 
-import time
-from apis import sofascore_scraper
-from apis import thesportsdb_api
-from utils.log_utils import registrar_log
+"""Scheduler for periodic data collection tasks.
 
-def tarefa_sofascore():
+This module uses APScheduler's :class:`BlockingScheduler` to run
+data collection jobs at regular intervals. It replaces the previous
+implementation based on the ``schedule`` library and a manual loop.
+"""
+
+import logging
+from apscheduler.schedulers.blocking import BlockingScheduler
+
+from apis.news.collector import coletar_noticias_para_todos_clubes
+from apis.social.collector import coletar_dados_para_todos_clubes
+
+
+logger = logging.getLogger(__name__)
+
+
+def executar_coleta_noticias() -> None:
+    """Wrapper para coleta de notícias de clubes."""
+    logger.info("Iniciando coleta de notícias")
     try:
-        registrar_log("sofascore", "Iniciando coleta agendada...")
-        sofascore_scraper.executar_coleta_sofascore()
-        registrar_log("sofascore", "Coleta concluída com sucesso.")
-    except Exception as e:
-        registrar_log("sofascore", f"Erro durante a coleta agendada: {e}", tipo="ERRO")
+        coletar_noticias_para_todos_clubes()
+        logger.info("Coleta de notícias concluída com sucesso")
+    except Exception as exc:  # pragma: no cover - log for operational visibility
+        logger.exception("Falha na coleta de notícias: %s", exc)
 
-def tarefa_thesportsdb():
+
+def executar_coleta_social() -> None:
+    """Wrapper para coleta de dados de redes sociais."""
+    logger.info("Iniciando coleta de redes sociais")
     try:
-        registrar_log("thesportsdb", "Iniciando coleta agendada...")
-        thesportsdb_api.executar_coleta_thesportsdb()
-        registrar_log("thesportsdb", "Coleta concluída com sucesso.")
-    except Exception as e:
-        registrar_log("thesportsdb", f"Erro durante a coleta agendada: {e}", tipo="ERRO")
+        coletar_dados_para_todos_clubes()
+        logger.info("Coleta de redes sociais concluída com sucesso")
+    except Exception as exc:  # pragma: no cover - log for operational visibility
+        logger.exception("Falha na coleta de redes sociais: %s", exc)
 
-# Agendar as tarefas para rodar a cada 6 horas
-schedule.every(6).hours.do(tarefa_sofascore)
-schedule.every(6).hours.do(tarefa_thesportsdb)
 
 if __name__ == "__main__":
-    registrar_log("agendador", "Agendador iniciado.")
-    while True:
-        schedule.run_pending()
-        time.sleep(60)
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
+    )
+
+    scheduler = BlockingScheduler(timezone="America/Sao_Paulo")
+    scheduler.add_job(executar_coleta_noticias, "interval", hours=6)
+    scheduler.add_job(executar_coleta_social, "interval", hours=6)
+
+    try:
+        logger.info("Agendador iniciado")
+        scheduler.start()
+    except (KeyboardInterrupt, SystemExit):  # pragma: no cover - runtime control
+        logger.info("Agendador finalizado")
+
