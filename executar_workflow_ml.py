@@ -2,6 +2,10 @@
 """
 Script principal para executar o workflow completo de Machine Learning do ApostaPro.
 Executa em sequência: preparação de dados, treinamento de modelos e geração de recomendações.
+
+Use este script como ponto de entrada para execuções completas em ambiente de
+produção. Para uma demonstração mais simples voltada a desenvolvimento ou
+testes rápidos, utilize `demo_pipeline_ml.py`.
 """
 
 import logging

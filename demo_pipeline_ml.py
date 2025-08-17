@@ -1,6 +1,9 @@
 """
 Demonstração do Pipeline de Machine Learning Completo
 Testa todas as fases: preparação de dados, treinamento e geração de recomendações
+
+Este script é voltado para demonstrações e testes locais. Para executar o
+workflow completo em produção, utilize `executar_workflow_ml.py`.
 """
 
 import sys
